@@ -1,0 +1,121 @@
+/* ---------- Hero ---------- */
+
+.hero {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding-top: clamp(48px, 7vw, 104px);
+}
+
+.brand {
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.owner {
+  margin-left: 0.55em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  opacity: 0.55;
+}
+
+.title {
+  margin-top: clamp(10px, 1.2vw, 18px);
+  font-size: var(--t-hero);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.heroText {
+  max-width: 30em;
+  margin-top: clamp(16px, 2vw, 24px);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 32px;
+  margin-top: clamp(28px, 3vw, 40px);
+}
+
+.cube {
+  width: 100%;
+  max-width: 900px;
+  margin-top: clamp(8px, 2vw, 24px);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding-top: var(--section);
+  scroll-margin-top: 0;
+}
+
+.head {
+  display: grid;
+  justify-items: center;
+  gap: clamp(14px, 1.6vw, 22px);
+  max-width: 860px;
+  margin: 0 auto clamp(40px, 5vw, 72px);
+  text-align: center;
+}
+
+.head :global(.lead) {
+  max-width: 34em;
+}
+
+/* ---------- About ---------- */
+
+.about {
+  display: grid;
+  gap: clamp(18px, 2vw, 28px);
+  max-width: calc(1040px + 2 * var(--page));
+  padding-block: var(--section);
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  background: var(--ink);
+  color: var(--paper);
+  padding-block: var(--section);
+}
+
+.contactInner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.contactTitle {
+  max-width: 14em;
+}
+
+.contactText {
+  margin: clamp(14px, 1.6vw, 22px) 0 clamp(28px, 3vw, 40px);
+  color: var(--on-ink-2);
+}
+
+.email {
+  margin-top: 22px;
+  color: var(--on-ink-2);
+}
+
+.email:hover {
+  color: var(--paper);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  margin-top: 28px;
+  list-style: none;
+  color: var(--on-ink-2);
+}

@@ -1,0 +1,287 @@
+/*
+  Dcube — base styles.
+  Brand colours are injected as CSS variables from src/remotion/brand.ts (see layout.tsx),
+  so the website and the videos always share one palette. Every other tone is derived
+  from those five with color-mix() — never hard-code a new colour.
+*/
+
+:root {
+  /* Fallbacks — the real values come from BRAND via layout.tsx */
+  --paper: #f2f1ec;
+  --ink: #111110;
+  --muted: #8c8b85;
+  --line: #d6d4cc;
+  --accent: #ff4a1c;
+
+  /* Derived tones */
+  --ink-2: color-mix(in srgb, var(--ink) 66%, var(--paper)); /* secondary text (≥ 4.5:1 on paper) */
+  --ink-3: color-mix(in srgb, var(--ink) 48%, var(--paper)); /* captions, meta */
+  --tile: color-mix(in srgb, var(--ink) 5%, var(--paper)); /* tiles on the paper page */
+  --hairline: color-mix(in srgb, var(--ink) 12%, transparent);
+  --on-ink-2: color-mix(in srgb, var(--paper) 62%, var(--ink)); /* secondary text on ink */
+
+  /* Type scale (one family: Inter Tight) */
+  --t-hero: clamp(2.75rem, 7vw, 6.5rem);
+  --t-h2: clamp(2.25rem, 5vw, 4.75rem);
+  --t-h3: clamp(1.75rem, 3.2vw, 3rem);
+  --t-lead: clamp(1.1875rem, 1.75vw, 1.625rem);
+  --t-body: 1.0625rem;
+  --t-small: 0.875rem;
+  --t-micro: 0.75rem;
+
+  /* Layout */
+  --max: 1240px;
+  --text: 760px;
+  --page: clamp(20px, 4vw, 48px);
+  --gap: clamp(12px, 1.4vw, 20px);
+  --section: clamp(96px, 12vw, 180px);
+  --radius: clamp(20px, 2.2vw, 30px);
+  --radius-sm: clamp(12px, 1.4vw, 18px);
+  --header: 52px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--t-body);
+  line-height: 1.47;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--max) + 2 * var(--page));
+  margin-inline: auto;
+  padding-inline: var(--page);
+}
+
+/* ---------- Type ---------- */
+
+/* Small heading above a headline (Apple's "eyebrow"). */
+.eyebrow {
+  font-size: clamp(1rem, 1.35vw, 1.3125rem);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.2;
+  color: var(--ink-2);
+}
+
+.headline {
+  font-size: var(--t-h2);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.042em;
+  text-wrap: balance;
+}
+
+.lead {
+  font-size: var(--t-lead);
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: -0.016em;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+/* ---------- Actions ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  min-height: 46px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: var(--t-body);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    scale 0.4s var(--ease-out);
+}
+
+.btn:hover {
+  background: color-mix(in srgb, var(--ink) 80%, var(--paper));
+}
+
+.btn:active {
+  scale: 0.97;
+}
+
+.btn-light {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.btn-light:hover {
+  background: color-mix(in srgb, var(--paper) 86%, var(--ink));
+}
+
+/* Text link with a chevron: "View case study ›". */
+.more {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  font-size: var(--t-body);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.more::after {
+  content: "›";
+  font-size: 1.25em;
+  line-height: 0;
+  transition: translate 0.4s var(--ease-out);
+}
+
+.more:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+.more:hover::after {
+  translate: 0.12em 0;
+}
+
+.link {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.5s var(--ease-out);
+}
+
+.link:hover,
+.link:focus-visible {
+  background-size: 100% 1px;
+}
+
+/* ---------- The Dcube full stop ---------- */
+
+/* Arrives as a dot, snaps into a square (same motion as the brand film). */
+.dot {
+  display: inline-block;
+  width: 0.16em;
+  height: 0.16em;
+  margin-left: 0.08em;
+  background: var(--accent);
+  animation: dot-to-square 0.6s cubic-bezier(0.65, 0, 0.35, 1) 1.1s both;
+}
+
+@keyframes dot-to-square {
+  from {
+    border-radius: 50%;
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1.12;
+  }
+  to {
+    border-radius: 0;
+    rotate: 90deg;
+  }
+}
+
+/* ---------- Motion ---------- */
+
+/* Fade-up on load. Set --d (seconds) inline for a stagger. */
+.reveal {
+  animation: reveal 1.1s var(--ease-out) both;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+}
+
+/* Rise into place as it scrolls into view (scroll-driven; static where unsupported). */
+@supports (animation-timeline: view()) {
+  .rise {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 70%;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      translate: 0 56px;
+      scale: 0.98;
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .rise,
+  .dot {
+    animation: none;
+  }
+}

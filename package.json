@@ -1,0 +1,43 @@
+{
+  "name": "dcube",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "studio": "remotion studio",
+    "render": "remotion render",
+    "still": "remotion still",
+    "render:portfolio": "node scripts/render-portfolio.mjs",
+    "render:pureflame": "node scripts/render-pureflame.mjs",
+    "render:davidcraft": "node scripts/render-davidcraft.mjs",
+    "remotion:upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.533",
+    "@remotion/google-fonts": "4.0.533",
+    "@remotion/media": "4.0.533",
+    "@remotion/paths": "4.0.533",
+    "@remotion/player": "4.0.533",
+    "@remotion/shapes": "4.0.533",
+    "@remotion/transitions": "4.0.533",
+    "next": "16.3.8",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "remotion": "4.0.533",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@remotion/eslint-plugin": "4.0.533",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.8",
+    "puppeteer-core": "^24.43.1",
+    "typescript": "^5"
+  }
+}

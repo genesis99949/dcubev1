@@ -1,0 +1,213 @@
+/* Case study: centred, with generous margins — text in a ~760px column, media up to 1120px. */
+.article {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+/* ---------- Header ---------- */
+
+.head {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding-block: clamp(28px, 4vw, 48px) clamp(40px, 5vw, 72px);
+}
+
+.back {
+  display: inline-flex;
+  gap: 0.35em;
+  margin-bottom: clamp(40px, 6vw, 80px);
+  font-size: var(--t-small);
+  color: var(--ink-2);
+  transition: color 0.25s;
+}
+
+.back:hover {
+  color: var(--ink);
+}
+
+.services {
+  font-size: var(--t-body);
+}
+
+.title {
+  margin-top: 12px;
+  font-size: var(--t-hero);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.subtitle {
+  margin-top: clamp(12px, 1.4vw, 18px);
+}
+
+/* ---------- Media ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.half {
+  grid-column: span 1;
+}
+
+.frame {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--tile);
+}
+
+.half .frame {
+  border-radius: var(--radius-sm);
+}
+
+.frame img,
+.frame video {
+  width: 100%;
+  height: auto;
+}
+
+.frame video {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.caption {
+  margin-top: 14px;
+  padding-inline: 4px;
+  font-size: var(--t-small);
+  color: var(--ink-3);
+  text-align: center;
+}
+
+/* ---------- Intro ---------- */
+
+.intro {
+  display: grid;
+  gap: clamp(40px, 5vw, 64px);
+  max-width: var(--text);
+  margin: clamp(72px, 9vw, 128px) auto 0;
+}
+
+.introText {
+  display: grid;
+  gap: 0.8em;
+  font-size: clamp(1.3125rem, 2.1vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.03em;
+  text-wrap: pretty;
+}
+
+.introText p + p {
+  color: var(--ink-2);
+}
+
+/* Key facts, as a spec row. */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+}
+
+.facts div {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+}
+
+.facts dt {
+  font-size: var(--t-small);
+  color: var(--ink-3);
+}
+
+.facts dd {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  margin-top: clamp(96px, 12vw, 176px);
+}
+
+.sectionText {
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+  max-width: var(--text);
+  margin: 0 auto clamp(36px, 4.5vw, 64px);
+}
+
+.sectionTitle {
+  font-size: var(--t-h3);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.042em;
+}
+
+.text {
+  display: grid;
+  gap: 1em;
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+/* ---------- Next project ---------- */
+
+.next {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin-block: clamp(112px, 14vw, 200px) var(--section);
+  padding: clamp(56px, 8vw, 112px) var(--page);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+  text-align: center;
+}
+
+.next :global(.eyebrow) {
+  color: var(--on-ink-2);
+}
+
+.nextTitle {
+  font-size: var(--t-h2);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.nextSubtitle {
+  color: var(--on-ink-2);
+}
+
+.nextMore {
+  margin-top: 12px;
+}
+
+.next:hover .nextMore {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 760px) {
+  .half {
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,13 @@
+.statement {
+  --p: 0;
+  font-size: clamp(1.875rem, 4.2vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+/* Each word goes from faint to ink as --p passes its position in the sentence. */
+.word {
+  opacity: clamp(0.18, calc(var(--p) * (var(--n) + 4) - var(--i)), 1);
+}
