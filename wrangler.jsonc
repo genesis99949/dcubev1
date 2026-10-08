@@ -1,0 +1,6 @@
+{
+  // Cloudflare: serves the static export from ./out (created by `npm run build`).
+  "name": "dcubev1",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./out" }
+}

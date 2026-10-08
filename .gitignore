@@ -55,3 +55,6 @@ exports/
 
 # Material-sursa pentru randarea videourilor (Remotion); site-ul serveste doar public/videos
 public/remotion/
+
+# Cloudflare
+.wrangler/
