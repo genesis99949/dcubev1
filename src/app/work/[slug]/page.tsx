@@ -88,7 +88,15 @@ export default async function ProjectPage({ params }: Props) {
             {facts.map((fact) => (
               <div key={fact.label}>
                 <dt>{fact.label}</dt>
-                <dd>{fact.value}</dd>
+                <dd>
+                  {fact.href ? (
+                    <a href={fact.href} className="link" target="_blank" rel="noreferrer">
+                      {fact.value}
+                    </a>
+                  ) : (
+                    fact.value
+                  )}
+                </dd>
               </div>
             ))}
           </dl>

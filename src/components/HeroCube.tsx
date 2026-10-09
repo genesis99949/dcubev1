@@ -50,7 +50,8 @@ export function HeroCube() {
       </div>
       <p className={styles.caption} aria-hidden>
         <span key={service.name} className={styles.face}>
-          <span className={styles.axis}>{service.axis}</span> {service.name}
+          {/* "01 Web Design" — the axis is already part of most names, so number + name reads cleaner */}
+          <span className={styles.axis}>{String(active + 1).padStart(2, "0")}</span> {service.name}
         </span>
       </p>
     </div>

@@ -1,19 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
-
-const query = "(prefers-reduced-motion: reduce)";
-
-const subscribe = (onChange: () => void) => {
-  const media = window.matchMedia(query);
-  media.addEventListener("change", onChange);
-  return () => media.removeEventListener("change", onChange);
-};
+import { useMediaQuery } from "./useMediaQuery";
 
 /** True when the visitor asked the OS for less motion. */
-export const usePrefersReducedMotion = () =>
-  useSyncExternalStore(
-    subscribe,
-    () => window.matchMedia(query).matches,
-    () => false,
-  );
+export const usePrefersReducedMotion = () => useMediaQuery("(prefers-reduced-motion: reduce)");

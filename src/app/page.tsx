@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* About */}
       <section id="about" className={`container ${styles.about}`} aria-label="About">
-        <p className="eyebrow">About {site.name}</p>
+        <p className="eyebrow">{site.aboutLabel}</p>
         <ScrollStatement text={site.about} />
       </section>
 

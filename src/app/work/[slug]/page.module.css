@@ -75,8 +75,8 @@
   height: auto;
 }
 
+/* Videos keep their own proportions (LoopVideo sets aspect-ratio from width/height). */
 .frame video {
-  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
@@ -135,6 +135,7 @@
   font-size: var(--t-body);
   font-weight: 500;
   line-height: 1.35;
+  overflow-wrap: anywhere; /* long values such as URLs must wrap inside their column */
 }
 
 /* ---------- Sections ---------- */

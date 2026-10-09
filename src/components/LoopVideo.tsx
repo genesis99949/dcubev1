@@ -59,6 +59,8 @@ export function LoopVideo({ src, poster, width, height, controls = false, classN
       poster={poster}
       width={width}
       height={height}
+      // Reserve the right shape before the video loads (16:9 site films, 3:2 mockups…).
+      style={{ aspectRatio: `${width} / ${height}` }}
       muted
       loop
       playsInline

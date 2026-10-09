@@ -88,8 +88,17 @@
   rotate: -45deg;
 }
 
+/* Mobile menu: a full-screen sheet under the bar. (Absolute, not fixed: the bar's backdrop-filter
+   would make "fixed" relative to the bar itself.) */
 .menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: calc(100dvh - var(--header));
+  overflow-y: auto;
   border-top: 1px solid var(--hairline);
+  background: var(--paper);
 }
 
 .menu ul {

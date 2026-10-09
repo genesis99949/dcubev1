@@ -72,20 +72,34 @@
   margin-top: 6px;
 }
 
+/* Narrow screens: no pinned cube (not rendered), the services become a stack of cards. */
 @media (max-width: 860px) {
   .layout {
     grid-template-columns: 1fr;
   }
 
-  .pin {
-    z-index: 2;
-    height: auto;
-    padding-block: 12px 20px;
-    background: var(--paper);
+  .list {
+    display: grid;
+    gap: var(--gap);
   }
 
-  .item {
-    min-height: 56svh;
+  .item,
+  .item[data-active="true"] {
+    min-height: 0;
+    gap: 10px;
+    padding: clamp(24px, 6vw, 36px);
+    border-radius: var(--radius-sm);
+    background: var(--tile);
+    opacity: 1;
+  }
+
+  .name {
+    font-size: clamp(1.625rem, 7vw, 2.25rem);
+  }
+
+  .text {
+    font-size: var(--t-body);
+    line-height: 1.47;
   }
 }
 

@@ -9,16 +9,17 @@ import { BrowserPage } from "./components/Layouts";
 
 // Scene lengths in seconds — each plays a real, frame-by-frame scroll recording of the site
 // (scripts/site-capture/record.mjs → public/remotion/pureflame/*-scroll.mp4).
+// The collection page is not in this film: the case study shows it in its own mockup video
+// (public/videos/pureflame/collection-field.mp4), and every view appears only once.
 export const PF_SHOWCASE_SECONDS = {
   home: 8.4,
-  collection: 9,
   about: 8.8,
   overlap: 0.6,
 } as const;
 
 export const getPfShowcaseDuration = (fps: number) => {
   const s = PF_SHOWCASE_SECONDS;
-  return toFrames(s.home, fps) + toFrames(s.collection, fps) + toFrames(s.about, fps) - 2 * toFrames(s.overlap, fps);
+  return toFrames(s.home, fps) + toFrames(s.about, fps) - toFrames(s.overlap, fps);
 };
 
 const Page: React.FC<{ video: string; seconds: number; background: string; label: string; first?: boolean }> = ({
@@ -41,7 +42,7 @@ const Page: React.FC<{ video: string; seconds: number; background: string; label
   );
 };
 
-/** The PureFlame website in motion: homepage → collection → about. */
+/** The PureFlame website in motion: homepage → about. */
 export const PureFlameShowcase: React.FC = () => {
   const { fps } = useVideoConfig();
   const s = PF_SHOWCASE_SECONDS;
@@ -52,12 +53,8 @@ export const PureFlameShowcase: React.FC = () => {
         <Page first video="home-scroll.mp4" seconds={s.home} background={PF.colors.oliveDeep} label="01 — Homepage" />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition presentation={slide({ direction: "from-right" })} timing={t} />
-      <TransitionSeries.Sequence name="Collection" durationInFrames={toFrames(s.collection, fps)} premountFor={fps}>
-        <Page video="collection-scroll.mp4" seconds={s.collection} background={PF.colors.creamSoft} label="02 — Collection" />
-      </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={slide({ direction: "from-right" })} timing={t} />
       <TransitionSeries.Sequence name="About" durationInFrames={toFrames(s.about, fps)} premountFor={fps}>
-        <Page video="about-scroll.mp4" seconds={s.about} background={PF.colors.charcoal} label="03 — About us" />
+        <Page video="about-scroll.mp4" seconds={s.about} background={PF.colors.charcoal} label="02 — About us" />
       </TransitionSeries.Sequence>
     </TransitionSeries>
   );

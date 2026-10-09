@@ -14,12 +14,18 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  // Close the menu with Escape (links close it on click).
+  // While the menu is open: Escape closes it (links close it on click) and the page underneath doesn't scroll.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const root = document.documentElement;
+    const previous = root.style.overflow;
+    root.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      root.style.overflow = previous;
+      window.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   return (

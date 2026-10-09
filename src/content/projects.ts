@@ -43,7 +43,7 @@ export type Project = {
   /** The case study, chapter by chapter. Every view should appear only once. */
   sections: ProjectSection[];
   /** Extra facts on the project page. */
-  details?: { label: string; value: string }[];
+  details?: { label: string; value: string; href?: string }[];
 };
 
 const img = (
@@ -58,7 +58,7 @@ const img = (
 export const projects: Project[] = [
   {
     slug: "pure-flame",
-    title: "PureFlame",
+    title: "Pure Flame",
     subtitle: "The art of gathering",
     services: ["Web Design", "E-commerce", "Brand Identity", "Motion & Content"],
     year: 2026,
@@ -78,9 +78,12 @@ export const projects: Project[] = [
       height: 1080,
       alt: "The PureFlame website in a browser, scrolling through the homepage",
     },
+    // Self-hosted (the Vimeo copy is private and asked visitors to log in). Source:
+    // Pureflame/Behance/mockups/macbook_field_mockup_homepage.mp4, re-encoded without audio.
     lead: {
-      kind: "vimeo",
-      id: "1230886081",
+      kind: "video",
+      src: "/videos/pureflame/macbook-field.mp4",
+      poster: "/videos/pureflame/macbook-field.jpg",
       width: 1920,
       height: 1080,
       alt: "PureFlame homepage on a MacBook, outdoors in a wheat field",
@@ -90,7 +93,7 @@ export const projects: Project[] = [
         title: "Website",
         text: [
           "The homepage opens on a full-screen film under a single line — “Ignite the moment” — then moves through the collection, the evening ritual around the fire and a guide that helps you choose a table by the size of your terrace.",
-          "The collection page presents the five models — Embera, Aether, Flavo, Fera and Ignite — as large lifestyle compositions, followed by a side-by-side comparison and the accessories. The about page tells the story behind the tables: the idea, the materials — flame, glass, stone — and the people who make them.",
+          "The about page tells the story behind the tables: the idea, the materials — flame, glass, stone — and the people who make them.",
         ],
         media: [
           {
@@ -99,8 +102,26 @@ export const projects: Project[] = [
             poster: "/videos/pureflame/showcase.jpg",
             width: 1920,
             height: 1080,
-            alt: "The PureFlame website in motion: homepage, collection and about pages",
-            caption: "Homepage, collection and about — recorded scrolling through the live site.",
+            alt: "The PureFlame website in motion: homepage and about page",
+            caption: "Homepage and about — recorded scrolling through the live site.",
+          },
+        ],
+      },
+      {
+        title: "Collection",
+        text: [
+          "The collection page presents the five models — Embera, Aether, Flavo, Fera and Ignite — as large lifestyle compositions with a full-screen gallery view, followed by a side-by-side comparison of their proportions and the accessories.",
+        ],
+        media: [
+          // Source: Pureflame/Behance/mockups/Collection_1.mp4, re-encoded without audio.
+          {
+            kind: "video",
+            src: "/videos/pureflame/collection-field.mp4",
+            poster: "/videos/pureflame/collection-field.jpg",
+            width: 1536,
+            height: 1024,
+            alt: "The PureFlame collection page on a desktop display in a wheat field: the five models, the comparison and the accessories",
+            caption: "Collection — the five models, the comparison and the accessories.",
           },
         ],
       },
@@ -166,6 +187,16 @@ export const projects: Project[] = [
       { label: "Platforms", value: "Desktop & mobile" },
       { label: "Type", value: "Portfolio concept" },
       { label: "Build", value: "HTML/CSS/JS front end, Node.js + Express back end, Stripe in test mode" },
+      {
+        label: "Live demo",
+        value: "pureflameportofolioeditorial.vercel.app (front end only)",
+        href: "https://pureflameportofolioeditorial.vercel.app",
+      },
+      {
+        label: "Source",
+        value: "github.com/genesis99949/pureflame_portofolio_editorial",
+        href: "https://github.com/genesis99949/pureflame_portofolio_editorial",
+      },
     ],
   },
   {
@@ -299,6 +330,7 @@ export const projects: Project[] = [
       { label: "Identity", value: "Edition 02 · October 2026" },
       { label: "Platforms", value: "Desktop, tablet & mobile" },
       { label: "Type", value: "Portfolio concept" },
+      { label: "Live demo", value: "dca-murex.vercel.app", href: "https://dca-murex.vercel.app" },
     ],
   },
 ];
