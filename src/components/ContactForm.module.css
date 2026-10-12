@@ -1,0 +1,177 @@
+/* A light card on the dark contact section. */
+.form,
+.done {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  padding: clamp(24px, 4vw, 44px);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  text-align: left;
+}
+
+.form {
+  display: grid;
+  gap: clamp(18px, 2vw, 24px);
+}
+
+.done {
+  font-size: var(--t-lead);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.016em;
+  text-align: center;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(14px, 2vw, 20px);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  border: 0;
+}
+
+.field > span,
+.field legend {
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.field legend {
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.package {
+  font-style: normal;
+  color: var(--ink);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--ink) 3%, var(--paper));
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--t-body);
+  line-height: 1.4;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 132px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px;
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+  border-radius: 999px;
+  font-size: var(--t-small);
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.chip[data-on="true"] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--t-small);
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.consent input {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: var(--ink);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.actions :global(.btn):disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.status {
+  flex: 1 1 220px;
+  font-size: var(--t-small);
+  color: var(--ink-2);
+}
+
+.status:empty {
+  display: none;
+}
+
+.trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

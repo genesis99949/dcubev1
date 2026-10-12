@@ -1,20 +1,22 @@
 import Link from "next/link";
+import { localePath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
+import { ui } from "@/content/ui";
 import { CubeMark } from "./CubeMark";
 import styles from "./SiteFooter.module.css";
 
-const links = [
-  { label: "Work", href: "/#work" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
-];
-
-export function SiteFooter() {
+export function SiteFooter({ lang }: { lang: Lang }) {
+  const links = [
+    { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
+    { label: tr(ui.nav.services, lang), href: localePath(lang, "/#services") },
+    { label: tr(ui.nav.pricing, lang), href: localePath(lang, "/#pricing") },
+    { label: tr(ui.nav.about, lang), href: localePath(lang, "/#about") },
+    { label: tr(ui.nav.contact, lang), href: localePath(lang, "/#contact") },
+  ];
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.name}>
+        <Link href={localePath(lang, "/")} className={styles.name}>
           <CubeMark size={16} />
           {site.name}
         </Link>
@@ -38,7 +40,10 @@ export function SiteFooter() {
           ))}
         </ul>
         <p className={styles.legal}>
-          © {site.year} {site.owner.name} · {site.name}. Web · Branding · Marketing.
+          <span>
+            © {site.year} {site.owner.name} · {site.name}. {tr(ui.footer.tagline, lang)}
+          </span>
+          <Link href={localePath(lang, "/privacy")}>{tr(ui.footer.privacy, lang)}</Link>
         </p>
       </div>
     </footer>

@@ -34,33 +34,56 @@ npm run studio     # Remotion Studio → http://localhost:3100
 singur rând) și se rescriu complet la fiecare build. În plus, Next.js păstrează textele și într-o copie pentru
 navigarea între pagini, așa că o modificare făcută doar în HTML ar dispărea când treci de la o pagină la alta.
 
-Toate textele stau în trei fișiere din `src/content/`, scrise frumos, câte un câmp pe rând:
+Site-ul e bilingv: engleza la `/`, româna la `/ro` (comutatorul EN/RO din header duce la aceeași pagină
+în cealaltă limbă). Fiecare text e scris o singură dată, în ambele limbi, așa: `l("English", "Română")`.
+
+Toate textele stau în `src/content/`, scrise frumos, câte un câmp pe rând:
 
 | Ce vezi pe site | Fișier | Câmp |
 | --- | --- | --- |
-| Titlul mare, fraza și butoanele din hero | `src/content/site.ts` | `hero.headline`, `hero.text`, `hero.primary`, `hero.secondary` |
-| „Selected work.” și fraza de sub el | `src/content/site.ts` | `work.headline`, `work.text` |
-| „Six faces. One cube.” și fraza de sub el | `src/content/site.ts` | `services.headline`, `services.text` |
-| Numele și descrierile celor 6 servicii | `src/content/services.ts` | `name`, `short` |
-| Secțiunea About | `src/content/site.ts` | `aboutLabel`, `about` |
-| Contact, email, linkurile sociale (Behance, GitHub; adaugi LinkedIn aici) | `src/content/site.ts` | `contact.*`, `contact.socials` |
-| Numele tău, anul din footer | `src/content/site.ts` | `owner.name`, `year` |
-| Descrierea pentru Google și social media | `src/content/site.ts` | `tagline` |
-| Tot ce ține de un proiect (titlu, subtitlu, texte, secțiuni, legende sub poze/video, detalii) | `src/content/projects.ts` | intrarea proiectului (`title`, `subtitle`, `summary`, `description`, `sections`, `details`) |
+| Titlul mare, fraza și butoanele din hero | `site.ts` | `hero.headline`, `hero.text`, `hero.primary`, `hero.secondary` |
+| „Selected work” / „Proiecte alese” și fraza de sub el | `site.ts` | `work.headline`, `work.text` |
+| „Six faces. One cube.” și fraza de sub el | `site.ts` | `services.headline`, `services.text` |
+| Numele și descrierile celor 6 servicii | `services.ts` | `label`, `short` (`name` e doar un cod intern — nu-l schimba) |
+| „How I work” / „Cum lucrez” (cei 4 pași) | `site.ts` | `process.steps` |
+| Titlul și textele secțiunii de prețuri | `site.ts` | `pricing.*` |
+| **Pachetele: nume, pentru cine, ce includ, prețul „de la”** | `packages.ts` | `name`, `for`, `includes`, `price` (număr în euro; `null` = „Preț la cerere”) |
+| Secțiunea About | `site.ts` | `aboutLabel`, `about` |
+| Contact, intervalele de buget, linkurile sociale | `site.ts` | `contact.*`, `contact.budgets`, `contact.socials` |
+| Cheia formularului de contact (Web3Forms) | `site.ts` | `contact.formKey` — vezi mai jos |
+| Numele tău, anul din footer | `site.ts` | `owner.name`, `year` |
+| Descrierea pentru Google și social media | `site.ts` | `tagline` |
+| Pagina de confidențialitate | `privacy.ts` | `sections` |
+| Rândurile cu logo-urile uneltelor (ordine, ce apare) | `tools.ts` | `rows` — un rând pe listă; logo-urile sunt în `public/logos/` |
+| Butoane, meniu, etichetele formularului | `ui.ts` | — |
+| Tot ce ține de un proiect (subtitlu, texte, secțiuni, legende, detalii) | `projects.ts` | intrarea proiectului (`subtitle`, `summary`, `description`, `sections`, `details`) |
 
 Pașii:
-1. `npm run dev` și deschide http://localhost:3000 — vezi modificările pe loc, la fiecare salvare.
-2. Schimbă textul între ghilimele în fișierul de mai sus și salvează. Păstrează ghilimelele și virgula de la
-   final; dacă textul conține ghilimele drepte (`"`), folosește ghilimele tipografice („ ” / “ ”) sau `\"`.
+1. `npm run dev` și deschide http://localhost:3000 (sau http://localhost:3000/ro) — vezi modificările pe loc.
+2. Schimbă textul între ghilimele — și pe cel englezesc, și pe cel românesc — și salvează. Păstrează
+   ghilimelele și virgulele; dacă textul conține ghilimele drepte (`"`), folosește ghilimele tipografice
+   („ ” / “ ”) sau `\"`.
 3. `npm run build` — regenerează site-ul static în `out/`.
 4. Publică `out/` ca de obicei (Cloudflare, vezi `wrangler.jsonc`).
 
-Dacă redenumești un serviciu în `services.ts`, schimbă numele și în lista `services` a proiectelor care îl
-folosesc; `npm run typecheck` îți arată exact unde.
+Dacă redenumești un serviciu în `services.ts`, schimbă doar `label`; `name` rămâne codul folosit de proiecte.
+`npm run typecheck` îți arată exact unde e o greșeală.
+
+### Formularul de contact
+
+Mesajele din formular îți vin pe email prin [Web3Forms](https://web3forms.com) (gratuit; site-ul e static, deci
+nu are server propriu). Îți faci cont cu adresa la care vrei să primești mesajele, copiezi „Access Key” și o
+pui în `site.ts` → `contact.formKey` (sau în `.env.local` ca `NEXT_PUBLIC_WEB3FORMS_KEY=…`), apoi
+`npm run build`. Cheia e publică prin natura ei; adresa ta de email nu apare nicăieri pe site.
+Până pui cheia, formularul afișează un mesaj că e în curs de configurare și trimite vizitatorii spre LinkedIn.
 
 ## Where things live
 
-- `src/content/site.ts` — name, tagline, about text, email and social links
+- `src/content/site.ts` — all homepage copy (EN + RO), contact form settings and social links
+- `src/content/packages.ts` — the pricing packages (what's included, starting price)
+- `src/content/privacy.ts`, `src/content/ui.ts` — privacy policy and interface labels
+- `src/content/i18n.ts` — the two languages (English at `/`, Romanian at `/ro`)
+- `src/app/(en)`, `src/app/(ro)` — one root layout per language; pages are shared components in `src/components/pages`
 - `src/content/services.ts` — the six services, one per face of the Dcube
 - `src/content/projects.ts` — portfolio entries (each gets `/work/<slug>`), with services, cover and gallery
 - `public/work/<slug>/` — case-study images for each project

@@ -38,6 +38,10 @@
 }
 
 .legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
   grid-column: 1 / -1;
   padding-top: 18px;
   border-top: 1px solid var(--hairline);
@@ -52,4 +56,12 @@
   .links {
     justify-content: flex-start;
   }
+}
+
+.legal a {
+  transition: color 0.25s;
+}
+
+.legal a:hover {
+  color: var(--ink);
 }

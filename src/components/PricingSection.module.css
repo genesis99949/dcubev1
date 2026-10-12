@@ -1,0 +1,157 @@
+/* ---------- Packages ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap);
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(28px, 3vw, 40px);
+  border-radius: var(--radius);
+  background: var(--tile);
+}
+
+.featured {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.name {
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.for {
+  color: var(--ink-2);
+}
+
+.featured .for {
+  color: var(--on-ink-2);
+}
+
+.price {
+  margin-top: 10px;
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.from {
+  font-size: var(--t-body);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+}
+
+.featured .from {
+  color: var(--on-ink-2);
+}
+
+.request {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  letter-spacing: -0.025em;
+}
+
+.includes {
+  display: grid;
+  gap: 10px;
+  margin: 10px 0 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
+  list-style: none;
+  font-size: var(--t-body);
+}
+
+.featured .includes {
+  border-color: color-mix(in srgb, var(--paper) 18%, transparent);
+}
+
+.includes li {
+  position: relative;
+  padding-left: 26px;
+}
+
+/* A small check drawn in CSS. */
+.includes li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.45em;
+  width: 11px;
+  height: 6px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  rotate: -45deg;
+  opacity: 0.7;
+}
+
+.action {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.note {
+  margin-top: clamp(24px, 3vw, 36px);
+  text-align: center;
+  color: var(--ink-2);
+}
+
+/* ---------- Process ---------- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--hairline);
+}
+
+.stepNumber {
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.stepTitle {
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.stepText {
+  color: var(--ink-2);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}

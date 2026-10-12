@@ -41,6 +41,29 @@
   color: var(--ink);
 }
 
+/* Language switch: a small outlined pill next to the call to action. */
+.lang {
+  display: inline-grid;
+  place-items: center;
+  min-width: 32px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  font-size: var(--t-micro);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+  transition:
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.lang:hover {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--ink) 35%, transparent);
+}
+
 .cta {
   min-height: 32px;
   padding: 0 16px;
@@ -116,8 +139,17 @@
   letter-spacing: -0.035em;
 }
 
+.menu .menuLang a {
+  margin-top: 12px;
+  font-size: var(--t-body);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+}
+
 @media (max-width: 720px) {
-  .nav {
+  .nav,
+  .lang {
     display: none;
   }
 

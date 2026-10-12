@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { tr, type Lang } from "@/content/i18n";
 import type { Media } from "@/content/projects";
 import { LoopVideo } from "./LoopVideo";
 
 type ProjectMediaProps = {
+  lang: Lang;
   media: Media;
   /** Rendered width hint for responsive images, e.g. "(max-width: 760px) 100vw, 50vw". */
   sizes: string;
@@ -28,7 +30,8 @@ const vimeoSrc = (id: string) =>
   })}`;
 
 /** An optimised image, a muted looping video or a Vimeo embed, depending on the media kind. */
-export function ProjectMedia({ media, sizes, className, controls, eager }: ProjectMediaProps) {
+export function ProjectMedia({ lang, media, sizes, className, controls, eager }: ProjectMediaProps) {
+  const alt = tr(media.alt, lang);
   if (media.kind === "vimeo") {
     return (
       <div
@@ -41,7 +44,7 @@ export function ProjectMedia({ media, sizes, className, controls, eager }: Proje
       >
         <iframe
           src={vimeoSrc(media.id)}
-          title={media.alt}
+          title={alt}
           allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           loading={eager ? "eager" : "lazy"}
@@ -58,7 +61,8 @@ export function ProjectMedia({ media, sizes, className, controls, eager }: Proje
         poster={media.poster}
         width={media.width}
         height={media.height}
-        label={media.alt}
+        label={alt}
+        lang={lang}
         controls={controls}
         className={className}
       />
@@ -70,7 +74,7 @@ export function ProjectMedia({ media, sizes, className, controls, eager }: Proje
       src={media.src}
       width={media.width}
       height={media.height}
-      alt={media.alt}
+      alt={alt}
       sizes={sizes}
       className={className}
       loading={eager ? "eager" : "lazy"}

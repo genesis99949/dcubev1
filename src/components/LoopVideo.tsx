@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { tr, type Lang } from "@/content/i18n";
+import { ui } from "@/content/ui";
 import styles from "./LoopVideo.module.css";
 import { usePrefersReducedMotion } from "./usePrefersReducedMotion";
 
@@ -13,13 +15,14 @@ type LoopVideoProps = {
   controls?: boolean;
   className?: string;
   label: string;
+  lang: Lang;
 };
 
 /**
  * Muted, looping video that only plays while on screen — no native player chrome.
  * Respects prefers-reduced-motion (shows the poster; the button can still start it).
  */
-export function LoopVideo({ src, poster, width, height, controls = false, className, label }: LoopVideoProps) {
+export function LoopVideo({ src, poster, width, height, controls = false, className, label, lang }: LoopVideoProps) {
   const ref = useRef<HTMLVideoElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const [userPaused, setUserPaused] = useState(false);
@@ -76,7 +79,7 @@ export function LoopVideo({ src, poster, width, height, controls = false, classN
   return (
     <div className={`${styles.wrap} ${className ?? ""}`}>
       {element}
-      <button type="button" className={styles.toggle} onClick={toggle} aria-label={playing ? "Pause video" : "Play video"}>
+      <button type="button" className={styles.toggle} onClick={toggle} aria-label={tr(playing ? ui.video.pause : ui.video.play, lang)}>
         {playing ? (
           <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden>
             <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" />

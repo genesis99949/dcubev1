@@ -1,19 +1,26 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { localePath, switchPath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
+import { ui } from "@/content/ui";
 import { CubeMark } from "./CubeMark";
 import styles from "./SiteHeader.module.css";
 
-const nav = [
-  { label: "Work", href: "/#work" },
-  { label: "Services", href: "/#services" },
-  { label: "About", href: "/#about" },
-];
-
-export function SiteHeader() {
+export function SiteHeader({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const other: Lang = lang === "en" ? "ro" : "en";
+
+  const nav = [
+    { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
+    { label: tr(ui.nav.services, lang), href: localePath(lang, "/#services") },
+    { label: tr(ui.nav.pricing, lang), href: localePath(lang, "/#pricing") },
+    { label: tr(ui.nav.about, lang), href: localePath(lang, "/#about") },
+  ];
+
   // While the menu is open: Escape closes it (links close it on click) and the page underneath doesn't scroll.
   useEffect(() => {
     if (!open) return;
@@ -28,14 +35,32 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  // The two languages use separate root layouts, so switching is a normal page load.
+  const languageLink = (className: string, long = false) => (
+    <a
+      href={switchPath(pathname, other)}
+      hrefLang={other}
+      lang={other}
+      className={className}
+      aria-label={tr(ui.nav.otherLanguage, lang)}
+    >
+      {long ? tr(ui.nav.otherLanguage, lang) : tr(ui.nav.otherLanguageShort, lang)}
+    </a>
+  );
+
   return (
     <header className={styles.header} data-open={open}>
       <div className={`container ${styles.bar}`}>
-        <Link href="/" className={styles.name} aria-label={`${site.name} — home`} onClick={() => setOpen(false)}>
+        <Link
+          href={localePath(lang, "/")}
+          className={styles.name}
+          aria-label={`${site.name} — ${tr(ui.nav.home, lang)}`}
+          onClick={() => setOpen(false)}
+        >
           <CubeMark />
           {site.name}
         </Link>
-        <nav aria-label="Main" className={styles.nav}>
+        <nav aria-label={tr(ui.nav.main, lang)} className={styles.nav}>
           <ul>
             {nav.map((item) => (
               <li key={item.href}>
@@ -44,15 +69,16 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-        <Link href="/#contact" className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
-          {site.hero.primary}
+        {languageLink(styles.lang)}
+        <Link href={localePath(lang, "/#contact")} className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
+          {tr(site.hero.primary, lang)}
         </Link>
         <button
           type="button"
           className={styles.toggle}
           aria-expanded={open}
           aria-controls="menu"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={tr(open ? ui.nav.closeMenu : ui.nav.openMenu, lang)}
           onClick={() => setOpen((o) => !o)}
         >
           <span />
@@ -61,13 +87,14 @@ export function SiteHeader() {
       </div>
       <div id="menu" className={styles.menu} hidden={!open}>
         <ul className="container">
-          {[...nav, { label: "Contact", href: "/#contact" }].map((item) => (
+          {[...nav, { label: tr(ui.nav.contact, lang), href: localePath(lang, "/#contact") }].map((item) => (
             <li key={item.href}>
               <Link href={item.href} onClick={() => setOpen(false)}>
                 {item.label}
               </Link>
             </li>
           ))}
+          <li className={styles.menuLang}>{languageLink("", true)}</li>
         </ul>
       </div>
     </header>

@@ -1,0 +1,66 @@
+// Interface labels (buttons, navigation, form fields…) in both languages.
+// Page copy lives in site.ts, services.ts, packages.ts and projects.ts.
+
+import { l } from "./i18n";
+
+export const ui = {
+  nav: {
+    work: l("Work", "Proiecte"),
+    services: l("Services", "Servicii"),
+    pricing: l("Pricing", "Prețuri"),
+    about: l("About", "Despre"),
+    contact: l("Contact", "Contact"),
+    home: l("home", "acasă"),
+    main: l("Main", "Principal"),
+    openMenu: l("Open menu", "Deschide meniul"),
+    closeMenu: l("Close menu", "Închide meniul"),
+    language: l("Language", "Limbă"),
+    /** Label of the link to the other language. */
+    otherLanguage: l("Română", "English"),
+    otherLanguageShort: l("RO", "EN"),
+  },
+  work: {
+    viewCaseStudy: l("View case study", "Vezi studiul de caz"),
+    allWork: l("All work", "Toate proiectele"),
+    nextProject: l("Next project", "Proiectul următor"),
+    year: l("Year", "An"),
+  },
+  video: {
+    play: l("Play video", "Pornește video"),
+    pause: l("Pause video", "Oprește video"),
+  },
+  footer: {
+    tagline: l("Web · Branding · Marketing.", "Web · Branding · Marketing."),
+    privacy: l("Privacy", "Confidențialitate"),
+  },
+  notFound: {
+    title: l("Nothing here", "Nimic aici"),
+    back: l("Back to Dcube", "Înapoi la Dcube"),
+  },
+  form: {
+    name: l("Name", "Nume"),
+    email: l("Email", "Email"),
+    services: l("What do you need?", "De ce ai nevoie?"),
+    budget: l("Budget", "Buget"),
+    budgetPlaceholder: l("Choose a range", "Alege un interval"),
+    message: l("Tell me about the project", "Spune-mi despre proiect"),
+    messagePlaceholder: l(
+      "What are you building, for whom, and by when?",
+      "Ce construiești, pentru cine și până când?",
+    ),
+    consent: l("I agree that my details are used to reply to this message —", "Sunt de acord ca datele mele să fie folosite pentru a primi răspuns —"),
+    consentLink: l("privacy policy", "politica de confidențialitate"),
+    send: l("Send message", "Trimite mesajul"),
+    sending: l("Sending…", "Se trimite…"),
+    sent: l("Thank you! Your message is on its way — I'll get back to you soon.", "Mulțumesc! Mesajul a plecat — revin cu un răspuns în curând."),
+    error: l(
+      "The message couldn't be sent. Please try again, or write to me on LinkedIn.",
+      "Mesajul nu a putut fi trimis. Încearcă din nou sau scrie-mi pe LinkedIn.",
+    ),
+    notConfigured: l(
+      "The contact form is being set up. Until then, write to me on LinkedIn.",
+      "Formularul de contact e în curs de configurare. Până atunci, scrie-mi pe LinkedIn.",
+    ),
+    subject: l("New project inquiry — Dcube", "Cerere nouă de proiect — Dcube"),
+  },
+} as const;
