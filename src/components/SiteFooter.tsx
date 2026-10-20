@@ -2,7 +2,6 @@ import Link from "next/link";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
-import { CubeMark } from "./CubeMark";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter({ lang }: { lang: Lang }) {
@@ -17,8 +16,8 @@ export function SiteFooter({ lang }: { lang: Lang }) {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <Link href={localePath(lang, "/")} className={styles.name}>
-          <CubeMark size={16} />
           {site.name}
+          <span className="mark" aria-hidden />
         </Link>
         <ul className={styles.links}>
           {links.map((l) => (
@@ -41,7 +40,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
         </ul>
         <p className={styles.legal}>
           <span>
-            © {site.year} {site.owner.name} · {site.name}. {tr(ui.footer.tagline, lang)}
+            © {site.year} {site.name}. {tr(ui.footer.tagline, lang)}
           </span>
           <Link href={localePath(lang, "/privacy")}>{tr(ui.footer.privacy, lang)}</Link>
         </p>

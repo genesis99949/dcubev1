@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import type { Project } from "@/content/projects";
-import { serviceLabel } from "@/content/services";
 import { ui } from "@/content/ui";
 import { ProjectMedia } from "./ProjectMedia";
 import styles from "./WorkTiles.module.css";
@@ -15,7 +14,7 @@ export function WorkTiles({ lang, projects }: { lang: Lang; projects: Project[] 
         <li key={project.slug} className={`${styles.tile} ${i % 2 === 0 ? styles.dark : styles.light} rise`}>
           <Link href={localePath(lang, `/work/${project.slug}`)} className={styles.link} aria-label={`${project.title} — ${view}`}>
             <div className={styles.copy}>
-              <p className={styles.services}>{project.services.map((s) => tr(serviceLabel(s), lang)).join(" · ")}</p>
+              <p className={styles.services}>{project.scope.map((s) => tr(s, lang)).join(" · ")}</p>
               <h3 className={styles.title}>{project.title}</h3>
               {project.subtitle ? <p className={styles.subtitle}>{tr(project.subtitle, lang)}</p> : null}
               <span className={`more ${styles.more}`}>{view}</span>

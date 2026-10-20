@@ -1,5 +1,5 @@
 import { tr, type Lang } from "@/content/i18n";
-import { CURRENCY, packages } from "@/content/packages";
+import { CURRENCY, extras, packages } from "@/content/packages";
 import { site } from "@/content/site";
 import { PackageLink } from "./PackageLink";
 import styles from "./PricingSection.module.css";
@@ -7,7 +7,7 @@ import styles from "./PricingSection.module.css";
 const price = (value: number, lang: Lang) =>
   lang === "ro" ? `${value.toLocaleString("ro-RO")} ${CURRENCY}` : `${CURRENCY}${value.toLocaleString("en-GB")}`;
 
-/** The packages, side by side: who each is for, a starting price and what's included. */
+/** The packages, side by side: who each is for, a starting price and what's included — then the extras. */
 export function PricingSection({ lang }: { lang: Lang }) {
   const p = site.pricing;
   return (
@@ -38,7 +38,14 @@ export function PricingSection({ lang }: { lang: Lang }) {
           </li>
         ))}
       </ul>
-      <p className={styles.note}>{tr(p.note, lang)}</p>
+      <div className={styles.extras}>
+        <h3 className={styles.extrasTitle}>{tr(p.extras, lang)}</h3>
+        <ul className={styles.extrasList}>
+          {extras.map((item) => (
+            <li key={item.en}>{tr(item, lang)}</li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }

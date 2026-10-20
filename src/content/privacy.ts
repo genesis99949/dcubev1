@@ -6,8 +6,8 @@ export const privacy = {
   title: l("Privacy", "Confidențialitate"),
   updated: l("Last updated: October 2026", "Ultima actualizare: octombrie 2026"),
   intro: l(
-    "This site belongs to Ramon Bugariu (Dcube). It collects as little as possible — here is exactly what, and why.",
-    "Acest site îi aparține lui Ramon Bugariu (Dcube). Colectează cât mai puțin posibil — iată exact ce și de ce.",
+    "This site belongs to Ramon Bugariu. It collects as little as possible — here is exactly what, and why.",
+    "Acest site îi aparține lui Ramon Bugariu. Colectează cât mai puțin posibil — iată exact ce și de ce.",
   ),
   sections: [
     {

@@ -1,4 +1,4 @@
-// Service packages shown in the "Pricing" section of the homepage.
+// Service packages shown in the "Pricing" section of the homepage — one per service, plus extras.
 // `price` is the starting price in euro ("from €…"); leave it null to show "Price on request".
 
 import { l, type L } from "./i18n";
@@ -22,41 +22,39 @@ export const CURRENCY = "€";
 export const packages: Package[] = [
   {
     id: "website",
-    name: l("Website", "Website"),
-    for: l("For a business that needs a fast, modern site.", "Pentru o afacere care are nevoie de un site rapid și modern."),
+    name: l("Presentation website", "Site de prezentare"),
+    for: l("For a business that needs to be found — and trusted — online.", "Pentru o afacere care vrea să fie găsită online și să inspire încredere."),
     price: null,
-    services: ["Web Design"],
+    services: ["Website"],
     includes: [
       l("Custom design for desktop and mobile", "Design personalizat, pentru desktop și mobil"),
-      l("Development and launch on your domain", "Dezvoltare și lansare pe domeniul tău"),
+      l("Pages for your services, about and contact", "Pagini pentru servicii, despre și contact"),
       l("Contact form, basic SEO and analytics", "Formular de contact, SEO de bază și statistici"),
+      l("Fast loading, launched on your domain", "Încărcare rapidă, lansare pe domeniul tău"),
       l("A short guide to update your own content", "Un ghid scurt ca să-ți actualizezi singur conținutul"),
     ],
   },
   {
-    id: "identity",
-    name: l("Brand identity", "Identitate de brand"),
-    for: l("For a new brand, or one that has outgrown its logo.", "Pentru un brand nou sau unul care și-a depășit logo-ul."),
+    id: "online-store",
+    name: l("Online store", "Magazin online"),
+    for: l("For selling your products online, from the first order on.", "Pentru a-ți vinde produsele online, de la prima comandă."),
     price: null,
-    services: ["Brand Identity"],
-    includes: [
-      l("Logo, logomark and their variations", "Logo, simbol și variantele lor"),
-      l("Colour palette and typography", "Paletă de culori și tipografie"),
-      l("Brand guidelines", "Ghid de brand"),
-      l("Templates for social media and print", "Șabloane pentru social media și print"),
-    ],
-  },
-  {
-    id: "brand-website",
-    name: l("Brand + Website", "Brand + Website"),
-    for: l("For launching a brand properly, all at once.", "Pentru lansarea unui brand cum trebuie, totul deodată."),
-    price: null,
-    services: ["Brand Identity", "Web Design", "Motion & Content"],
+    services: ["Online store"],
     featured: true,
     includes: [
-      l("Everything in Brand identity", "Tot ce include Identitatea de brand"),
-      l("Everything in Website", "Tot ce include Website-ul"),
-      l("Launch content: a logo animation and social posts", "Conținut de lansare: animație de logo și postări pentru social media"),
+      l("Custom design for product, collection and cart pages", "Design personalizat pentru paginile de produs, colecție și coș"),
+      l("Card payments, shipping and order emails set up", "Plăți cu cardul, livrare și emailuri de comandă configurate"),
+      l("Products and orders you can manage yourself", "Produse și comenzi pe care le gestionezi singur"),
+      l("SEO for every product, analytics", "SEO pentru fiecare produs, statistici"),
+      l("Fast loading, launched on your domain", "Încărcare rapidă, lansare pe domeniul tău"),
     ],
   },
+];
+
+/** Optional extras, added to either package. */
+export const extras: L[] = [
+  l("Logo & visual identity", "Logo și identitate vizuală"),
+  l("Launch content: animations, social posts", "Conținut de lansare: animații, postări"),
+  l("Monthly maintenance", "Mentenanță lunară"),
+  l("SEO & copywriting", "SEO și texte"),
 ];

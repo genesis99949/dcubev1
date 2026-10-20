@@ -1,11 +1,12 @@
 // Site-wide copy, in English and Romanian: l("English", "Română"). Every page reads from here.
-// The six services live in ./services.ts, the packages in ./packages.ts, projects in ./projects.ts.
+// The two services live in ./services.ts, the packages in ./packages.ts, projects in ./projects.ts.
 
 import { l } from "./i18n";
 
 export const site = {
-  name: "Dcube",
-  /** The person behind the studio. */
+  /** The brand is Ramon's own name. */
+  name: "Ramon Bugariu",
+  /** The person behind the site. */
   owner: {
     name: "Ramon Bugariu",
     role: l("Web Designer & Web Developer", "Web designer & web developer"),
@@ -14,16 +15,17 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dcubev1.ramonbugariu.workers.dev",
   /** Default meta description. */
   tagline: l(
-    "Dcube is the studio of Ramon Bugariu — web design, branding and marketing, every face of your brand from one idea.",
-    "Dcube este studioul lui Ramon Bugariu — web design, branding și marketing, fiecare față a brandului tău pornind de la o singură idee.",
+    "Ramon Bugariu designs and builds presentation websites and online stores — fast, clear and easy to run.",
+    "Ramon Bugariu face site-uri de prezentare și magazine online — rapide, clare și ușor de administrat.",
   ),
+  /** What the site offers, in a few words — after the name in titles ("Ramon Bugariu — …"). */
+  offer: l("Websites and online stores", "Site-uri de prezentare și magazine online"),
   year: 2026,
 
   hero: {
-    headline: l("Every face of your brand.", "Fiecare față a brandului tău."),
     text: l(
-      "Websites, identities and campaigns — designed as one, by one studio.",
-      "Site-uri, identități vizuale și campanii — gândite împreună, de un singur studio.",
+      "Designed and built by one person, from the first sketch to launch day — fast, clear and easy to run.",
+      "Gândite și construite de un singur om, de la prima schiță până în ziua lansării — rapide, clare și ușor de administrat.",
     ),
     primary: l("Get in touch", "Hai să vorbim"),
     secondary: l("See the work", "Vezi proiectele"),
@@ -31,16 +33,20 @@ export const site = {
   work: {
     headline: l("Selected work.", "Proiecte alese."),
     text: l(
-      "Identities and online shops, from the first sketch to the last pixel.",
-      "Identități și magazine online, de la prima schiță la ultimul pixel.",
+      "Online stores, from the first sketch to the last pixel — the identity included.",
+      "Magazine online, de la prima schiță la ultimul pixel — inclusiv identitatea.",
     ),
   },
   services: {
-    headline: l("Six faces. One cube.", "Șase fețe. Un singur cub."),
+    headline: l("Two things, done well.", "Două lucruri, făcute bine."),
     text: l(
-      "Web, branding and marketing — three axes, two faces each. Most brands need several of them; they work best when they come from one idea.",
-      "Web, branding și marketing — trei axe, câte două fețe fiecare. Cele mai multe branduri au nevoie de mai multe dintre ele; funcționează cel mai bine când pornesc de la aceeași idee.",
+      "A site that presents your business, or a store that sells your products. Designed for your brand, built to load fast, and yours to run.",
+      "Un site care îți prezintă afacerea sau un magazin care îți vinde produsele. Gândite pentru brandul tău, făcute să se încarce rapid și ușor de administrat de tine.",
     ),
+    /** Label before the projects listed under a service. */
+    seeWork: l("See it in", "Vezi în"),
+    /** Opens the contact form with the service's package picked. */
+    action: l("Ask for a quote", "Cere o ofertă"),
   },
   pricing: {
     headline: l("Pick your starting point.", "Alege de unde pornești."),
@@ -52,10 +58,8 @@ export const site = {
     from: l("from", "de la"),
     onRequest: l("Price on request", "Preț la cerere"),
     action: l("Start with this", "Pornesc cu acesta"),
-    note: l(
-      "Need something else — an online shop, packaging, a campaign? Tell me about it.",
-      "Ai nevoie de altceva — un magazin online, ambalaje, o campanie? Spune-mi despre ce e vorba.",
-    ),
+    /** Heading of the optional extras under the packages. */
+    extras: l("Add to either one", "Se pot adăuga la oricare"),
   },
   process: {
     headline: l("How I work.", "Cum lucrez."),
@@ -93,8 +97,8 @@ export const site = {
   /** Eyebrow + statement of the About section, in Ramon's own voice. */
   aboutLabel: l("About me", "Despre mine"),
   about: l(
-    "I'm Ramon, a web designer and developer. Dcube is my studio — I build brands, websites and the content around them, from the first sketch to launch day. One person, one idea, carried all the way through.",
-    "Sunt Ramon, web designer și developer. Dcube e studioul meu — construiesc branduri, site-uri și conținutul din jurul lor, de la prima schiță până în ziua lansării. Un singur om, o singură idee, dusă până la capăt.",
+    "I'm Ramon, a web designer and developer. I make presentation websites and online stores — I design them, build them and launch them myself. You talk to the person doing the work, from the first sketch to launch day.",
+    "Sunt Ramon, web designer și developer. Fac site-uri de prezentare și magazine online — le gândesc, le construiesc și le lansez eu. Vorbești direct cu omul care face treaba, de la prima schiță până în ziua lansării.",
   ),
   contact: {
     headline: l("Have a project in mind?", "Ai un proiect în minte?"),

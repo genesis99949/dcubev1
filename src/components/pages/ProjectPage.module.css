@@ -138,6 +138,14 @@
   overflow-wrap: anywhere; /* long values such as URLs must wrap inside their column */
 }
 
+/* What it's built on and the programs used. */
+.stack {
+  display: grid;
+  gap: clamp(20px, 2.4vw, 28px);
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline);
+}
+
 /* ---------- Sections ---------- */
 
 .section {

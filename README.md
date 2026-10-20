@@ -1,4 +1,4 @@
-# Dcube
+# Ramon Bugariu — portfolio
 
 Minimal portfolio website + programmatic motion graphics, in one project.
 
@@ -41,13 +41,16 @@ Toate textele stau în `src/content/`, scrise frumos, câte un câmp pe rând:
 
 | Ce vezi pe site | Fișier | Câmp |
 | --- | --- | --- |
-| Titlul mare, fraza și butoanele din hero | `site.ts` | `hero.headline`, `hero.text`, `hero.primary`, `hero.secondary` |
+| Titlul mare din hero (și din titlul paginii) | `site.ts` | `offer` |
+| Fraza și butoanele din hero | `site.ts` | `hero.text`, `hero.primary`, `hero.secondary` |
 | „Selected work” / „Proiecte alese” și fraza de sub el | `site.ts` | `work.headline`, `work.text` |
-| „Six faces. One cube.” și fraza de sub el | `site.ts` | `services.headline`, `services.text` |
-| Numele și descrierile celor 6 servicii | `services.ts` | `label`, `short` (`name` e doar un cod intern — nu-l schimba) |
+| „Two things, done well.” și fraza de sub el | `site.ts` | `services.headline`, `services.text` |
+| Numele și descrierile celor 2 servicii | `services.ts` | `label`, `short`, `for` (`name` e doar un cod intern — nu-l schimba) |
 | „How I work” / „Cum lucrez” (cei 4 pași) | `site.ts` | `process.steps` |
 | Titlul și textele secțiunii de prețuri | `site.ts` | `pricing.*` |
 | **Pachetele: nume, pentru cine, ce includ, prețul „de la”** | `packages.ts` | `name`, `for`, `includes`, `price` (număr în euro; `null` = „Preț la cerere”) |
+| Opțiunile extra de sub pachete | `packages.ts` | `extras` |
+| Eticheta de deasupra unui proiect („Magazin online · Identitate de brand”) | `projects.ts` | `scope` |
 | Secțiunea About | `site.ts` | `aboutLabel`, `about` |
 | Contact, intervalele de buget, linkurile sociale | `site.ts` | `contact.*`, `contact.budgets`, `contact.socials` |
 | Cheia formularului de contact (Web3Forms) | `site.ts` | `contact.formKey` — vezi mai jos |
@@ -55,6 +58,7 @@ Toate textele stau în `src/content/`, scrise frumos, câte un câmp pe rând:
 | Descrierea pentru Google și social media | `site.ts` | `tagline` |
 | Pagina de confidențialitate | `privacy.ts` | `sections` |
 | Rândurile cu logo-urile uneltelor (ordine, ce apare) | `tools.ts` | `rows` — un rând pe listă; logo-urile sunt în `public/logos/` |
+| „Built with” / „Made with” de pe fiecare studiu de caz | `projects.ts` | `stack.built`, `stack.made` — coduri din `TOOLS` (`tools.ts`) |
 | Butoane, meniu, etichetele formularului | `ui.ts` | — |
 | Tot ce ține de un proiect (subtitlu, texte, secțiuni, legende, detalii) | `projects.ts` | intrarea proiectului (`subtitle`, `summary`, `description`, `sections`, `details`) |
 
@@ -84,7 +88,7 @@ Până pui cheia, formularul afișează un mesaj că e în curs de configurare �
 - `src/content/privacy.ts`, `src/content/ui.ts` — privacy policy and interface labels
 - `src/content/i18n.ts` — the two languages (English at `/`, Romanian at `/ro`)
 - `src/app/(en)`, `src/app/(ro)` — one root layout per language; pages are shared components in `src/components/pages`
-- `src/content/services.ts` — the six services, one per face of the Dcube
+- `src/content/services.ts` — the two services: presentation website and online store
 - `src/content/projects.ts` — portfolio entries (each gets `/work/<slug>`), with services, cover and gallery
 - `public/work/<slug>/` — case-study images for each project
 - `src/remotion/config.ts` — resolution and frame rate for all videos

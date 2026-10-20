@@ -1,72 +1,37 @@
-// The six faces of the Dcube — one service per face of the cube.
-// The cube's three axes are the three disciplines; each axis has two opposite faces.
-// `name` is the service's id (projects refer to it); `label` and `short` are what visitors read.
-// Order = face number (01–06).
+// The two things on offer: presentation websites and online stores.
+// `name` is the service's id (projects, packages and the contact form refer to it); `label`, `short`
+// and `for` are what visitors read.
 
 import { l, type L } from "./i18n";
 
-export const AXES = ["Web", "Branding", "Marketing"] as const;
-export type Axis = (typeof AXES)[number];
-
 export const SERVICES = [
   {
-    name: "Web Design",
-    axis: "Web",
-    label: l("Web Design", "Web design"),
+    name: "Website",
+    label: l("Presentation website", "Site de prezentare"),
     short: l(
-      "Websites and interfaces designed around one clear idea — and built to load fast.",
-      "Site-uri și interfețe construite în jurul unei idei clare — și făcute să se încarce rapid.",
+      "A fast, clear site that tells people who you are, what you do and how to reach you — and makes them want to.",
+      "Un site rapid și clar, care le spune oamenilor cine ești, ce faci și cum te găsesc — și îi face să vrea asta.",
+    ),
+    for: l(
+      "For businesses, studios, clinics, restaurants and professionals.",
+      "Pentru firme, studiouri, clinici, restaurante și profesioniști.",
     ),
   },
   {
-    name: "E-commerce",
-    axis: "Web",
-    label: l("E-commerce", "E-commerce"),
+    name: "Online store",
+    label: l("Online store", "Magazin online"),
     short: l(
-      "Online shops that sell: collection and product pages, cart and checkout.",
-      "Magazine online care vând: pagini de colecție și de produs, coș și checkout.",
+      "A shop that sells: product and collection pages people enjoy browsing, a short checkout and payments that just work.",
+      "Un magazin care vinde: pagini de produs și de colecție prin care e plăcut să navighezi, un checkout scurt și plăți care merg.",
+    ),
+    for: l(
+      "For brands selling their own products, from a handful to a few hundred.",
+      "Pentru branduri care își vând propriile produse, de la câteva la câteva sute.",
     ),
   },
-  {
-    name: "Brand Identity",
-    axis: "Branding",
-    label: l("Brand Identity", "Identitate de brand"),
-    short: l(
-      "Logos, type and colour systems that hold together everywhere.",
-      "Logo, tipografie și sisteme de culoare care rămân coerente peste tot.",
-    ),
-  },
-  {
-    name: "Packaging & Print",
-    axis: "Branding",
-    label: l("Packaging & Print", "Ambalaje & print"),
-    short: l(
-      "Labels, packaging and printed matter that carry the brand off-screen.",
-      "Etichete, ambalaje și materiale tipărite care duc brandul dincolo de ecran.",
-    ),
-  },
-  {
-    name: "Social Media & Ads",
-    axis: "Marketing",
-    label: l("Social Media & Ads", "Social media & reclame"),
-    short: l(
-      "Campaign visuals and ad creative built to stop the scroll.",
-      "Vizualuri de campanie și reclame făcute să oprească scroll-ul.",
-    ),
-  },
-  {
-    name: "Motion & Content",
-    axis: "Marketing",
-    label: l("Motion & Content", "Motion & conținut"),
-    short: l(
-      "Logo animations, brand films and content for every channel.",
-      "Animații de logo, filme de brand și conținut pentru fiecare canal.",
-    ),
-  },
-] as const satisfies readonly { name: string; axis: Axis; label: L; short: L }[];
+] as const satisfies readonly { name: string; label: L; short: L; for: L }[];
 
 export type Service = (typeof SERVICES)[number]["name"];
-export const SERVICE_NAMES = SERVICES.map((s) => s.name) as Service[];
 
 /** Visible label of a service, by id. */
 export const serviceLabel = (name: Service) => SERVICES.find((s) => s.name === name)!.label;

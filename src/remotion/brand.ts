@@ -1,9 +1,9 @@
-// Single source of truth for the Dcube visual identity.
+// Single source of truth for the Ramon Bugariu visual identity (formerly Dcube).
 // Used by every Remotion composition AND injected as CSS variables into the website
 // (see src/app/layout.tsx), so videos and site always match.
 
 export const BRAND = {
-  name: "Dcube",
+  name: "Ramon Bugariu",
   colors: {
     paper: "#F2F1EC", // background
     ink: "#111110", // primary text / shapes

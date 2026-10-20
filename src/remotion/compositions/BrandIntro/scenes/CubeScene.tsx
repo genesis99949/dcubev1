@@ -7,7 +7,6 @@ import {
   useVideoConfig,
   type InteractivitySchema,
 } from "remotion";
-import { SERVICES } from "../../../../content/services";
 import { BRAND } from "../../../brand";
 import { CssCube } from "../../../components/CssCube";
 import { FrameLabels } from "../../../components/FrameLabels";
@@ -24,7 +23,18 @@ type CubeSceneProps = {
   readonly style?: React.CSSProperties;
 };
 
-const FACES = SERVICES.map((s, i) => ({
+// The six services of the former Dcube studio, one per face. The site now offers two services
+// (src/content/services.ts); this film keeps the cube concept it was made for.
+const CUBE_SERVICES = [
+  { name: "Web Design", axis: "Web" },
+  { name: "E-commerce", axis: "Web" },
+  { name: "Brand Identity", axis: "Branding" },
+  { name: "Packaging & Print", axis: "Branding" },
+  { name: "Social Media & Ads", axis: "Marketing" },
+  { name: "Motion & Content", axis: "Marketing" },
+];
+
+const FACES = CUBE_SERVICES.map((s, i) => ({
   number: String(i + 1).padStart(2, "0"),
   kicker: s.axis,
   title: s.name,
@@ -92,7 +102,7 @@ const CubeSceneInner: React.FC<CubeSceneProps> = ({ headline, accentColor, style
               opacity: interpolate(t, [1, 1.6], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }),
             }}
           >
-            {String(active + 1).padStart(2, "0")} / 06 — {SERVICES[active].name}
+            {String(active + 1).padStart(2, "0")} / 06 — {CUBE_SERVICES[active].name}
           </div>
         </div>
         <div style={{ opacity: Math.min(1, enter * 1.5), scale: 0.7 + enter * 0.3, marginRight: isPortrait ? 0 : 60 * unit }}>

@@ -3,10 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type React from "react";
 import { ProjectMedia } from "@/components/ProjectMedia";
+import { ToolChips } from "@/components/ToolChips";
 import { localePath, OG_LOCALE, tr, type Lang } from "@/content/i18n";
 import { getProject, projects, type GalleryItem } from "@/content/projects";
 import { alternates } from "@/content/seo";
-import { serviceLabel } from "@/content/services";
 import { ui } from "@/content/ui";
 import styles from "./ProjectPage.module.css";
 
@@ -74,7 +74,7 @@ export async function ProjectPage({ lang, params }: ProjectPageProps & { lang: L
           <Link href={localePath(lang, "/#work")} className={styles.back}>
             <span aria-hidden>‹</span> {t(ui.work.allWork)}
           </Link>
-          <p className={`eyebrow ${styles.services} reveal`}>{project.services.map((s) => t(serviceLabel(s))).join(" · ")}</p>
+          <p className={`eyebrow ${styles.services} reveal`}>{project.scope.map((s) => t(s)).join(" · ")}</p>
           <h1 className={`${styles.title} reveal`} style={{ "--d": 0.06 } as React.CSSProperties}>
             {project.title}
           </h1>
@@ -113,6 +113,12 @@ export async function ProjectPage({ lang, params }: ProjectPageProps & { lang: L
               </div>
             ))}
           </dl>
+          {project.stack ? (
+            <div className={styles.stack}>
+              <ToolChips label={t(ui.work.builtWith)} ids={project.stack.built} />
+              <ToolChips label={t(ui.work.madeWith)} ids={project.stack.made} />
+            </div>
+          ) : null}
         </div>
 
         {project.sections.map((section, i) => (

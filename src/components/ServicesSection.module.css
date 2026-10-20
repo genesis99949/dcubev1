@@ -1,0 +1,68 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+  list-style: none;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(32px, 4.4vw, 64px);
+  border-radius: var(--radius);
+  background: var(--tile);
+}
+
+.number {
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.name {
+  font-size: var(--t-h3);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.text {
+  max-width: 30em;
+  font-size: var(--t-lead);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.016em;
+}
+
+.for {
+  margin-bottom: clamp(12px, 1.6vw, 20px);
+  color: var(--ink-2);
+}
+
+/* Pinned to the bottom, so both tiles' buttons line up. */
+.action {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.examples {
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 18px;
+}
+
+.examples span {
+  color: var(--ink-3);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+}

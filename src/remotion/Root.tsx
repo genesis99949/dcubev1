@@ -15,6 +15,7 @@ import { PureFlameStill } from "./compositions/PureFlame/PureFlameStill";
 import { DcaIdentity } from "./compositions/DavidCraft/DcaIdentity";
 import { DcaHome, DcaMobile, DcaProduct, DcaShop, DcaStory } from "./compositions/DavidCraft/DcaSite";
 import { getDcaIdentityDuration, getDcaProductDuration, getDcaSiteDuration } from "./compositions/DavidCraft/timing";
+import { OgImage } from "./compositions/Social/OgImage";
 
 // Every renderable video is registered here. Format and fps come from ./config.ts;
 // durations come from each composition's timing file (written in seconds).
@@ -179,6 +180,9 @@ export const RemotionRoot: React.FC = () => {
         <Composition id="DCA-Shop" component={DcaShop} width={VIDEO.width} height={VIDEO.height} fps={VIDEO.fps} durationInFrames={getDcaSiteDuration("products", VIDEO.fps)} />
         <Composition id="DCA-Mobile" component={DcaMobile} width={VIDEO.width} height={VIDEO.height} fps={VIDEO.fps} durationInFrames={getDcaSiteDuration("mobile", VIDEO.fps)} />
       </Folder>
+
+      {/* The website's social preview image → public/og.png */}
+      <Still id="OG" component={OgImage} width={1200} height={630} />
     </>
   );
 };

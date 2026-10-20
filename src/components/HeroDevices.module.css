@@ -1,0 +1,76 @@
+/* A laptop with a phone leaning on its right edge. Sizes are in % of the stage width, so the pair scales as one. */
+.devices {
+  position: relative;
+  width: 100%;
+  padding: 0 7% 3.5% 0;
+}
+
+.laptop {
+  width: 100%;
+}
+
+.lid {
+  padding: 1.6% 1.6% 2.4%;
+  border-radius: clamp(12px, 1.8vw, 24px) clamp(12px, 1.8vw, 24px) 0 0;
+  background: var(--ink);
+}
+
+.screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(3px, 0.4vw, 6px);
+  background: var(--tile);
+}
+
+/* The base: a little wider than the lid, with the opening notch in the middle. */
+.base {
+  position: relative;
+  width: 108%;
+  height: clamp(8px, 1.3vw, 18px);
+  margin-left: -4%;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  background: color-mix(in srgb, var(--ink) 78%, var(--paper));
+}
+
+.base::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 14%;
+  height: 40%;
+  translate: -50% 0;
+  border-radius: 0 0 6px 6px;
+  background: color-mix(in srgb, var(--ink) 60%, var(--paper));
+}
+
+/* The phone: an ink body with a paper ring, so it reads in front of the laptop without a shadow. */
+.phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 21%;
+  padding: 0.75%;
+  border-radius: clamp(16px, 2.6vw, 36px);
+  background: var(--ink);
+  outline: clamp(3px, 0.5vw, 7px) solid var(--paper);
+}
+
+.phoneScreen {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: clamp(12px, 2.1vw, 30px);
+  background: var(--tile);
+}
+
+@media (max-width: 640px) {
+  .devices {
+    padding-right: 10%;
+  }
+
+  .phone {
+    width: 29%;
+  }
+}

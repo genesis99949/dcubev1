@@ -7,8 +7,9 @@
 
 import { l, type L } from "./i18n";
 import type { Service } from "./services";
+import type { ToolId } from "./tools";
 
-// A project lists only the services (cube faces, see ./services.ts) it actually involved.
+// A project lists the service it was (see ./services.ts), and in `scope` everything the work covered.
 export type { Service };
 
 export type Media =
@@ -34,6 +35,8 @@ export type Project = {
   /** Short line under the title on the project page. */
   subtitle?: L;
   services: Service[];
+  /** What the work covered, e.g. "Online store · Brand identity" (tile and page eyebrow). */
+  scope: L[];
   year: number;
   /** One line, shown in lists and as the meta description. */
   summary: L;
@@ -47,6 +50,8 @@ export type Project = {
   sections: ProjectSection[];
   /** Extra facts on the project page. */
   details?: { label: L; value: L; href?: string }[];
+  /** What it runs on, and the programs used to make it (logos from ./tools.ts). */
+  stack?: { built: ToolId[]; made: ToolId[] };
 };
 
 const img = (
@@ -67,7 +72,8 @@ export const projects: Project[] = [
     title: "Pure Flame",
     // The brand's own line, kept in English.
     subtitle: same("The art of gathering"),
-    services: ["Web Design", "E-commerce", "Brand Identity", "Motion & Content"],
+    services: ["Online store"],
+    scope: [l("Online store", "Magazin online"), l("Brand identity", "Identitate de brand"), l("Motion", "Animație")],
     year: 2026,
     summary: l(
       "A digital experience for outdoor living — sculptural fire tables in a quiet, editorial e-commerce journey.",
@@ -288,13 +294,20 @@ export const projects: Project[] = [
         href: "https://github.com/genesis99949/pureflame_portofolio_editorial",
       },
     ],
+    // From the project files: package.json (Express, Stripe), the pages (GSAP, three.js), Vercel deploy,
+    // and the design/motion sources (.psd, .ai, .aep, .prproj, .blend, Claude/Codex setup).
+    stack: {
+      built: ["html", "css", "javascript", "gsap", "threejs", "nodejs", "express", "stripe", "vercel", "github"],
+      made: ["photoshop", "illustrator", "afterEffects", "premierePro", "blender", "claude", "codex"],
+    },
   },
   {
     slug: "david-craft-ale",
     title: "David Craft Ale",
     // The brand's own line, kept in English.
     subtitle: same("The new age of beer"),
-    services: ["Web Design", "E-commerce", "Brand Identity", "Packaging & Print"],
+    services: ["Online store"],
+    scope: [l("Online store", "Magazin online"), l("Brand identity", "Identitate de brand"), l("Packaging", "Ambalaje")],
     year: 2026,
     summary: l(
       "Identity and online shop for a small-batch craft beer brand — four beers, one colour each, and Hopper, a winged hop who never arrives empty-winged.",
@@ -575,6 +588,12 @@ export const projects: Project[] = [
       { label: l("Type", "Tip"), value: l("Portfolio concept", "Concept de portofoliu") },
       { label: l("Live demo", "Demo live"), value: same("dca-murex.vercel.app"), href: "https://dca-murex.vercel.app" },
     ],
+    // From the project files: static pages with GSAP, Lenis and Remotion-made animations, Vercel deploy;
+    // Blender scenes, Python asset scripts (OpenAI images) and the Claude setup.
+    stack: {
+      built: ["html", "css", "javascript", "gsap", "lenis", "remotion", "vercel"],
+      made: ["blender", "python", "chatgpt", "claude"],
+    },
   },
 ];
 

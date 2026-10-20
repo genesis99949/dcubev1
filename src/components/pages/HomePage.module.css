@@ -43,10 +43,10 @@
   margin-top: clamp(28px, 3vw, 40px);
 }
 
-.cube {
+.devices {
   width: 100%;
-  max-width: 900px;
-  margin-top: clamp(8px, 2vw, 24px);
+  max-width: 1040px;
+  margin-top: clamp(48px, 6vw, 88px);
 }
 
 /* ---------- Sections ---------- */

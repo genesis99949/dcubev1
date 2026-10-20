@@ -91,6 +91,7 @@
 }
 
 .chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
   padding: 9px 15px;
@@ -106,8 +107,12 @@
     border-color 0.2s;
 }
 
+/* Hidden but focusable; sized to 1px so the field styles' width: 100% can't widen the page. */
 .chip input {
   position: absolute;
+  inset: 0;
+  width: 1px;
+  height: 1px;
   opacity: 0;
   pointer-events: none;
 }

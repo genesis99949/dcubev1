@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { localePath, switchPath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
-import { CubeMark } from "./CubeMark";
 import styles from "./SiteHeader.module.css";
 
 export function SiteHeader({ lang }: { lang: Lang }) {
@@ -57,8 +56,8 @@ export function SiteHeader({ lang }: { lang: Lang }) {
           aria-label={`${site.name} — ${tr(ui.nav.home, lang)}`}
           onClick={() => setOpen(false)}
         >
-          <CubeMark />
           {site.name}
+          <span className="mark" aria-hidden />
         </Link>
         <nav aria-label={tr(ui.nav.main, lang)} className={styles.nav}>
           <ul>

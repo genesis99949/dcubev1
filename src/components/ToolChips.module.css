@@ -1,0 +1,56 @@
+.group {
+  display: grid;
+  gap: 12px;
+}
+
+.label {
+  font-size: var(--t-small);
+  color: var(--ink-3);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  background: var(--tile);
+  font-size: var(--t-small);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+/* Logos read quietly in grey and show their colours on hover — as on the homepage. */
+.logo,
+.wordmark {
+  width: auto;
+  filter: grayscale(1);
+  opacity: 0.75;
+  transition:
+    filter 0.3s var(--ease-out),
+    opacity 0.3s var(--ease-out);
+}
+
+.logo {
+  height: 22px;
+}
+
+.wordmark {
+  height: 20px;
+}
+
+.chip:hover .logo,
+.chip:hover .wordmark {
+  filter: none;
+  opacity: 1;
+}

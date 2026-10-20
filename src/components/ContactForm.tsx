@@ -10,7 +10,7 @@ import { ui } from "@/content/ui";
 import styles from "./ContactForm.module.css";
 
 /** Fired by the "Start with this" buttons of the pricing section (see PackageLink). */
-export const PACKAGE_EVENT = "dcube:package";
+export const PACKAGE_EVENT = "site:package";
 
 type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
 

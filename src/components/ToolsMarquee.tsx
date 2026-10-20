@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type React from "react";
 import { tr, type Lang } from "@/content/i18n";
-import { tools, type Tool } from "@/content/tools";
+import { TOOLS, tools, type Tool } from "@/content/tools";
 import styles from "./ToolsMarquee.module.css";
 
 function ToolList({ items, unique, hidden }: { items: Tool[]; unique: number; hidden?: boolean }) {
@@ -11,7 +11,7 @@ function ToolList({ items, unique, hidden }: { items: Tool[]; unique: number; hi
         // A row's items appear twice per copy, so the index keeps the keys unique.
         <li key={`${tool.name}-${i}`} className={styles.item} data-repeat={i >= unique || undefined}>
           <Image
-            src={tool.logo}
+            src={tool.logo!}
             width={tool.width}
             height={tool.height}
             alt={tool.wordmark ? tool.name : ""}
@@ -38,7 +38,8 @@ export function ToolsMarquee({ lang }: { lang: Lang }) {
         {tr(tools.label, lang)}
       </h2>
       <div className={styles.panel}>
-        {tools.rows.map((row, r) => {
+        {tools.rows.map((ids, r) => {
+          const row: Tool[] = ids.map((id) => TOOLS[id]);
           // Short rows are doubled so one copy is always wider than the panel.
           const items = row.length < 8 ? [...row, ...row] : row;
           return (

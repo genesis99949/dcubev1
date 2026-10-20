@@ -24,18 +24,20 @@ export const ui = {
     allWork: l("All work", "Toate proiectele"),
     nextProject: l("Next project", "Proiectul următor"),
     year: l("Year", "An"),
+    builtWith: l("Built with", "Construit cu"),
+    madeWith: l("Made with", "Realizat cu"),
   },
   video: {
     play: l("Play video", "Pornește video"),
     pause: l("Pause video", "Oprește video"),
   },
   footer: {
-    tagline: l("Web · Branding · Marketing.", "Web · Branding · Marketing."),
+    tagline: l("Websites · Online stores.", "Site-uri de prezentare · Magazine online."),
     privacy: l("Privacy", "Confidențialitate"),
   },
   notFound: {
     title: l("Nothing here", "Nimic aici"),
-    back: l("Back to Dcube", "Înapoi la Dcube"),
+    back: l("Back to the homepage", "Înapoi la prima pagină"),
   },
   form: {
     name: l("Name", "Nume"),
@@ -61,6 +63,6 @@ export const ui = {
       "The contact form is being set up. Until then, write to me on LinkedIn.",
       "Formularul de contact e în curs de configurare. Până atunci, scrie-mi pe LinkedIn.",
     ),
-    subject: l("New project inquiry — Dcube", "Cerere nouă de proiect — Dcube"),
+    subject: l("New project inquiry — Ramon Bugariu", "Cerere nouă de proiect — Ramon Bugariu"),
   },
 } as const;

@@ -1,5 +1,5 @@
 /*
-  Dcube — base styles.
+  Ramon Bugariu — base styles.
   Brand colours are injected as CSS variables from src/remotion/brand.ts (see layout.tsx),
   so the website and the videos always share one palette. Every other tone is derived
   from those five with color-mix() — never hard-code a new colour.
@@ -208,7 +208,16 @@ button {
   background-size: 100% 1px;
 }
 
-/* ---------- The Dcube full stop ---------- */
+/* ---------- The accent full stop ---------- */
+
+/* The wordmark's stop (header, footer): a small static square in the accent colour. */
+.mark {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.06em;
+  background: var(--accent);
+}
 
 /* Arrives as a dot, snaps into a square (same motion as the brand film). */
 .dot {

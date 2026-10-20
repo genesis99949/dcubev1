@@ -1,9 +1,9 @@
 import type React from "react";
 import { ContactForm } from "@/components/ContactForm";
-import { HeroCube } from "@/components/HeroCube";
+import { HeroDevices } from "@/components/HeroDevices";
 import { PricingSection, ProcessSteps } from "@/components/PricingSection";
 import { ScrollStatement } from "@/components/ScrollStatement";
-import { ServicesScroll } from "@/components/ServicesScroll";
+import { ServicesSection } from "@/components/ServicesSection";
 import { ToolsMarquee } from "@/components/ToolsMarquee";
 import { WorkTiles } from "@/components/WorkTiles";
 import { localePath, tr, type Lang } from "@/content/i18n";
@@ -14,15 +14,7 @@ import styles from "./HomePage.module.css";
 
 const delay = (seconds: number) => ({ "--d": seconds }) as React.CSSProperties;
 
-// Which projects involved each service — listed under each face in the services section.
-const projectsByService = Object.fromEntries(
-  SERVICES.map((s) => [
-    s.name,
-    projects.filter((p) => p.services.includes(s.name)).map((p) => ({ slug: p.slug, title: p.title })),
-  ]),
-);
-
-/** Structured data: who Dcube is, for search engines. */
+/** Structured data: who Ramon is and what he offers, for search engines. */
 const jsonLd = (lang: Lang) => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -48,15 +40,15 @@ export function HomePage({ lang }: { lang: Lang }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(lang)).replace(/</g, "\\u003c") }}
       />
 
-      {/* Hero — one line, one sentence, two actions, and the cube as the product */}
+      {/* Hero — one line, one sentence, two actions, and real projects on a laptop and a phone */}
       <section className={`container ${styles.hero}`} aria-labelledby="hero-title">
         <p className={`${styles.brand} reveal`}>
-          {site.name}
-          <span className="dot" aria-hidden />
-          <span className={styles.owner}>{site.owner.name}</span>
+          {site.owner.name}
+          <span className={styles.owner}>{t(site.owner.role)}</span>
         </p>
         <h1 id="hero-title" className={`${styles.title} reveal`} style={delay(0.08)}>
-          {t(site.hero.headline)}
+          {t(site.offer)}
+          <span className="dot" aria-hidden />
         </h1>
         <p className={`lead ${styles.heroText} reveal`} style={delay(0.16)}>
           {t(site.hero.text)}
@@ -69,8 +61,8 @@ export function HomePage({ lang }: { lang: Lang }) {
             {t(site.hero.secondary)}
           </a>
         </div>
-        <div className={`${styles.cube} reveal`} style={delay(0.4)}>
-          <HeroCube lang={lang} />
+        <div className={`${styles.devices} reveal`} style={delay(0.4)}>
+          <HeroDevices lang={lang} />
         </div>
       </section>
 
@@ -85,7 +77,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         <WorkTiles lang={lang} projects={projects} />
       </section>
 
-      {/* Services — the cube stays pinned and turns as the six faces scroll past */}
+      {/* Services — the two offers, side by side */}
       <section id="services" className={`container ${styles.section}`} aria-labelledby="services-title">
         <header className={styles.head}>
           <h2 id="services-title" className="headline">
@@ -93,7 +85,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           </h2>
           <p className="lead">{t(site.services.text)}</p>
         </header>
-        <ServicesScroll lang={lang} projectsByService={projectsByService} />
+        <ServicesSection lang={lang} />
       </section>
 
       {/* The tools and platforms — a full-width, endlessly moving logo strip */}
