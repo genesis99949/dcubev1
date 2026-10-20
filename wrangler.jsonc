@@ -2,5 +2,11 @@
   // Cloudflare: serves the static export from ./out (created by `npm run build`).
   "name": "dcubev1",
   "compatibility_date": "2026-10-01",
-  "assets": { "directory": "./out" }
+  "assets": { "directory": "./out" },
+  // The site's own domain (zone on Cloudflare). Deploying creates the DNS records and the SSL certificate.
+  // The workers.dev address keeps working alongside.
+  "routes": [
+    { "pattern": "ramonbugariu.ro", "custom_domain": true },
+    { "pattern": "www.ramonbugariu.ro", "custom_domain": true }
+  ]
 }

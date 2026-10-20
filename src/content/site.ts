@@ -12,7 +12,7 @@ export const site = {
     role: l("Web Designer & Web Developer", "Web designer & web developer"),
   },
   /** Public URL (social previews, canonical links, sitemap). NEXT_PUBLIC_SITE_URL overrides it, e.g. for a custom domain. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://dcubev1.ramonbugariu.workers.dev",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ramonbugariu.ro",
   /** Default meta description. */
   tagline: l(
     "Ramon Bugariu designs and builds presentation websites and online stores — fast, clear and easy to run.",
