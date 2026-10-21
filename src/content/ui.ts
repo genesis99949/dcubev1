@@ -47,14 +47,14 @@ export const ui = {
     budgetPlaceholder: l("Choose a range", "Alege un interval"),
     message: l("Tell me about the project", "Spune-mi despre proiect"),
     messagePlaceholder: l(
-      "What are you building, for whom, and by when?",
-      "Ce construiești, pentru cine și până când?",
+      "What does your business do, and when do you need the site? If you already have one, leave me the link.",
+      "Ce face afacerea ta și când ai nevoie de site? Dacă ai deja unul, lasă-mi linkul.",
     ),
-    consent: l("I agree that my details are used to reply to this message —", "Sunt de acord ca datele mele să fie folosite pentru a primi răspuns —"),
+    consent: l("I agree that my details are used to reply to me. See the", "Sunt de acord ca datele mele să fie folosite ca să primesc răspuns. Vezi"),
     consentLink: l("privacy policy", "politica de confidențialitate"),
     send: l("Send message", "Trimite mesajul"),
     sending: l("Sending…", "Se trimite…"),
-    sent: l("Thank you! Your message is on its way — I'll get back to you soon.", "Mulțumesc! Mesajul a plecat — revin cu un răspuns în curând."),
+    sent: l("Thanks, your message is on its way. I'll reply soon.", "Mulțumesc, mesajul a fost trimis. Îți răspund în curând."),
     error: l(
       "The message couldn't be sent. Please try again, or write to me on LinkedIn.",
       "Mesajul nu a putut fi trimis. Încearcă din nou sau scrie-mi pe LinkedIn.",

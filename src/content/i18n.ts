@@ -1,9 +1,11 @@
-// Languages. English lives at the root (/, /work/…), Romanian under /ro (/ro, /ro/work/…).
-// Every visible text in src/content is written as l("English", "Română").
+// Languages. Romanian is the main language and lives at the root (/, /work/…); English is under /en
+// (/en, /en/work/…). Every visible text in src/content is written as l("English", "Română").
 
-export const LANGS = ["en", "ro"] as const;
+export const LANGS = ["ro", "en"] as const;
 export type Lang = (typeof LANGS)[number];
 
+/** The site's main language: unprefixed URLs, x-default. */
+export const DEFAULT_LANG: Lang = "ro";
 /** A text in both languages. */
 export type L = { readonly en: string; readonly ro: string };
 
@@ -17,18 +19,18 @@ export const tr = (text: L, lang: Lang) => text[lang];
 export const OG_LOCALE: Record<Lang, string> = { en: "en_US", ro: "ro_RO" };
 
 /**
- * A site path in a language: "/" → "/ro", "/work/x" → "/ro/work/x", "/#work" → "/ro#work".
- * English paths are returned unchanged.
+ * A site path in a language: "/" → "/en", "/work/x" → "/en/work/x", "/#work" → "/en#work".
+ * Romanian (the default language) paths are returned unchanged.
  */
 export const localePath = (lang: Lang, path = "/") => {
-  if (lang === "en") return path;
-  if (path === "/") return "/ro";
-  if (path.startsWith("/#")) return `/ro${path.slice(1)}`;
-  return `/ro${path}`;
+  if (lang === DEFAULT_LANG) return path;
+  if (path === "/") return `/${lang}`;
+  if (path.startsWith("/#")) return `/${lang}${path.slice(1)}`;
+  return `/${lang}${path}`;
 };
 
 /** The same page in the other language, from a pathname (used by the language switch). */
 export const switchPath = (pathname: string, to: Lang) => {
-  const bare = pathname === "/ro" ? "/" : pathname.startsWith("/ro/") ? pathname.slice(3) : pathname;
+  const bare = pathname === "/en" ? "/" : pathname.startsWith("/en/") ? pathname.slice(3) : pathname;
   return localePath(to, bare);
 };

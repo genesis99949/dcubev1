@@ -1,4 +1,4 @@
-// Portfolio entries, in display order. Each one gets a case-study page at /work/<slug> (and /ro/work/<slug>).
+// Portfolio entries, in display order. Each one gets a case-study page at /work/<slug> (and /en/work/<slug>).
 // Every visible text is bilingual: l("English", "Română").
 //
 // Images: put them in public/work/<slug>/ and list them with their pixel size.

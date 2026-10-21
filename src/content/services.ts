@@ -9,8 +9,8 @@ export const SERVICES = [
     name: "Website",
     label: l("Presentation website", "Site de prezentare"),
     short: l(
-      "A fast, clear site that tells people who you are, what you do and how to reach you — and makes them want to.",
-      "Un site rapid și clar, care le spune oamenilor cine ești, ce faci și cum te găsesc — și îi face să vrea asta.",
+      "A few clear pages that say who you are, what you do and how to reach you, with a contact form that lands straight in your inbox.",
+      "Câteva pagini clare care spun cine ești, ce faci și cum te găsește clientul, cu un formular care ajunge direct în emailul tău.",
     ),
     for: l(
       "For businesses, studios, clinics, restaurants and professionals.",
@@ -21,8 +21,8 @@ export const SERVICES = [
     name: "Online store",
     label: l("Online store", "Magazin online"),
     short: l(
-      "A shop that sells: product and collection pages people enjoy browsing, a short checkout and payments that just work.",
-      "Un magazin care vinde: pagini de produs și de colecție prin care e plăcut să navighezi, un checkout scurt și plăți care merg.",
+      "Product pages people enjoy browsing, a short checkout and card payments that work from the first order.",
+      "Pagini de produs pe care oamenii le răsfoiesc cu plăcere, un checkout scurt și plăți cu cardul care merg de la prima comandă.",
     ),
     for: l(
       "For brands selling their own products, from a handful to a few hundred.",

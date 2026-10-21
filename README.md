@@ -34,7 +34,7 @@ npm run studio     # Remotion Studio → http://localhost:3100
 singur rând) și se rescriu complet la fiecare build. În plus, Next.js păstrează textele și într-o copie pentru
 navigarea între pagini, așa că o modificare făcută doar în HTML ar dispărea când treci de la o pagină la alta.
 
-Site-ul e bilingv: engleza la `/`, româna la `/ro` (comutatorul EN/RO din header duce la aceeași pagină
+Site-ul e bilingv: româna (limba principală) la `/`, engleza la `/en` (comutatorul RO/EN din header duce la aceeași pagină
 în cealaltă limbă). Fiecare text e scris o singură dată, în ambele limbi, așa: `l("English", "Română")`.
 
 Toate textele stau în `src/content/`, scrise frumos, câte un câmp pe rând:
@@ -48,7 +48,8 @@ Toate textele stau în `src/content/`, scrise frumos, câte un câmp pe rând:
 | Numele și descrierile celor 2 servicii | `services.ts` | `label`, `short`, `for` (`name` e doar un cod intern — nu-l schimba) |
 | „How I work” / „Cum lucrez” (cei 4 pași) | `site.ts` | `process.steps` |
 | Titlul și textele secțiunii de prețuri | `site.ts` | `pricing.*` |
-| **Pachetele: nume, pentru cine, ce includ, prețul „de la”** | `packages.ts` | `name`, `for`, `includes`, `price` (număr în euro; `null` = „Preț la cerere”) |
+| **Pachetele (Start / Personalizat, pentru fiecare serviciu): pentru cine, ce includ, prețul „de la”** | `packages.ts` | `for`, `includes`, `price` (număr în euro; `null` = „Preț la cerere”) |
+| Condițiile de plată de sub prețuri | `site.ts` | `pricing.payment` |
 | Opțiunile extra de sub pachete | `packages.ts` | `extras` |
 | Eticheta de deasupra unui proiect („Magazin online · Identitate de brand”) | `projects.ts` | `scope` |
 | Secțiunea About | `site.ts` | `aboutLabel`, `about` |
@@ -63,7 +64,7 @@ Toate textele stau în `src/content/`, scrise frumos, câte un câmp pe rând:
 | Tot ce ține de un proiect (subtitlu, texte, secțiuni, legende, detalii) | `projects.ts` | intrarea proiectului (`subtitle`, `summary`, `description`, `sections`, `details`) |
 
 Pașii:
-1. `npm run dev` și deschide http://localhost:3000 (sau http://localhost:3000/ro) — vezi modificările pe loc.
+1. `npm run dev` și deschide http://localhost:3000 (sau http://localhost:3000/en) — vezi modificările pe loc.
 2. Schimbă textul între ghilimele — și pe cel englezesc, și pe cel românesc — și salvează. Păstrează
    ghilimelele și virgulele; dacă textul conține ghilimele drepte (`"`), folosește ghilimele tipografice
    („ ” / “ ”) sau `\"`.
@@ -86,7 +87,7 @@ Până pui cheia, formularul afișează un mesaj că e în curs de configurare �
 - `src/content/site.ts` — all homepage copy (EN + RO), contact form settings and social links
 - `src/content/packages.ts` — the pricing packages (what's included, starting price)
 - `src/content/privacy.ts`, `src/content/ui.ts` — privacy policy and interface labels
-- `src/content/i18n.ts` — the two languages (English at `/`, Romanian at `/ro`)
+- `src/content/i18n.ts` — the two languages (Romanian at `/`, English at `/en`)
 - `src/app/(en)`, `src/app/(ro)` — one root layout per language; pages are shared components in `src/components/pages`
 - `src/content/services.ts` — the two services: presentation website and online store
 - `src/content/projects.ts` — portfolio entries (each gets `/work/<slug>`), with services, cover and gallery

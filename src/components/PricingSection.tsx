@@ -1,43 +1,15 @@
 import { tr, type Lang } from "@/content/i18n";
-import { CURRENCY, extras, packages } from "@/content/packages";
+import { extras } from "@/content/packages";
 import { site } from "@/content/site";
-import { PackageLink } from "./PackageLink";
 import styles from "./PricingSection.module.css";
+import { PricingTabs } from "./PricingTabs";
 
-const price = (value: number, lang: Lang) =>
-  lang === "ro" ? `${value.toLocaleString("ro-RO")} ${CURRENCY}` : `${CURRENCY}${value.toLocaleString("en-GB")}`;
-
-/** The packages, side by side: who each is for, a starting price and what's included — then the extras. */
+/** The packages (service switch + two tiers), then the extras and how payment works. */
 export function PricingSection({ lang }: { lang: Lang }) {
   const p = site.pricing;
   return (
     <>
-      <ul className={styles.grid}>
-        {packages.map((pkg) => (
-          <li key={pkg.id} className={`${styles.card} ${pkg.featured ? styles.featured : ""} rise`}>
-            <h3 className={styles.name}>{tr(pkg.name, lang)}</h3>
-            <p className={styles.for}>{tr(pkg.for, lang)}</p>
-            <p className={styles.price}>
-              {pkg.price === null ? (
-                <span className={styles.request}>{tr(p.onRequest, lang)}</span>
-              ) : (
-                <>
-                  <span className={styles.from}>{tr(p.from, lang)} </span>
-                  {price(pkg.price, lang)}
-                </>
-              )}
-            </p>
-            <ul className={styles.includes}>
-              {pkg.includes.map((item) => (
-                <li key={item.en}>{tr(item, lang)}</li>
-              ))}
-            </ul>
-            <PackageLink id={pkg.id} href="#contact" className={`btn ${pkg.featured ? "btn-light" : ""} ${styles.action}`}>
-              {tr(p.action, lang)}
-            </PackageLink>
-          </li>
-        ))}
-      </ul>
+      <PricingTabs lang={lang} />
       <div className={styles.extras}>
         <h3 className={styles.extrasTitle}>{tr(p.extras, lang)}</h3>
         <ul className={styles.extrasList}>
@@ -45,6 +17,7 @@ export function PricingSection({ lang }: { lang: Lang }) {
             <li key={item.en}>{tr(item, lang)}</li>
           ))}
         </ul>
+        <p className={styles.payment}>{tr(p.payment, lang)}</p>
       </div>
     </>
   );

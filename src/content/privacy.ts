@@ -1,4 +1,4 @@
-// Privacy policy (/privacy and /ro/privacy). Plain-language, GDPR-oriented; review it before relying on it.
+// Privacy policy (/privacy and /en/privacy). Plain-language, GDPR-oriented; review it before relying on it.
 
 import { l } from "./i18n";
 

@@ -4,13 +4,12 @@ import Link from "next/link";
 import { type FormEvent, useEffect, useState } from "react";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { packages } from "@/content/packages";
-import { SERVICES, type Service } from "@/content/services";
+import { SERVICES, serviceLabel, type Service } from "@/content/services";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
 import styles from "./ContactForm.module.css";
+import { PACKAGE_EVENT } from "./events";
 
-/** Fired by the "Start with this" buttons of the pricing section (see PackageLink). */
-export const PACKAGE_EVENT = "site:package";
 
 type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
 
@@ -29,7 +28,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
       const pkg = packages.find((p) => p.id === (e as CustomEvent<string>).detail);
       if (!pkg) return;
       setPackageId(pkg.id);
-      setSelected(pkg.services);
+      setSelected([pkg.service]);
     };
     window.addEventListener(PACKAGE_EVENT, onPackage);
     return () => window.removeEventListener(PACKAGE_EVENT, onPackage);
@@ -39,6 +38,9 @@ export function ContactForm({ lang }: { lang: Lang }) {
     setSelected((s) => (s.includes(name) ? s.filter((x) => x !== name) : [...s, name]));
 
   const chosenPackage = packages.find((p) => p.id === packageId);
+  /** "Online store · Start" — the service and tier of the picked package. */
+  const packageName = (target: Lang) =>
+    chosenPackage ? `${tr(serviceLabel(chosenPackage.service), target)} · ${tr(chosenPackage.name, target)}` : "";
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,7 +61,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
           name: form.get("name"),
           email: form.get("email"),
           services: selected.join(", ") || "—",
-          package: chosenPackage ? tr(chosenPackage.name, "en") : "—",
+          package: packageName("en") || "—",
           budget: form.get("budget") || "—",
           message: form.get("message"),
           language: lang,
@@ -98,7 +100,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
       <fieldset className={styles.field}>
         <legend>
           {tr(ui.form.services, lang)}
-          {chosenPackage ? <em className={styles.package}> · {tr(chosenPackage.name, lang)}</em> : null}
+          {chosenPackage ? <em className={styles.package}> · {packageName(lang)}</em> : null}
         </legend>
         <div className={styles.chips}>
           {SERVICES.map((s) => (

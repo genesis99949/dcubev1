@@ -28,7 +28,7 @@ const jsonLd = (lang: Lang) => ({
   ...(site.contact.email ? { email: site.contact.email } : {}),
 });
 
-/** The homepage, in either language (app/(en)/page.tsx and app/(ro)/ro/page.tsx). */
+/** The homepage, in either language (app/(ro)/page.tsx at / and app/(en)/en/page.tsx at /en). */
 export function HomePage({ lang }: { lang: Lang }) {
   const t = (text: { en: string; ro: string }) => tr(text, lang);
   const mailto = `mailto:${site.contact.email}`;
