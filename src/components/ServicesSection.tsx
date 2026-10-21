@@ -17,13 +17,14 @@ export function ServicesSection({ lang }: { lang: Lang }) {
     <ul className={styles.grid}>
       {SERVICES.map((service, i) => {
         const examples = projects.filter((p) => p.services.includes(service.name));
+        const ownSite = "ownSite" in service ? service.ownSite : null;
         return (
           <li key={service.name} className={`${styles.tile} rise`}>
             <p className={styles.number}>{String(i + 1).padStart(2, "0")}</p>
             <h3 className={styles.name}>{tr(service.label, lang)}</h3>
             <p className={styles.text}>{tr(service.short, lang)}</p>
             <p className={styles.for}>{tr(service.for, lang)}</p>
-            {examples.length > 0 ? (
+            {examples.length > 0 || ownSite ? (
               <p className={styles.examples}>
                 <span>{tr(s.seeWork, lang)}</span>
                 {examples.map((p) => (
@@ -31,6 +32,11 @@ export function ServicesSection({ lang }: { lang: Lang }) {
                     {p.title}
                   </Link>
                 ))}
+                {ownSite ? (
+                  <Link href={localePath(lang, "/")} className="more">
+                    {tr(ownSite, lang)}
+                  </Link>
+                ) : null}
               </p>
             ) : null}
             <EventLink event={SERVICE_EVENT} detail={service.name} href="#pricing" className={`btn ${styles.action}`}>

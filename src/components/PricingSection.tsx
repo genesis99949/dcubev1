@@ -17,7 +17,9 @@ export function PricingSection({ lang }: { lang: Lang }) {
             <li key={item.en}>{tr(item, lang)}</li>
           ))}
         </ul>
-        <p className={styles.payment}>{tr(p.payment, lang)}</p>
+        <p className={styles.payment}>
+          {tr(p.payment, lang)} {tr(p.ownHosting, lang)}
+        </p>
       </div>
     </>
   );

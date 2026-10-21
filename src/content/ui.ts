@@ -43,6 +43,8 @@ export const ui = {
     name: l("Name", "Nume"),
     email: l("Email", "Email"),
     services: l("What do you need?", "De ce ai nevoie?"),
+    /** Third answer next to the two services. */
+    unsure: l("Not sure yet, help me choose", "Nu știu încă, ajută-mă să aleg"),
     budget: l("Budget", "Buget"),
     budgetPlaceholder: l("Choose a range", "Alege un interval"),
     message: l("Tell me about the project", "Spune-mi despre proiect"),

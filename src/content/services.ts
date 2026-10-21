@@ -16,6 +16,9 @@ export const SERVICES = [
       "For businesses, studios, clinics, restaurants and professionals.",
       "Pentru firme, studiouri, clinici, restaurante și profesioniști.",
     ),
+    // No client presentation site in the portfolio yet: this site is one (no cart, services + contact form).
+    // Replace it with a Start demo project once there is one.
+    ownSite: l("This very site", "Chiar site-ul ăsta"),
   },
   {
     name: "Online store",
@@ -29,7 +32,7 @@ export const SERVICES = [
       "Pentru branduri care își vând propriile produse, de la câteva la câteva sute.",
     ),
   },
-] as const satisfies readonly { name: string; label: L; short: L; for: L }[];
+] as const satisfies readonly { name: string; label: L; short: L; for: L; ownSite?: L }[];
 
 export type Service = (typeof SERVICES)[number]["name"];
 

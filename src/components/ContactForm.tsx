@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { type FormEvent, useEffect, useState } from "react";
-import { localePath, tr, type Lang } from "@/content/i18n";
+import { localePath, tr, type L, type Lang } from "@/content/i18n";
 import { packages } from "@/content/packages";
 import { SERVICES, serviceLabel, type Service } from "@/content/services";
 import { site } from "@/content/site";
@@ -17,25 +17,36 @@ type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
  * Project inquiry form. Messages are delivered by Web3Forms (a static site has no server of its own)
  * to the email address the access key was created for — that address never appears on the site.
  */
+/** One answer to "What do you need?": a service, or "not sure yet". */
+type Choice = Service | "unsure";
+
 export function ContactForm({ lang }: { lang: Lang }) {
-  const [selected, setSelected] = useState<Service[]>([]);
+  const [choice, setChoice] = useState<Choice | null>(null);
   const [packageId, setPackageId] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>("idle");
 
-  // A package picked in the pricing section pre-fills the services it covers.
+  // A package picked in the pricing section pre-fills its service.
   useEffect(() => {
     const onPackage = (e: Event) => {
       const pkg = packages.find((p) => p.id === (e as CustomEvent<string>).detail);
       if (!pkg) return;
       setPackageId(pkg.id);
-      setSelected([pkg.service]);
+      setChoice(pkg.service);
     };
     window.addEventListener(PACKAGE_EVENT, onPackage);
     return () => window.removeEventListener(PACKAGE_EVENT, onPackage);
   }, []);
 
-  const toggle = (name: Service) =>
-    setSelected((s) => (s.includes(name) ? s.filter((x) => x !== name) : [...s, name]));
+  const options: { value: Choice; label: L }[] = [
+    ...SERVICES.map((s) => ({ value: s.name, label: s.label })),
+    { value: "unsure", label: ui.form.unsure },
+  ];
+
+  // Picking another answer by hand drops a package that no longer matches it.
+  const pick = (value: Choice) => {
+    setChoice(value);
+    if (packages.find((p) => p.id === packageId)?.service !== value) setPackageId(null);
+  };
 
   const chosenPackage = packages.find((p) => p.id === packageId);
   /** "Online store · Start" — the service and tier of the picked package. */
@@ -60,7 +71,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
           from_name: `${site.name} website`,
           name: form.get("name"),
           email: form.get("email"),
-          services: selected.join(", ") || "—",
+          services: choice ? tr(options.find((o) => o.value === choice)!.label, "en") : "—",
           package: packageName("en") || "—",
           budget: form.get("budget") || "—",
           message: form.get("message"),
@@ -103,10 +114,10 @@ export function ContactForm({ lang }: { lang: Lang }) {
           {chosenPackage ? <em className={styles.package}> · {packageName(lang)}</em> : null}
         </legend>
         <div className={styles.chips}>
-          {SERVICES.map((s) => (
-            <label key={s.name} className={styles.chip} data-on={selected.includes(s.name)}>
-              <input type="checkbox" checked={selected.includes(s.name)} onChange={() => toggle(s.name)} />
-              {tr(s.label, lang)}
+          {options.map((o) => (
+            <label key={o.value} className={styles.chip} data-on={choice === o.value}>
+              <input type="radio" name="service" checked={choice === o.value} onChange={() => pick(o.value)} />
+              {tr(o.label, lang)}
             </label>
           ))}
         </div>
@@ -119,7 +130,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
             {tr(ui.form.budgetPlaceholder, lang)}
           </option>
           {site.contact.budgets.map((b) => (
-            <option key={b.en} value={b.en}>
+            <option key={b.en} value={tr(b, lang)}>
               {tr(b, lang)}
             </option>
           ))}

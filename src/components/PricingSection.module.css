@@ -193,7 +193,9 @@
 }
 
 .payment {
+  max-width: 46em;
   margin-top: 6px;
+  text-wrap: balance;
   font-size: var(--t-small);
   color: var(--ink-3);
 }

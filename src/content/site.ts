@@ -18,7 +18,7 @@ export const site = {
   /** Default meta description. */
   tagline: l(
     "Presentation websites and online stores, designed and built by Ramon Bugariu. From €350 on his own template, or designed from scratch.",
-    "Site-uri de prezentare și magazine online, gândite și construite de Ramon Bugariu. De la 350 € pe un șablon propriu sau cu design de la zero.",
+    "Site-uri de prezentare și magazine online, gândite și construite de Ramon Bugariu. De la 1.800 lei pe un șablon propriu sau cu design de la zero.",
   ),
   /** What the site offers, in a few words — after the name in titles ("Ramon Bugariu — …"). */
   offer: l("Websites and online stores", "Site-uri de prezentare și magazine online"),
@@ -42,8 +42,8 @@ export const site = {
   services: {
     headline: l("A site that presents you, or a store that sells.", "Un site care te prezintă sau un magazin care vinde."),
     text: l(
-      "Both start either from my own template or from a design made from scratch for your brand. After launch, you change texts, photos and products yourself.",
-      "Amândouă pornesc fie de la un șablon al meu, fie de la un design făcut de la zero pentru brandul tău. După lansare, textele, pozele și produsele le schimbi singur.",
+      "Both start either from my own WordPress template, which you can run yourself, or from a design made from scratch for your brand. For the first months after launch, I look after the site for free.",
+      "Amândouă pornesc fie de la un șablon al meu pe WordPress, pe care îl administrezi ușor singur, fie de la un design făcut de la zero pentru brandul tău. În primele luni după lansare, site-ul îl administrez eu, gratuit.",
     ),
     /** Label before the projects listed under a service. */
     seeWork: l("Examples", "Exemple"),
@@ -53,18 +53,22 @@ export const site = {
   pricing: {
     headline: l("Pick your starting point.", "Alege de unde pornești."),
     text: l(
-      "Start is built on my own template and has clear limits, which is why it costs less. Custom is designed from scratch. You get the exact price in writing after a short call.",
-      "Start pornește de la un șablon al meu și are limite clare, de aceea costă mai puțin. Personalizat e gândit de la zero. Prețul exact îl primești în scris, după o discuție scurtă.",
+      "Start runs on WordPress, uses my own template and has clear limits, which is why it costs less. Custom is designed from scratch. You get the exact price in writing after a short call.",
+      "Start e pe WordPress, pornește de la un șablon al meu și are limite clare, de aceea costă mai puțin. Personalizat e gândit de la zero. Prețul exact îl primești în scris, după o discuție scurtă.",
     ),
     /** Label of the switch between the two services. */
     switchLabel: l("Choose a service", "Alege serviciul"),
-    /** Shown before a package price, e.g. "from €1,200". */
+    /** Shown before a package price, e.g. "de la 1.800 lei" / "from €350". */
     from: l("from", "de la"),
     onRequest: l("Price on request", "Preț la cerere"),
     action: l("Choose this package", "Aleg acest pachet"),
     /** Heading of the optional extras under the packages. */
     extras: l("Add to any package", "Se pot adăuga la orice pachet"),
     payment: l("Payment: 50% to start, 50% at launch.", "Plata: 50% avans, 50% la lansare."),
+    ownHosting: l(
+      "Already have hosting for Start? If it's up to date, I install the site there and take its cost off the price.",
+      "Ai deja găzduire pentru Start? Dacă e potrivită, instalez site-ul pe ea și scad costul găzduirii din preț.",
+    ),
   },
   process: {
     headline: l("How I work.", "Cum lucrez."),
@@ -93,8 +97,8 @@ export const site = {
       {
         title: l("Launch", "Lansare"),
         text: l(
-          "The site goes live on your domain, and I show you how to change texts and photos yourself.",
-          "Site-ul intră live pe domeniul tău și îți arăt cum schimbi singur textele și pozele.",
+          "The site goes live on your domain, and I look after it for free at first: one month on Start, three on Custom.",
+          "Site-ul intră live pe domeniul tău, iar la început îl administrez eu, gratuit: o lună la Start, trei luni la Personalizat.",
         ),
       },
     ],
@@ -102,8 +106,8 @@ export const site = {
   /** Eyebrow + statement of the About section, in Ramon's own voice. */
   aboutLabel: l("About me", "Despre mine"),
   about: l(
-    "I'm Ramon, a web designer and developer. I work alone, so the person you talk to first is the one who designs, codes and launches your site. To me, a site is finished only when it opens fast on an ordinary phone and looks like your business.",
-    "Sunt Ramon, web designer și developer. Lucrez singur, așa că omul cu care vorbești la început e același care desenează, scrie codul și lansează site-ul. Pentru mine, un site e gata abia când se deschide repede pe un telefon obișnuit și arată ca afacerea ta.",
+    "I'm Ramon, a web designer in Timișoara. I started with banners, ads and logos, then moved to code. Plenty of businesses get a website just to have one. I start by asking what it has to bring in: a call, a booking, an order. I like drawing every page from scratch and taking risks with the design, but in the end the page has to be fast and have a clear purpose.",
+    "Sunt Ramon, web designer din Timișoara. Am început cu bannere, reclame și logo-uri, apoi am trecut la cod. Multe firme își fac un site doar ca să existe. Eu încep cu întrebarea ce trebuie să aducă: un telefon, o rezervare, o comandă. Îmi place să desenez fiecare pagină de la zero și să-mi asum riscuri în design, dar la final pagina trebuie să fie rapidă și să aibă un scop clar.",
   ),
   contact: {
     headline: l("Tell me about your business.", "Spune-mi despre afacerea ta."),
@@ -119,12 +123,12 @@ export const site = {
      * Set NEXT_PUBLIC_WEB3FORMS_KEY, or paste the key here.
      */
     formKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "",
-    /** Budget ranges offered in the form. */
+    /** Budget ranges offered in the form (lei in Romanian, euro in English, as in the pricing). */
     budgets: [
-      l("Under €500", "Sub 500 €"),
-      l("€500 – €1,000", "500 – 1.000 €"),
-      l("€1,000 – €2,500", "1.000 – 2.500 €"),
-      l("Over €2,500", "Peste 2.500 €"),
+      l("Under €500", "Sub 2.500 lei"),
+      l("€500 – €1,000", "2.500 – 5.000 lei"),
+      l("€1,000 – €2,500", "5.000 – 12.500 lei"),
+      l("Over €2,500", "Peste 12.500 lei"),
       l("Not sure yet", "Încă nu știu"),
     ],
     // Add more profiles here, e.g. { label: "Instagram", href: "https://instagram.com/…" }.

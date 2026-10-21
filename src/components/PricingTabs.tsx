@@ -3,15 +3,12 @@
 import type React from "react";
 import { useEffect, useState } from "react";
 import { tr, type Lang } from "@/content/i18n";
-import { CURRENCY, packages } from "@/content/packages";
+import { formatPrice, packages } from "@/content/packages";
 import { SERVICES, type Service } from "@/content/services";
 import { site } from "@/content/site";
 import { EventLink } from "./EventLink";
 import { PACKAGE_EVENT, SERVICE_EVENT } from "./events";
 import styles from "./PricingSection.module.css";
-
-const price = (value: number, lang: Lang) =>
-  lang === "ro" ? `${value.toLocaleString("ro-RO")} ${CURRENCY}` : `${CURRENCY}${value.toLocaleString("en-GB")}`;
 
 /**
  * A segmented switch between the two services, and that service's two tiers side by side:
@@ -75,7 +72,7 @@ export function PricingTabs({ lang }: { lang: Lang }) {
                   ) : (
                     <>
                       <span className={styles.from}>{tr(p.from, lang)} </span>
-                      {price(pkg.price, lang)}
+                      {formatPrice(pkg.price[lang], lang)}
                     </>
                   )}
                 </p>

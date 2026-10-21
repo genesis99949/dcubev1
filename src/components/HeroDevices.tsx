@@ -2,8 +2,11 @@ import { l, tr, type Lang } from "@/content/i18n";
 import styles from "./HeroDevices.module.css";
 import { LoopVideo } from "./LoopVideo";
 
-// Recordings of real client sites (scripts/site-capture), re-encoded light for the hero:
-// public/remotion/pureflame/home-scroll.mp4 and public/remotion/dca/mobile.mp4 (intro trimmed).
+// Recordings of real client sites (scripts/site-capture), re-encoded light for the hero.
+// Laptop: public/remotion/pureflame/home-scroll.mp4.
+// Phone: scripts/site-capture/dca-hero-phone.json — an eased stop at each David Craft Ale section, held until
+// its animations finish. Encoded as a seamless loop: frames 0.8–19.6 s, the last 0.8 s cross-faded into
+// the first 0.8 s (ffmpeg xfade), scaled to 480 px wide, crf 27.
 const LAPTOP = {
   src: "/videos/hero/laptop.mp4",
   poster: "/videos/hero/laptop.jpg",
