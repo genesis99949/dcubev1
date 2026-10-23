@@ -42,8 +42,8 @@ export const site = {
   services: {
     headline: l("A site that presents you, or a store that sells.", "Un site care te prezintă sau un magazin care vinde."),
     text: l(
-      "Both start either from my own WordPress template, which you can run yourself, or from a design made from scratch for your brand. For the first months after launch, I look after the site for free.",
-      "Amândouă pornesc fie de la un șablon al meu pe WordPress, pe care îl administrezi ușor singur, fie de la un design făcut de la zero pentru brandul tău. În primele luni după lansare, site-ul îl administrez eu, gratuit.",
+      "Choose Start for a WordPress site you can manage yourself, or Custom for a design made from scratch for your brand. After launch, I look after the site for free: one month with Start, three with Custom.",
+      "Alegi Start pentru un site pe WordPress pe care îl administrezi singur sau Personalizat pentru un design făcut de la zero pentru brandul tău. După lansare, mă ocup gratuit de administrare: o lună la Start, trei la Personalizat.",
     ),
     /** Label before the projects listed under a service. */
     seeWork: l("Examples", "Exemple"),

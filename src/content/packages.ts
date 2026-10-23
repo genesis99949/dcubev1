@@ -37,12 +37,13 @@ export const packages: Package[] = [
     tier: "start",
     name: TIERS.start,
     for: l(
-      "A clean WordPress site on my own template. Live in about a week.",
-      "Un site curat pe WordPress, pornind de la șablonul meu. Gata în aproximativ o săptămână.",
+      "A website tailored to your business, ready for mobile and launched on your domain.",
+      "Un site adaptat afacerii tale, pregătit pentru mobil și lansat pe domeniul tău.",
     ),
     price: { ro: 1800, en: 350 },
     includes: [
-      l("Up to 5 pages, in your colours, fonts and photos", "Până la 5 pagini, cu culorile, fonturile și pozele tale"),
+      l("Up to 5 pages, adapted for mobile", "Până la 5 pagini, adaptate pentru mobil"),
+      l("My own template, with your colours, fonts and photos", "Șablon propriu, cu culorile, fonturile și pozele tale"),
       l("On WordPress: you change texts and photos yourself", "Pe WordPress: textele și pozele le schimbi singur"),
       l("Contact form, map, basic SEO and analytics", "Formular de contact, hartă, SEO de bază și statistici"),
       l("Hosting for the first year and one month of site management, included", "Găzduire în primul an și o lună de administrare, incluse"),
@@ -73,12 +74,13 @@ export const packages: Package[] = [
     tier: "start",
     name: TIERS.start,
     for: l(
-      "A complete WordPress store on my own template, ready to take orders.",
-      "Un magazin complet pe WordPress, pornind de la șablonul meu, gata să primească comenzi.",
+      "Your products and payments set up, ready to take your first orders.",
+      "Un magazin cu produsele și plățile configurate, gata să primească primele comenzi.",
     ),
     price: { ro: 3000, en: 600 },
     includes: [
-      l("Shop, product, cart and checkout pages", "Pagini de magazin, produs, coș și checkout"),
+      l("Shop, product, cart and checkout pages, adapted for mobile", "Pagini de magazin, produs, coș și checkout, adaptate pentru mobil"),
+      l("My own template, adapted to your brand", "Șablon propriu, adaptat brandului tău"),
       l("Up to 30 products uploaded by me", "Până la 30 de produse urcate de mine"),
       l("Card payments and one courier set up", "Plăți cu cardul și un curier configurate"),
       l("On WordPress: you manage products and orders yourself", "Pe WordPress: produsele și comenzile le gestionezi singur"),
