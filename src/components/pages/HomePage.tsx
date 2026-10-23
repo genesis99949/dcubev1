@@ -107,7 +107,6 @@ export function HomePage({ lang }: { lang: Lang }) {
           <h2 id="pricing-title" className="headline">
             {t(site.pricing.headline)}
           </h2>
-          <p className="lead">{t(site.pricing.text)}</p>
         </header>
         <PricingSection lang={lang} />
       </section>

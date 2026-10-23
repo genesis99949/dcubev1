@@ -52,10 +52,6 @@ export const site = {
   },
   pricing: {
     headline: l("Pick your starting point.", "Alege de unde pornești."),
-    text: l(
-      "Start runs on WordPress, uses my own template and has clear limits, which is why it costs less. Custom is designed from scratch. You get the exact price in writing after a short call.",
-      "Start e pe WordPress, pornește de la un șablon al meu și are limite clare, de aceea costă mai puțin. Personalizat e gândit de la zero. Prețul exact îl primești în scris, după o discuție scurtă.",
-    ),
     /** Label of the switch between the two services. */
     switchLabel: l("Choose a service", "Alege serviciul"),
     /** Shown before a package price, e.g. "de la 1.800 lei" / "from €350". */
