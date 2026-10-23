@@ -331,8 +331,10 @@ export const projects: Project[] = [
               "Concept, regie AI, montaj pe ritm, titluri cinetice, sunet și muzică originală.",
             ),
             tools: same("Seedance 2.0 (1080p) · MiniMax H3 / Krea · Premiere Pro · Anton"),
-            // Add music.href when the new YouTube upload is available.
-            music: { credit: l("Original music by me", "Muzică originală compusă de mine") },
+            music: {
+              credit: l("Original music by me", "Muzică originală compusă de mine"),
+              href: "https://www.youtube.com/watch?v=RW0nDiGbXQw",
+            },
             loop: true,
             video: {
               kind: "video",
