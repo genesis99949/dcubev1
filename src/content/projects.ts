@@ -118,10 +118,11 @@ export const projects: Project[] = [
     },
     // Self-hosted (the Vimeo copy is private and asked visitors to log in). Source:
     // Pureflame/Behance/mockups/macbook_field_mockup_homepage.mp4, re-encoded without audio.
+    // scripts/encode-pureflame-macbook.mjs corrects the baked-in label to PUREFLAME.
     lead: {
       kind: "video",
-      src: "/videos/pureflame/macbook-field.mp4",
-      poster: "/videos/pureflame/macbook-field.jpg",
+      src: "/videos/pureflame/macbook-field-corrected.mp4",
+      poster: "/videos/pureflame/macbook-field-corrected.jpg",
       width: 1920,
       height: 1080,
       alt: l(
