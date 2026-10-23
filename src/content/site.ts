@@ -118,7 +118,7 @@ export const site = {
      * to the address the key was created for; that address never appears on the site.
      * Set NEXT_PUBLIC_WEB3FORMS_KEY, or paste the key here.
      */
-    formKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "",
+    formKey: process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "fe20cbd5-f67f-4ba2-b4f0-1fe94baec65a",
     /** Budget ranges offered in the form (lei in Romanian, euro in English, as in the pricing). */
     budgets: [
       l("Under €500", "Sub 2.500 lei"),
