@@ -103,11 +103,11 @@ export const site = {
       },
     ],
   },
-  /** Eyebrow + statement of the About section, in Ramon's own voice. */
+  /** Eyebrow + statement of the About section, in Ramon's own voice. "\n\n" starts a new paragraph. */
   aboutLabel: l("About me", "Despre mine"),
   about: l(
-    "I'm Ramon, a web designer in Timișoara. I started with banners, ads and logos, then moved to code. Plenty of businesses get a website just to have one. I start by asking what it has to bring in: a call, a booking, an order. I like drawing every page from scratch and taking risks with the design, but in the end the page has to be fast and have a clear purpose.",
-    "Sunt Ramon, web designer din Timișoara. Am început cu bannere, reclame și logo-uri, apoi am trecut la cod. Multe firme își fac un site doar ca să existe. Eu încep cu întrebarea ce trebuie să aducă: un telefon, o rezervare, o comandă. Îmi place să desenez fiecare pagină de la zero și să-mi asum riscuri în design, dar la final pagina trebuie să fie rapidă și să aibă un scop clar.",
+    "I'm Ramon, a web designer and developer in Timișoara, and besides websites I make video ads and online content, more and more often with the help of AI. I started with banners, ads and logos, then moved to code.\n\nPlenty of businesses get a website just to have one. I start by asking what it has to bring in: a call, a booking, an order. That way I begin with the end in mind and know from day one what your business needs.\n\nI like drawing every page from scratch and taking risks with the design, but in the end the page has to be fast and have a clear purpose.",
+    "Sunt Ramon, web designer și developer din Timișoara, iar pe lângă site-uri fac reclame video și conținut online, tot mai des cu ajutorul AI. Am început cu bannere, reclame și logo-uri, apoi am trecut la cod.\n\nMulte firme își fac un site doar ca să existe. Eu încep cu întrebarea ce trebuie să aducă: un telefon, o rezervare, o comandă. Așa pornesc cu finalul în minte și știu de la început de ce are nevoie afacerea ta.\n\nÎmi place să desenez fiecare pagină de la zero și să-mi asum riscuri în design, dar la final pagina trebuie să fie rapidă și să aibă un scop clar.",
   ),
   contact: {
     headline: l("Tell me about your business.", "Spune-mi despre afacerea ta."),

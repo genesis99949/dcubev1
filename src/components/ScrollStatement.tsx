@@ -7,13 +7,15 @@ import { usePrefersReducedMotion } from "./usePrefersReducedMotion";
 
 /**
  * A large statement whose words light up one by one as it scrolls through the viewport.
+ * Paragraphs are separated by a blank line ("\n\n"); the lighting runs on across them.
  * Only a single CSS variable (--p, 0 → 1) is updated on scroll; the words derive their
  * opacity from it. Fully lit when motion is reduced.
  */
 export function ScrollStatement({ text, className }: { text: string; className?: string }) {
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const reducedMotion = usePrefersReducedMotion();
-  const words = text.split(" ");
+  const paragraphs = text.split("\n\n").map((p) => p.split(" "));
+  const total = paragraphs.reduce((n, words) => n + words.length, 0);
 
   useEffect(() => {
     const el = ref.current;
@@ -44,13 +46,18 @@ export function ScrollStatement({ text, className }: { text: string; className?:
     };
   }, [reducedMotion]);
 
+  let index = 0;
   return (
-    <p ref={ref} className={`${styles.statement} ${className ?? ""}`} style={{ "--n": words.length } as React.CSSProperties}>
-      {words.map((word, i) => (
-        <span key={i} className={styles.word} style={{ "--i": i } as React.CSSProperties}>
-          {word}{" "}
-        </span>
+    <div ref={ref} className={`${styles.statement} ${className ?? ""}`} style={{ "--n": total } as React.CSSProperties}>
+      {paragraphs.map((words, p) => (
+        <p key={p}>
+          {words.map((word, i) => (
+            <span key={i} className={styles.word} style={{ "--i": index++ } as React.CSSProperties}>
+              {word}{" "}
+            </span>
+          ))}
+        </p>
       ))}
-    </p>
+    </div>
   );
 }

@@ -1,10 +1,16 @@
 .statement {
   --p: 0;
-  font-size: clamp(1.875rem, 4.2vw, 3.75rem);
+  display: grid;
+  gap: 0.75em;
+  max-width: 24em;
+  font-size: clamp(1.625rem, 3.3vw, 3rem);
   font-weight: 600;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  text-wrap: balance;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.statement p {
+  text-wrap: pretty;
 }
 
 /* Each word goes from faint to ink as --p passes its position in the sentence. */
