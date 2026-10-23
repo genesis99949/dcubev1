@@ -30,6 +30,15 @@ export const ui = {
   video: {
     play: l("Play video", "Pornește video"),
     pause: l("Pause video", "Oprește video"),
+    playWithSound: l("Play with sound", "Pornește cu sunet"),
+    mute: l("Mute sound", "Oprește sunetul"),
+    unmute: l("Turn sound on", "Pornește sunetul"),
+    soundOn: l("Sound on", "Sunet pornit"),
+    soundOff: l("Sound off", "Sunet oprit"),
+    error: l("The video couldn’t play. Try again or open the video file.", "Videoul nu a putut fi redat. Încearcă din nou sau deschide fișierul video."),
+    openFile: l("Open video file", "Deschide fișierul video"),
+    role: l("My role", "Rolul meu"),
+    tools: l("Tools", "Unelte"),
   },
   footer: {
     tagline: l("Websites · Online stores.", "Site-uri de prezentare · Magazine online."),

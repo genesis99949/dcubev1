@@ -21,11 +21,25 @@ export type Media =
 /** `half` items sit side by side on wide screens; `caption` is shown under the media. */
 export type GalleryItem = Media & { span?: "full" | "half"; caption?: L };
 
+/** Finished films with audible content, separate from the silent case-study loops. */
+export type VideoAd = {
+  id: string;
+  title: L;
+  description: L;
+  format: L;
+  role: L;
+  tools: L;
+  music: { credit: L; href?: string };
+  video: Extract<Media, { kind: "video" }>;
+  loop?: boolean;
+};
+
 /** One chapter of a case study: a heading, a few paragraphs, then its media. */
 export type ProjectSection = {
   title: L;
   text: L[];
   media: GalleryItem[];
+  videoAds?: VideoAd[];
 };
 
 export type Project = {
@@ -259,6 +273,77 @@ export const projects: Project[] = [
               "Logo animation, palette, typography and product naming.",
               "Animația logo-ului, paleta, tipografia și numele produselor.",
             ),
+          },
+        ],
+      },
+      {
+        title: l("Video ads", "Reclame video"),
+        text: [
+          l(
+            "Two vertical films made pro bono for a friend’s business. Created as portfolio pieces, they were not run as paid campaigns. The footage is AI-generated; I handled the concept, direction and post-production.",
+            "Două reclame verticale realizate pro bono pentru afacerea unui prieten, ca piese de portofoliu. Nu au fost difuzate în campanii plătite. Cadrele sunt generate cu AI; conceptul, regia și post-producția îmi aparțin.",
+          ),
+        ],
+        media: [],
+        videoAds: [
+          {
+            id: "forme-create",
+            title: same("Forme create în jurul focului"),
+            format: l("32 s · Romanian voice-over and captions", "32 s · Voce și subtitrări în română"),
+            description: l(
+              "A child’s drawing of home becomes a story about a family gathering around the fire. My own voice-over carries the film, with Romanian captions embedded in the picture.",
+              "Un desen de copil despre „acasă” devine o poveste despre familia care se adună în jurul focului. Vocea este a mea, iar subtitrările în română sunt incluse în imagine.",
+            ),
+            role: l(
+              "Concept, script, storyboard, AI direction, edit, titles, colour grade with my own LUT, voice-over and sound mix; fire simulation test in Blender.",
+              "Concept, scenariu, storyboard, regie AI, montaj, titluri, color grading cu LUT propriu, voce și mix audio; test de simulare a focului în Blender.",
+            ),
+            tools: same("Krea (MiniMax H3, Kling 3.0, Nano Banana) · Blender · Premiere Pro · After Effects"),
+            music: {
+              credit: l(
+                "Music: Sonican, “Slow Piano – Intimate Cinematic” (Pixabay license).",
+                "Muzică: Sonican, „Slow Piano – Intimate Cinematic” (licență Pixabay).",
+              ),
+            },
+            video: {
+              kind: "video",
+              src: "/videos/pureflame/ads/forme-create.mp4",
+              poster: "/videos/pureflame/ads/forme-create.jpg",
+              width: 720,
+              height: 1280,
+              alt: l(
+                "Pure Flame: Forme create în jurul focului. A family gathers around a fire table, with Romanian voice-over and embedded captions.",
+                "Pure Flame: Forme create în jurul focului. O familie se adună în jurul unei mese cu foc, cu voce și subtitrări în română.",
+              ),
+            },
+          },
+          {
+            id: "ignite-the-moment",
+            title: same("Ignite the Moment"),
+            format: l("17 s · English titles · Original music", "17 s · Titluri în engleză · Muzică originală"),
+            description: l(
+              "A sunset dance on the terrace, cut to the beat of my own music. Close-ups of the Ignite fire table lead into kinetic titles set in the brand’s Anton typeface.",
+              "Un dans la apus pe terasă, montat pe ritmul muzicii compuse de mine. Prim-planurile mesei cu foc Ignite duc spre titluri cinetice în Anton, fontul brandului.",
+            ),
+            role: l(
+              "Concept, AI direction, beat-synced edit, kinetic titles, sound and original music.",
+              "Concept, regie AI, montaj pe ritm, titluri cinetice, sunet și muzică originală.",
+            ),
+            tools: same("Seedance 2.0 (1080p) · MiniMax H3 / Krea · Premiere Pro · Anton"),
+            // Add music.href when the new YouTube upload is available.
+            music: { credit: l("Original music by me", "Muzică originală compusă de mine") },
+            loop: true,
+            video: {
+              kind: "video",
+              src: "/videos/pureflame/ads/ignite-the-moment.mp4",
+              poster: "/videos/pureflame/ads/ignite-the-moment.jpg",
+              width: 720,
+              height: 1280,
+              alt: l(
+                "Pure Flame: Ignite the Moment. A sunset terrace dance and close-ups of the Ignite fire table, edited to original music.",
+                "Pure Flame: Ignite the Moment. Un dans pe terasă la apus și prim-planuri cu masa cu foc Ignite, montate pe muzică originală.",
+              ),
+            },
           },
         ],
       },

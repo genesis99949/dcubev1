@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type React from "react";
 import { ProjectMedia } from "@/components/ProjectMedia";
+import { ProjectVideoAds } from "@/components/ProjectVideoAds";
 import { ToolChips } from "@/components/ToolChips";
 import { localePath, OG_LOCALE, tr, type Lang } from "@/content/i18n";
 import { getProject, projects, type GalleryItem } from "@/content/projects";
@@ -140,6 +141,7 @@ export async function ProjectPage({ lang, params }: ProjectPageProps & { lang: L
                 ))}
               </div>
             ) : null}
+            {section.videoAds ? <ProjectVideoAds lang={lang} ads={section.videoAds} /> : null}
           </section>
         ))}
 
