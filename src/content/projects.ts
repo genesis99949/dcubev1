@@ -52,8 +52,10 @@ export type Project = {
   /** What the work covered, e.g. "Online store · Brand identity" (tile and page eyebrow). */
   scope: L[];
   year: number;
-  /** One line, shown in lists and as the meta description. */
+  /** One editorial line, shown in project lists. */
   summary: L;
+  /** Search snippets, kept separate from the editorial text in portfolio tiles. */
+  seo: { title: L; description: L };
   /** Intro paragraphs, shown right after the lead media. */
   description: L[];
   /** Video/image in the project's tile on the home page (16:9). */
@@ -84,6 +86,13 @@ export const projects: Project[] = [
   {
     slug: "pure-flame",
     title: "Pure Flame",
+    seo: {
+      title: l("Pure Flame: online store & identity", "Pure Flame: magazin online și identitate"),
+      description: l(
+        "Explore Pure Flame, a portfolio concept by Ramon Bugariu: an online store for sculptural fire tables, with visual identity, logo animation and mobile design.",
+        "Descoperă Pure Flame, un concept de portofoliu de Ramon Bugariu: magazin online pentru mese cu foc, identitate vizuală, animație de logo și design pentru mobil.",
+      ),
+    },
     // The brand's own line, kept in English.
     subtitle: same("The art of gathering"),
     services: ["Online store"],
@@ -392,6 +401,13 @@ export const projects: Project[] = [
   {
     slug: "david-craft-ale",
     title: "David Craft Ale",
+    seo: {
+      title: l("David Craft Ale: online store & branding", "David Craft Ale: magazin online și branding"),
+      description: l(
+        "Explore David Craft Ale, a portfolio concept by Ramon Bugariu: an animated craft beer online store, with visual identity, label design and packaging.",
+        "Descoperă David Craft Ale, un concept de portofoliu de Ramon Bugariu: magazin online animat pentru bere artizanală, identitate vizuală, etichete și ambalaje.",
+      ),
+    },
     // The brand's own line, kept in English.
     subtitle: same("The new age of beer"),
     services: ["Online store"],

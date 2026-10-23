@@ -4,10 +4,12 @@ import { notFound } from "next/navigation";
 import type React from "react";
 import { ProjectMedia } from "@/components/ProjectMedia";
 import { ProjectVideoAds } from "@/components/ProjectVideoAds";
+import { StructuredData } from "@/components/StructuredData";
 import { ToolChips } from "@/components/ToolChips";
-import { localePath, OG_LOCALE, tr, type Lang } from "@/content/i18n";
+import { localePath, tr, type Lang } from "@/content/i18n";
 import { getProject, projects, type GalleryItem } from "@/content/projects";
-import { alternates } from "@/content/seo";
+import { pageMetadata } from "@/content/seo";
+import { projectStructuredData } from "@/content/structured-data";
 import { ui } from "@/content/ui";
 import styles from "./ProjectPage.module.css";
 
@@ -19,21 +21,16 @@ export const projectStaticParams = () => projects.map((project) => ({ slug: proj
 export async function projectMetadata(lang: Lang, { params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = getProject(slug);
-  if (!project) return {};
+  if (!project) notFound();
   const { cover } = project;
   const image = cover.kind === "video" ? cover.poster : cover.kind === "image" ? cover.src : undefined;
-  return {
-    title: project.title,
-    description: tr(project.summary, lang),
-    alternates: alternates(lang, `/work/${slug}`),
-    openGraph: {
-      title: project.title,
-      description: tr(project.summary, lang),
-      locale: OG_LOCALE[lang],
-      url: localePath(lang, `/work/${slug}`),
-      ...(image ? { images: [image] } : {}),
-    },
-  };
+  return pageMetadata({
+    lang,
+    path: `/work/${slug}`,
+    title: tr(project.seo.title, lang),
+    description: tr(project.seo.description, lang),
+    image: image ? { url: image, width: cover.width, height: cover.height, alt: tr(cover.alt, lang) } : undefined,
+  });
 }
 
 const mediaKey = (item: GalleryItem) => (item.kind === "vimeo" ? item.id : item.src);
@@ -70,6 +67,7 @@ export async function ProjectPage({ lang, params }: ProjectPageProps & { lang: L
 
   return (
     <main className="container">
+      <StructuredData data={projectStructuredData(project, lang)} />
       <article className={styles.article}>
         <header className={styles.head}>
           <Link href={localePath(lang, "/#work")} className={styles.back}>

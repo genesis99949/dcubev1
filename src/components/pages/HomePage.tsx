@@ -6,27 +6,14 @@ import { ScrollStatement } from "@/components/ScrollStatement";
 import { ServicesSection } from "@/components/ServicesSection";
 import { ToolsMarquee } from "@/components/ToolsMarquee";
 import { WorkTiles } from "@/components/WorkTiles";
-import { localePath, tr, type Lang } from "@/content/i18n";
+import { StructuredData } from "@/components/StructuredData";
+import { tr, type Lang } from "@/content/i18n";
 import { projects } from "@/content/projects";
-import { SERVICES } from "@/content/services";
 import { site } from "@/content/site";
+import { homeStructuredData } from "@/content/structured-data";
 import styles from "./HomePage.module.css";
 
 const delay = (seconds: number) => ({ "--d": seconds }) as React.CSSProperties;
-
-/** Structured data: who Ramon is and what he offers, for search engines. */
-const jsonLd = (lang: Lang) => ({
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  url: new URL(localePath(lang, "/"), site.url).toString(),
-  description: tr(site.tagline, lang),
-  image: new URL("/og.png", site.url).toString(),
-  founder: { "@type": "Person", name: site.owner.name, jobTitle: tr(site.owner.role, lang) },
-  sameAs: site.contact.socials.map((s) => s.href),
-  knowsAbout: SERVICES.map((s) => tr(s.label, lang)),
-  ...(site.contact.email ? { email: site.contact.email } : {}),
-});
 
 /** The homepage, in either language (app/(ro)/page.tsx at / and app/(en)/en/page.tsx at /en). */
 export function HomePage({ lang }: { lang: Lang }) {
@@ -34,11 +21,7 @@ export function HomePage({ lang }: { lang: Lang }) {
   const mailto = `mailto:${site.contact.email}`;
   return (
     <main>
-      <script
-        type="application/ld+json"
-        // Escape "<" so the JSON can never close the script tag.
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd(lang)).replace(/</g, "\\u003c") }}
-      />
+      <StructuredData data={homeStructuredData(lang)} />
 
       {/* Hero — one line, one sentence, two actions, and real projects on a laptop and a phone */}
       <section className={`container ${styles.hero}`} aria-labelledby="hero-title">

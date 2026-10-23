@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { tr, type Lang } from "@/content/i18n";
 import { privacy } from "@/content/privacy";
-import { alternates } from "@/content/seo";
+import { pageMetadata } from "@/content/seo";
 import styles from "./PrivacyPage.module.css";
 
-export const privacyMetadata = (lang: Lang): Metadata => ({
+export const privacyMetadata = (lang: Lang): Metadata => pageMetadata({
+  lang,
+  path: "/privacy",
   title: tr(privacy.title, lang),
   description: tr(privacy.intro, lang),
-  alternates: alternates(lang, "/privacy"),
 });
 
 /** The privacy policy, in either language. */

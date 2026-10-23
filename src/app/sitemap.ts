@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { LANGS, localePath } from "@/content/i18n";
+import { DEFAULT_LANG, LANGS, localePath } from "@/content/i18n";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 
@@ -16,7 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absolute(localePath(lang, path)),
       changeFrequency: "monthly" as const,
       priority: path === "/" ? 1 : path === "/privacy" ? 0.2 : 0.8,
-      alternates: { languages: Object.fromEntries(LANGS.map((l) => [l, absolute(localePath(l, path))])) },
+      alternates: {
+        languages: {
+          ...Object.fromEntries(LANGS.map((l) => [l, absolute(localePath(l, path))])),
+          "x-default": absolute(localePath(DEFAULT_LANG, path)),
+        },
+      },
     })),
   );
 }

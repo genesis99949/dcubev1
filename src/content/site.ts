@@ -17,8 +17,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ramonbugariu.ro",
   /** Default meta description. */
   tagline: l(
-    "Presentation websites and online stores, designed and built by Ramon Bugariu. From €350 on his own template, or designed from scratch.",
-    "Site-uri de prezentare și magazine online, gândite și construite de Ramon Bugariu. De la 1.800 lei pe un șablon propriu sau cu design de la zero.",
+    "I design and build websites and online stores for your business. Work directly with me, from the first design to launch. Explore projects and prices.",
+    "Creez site-uri de prezentare și magazine online pentru afacerea ta. Lucrezi direct cu mine, de la design la lansare. Vezi proiectele și prețurile.",
   ),
   /** What the site offers, in a few words — after the name in titles ("Ramon Bugariu — …"). */
   offer: l("Websites and online stores", "Site-uri de prezentare și magazine online"),
