@@ -41,30 +41,6 @@
   border-radius: var(--radius-sm);
 }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.control {
-  min-height: 44px;
-  padding: 10px 16px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--ink);
-  font-size: var(--t-small);
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.control:hover,
-.control:active {
-  background: var(--tile);
-}
-
 .copy {
   display: grid;
   gap: 20px;
