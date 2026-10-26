@@ -3,6 +3,9 @@ import type { Project } from "./projects";
 import { SERVICES } from "./services";
 import { site } from "./site";
 import { ui } from "./ui";
+import { mediaLabels } from "./video";
+import { servicePageCopy, servicePages, type ServicePageKey } from "./service-pages";
+import { packages } from "./packages";
 
 const absolute = (path: string) => new URL(path, site.url).toString();
 const personId = absolute("/#person");
@@ -15,7 +18,7 @@ const person = (lang: Lang) => ({
   url: absolute("/"),
   jobTitle: tr(site.owner.role, lang),
   sameAs: site.contact.socials.map((social) => social.href),
-  knowsAbout: SERVICES.map((service) => tr(service.label, lang)),
+  knowsAbout: [...SERVICES.map((service) => tr(service.label, lang)), ...Object.values(mediaLabels).map((label) => tr(label, lang))],
 });
 
 const website = {
@@ -25,6 +28,40 @@ const website = {
   name: site.name,
   inLanguage: ["ro", "en"],
   publisher: { "@id": personId },
+};
+
+export const serviceStructuredData = (key: ServicePageKey, lang: Lang) => {
+  const page = servicePages[key];
+  const url = absolute(localePath(lang, page.path));
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      person(lang), website,
+      {
+        "@type": "WebPage", "@id": `${url}#webpage`, url,
+        name: tr(page.title, lang), description: tr(page.description, lang), inLanguage: lang,
+        isPartOf: { "@id": websiteId }, breadcrumb: { "@id": `${url}#breadcrumb` },
+        mainEntity: {
+          "@type": "Service", "@id": `${url}#service`, url,
+          name: tr(page.title, lang), description: tr(page.description, lang),
+          provider: { "@id": personId }, areaServed: { "@type": "Country", name: "Romania" },
+          offers: packages.filter((pkg) => pkg.service === page.service).map((pkg) => ({
+            "@type": "Offer", name: tr(pkg.name, lang), description: tr(pkg.for, lang), url: `${url}#pricing`,
+            ...(pkg.price ? {
+              priceSpecification: { "@type": "PriceSpecification", minPrice: pkg.price[lang], priceCurrency: lang === "ro" ? "RON" : "EUR" },
+            } : {}),
+          })),
+        },
+      },
+      {
+        "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: tr(servicePageCopy.home, lang), item: absolute(localePath(lang, "/")) },
+          { "@type": "ListItem", position: 2, name: tr(page.title, lang), item: url },
+        ],
+      },
+    ],
+  };
 };
 
 /** A personal portfolio: describe the person without inventing business premises or reviews. */

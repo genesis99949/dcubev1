@@ -1,0 +1,31 @@
+.details {
+  max-width: 960px;
+  margin: clamp(40px, 5vw, 64px) auto 0;
+}
+
+.details h3 {
+  margin-bottom: 20px;
+  font-size: var(--t-lead);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.details details {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.details summary {
+  min-height: 44px;
+  padding-block: 20px;
+  font-size: var(--t-body);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.details p {
+  max-width: 64em;
+  padding-bottom: 24px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}

@@ -54,6 +54,29 @@
   color: var(--ink);
 }
 
+.total {
+  display: grid;
+  gap: 8px;
+  padding-block: 16px;
+  border-block: 1px solid var(--hairline);
+  font-size: var(--t-small);
+  color: var(--ink-2);
+}
+
+.total p:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.total strong {
+  font-size: var(--t-lead);
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .field input,
 .field select,
 .field textarea {

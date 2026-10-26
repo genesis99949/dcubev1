@@ -14,23 +14,23 @@ import styles from "./PricingSection.module.css";
  * A segmented switch between the two services, and that service's two tiers side by side:
  * Start on a light tile, Custom on a dark one. "See prices" on a service tile turns the switch.
  */
-export function PricingTabs({ lang }: { lang: Lang }) {
+export function PricingTabs({ lang, service: fixedService }: { lang: Lang; service?: Service }) {
   const p = site.pricing;
-  const [service, setService] = useState<Service>(SERVICES[0].name);
+  const [service, setService] = useState<Service>(fixedService ?? SERVICES[0].name);
   const index = SERVICES.findIndex((s) => s.name === service);
 
   useEffect(() => {
     const onService = (e: Event) => {
       const name = (e as CustomEvent<string>).detail;
-      if (SERVICES.some((s) => s.name === name)) setService(name as Service);
+      if (!fixedService && SERVICES.some((s) => s.name === name)) setService(name as Service);
     };
     window.addEventListener(SERVICE_EVENT, onService);
     return () => window.removeEventListener(SERVICE_EVENT, onService);
-  }, []);
+  }, [fixedService]);
 
   return (
     <div className={styles.tabs}>
-      <div
+      {!fixedService ? <div
         role="tablist"
         aria-label={tr(p.switchLabel, lang)}
         className={styles.switch}
@@ -50,10 +50,10 @@ export function PricingTabs({ lang }: { lang: Lang }) {
             {tr(s.label, lang)}
           </button>
         ))}
-      </div>
+      </div> : null}
 
       {/* Re-keyed per service, so the cards play their entrance again when the switch turns. */}
-      <ul key={service} id="pricing-panel" role="tabpanel" aria-labelledby={`tab-${service}`} className={styles.grid}>
+      <ul key={service} id="pricing-panel" role={fixedService ? undefined : "tabpanel"} aria-labelledby={fixedService ? undefined : `tab-${service}`} className={styles.grid}>
         {packages
           .filter((pkg) => pkg.service === service)
           .map((pkg, i) => {
@@ -81,6 +81,7 @@ export function PricingTabs({ lang }: { lang: Lang }) {
                     <li key={item.en}>{tr(item, lang)}</li>
                   ))}
                 </ul>
+                {pkg.editing ? <p className={styles.packageNote}>{tr(pkg.editing, lang)}</p> : null}
                 <EventLink
                   event={PACKAGE_EVENT}
                   detail={pkg.id}

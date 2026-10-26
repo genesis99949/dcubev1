@@ -12,11 +12,14 @@ export function SiteHeader({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const other: Lang = lang === "en" ? "ro" : "en";
+  const onServicePage = ["/website-design", "/online-store"].some((path) => localePath(lang, path) === pathname);
+  const contactHref = onServicePage ? "#contact" : localePath(lang, "/#contact");
 
   const nav = [
     { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
     { label: tr(ui.nav.services, lang), href: localePath(lang, "/#services") },
     { label: tr(ui.nav.pricing, lang), href: localePath(lang, "/#pricing") },
+    { label: tr(ui.nav.video, lang), href: localePath(lang, "/#video") },
     { label: tr(ui.nav.about, lang), href: localePath(lang, "/#about") },
   ];
 
@@ -69,7 +72,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
           </ul>
         </nav>
         {languageLink(styles.lang)}
-        <Link href={localePath(lang, "/#contact")} className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
+        <Link href={contactHref} className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
           {tr(site.hero.primary, lang)}
         </Link>
         <button
@@ -86,7 +89,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
       </div>
       <div id="menu" className={styles.menu} hidden={!open}>
         <ul className="container">
-          {[...nav, { label: tr(ui.nav.contact, lang), href: localePath(lang, "/#contact") }].map((item) => (
+          {[...nav, { label: tr(ui.nav.contact, lang), href: contactHref }].map((item) => (
             <li key={item.href}>
               <Link href={item.href} onClick={() => setOpen(false)}>
                 {item.label}

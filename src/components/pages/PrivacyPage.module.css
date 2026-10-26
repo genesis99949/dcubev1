@@ -31,3 +31,10 @@
   color: var(--ink-2);
   text-wrap: pretty;
 }
+
+.resources {
+  display: grid;
+  gap: 10px;
+  padding-left: 1.2em;
+  color: var(--ink-2);
+}

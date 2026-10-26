@@ -17,11 +17,13 @@ export type Package = {
   name: L;
   /** Who it's for, in one line. */
   for: L;
+  /** Optional clarification below the included features. */
+  editing?: L;
   price: Record<Lang, number> | null;
   includes: L[];
 };
 
-/** "1.800 lei" on the Romanian site, "€350" on the English one. */
+/** "1.500 lei" on the Romanian site, "€300" on the English one. */
 export const formatPrice = (value: number, lang: Lang) =>
   lang === "ro" ? `${value.toLocaleString("ro-RO")} lei` : `€${value.toLocaleString("en-GB")}`;
 
@@ -40,7 +42,7 @@ export const packages: Package[] = [
       "A website tailored to your business, ready for mobile and launched on your domain.",
       "Un site adaptat afacerii tale, pregătit pentru mobil și lansat pe domeniul tău.",
     ),
-    price: { ro: 1800, en: 350 },
+    price: { ro: 1500, en: 300 },
     includes: [
       l("Up to 5 pages, adapted for mobile", "Până la 5 pagini, adaptate pentru mobil"),
       l("My own template, with your colours, fonts and photos", "Șablon propriu, cu culorile, fonturile și pozele tale"),
@@ -60,11 +62,12 @@ export const packages: Package[] = [
       "Gândit de la zero pentru brandul tău, ca proiectele de mai sus.",
     ),
     price: { ro: 4500, en: 900 },
+    editing: l("Want to edit texts and images yourself? An admin panel is an optional extra.", "Vrei să schimbi singur textele și imaginile? Panoul de administrare se adaugă separat."),
     includes: [
       l("Custom design, no templates", "Design de la zero, fără șabloane"),
-      l("As many pages as your business needs", "Câte pagini are nevoie afacerea ta"),
+      l("Pages and features agreed in the written quote", "Pagini și funcții stabilite în oferta scrisă"),
       l("Animation that tells your story as people scroll", "Animații care îți spun povestea pe măsură ce derulezi"),
-      l("Contact form, SEO and analytics", "Formular de contact, SEO și statistici"),
+      l("Contact form, basic SEO and analytics", "Formular de contact, SEO de bază și statistici"),
       l("Three months of site management, included", "Trei luni de administrare, incluse"),
     ],
   },
@@ -82,7 +85,7 @@ export const packages: Package[] = [
       l("Shop, product, cart and checkout pages, adapted for mobile", "Pagini de magazin, produs, coș și checkout, adaptate pentru mobil"),
       l("My own template, adapted to your brand", "Șablon propriu, adaptat brandului tău"),
       l("Up to 30 products uploaded by me", "Până la 30 de produse urcate de mine"),
-      l("Card payments and one courier set up", "Plăți cu cardul și un curier configurate"),
+      l("Card payments and shipping rates set up", "Plăți cu cardul și tarife de livrare configurate"),
       l("On WordPress: you manage products and orders yourself", "Pe WordPress: produsele și comenzile le gestionezi singur"),
       l("Hosting for the first year and one month of store management, included", "Găzduire în primul an și o lună de administrare, incluse"),
       l("One round of changes · about 14 days", "O rundă de modificări · aproximativ 14 zile"),
@@ -98,11 +101,12 @@ export const packages: Package[] = [
       "Un magazin gândit în jurul produselor tale, ca Pure Flame și David Craft Ale.",
     ),
     price: { ro: 10000, en: 2000 },
+    editing: l("Want to manage products and orders yourself? An admin panel is an optional extra.", "Vrei să gestionezi singur produsele și comenzile? Panoul de administrare se adaugă separat."),
     includes: [
       l("Custom design for every shop page", "Design de la zero pentru fiecare pagină a magazinului"),
       l("Storytelling, animation and your identity built in", "Poveste, animații și identitatea ta, integrate"),
-      l("Card payments, shipping and order emails", "Plăți cu cardul, livrare și emailuri de comandă"),
-      l("SEO for every product, analytics", "SEO pentru fiecare produs, statistici"),
+      l("Card payments, shipping rules and order emails", "Plăți cu cardul, reguli de livrare și emailuri de comandă"),
+      l("Basic SEO for every product, analytics", "SEO de bază pentru fiecare produs, statistici"),
       l("Three months of store management: I add products and make changes", "Trei luni de administrare: adaug eu produsele și fac modificările"),
     ],
   },
@@ -115,5 +119,5 @@ export const extras: L[] = [
   l("Logo & visual identity", "Logo și identitate vizuală"),
   l("Launch content: animations, social posts", "Conținut de lansare: animații, postări"),
   l("Monthly management after the free months", "Administrare lunară, după lunile gratuite"),
-  l("SEO & copywriting", "SEO și texte"),
+  l("Additional SEO work & copywriting", "Optimizare SEO suplimentară și redactare texte"),
 ];

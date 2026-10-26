@@ -219,28 +219,13 @@ button {
   background: var(--accent);
 }
 
-/* Arrives as a dot, snaps into a square (same motion as the brand film). */
+/* The hero's square. RollingDot handles its motion with GSAP. */
 .dot {
   display: inline-block;
   width: 0.16em;
   height: 0.16em;
   margin-left: 0.08em;
   background: var(--accent);
-  animation: dot-to-square 0.6s cubic-bezier(0.65, 0, 0.35, 1) 1.1s both;
-}
-
-@keyframes dot-to-square {
-  from {
-    border-radius: 50%;
-    rotate: 0deg;
-  }
-  50% {
-    scale: 1.12;
-  }
-  to {
-    border-radius: 0;
-    rotate: 90deg;
-  }
 }
 
 /* ---------- Motion ---------- */
@@ -289,8 +274,7 @@ button {
     scroll-behavior: auto;
   }
   .reveal,
-  .rise,
-  .dot {
+  .rise {
     animation: none;
   }
 }

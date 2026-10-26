@@ -1,0 +1,20 @@
+query,intent,cluster,role,target_path,priority,volume,difficulty,source,notes
+creare site de prezentare,transactional,website,primary,/creare-site-de-prezentare,1,,,user brief and public search inspection,No measured volume or difficulty
+creare site prezentare,transactional,website,secondary,/creare-site-de-prezentare,1,,,editorial variant,Same intent; not a separate page
+realizare site de prezentare,transactional,website,secondary,/creare-site-de-prezentare,1,,,editorial variant,Validate with Search Console
+pret site de prezentare,commercial,website,secondary,/creare-site-de-prezentare,1,,,public search inspection,Pricing and limits on service page
+site de prezentare pentru firma,transactional,website,secondary,/creare-site-de-prezentare,1,,,offer and audience,Validate with Search Console
+site de prezentare WordPress,commercial,website,secondary,/creare-site-de-prezentare,1,,,current Start offer,Own template disclosed in details
+creare site Timisoara,transactional local,website,secondary,/creare-site-de-prezentare,2,,,public search inspection,Real base in Timisoara; no separate city page yet
+creare magazin online,transactional,store,primary,/creare-magazin-online,1,,,user brief and public search inspection,No measured volume or difficulty
+realizare magazin online,transactional,store,secondary,/creare-magazin-online,1,,,editorial variant,Validate with Search Console
+pret magazin online,commercial,store,secondary,/creare-magazin-online,1,,,public search inspection,Pricing and recurring costs on page
+creare magazin WooCommerce,transactional,store,secondary,/creare-magazin-online,1,,,current Start offer,Explain administration and product limit
+magazin online personalizat,commercial,store,secondary,/creare-magazin-online,1,,,current Custom offer,Optional admin panel disclosed
+magazin online WordPress,commercial,store,secondary,/creare-magazin-online,1,,,current Start offer,No separate platform duplicate page
+creare magazin online Timisoara,transactional local,store,secondary,/creare-magazin-online,2,,,real location and offer,Unmeasured candidate
+cat costa un site de prezentare,informational,website-cost-guide,primary,,later,,,public search inspection,Future guide only if it adds useful detail
+costuri site dupa lansare,informational,website-cost-guide,secondary,,later,,,current offer questions,Validate demand before producing guide
+Ramon Bugariu,navigational,brand,primary,/,existing,,,brand identity,No query rows available in screenshot
+Pure Flame magazin online,navigational,portfolio,secondary,/work/pure-flame,existing,,,own portfolio,Concept; no sales claims
+David Craft Ale magazin online,navigational,portfolio,secondary,/work/david-craft-ale,existing,,,own portfolio,Concept; no client outcome claims

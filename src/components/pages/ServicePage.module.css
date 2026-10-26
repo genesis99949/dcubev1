@@ -1,0 +1,89 @@
+.hero {
+  display: grid;
+  justify-items: center;
+  padding-top: clamp(100px, 12vw, 160px);
+  text-align: center;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px 12px;
+  margin-bottom: 40px;
+  font-size: var(--t-small);
+  color: var(--ink-2);
+}
+
+.breadcrumb a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.breadcrumb a:hover { text-decoration: underline; }
+
+.title {
+  max-width: 15ch;
+  margin-top: 18px;
+  font-size: var(--t-hero);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.intro { max-width: 36em; margin-top: 28px; }
+.starting { margin-top: 26px; font-size: var(--t-lead); font-weight: 600; }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 32px;
+  margin-top: 26px;
+}
+.audience { max-width: 44em; margin-top: 28px; font-size: var(--t-small); color: var(--ink-2); }
+.section { padding-top: var(--section); }
+.head {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto clamp(36px, 5vw, 64px);
+  text-align: center;
+}
+.head :global(.lead) { max-width: 36em; }
+
+.benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.benefit { padding: clamp(24px, 3vw, 40px); border-radius: var(--radius); background: var(--tile); }
+.benefit h3 { font-size: var(--t-lead); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+.benefit p { margin-top: 18px; color: var(--ink-2); }
+
+.siteExample {
+  display: grid;
+  justify-items: center;
+  gap: 26px;
+  padding: clamp(36px, 6vw, 80px) var(--page);
+  border-radius: var(--radius);
+  background: var(--tile);
+  text-align: center;
+}
+.exampleTitle { max-width: 18ch; font-size: var(--t-h2); font-weight: 600; letter-spacing: -0.045em; line-height: 1.1; text-wrap: balance; }
+.faq { max-width: var(--text); margin-inline: auto; }
+.faq details { padding-block: 24px; border-bottom: 1px solid var(--hairline); }
+.faq summary { min-height: 44px; padding-block: 10px; font-size: var(--t-lead); font-weight: 500; letter-spacing: -0.015em; cursor: pointer; }
+.faq details p { margin-top: 14px; color: var(--ink-2); }
+.about { display: grid; justify-items: center; gap: 28px; max-width: calc(900px + 2 * var(--page)); padding-block: var(--section); text-align: center; }
+.contact { padding-block: var(--section); background: var(--ink); color: var(--paper); }
+.contactInner { display: grid; justify-items: center; text-align: center; }
+.contactInner h2 { max-width: 15em; }
+.contactText { margin: 24px 0 36px; color: var(--on-ink-2); }
+.related { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 28px; padding-block: 48px; }
+.related p { color: var(--ink-2); }
+
+@media (max-width: 760px) {
+  .benefits { grid-template-columns: 1fr; }
+  .breadcrumb { margin-bottom: 24px; }
+}

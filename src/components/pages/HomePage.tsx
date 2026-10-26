@@ -1,15 +1,19 @@
 import type React from "react";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroDevices } from "@/components/HeroDevices";
+import { HeadingText } from "@/components/HeadingText";
+import { RollingDot } from "@/components/RollingDot";
 import { PricingSection, ProcessSteps } from "@/components/PricingSection";
 import { ScrollStatement } from "@/components/ScrollStatement";
 import { ServicesSection } from "@/components/ServicesSection";
 import { ToolsMarquee } from "@/components/ToolsMarquee";
 import { WorkTiles } from "@/components/WorkTiles";
+import { VideoPricing } from "@/components/VideoPricing";
 import { StructuredData } from "@/components/StructuredData";
 import { tr, type Lang } from "@/content/i18n";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
+import { videoCopy } from "@/content/video";
 import { homeStructuredData } from "@/content/structured-data";
 import styles from "./HomePage.module.css";
 
@@ -31,7 +35,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         </p>
         <h1 id="hero-title" className={`${styles.title} reveal`} style={delay(0.08)}>
           {t(site.offer)}
-          <span className="dot" aria-hidden />
+          <RollingDot />
         </h1>
         <p className={`lead ${styles.heroText} reveal`} style={delay(0.16)}>
           {t(site.hero.text)}
@@ -53,7 +57,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section id="work" className={`container ${styles.section}`} aria-labelledby="work-title">
         <header className={styles.head}>
           <h2 id="work-title" className="headline">
-            {t(site.work.headline)}
+            <HeadingText text={t(site.work.headline)} />
           </h2>
           <p className="lead">{t(site.work.text)}</p>
         </header>
@@ -64,7 +68,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section id="services" className={`container ${styles.section}`} aria-labelledby="services-title">
         <header className={styles.head}>
           <h2 id="services-title" className="headline">
-            {t(site.services.headline)}
+            <HeadingText text={t(site.services.headline)} />
           </h2>
           <p className="lead">{t(site.services.text)}</p>
         </header>
@@ -78,7 +82,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section id="process" className={`container ${styles.section}`} aria-labelledby="process-title">
         <header className={styles.head}>
           <h2 id="process-title" className="headline">
-            {t(site.process.headline)}
+            <HeadingText text={t(site.process.headline)} />
           </h2>
         </header>
         <ProcessSteps lang={lang} />
@@ -88,10 +92,18 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section id="pricing" className={`container ${styles.section}`} aria-labelledby="pricing-title">
         <header className={styles.head}>
           <h2 id="pricing-title" className="headline">
-            {t(site.pricing.headline)}
+            <HeadingText text={t(site.pricing.headline)} />
           </h2>
         </header>
         <PricingSection lang={lang} />
+      </section>
+
+      <section id="video" className={`container ${styles.section}`} aria-labelledby="video-title">
+        <header className={styles.head}>
+          <h2 id="video-title" className="headline"><HeadingText text={t(videoCopy.headline)} /></h2>
+          <p className="lead">{t(videoCopy.text)}</p>
+        </header>
+        <VideoPricing lang={lang} />
       </section>
 
       {/* About */}
@@ -104,7 +116,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section id="contact" className={styles.contact} aria-labelledby="contact-title">
         <div className={`container ${styles.contactInner}`}>
           <h2 id="contact-title" className={`headline ${styles.contactTitle}`}>
-            {t(site.contact.headline)}
+            <HeadingText text={t(site.contact.headline)} />
           </h2>
           <p className={`lead ${styles.contactText}`}>{t(site.contact.text)}</p>
           <ContactForm lang={lang} />

@@ -168,6 +168,47 @@
   align-self: flex-start;
 }
 
+.packageNote {
+  margin-bottom: 18px;
+  font-size: var(--t-small);
+  color: var(--ink-2);
+}
+
+.featured .packageNote {
+  color: var(--on-ink-2);
+}
+
+/* ---------- Standalone voice-over ---------- */
+
+.voiceovers {
+  display: grid;
+  gap: var(--gap);
+  max-width: 960px;
+  margin: clamp(32px, 4vw, 52px) auto 0;
+  list-style: none;
+}
+
+.voiceover {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(24px, 3vw, 40px);
+  padding: clamp(28px, 3.4vw, 48px);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+}
+
+.voiceoverText {
+  display: grid;
+  gap: 10px;
+  flex: 1 1 320px;
+  min-width: 0;
+}
+
+.voiceover .price {
+  margin: 0;
+}
+
 /* ---------- Extras ---------- */
 
 .extras {
@@ -198,6 +239,10 @@
   text-wrap: balance;
   font-size: var(--t-small);
   color: var(--ink-3);
+}
+
+.mediaNotes .payment {
+  color: var(--ink-2);
 }
 
 .extrasList li {
@@ -245,6 +290,10 @@
 @media (max-width: 760px) {
   .grid {
     grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+
+  .voiceovers {
     max-width: 560px;
   }
 }

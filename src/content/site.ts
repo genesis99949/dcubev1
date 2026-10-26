@@ -17,12 +17,21 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://ramonbugariu.ro",
   /** Default meta description. */
   tagline: l(
-    "I design and build websites and online stores for your business. Work directly with me, from the first design to launch. Explore projects and prices.",
-    "Creez site-uri de prezentare și magazine online pentru afacerea ta. Lucrezi direct cu mine, de la design la lansare. Vezi proiectele și prețurile.",
+    "I create websites, online stores and AI video ads. Design, code and voice-over, working directly with me. Explore projects and prices.",
+    "Creez site-uri de prezentare, magazine online și reclame video cu AI. Design, cod și voice-over, direct cu mine. Vezi proiectele și prețurile.",
   ),
   /** What the site offers, in a few words — after the name in titles ("Ramon Bugariu — …"). */
   offer: l("Websites and online stores", "Site-uri de prezentare și magazine online"),
   year: 2026,
+  /** Confirmed PFA details. The owner has not authorised publishing the street address. */
+  business: {
+    name: "BUGARIU RAMON-DAVID PERSOANĂ FIZICĂ AUTORIZATĂ",
+    cui: "55131615",
+    registration: "F2026034188004",
+    euid: "ROONRC.F2026034188004",
+    clients: l("I work exclusively with companies and sole traders, on projects for their business.", "Lucrez exclusiv cu firme și PFA-uri, pentru proiecte legate de activitatea lor profesională."),
+    vat: l("Not registered for VAT. VAT is not added to the displayed prices.", "Neplătitor de TVA. TVA nu se adaugă prețurilor afișate."),
+  },
 
   hero: {
     text: l(
@@ -65,9 +74,24 @@ export const site = {
       "Already have hosting for Start? If it's up to date, I install the site there and take its cost off the price.",
       "Ai deja găzduire pentru Start? Dacă e potrivită, instalez site-ul pe ea și scad costul găzduirii din preț.",
     ),
+    detailsTitle: l("Before we start", "Înainte să începem"),
+    details: [
+      {
+        question: l("What about the domain, hosting and renewals?", "Cum rămâne cu domeniul, găzduirea și reînnoirile?"),
+        answer: l("Start includes hosting for the first year. The domain, hosting for Custom and any paid licences are itemised in the written quote, along with renewal costs. You know the recurring costs before work starts.", "Start include găzduirea pentru primul an. Domeniul, găzduirea la Personalizat și eventualele licențe plătite sunt detaliate separat în oferta scrisă, împreună cu reînnoirile. Cunoști costurile recurente înainte să începem."),
+      },
+      {
+        question: l("What does site management cover after launch?", "Ce acoperă administrarea după lansare?"),
+        answer: l("The included period is one month with Start or three with Custom. I handle the agreed content changes and check that the site works. The quote defines the number of interventions and the optional monthly fee afterwards. New pages, features and redesigns are quoted separately.", "Perioada inclusă este de o lună la Start sau trei la Personalizat. Mă ocup de modificările de conținut convenite și verific funcționarea site-ului. Oferta precizează numărul de intervenții și tariful lunar opțional de după. Paginile, funcțiile noi și schimbările de design se cotează separat."),
+      },
+      {
+        question: l("Who provides the texts, photos and logo?", "Cine pregătește textele, fotografiile și logo-ul?"),
+        answer: l("Before starting, we list the pages, features and materials needed. You send the texts, images and logo you already have. If you need copywriting or visual identity, we include that work separately in the quote.", "Înainte să începem, facem lista paginilor, funcțiilor și materialelor necesare. Îmi trimiți textele, imaginile și logo-ul pe care le ai. Dacă ai nevoie de redactare sau identitate vizuală, le includem separat în ofertă."),
+      },
+    ],
   },
   process: {
-    headline: l("How I work.", "Cum lucrez."),
+    headline: l("How we build your website.", "Cum lucrăm la site-ul tău."),
     steps: [
       {
         title: l("Talk", "Discutăm"),
@@ -102,8 +126,8 @@ export const site = {
   /** Eyebrow + statement of the About section, in Ramon's own voice. "\n\n" starts a new paragraph. */
   aboutLabel: l("About me", "Despre mine"),
   about: l(
-    "I'm Ramon, a web designer and developer in Timișoara, and besides websites I make video ads and online content, more and more often with the help of AI. I started with banners, ads and logos, then moved to code.\n\nPlenty of businesses get a website just to have one. I start by asking what it has to bring in: a call, a booking, an order. That way I begin with the end in mind and know from day one what your business needs.\n\nI like drawing every page from scratch and taking risks with the design, but in the end the page has to be fast and have a clear purpose.",
-    "Sunt Ramon, web designer și developer din Timișoara, iar pe lângă site-uri fac reclame video și conținut online, tot mai des cu ajutorul AI. Am început cu bannere, reclame și logo-uri, apoi am trecut la cod.\n\nMulte firme își fac un site doar ca să existe. Eu încep cu întrebarea ce trebuie să aducă: un telefon, o rezervare, o comandă. Așa pornesc cu finalul în minte și știu de la început de ce are nevoie afacerea ta.\n\nÎmi place să desenez fiecare pagină de la zero și să-mi asum riscuri în design, dar la final pagina trebuie să fie rapidă și să aibă un scop clar.",
+    "I'm Ramon, a web designer and developer in Timișoara. Alongside websites, I create video ads with AI and handle video editing, sound design and voice-over.\n\nPlenty of businesses get a website just to have one. I start by asking what it has to bring in: a call, a booking, an order. That way I begin with the end in mind and know from day one what your business needs.\n\nI like drawing every page from scratch and taking risks with the design, but in the end the page has to be fast and have a clear purpose.",
+    "Sunt Ramon, web designer și developer din Timișoara. Pe lângă site-uri, creez reclame video cu ajutorul AI și mă ocup de montaj, sound design și voice-over.\n\nMulte firme își fac un site doar ca să existe. Eu încep cu întrebarea ce trebuie să aducă: un telefon, o rezervare, o comandă. Așa pornesc cu finalul în minte și știu de la început de ce are nevoie afacerea ta.\n\nÎmi place să desenez fiecare pagină de la zero și să-mi asum riscuri în design, dar la final pagina trebuie să fie rapidă și să aibă un scop clar.",
   ),
   contact: {
     headline: l("Tell me about your business.", "Spune-mi despre afacerea ta."),
@@ -111,8 +135,8 @@ export const site = {
       "I'll reply with a few questions, a first idea and a ballpark price.",
       "Îți răspund cu câteva întrebări, o primă idee și un preț orientativ.",
     ),
-    // Public email, once the domain exists. While empty, no address is shown anywhere.
-    email: "" as string,
+    // Public business contact explicitly supplied by Ramon; the private delivery address stays private.
+    email: "contact@ramonbugariu.ro" as string,
     /**
      * Web3Forms access key (https://web3forms.com — free). Messages from the contact form are emailed
      * to the address the key was created for; that address never appears on the site.
