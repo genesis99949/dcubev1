@@ -4,10 +4,10 @@ import { l } from "./i18n";
 
 export const privacy = {
   title: l("Privacy", "Confidențialitate"),
-  updated: l("Last updated: 23 October 2026", "Ultima actualizare: 23 octombrie 2026"),
+  updated: l("Last updated: 27 October 2026", "Ultima actualizare: 27 octombrie 2026"),
   intro: l(
-    "Here is how I use the data you send me and the technical data needed to operate this site.",
-    "Aici găsești cum folosesc datele pe care mi le trimiți și datele tehnice necesare funcționării site-ului.",
+    "Here is how I use the data you send me, the billing data of the clients I work with and the technical data needed to operate this site.",
+    "Aici găsești cum folosesc datele pe care mi le trimiți, datele de facturare ale clienților cu care lucrez și datele tehnice necesare funcționării site-ului.",
   ),
   controllerTitle: l("Data controller and contact", "Operatorul de date și contact"),
   sections: [
@@ -33,6 +33,13 @@ export const privacy = {
       ),
     },
     {
+      title: l("Invoicing and e-Factura", "Facturare și e-Factura"),
+      text: l(
+        "If we work together, I issue invoices with Oblio, a cloud invoicing application operated by Oblio Software SRL (Romania). An invoice contains the billing details of your company or sole trader and, where applicable, the name of a representative. As Romanian law requires, Oblio transmits each invoice to ANAF, the Romanian tax authority, through the national e-Factura system. ANAF receives it as a public authority, not on my behalf. The basis is my legal obligation under GDPR Art. 6(1)(c).",
+        "Dacă lucrăm împreună, emit facturile cu Oblio, o aplicație de facturare în cloud operată de Oblio Software SRL (România). Factura conține datele de facturare ale firmei sau ale PFA-ului tău și, după caz, numele unui reprezentant. Conform legii, Oblio transmite fiecare factură la ANAF prin sistemul național e-Factura. ANAF o primește în calitate de autoritate publică, nu în numele meu. Temeiul este obligația mea legală, conform art. 6 alin. (1) lit. c din GDPR.",
+      ),
+    },
+    {
       title: l("Processing outside the EEA", "Prelucrarea în afara SEE"),
       text: l(
         "Web3Creative operates from India; Cloudflare uses global infrastructure. Data may leave the European Economic Area. The providers' data processing agreements describe transfer safeguards, including Standard Contractual Clauses, and are linked below.",
@@ -42,8 +49,8 @@ export const privacy = {
     {
       title: l("How long", "Cât timp"),
       text: l(
-        "I keep correspondence while handling your inquiry and any resulting offer or project. Further retention depends on applicable record-keeping duties and any need to establish, exercise or defend legal claims. You can request deletion; legal obligations may limit it. Web3Forms states a submission retention limit of three years, subject to its plan and deletion settings.",
-        "Păstrez corespondența cât timp gestionez cererea ta și oferta sau proiectul rezultat. Păstrarea ulterioară depinde de obligațiile legale de arhivare și de necesitatea constatării, exercitării sau apărării unor drepturi. Poți solicita ștergerea; obligațiile legale o pot limita. Web3Forms declară o limită de păstrare de trei ani, în funcție de plan și setările de ștergere.",
+        "I keep correspondence while handling your inquiry and any resulting offer or project. Further retention depends on applicable record-keeping duties and any need to establish, exercise or defend legal claims. Invoices and the data on them are kept for the period set by Romanian accounting and tax law. You can request deletion; legal obligations may limit it. Web3Forms states a submission retention limit of three years, subject to its plan and deletion settings.",
+        "Păstrez corespondența cât timp gestionez cererea ta și oferta sau proiectul rezultat. Păstrarea ulterioară depinde de obligațiile legale de arhivare și de necesitatea constatării, exercitării sau apărării unor drepturi. Facturile și datele din ele se păstrează pe durata stabilită de legislația contabilă și fiscală. Poți solicita ștergerea; obligațiile legale o pot limita. Web3Forms declară o limită de păstrare de trei ani, în funcție de plan și setările de ștergere.",
       ),
     },
     {
@@ -66,6 +73,7 @@ export const privacy = {
     { label: l("Web3Forms privacy policy", "Politica de confidențialitate Web3Forms"), href: "https://web3forms.com/privacy" },
     { label: l("Web3Forms data processing agreement", "Acordul de prelucrare a datelor Web3Forms"), href: "https://web3forms.com/dpa" },
     { label: l("Cloudflare data processing addendum", "Acordul de prelucrare a datelor Cloudflare"), href: "https://www.cloudflare.com/cloudflare-customer-dpa/" },
+    { label: l("Oblio terms and conditions", "Termenii și condițiile Oblio"), href: "https://www.oblio.eu/terms" },
     { label: l("ANSPDCP, the Romanian data protection authority", "ANSPDCP, autoritatea pentru protecția datelor"), href: "https://www.dataprotection.ro/" },
   ],
 } as const;
