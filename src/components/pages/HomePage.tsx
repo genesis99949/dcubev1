@@ -33,7 +33,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           {site.owner.name}
           <span className={styles.owner}>{t(site.owner.role)}</span>
         </p>
-        <h1 id="hero-title" className={`${styles.title} reveal`} style={delay(0.08)}>
+        <h1 id="hero-title" className={styles.title}>
           {t(site.offer)}
           <RollingDot />
         </h1>

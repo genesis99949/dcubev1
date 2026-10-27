@@ -71,6 +71,14 @@ Pașii:
 3. `npm run build` — regenerează site-ul static în `out/`.
 4. Publică `out/` ca de obicei (Cloudflare, vezi `wrangler.jsonc`).
 
+### Publicare prin GitHub și Cloudflare
+
+Repo-ul `genesis99949/dcubev1` este conectat la Cloudflare Workers Builds. Un push pe `origin/main`
+declanșează construirea și publicarea site-ului `dcubev1`. Urmărește verificarea GitHub
+`Workers Builds: dcubev1` până la succes, apoi verifică domeniul public `ramonbugariu.ro`.
+Această integrare folosește accesul Cloudflare configurat în serviciu; autentificarea locală Wrangler
+este separată și nu este necesară pentru fluxul prin GitHub.
+
 Dacă redenumești un serviciu în `services.ts`, schimbă doar `label`; `name` rămâne codul folosit de proiecte.
 `npm run typecheck` îți arată exact unde e o greșeală.
 

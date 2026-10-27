@@ -1,0 +1,154 @@
+{
+  "/videos/hero/laptop.jpg": [
+    {
+      "width": 128,
+      "src": "/images/optimized/457a26eb5714-128.webp"
+    },
+    {
+      "width": 256,
+      "src": "/images/optimized/457a26eb5714-256.webp"
+    },
+    {
+      "width": 384,
+      "src": "/images/optimized/457a26eb5714-384.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/optimized/457a26eb5714-640.webp"
+    },
+    {
+      "width": 960,
+      "src": "/images/optimized/457a26eb5714-960.webp"
+    },
+    {
+      "width": 1280,
+      "src": "/images/optimized/457a26eb5714-1280.webp"
+    },
+    {
+      "width": 1440,
+      "src": "/images/optimized/457a26eb5714-1440.webp"
+    }
+  ],
+  "/videos/hero/phone.jpg": [
+    {
+      "width": 128,
+      "src": "/images/optimized/0af7ca286109-128.webp"
+    },
+    {
+      "width": 256,
+      "src": "/images/optimized/0af7ca286109-256.webp"
+    },
+    {
+      "width": 384,
+      "src": "/images/optimized/0af7ca286109-384.webp"
+    },
+    {
+      "width": 480,
+      "src": "/images/optimized/0af7ca286109-480.webp"
+    }
+  ],
+  "/videos/pureflame/showcase.jpg": [
+    {
+      "width": 128,
+      "src": "/images/optimized/2d8f8a710da1-128.webp"
+    },
+    {
+      "width": 256,
+      "src": "/images/optimized/2d8f8a710da1-256.webp"
+    },
+    {
+      "width": 384,
+      "src": "/images/optimized/2d8f8a710da1-384.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/optimized/2d8f8a710da1-640.webp"
+    },
+    {
+      "width": 960,
+      "src": "/images/optimized/2d8f8a710da1-960.webp"
+    },
+    {
+      "width": 1280,
+      "src": "/images/optimized/2d8f8a710da1-1280.webp"
+    },
+    {
+      "width": 1920,
+      "src": "/images/optimized/2d8f8a710da1-1920.webp"
+    }
+  ],
+  "/videos/davidcraft/home-cover.jpg": [
+    {
+      "width": 128,
+      "src": "/images/optimized/d644b10ae35e-128.webp"
+    },
+    {
+      "width": 256,
+      "src": "/images/optimized/d644b10ae35e-256.webp"
+    },
+    {
+      "width": 384,
+      "src": "/images/optimized/d644b10ae35e-384.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/optimized/d644b10ae35e-640.webp"
+    },
+    {
+      "width": 960,
+      "src": "/images/optimized/d644b10ae35e-960.webp"
+    },
+    {
+      "width": 1280,
+      "src": "/images/optimized/d644b10ae35e-1280.webp"
+    },
+    {
+      "width": 1920,
+      "src": "/images/optimized/d644b10ae35e-1920.webp"
+    }
+  ],
+  "/videos/pureflame/ads/forme-create.jpg": [
+    {
+      "width": 128,
+      "src": "/images/optimized/83193e671275-128.webp"
+    },
+    {
+      "width": 256,
+      "src": "/images/optimized/83193e671275-256.webp"
+    },
+    {
+      "width": 384,
+      "src": "/images/optimized/83193e671275-384.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/optimized/83193e671275-640.webp"
+    },
+    {
+      "width": 720,
+      "src": "/images/optimized/83193e671275-720.webp"
+    }
+  ],
+  "/videos/pureflame/ads/ignite-the-moment.jpg": [
+    {
+      "width": 128,
+      "src": "/images/optimized/e80b1b4faa64-128.webp"
+    },
+    {
+      "width": 256,
+      "src": "/images/optimized/e80b1b4faa64-256.webp"
+    },
+    {
+      "width": 384,
+      "src": "/images/optimized/e80b1b4faa64-384.webp"
+    },
+    {
+      "width": 640,
+      "src": "/images/optimized/e80b1b4faa64-640.webp"
+    },
+    {
+      "width": 720,
+      "src": "/images/optimized/e80b1b4faa64-720.webp"
+    }
+  ]
+}

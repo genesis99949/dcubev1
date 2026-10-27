@@ -65,6 +65,8 @@ export function ProjectMedia({ lang, media, sizes, className, controls, eager }:
         lang={lang}
         controls={controls}
         className={className}
+        sizes={sizes}
+        eager={eager}
       />
     );
   }

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "./SiteImage";
 import Link from "next/link";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice } from "@/content/packages";
@@ -25,7 +25,7 @@ export function VideoPricing({ lang }: { lang: Lang }) {
           {examples.map(({ slug, ad }) => (
             <li key={ad.id}>
               <Link href={localePath(lang, `/work/${slug}#${ad.id}-title`)} className={mediaStyles.example}>
-                <Image src={ad.video.poster} width={ad.video.width} height={ad.video.height} alt={tr(ad.video.alt, lang)} sizes="96px" />
+                <SiteImage src={ad.video.poster} width={ad.video.width} height={ad.video.height} alt={tr(ad.video.alt, lang)} sizes="(max-width: 800px) 64px, 96px" />
                 <div>
                   <h4>{tr(ad.title, lang)}</h4>
                   <p>{tr(ad.format, lang)}</p>

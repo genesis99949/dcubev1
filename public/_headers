@@ -1,0 +1,10 @@
+# These generated filenames contain a content hash and can be cached indefinitely.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Videos can be re-rendered at the same URL; keep a short browser lifetime.
+/videos/*
+  Cache-Control: public, max-age=86400
