@@ -8,7 +8,8 @@ export function SiteImage(props: ImageProps) {
   if (!images) return <Image {...props} alt={props.alt} />;
   // A native picture supplies srcset even with Next's server optimizer disabled.
   return (
-    <picture style={{ display: "contents" }}>
+    // Keep non-fill pictures as one grid item (the source must not take a column).
+    <picture style={{ display: props.fill ? "contents" : "block", minWidth: 0 }}>
       <source type="image/webp" srcSet={images.map((image) => `${image.src} ${image.width}w`).join(", ")} sizes={props.sizes ?? "100vw"} />
       <Image {...props} alt={props.alt} />
     </picture>
