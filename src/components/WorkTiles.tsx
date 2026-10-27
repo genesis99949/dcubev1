@@ -17,6 +17,7 @@ export function WorkTiles({ lang, projects }: { lang: Lang; projects: Project[] 
               <p className={styles.services}>{project.scope.map((s) => tr(s, lang)).join(" · ")}</p>
               <h3 className={styles.title}>{project.title}</h3>
               {project.subtitle ? <p className={styles.subtitle}>{tr(project.subtitle, lang)}</p> : null}
+              {project.disclosure ? <p className={styles.services}>{tr(project.disclosure, lang)}</p> : null}
               <span className={`more ${styles.more}`}>{view}</span>
             </div>
             <div className={styles.media}>

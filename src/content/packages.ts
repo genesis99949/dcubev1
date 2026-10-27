@@ -58,8 +58,8 @@ export const packages: Package[] = [
     tier: "custom",
     name: TIERS.custom,
     for: l(
-      "Designed from scratch for your brand, like the work above.",
-      "Gândit de la zero pentru brandul tău, ca proiectele de mai sus.",
+      "Designed from scratch for your brand.",
+      "Gândit de la zero pentru brandul tău.",
     ),
     price: { ro: 4500, en: 900 },
     editing: l("Want to edit texts and images yourself? An admin panel is an optional extra.", "Vrei să schimbi singur textele și imaginile? Panoul de administrare se adaugă separat."),

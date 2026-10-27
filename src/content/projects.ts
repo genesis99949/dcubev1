@@ -46,6 +46,8 @@ export type Project = {
   slug: string;
   /** The project's (brand) name — the same in every language. */
   title: string;
+  /** Project status shown in tiles before opening the case study. */
+  disclosure?: L;
   /** Short line under the title on the project page. */
   subtitle?: L;
   services: Service[];
@@ -86,6 +88,7 @@ export const projects: Project[] = [
   {
     slug: "pure-flame",
     title: "Pure Flame",
+    disclosure: l("Portfolio concept", "Concept de portofoliu"),
     seo: {
       title: l("Pure Flame: online store & identity", "Pure Flame: magazin online și identitate"),
       description: l(
@@ -401,6 +404,7 @@ export const projects: Project[] = [
   {
     slug: "david-craft-ale",
     title: "David Craft Ale",
+    disclosure: l("Portfolio concept", "Concept de portofoliu"),
     seo: {
       title: l("David Craft Ale: online store & branding", "David Craft Ale: magazin online și branding"),
       description: l(
