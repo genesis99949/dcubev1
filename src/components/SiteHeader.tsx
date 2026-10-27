@@ -18,7 +18,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
   const nav = [
     { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
     { label: tr(ui.nav.services, lang), href: localePath(lang, "/#services") },
-    { label: tr(ui.nav.pricing, lang), href: localePath(lang, "/#pricing") },
+    { label: tr(ui.nav.pricing, lang), href: onServicePage ? "#pricing" : localePath(lang, "/#pricing") },
     { label: tr(ui.nav.video, lang), href: localePath(lang, "/#video") },
     { label: tr(ui.nav.about, lang), href: localePath(lang, "/#about") },
   ];
