@@ -1,5 +1,5 @@
 // Pricing: every service comes in two tiers — Start (WordPress, on Ramon's own template, clear limits,
-// hosting for the first year and one month of free site management included) and Custom (designed
+// one month of free site management; the client pays hosting in their own name, Ramon sets it up) and Custom (designed
 // from scratch, like the portfolio work; three months of free management; an admin panel/CMS is an extra). Shown in the "Pricing" section of the homepage.
 // `price` is the starting price per language: lei on the Romanian site, euro on the English one. They are
 // round amounts set by Ramon (about 5 lei to the euro), not live conversions. null = "Price on request".
@@ -48,7 +48,7 @@ export const packages: Package[] = [
       l("My own template, with your colours, fonts and photos", "Șablon propriu, cu culorile, fonturile și pozele tale"),
       l("On WordPress: you change texts and photos yourself", "Pe WordPress: textele și pozele le schimbi singur"),
       l("Contact form, map, basic SEO and analytics", "Formular de contact, hartă, SEO de bază și statistici"),
-      l("Hosting for the first year and one month of site management, included", "Găzduire în primul an și o lună de administrare, incluse"),
+      l("Hosting set up by me in your company's account, plus one month of site management", "Găzduire configurată de mine, în contul firmei tale, plus o lună de administrare"),
       l("One round of changes · about 7 days", "O rundă de modificări · aproximativ 7 zile"),
     ],
   },
@@ -87,7 +87,7 @@ export const packages: Package[] = [
       l("Up to 30 products uploaded by me", "Până la 30 de produse urcate de mine"),
       l("Card payments and shipping rates set up", "Plăți cu cardul și tarife de livrare configurate"),
       l("On WordPress: you manage products and orders yourself", "Pe WordPress: produsele și comenzile le gestionezi singur"),
-      l("Hosting for the first year and one month of store management, included", "Găzduire în primul an și o lună de administrare, incluse"),
+      l("Hosting set up by me in your company's account, plus one month of store management", "Găzduire configurată de mine, în contul firmei tale, plus o lună de administrare"),
       l("One round of changes · about 14 days", "O rundă de modificări · aproximativ 14 zile"),
     ],
   },
@@ -104,7 +104,7 @@ export const packages: Package[] = [
     editing: l("Want to manage products and orders yourself? An admin panel is an optional extra.", "Vrei să gestionezi singur produsele și comenzile? Panoul de administrare se adaugă separat."),
     includes: [
       l("Custom design for every shop page", "Design de la zero pentru fiecare pagină a magazinului"),
-      l("Storytelling, animation and your identity built in", "Poveste, animații și identitatea ta, integrate"),
+      l("Storytelling, animation and your brand built in", "Poveste, animații și brandul tău, integrate"),
       l("Card payments, shipping rules and order emails", "Plăți cu cardul, reguli de livrare și emailuri de comandă"),
       l("Basic SEO for every product, analytics", "SEO de bază pentru fiecare produs, statistici"),
       l("Three months of store management: I add products and make changes", "Trei luni de administrare: adaug eu produsele și fac modificările"),
@@ -116,7 +116,6 @@ export const packages: Package[] = [
 export const extras: L[] = [
   l("Admin panel (CMS) for Custom sites", "Panou de administrare (CMS) la Personalizat"),
   l("Extra pages and languages", "Pagini și limbi în plus"),
-  l("Logo & visual identity", "Logo și identitate vizuală"),
   l("Launch content: animations, social posts", "Conținut de lansare: animații, postări"),
   l("Monthly management after the free months", "Administrare lunară, după lunile gratuite"),
   l("Additional SEO work & copywriting", "Optimizare SEO suplimentară și redactare texte"),

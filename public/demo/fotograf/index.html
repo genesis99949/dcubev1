@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sara Marin — fotograf de nuntă și portret, Timișoara (demo)</title>
+<meta name="description" content="Demo One-Page Express, șablonul Freelanceri și profesioniști: portofoliul unui fotograf, cu servicii, lucrări alese și cerere de ofertă.">
+<meta name="robots" content="noindex">
+<link rel="preload" href="../fonts/playfair-display-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/inter-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+  :root {
+    --paper: #f3f0ea;
+    --linen: #e9e1d5;
+    --ink: #121110;
+    --ink-2: #5f5a52;
+    --clay: #8a5636;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: Inter, "Helvetica Neue", Arial, sans-serif;
+    --pad: clamp(18px, 2.6vw, 40px);
+    --max: 1160px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 400 15.5px/1.6 var(--sans); letter-spacing: 0.02em; -webkit-font-smoothing: antialiased; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  p, h1, h2, h3, figure, ul { margin: 0; padding: 0; }
+  ul { list-style: none; }
+  h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: 0; line-height: 1.08; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+  .caption { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .rule { border: 0; border-top: 1px solid var(--ink); margin: 0; }
+
+  /* Demo bar: tells visitors this is a template demo, not a real photographer. */
+  .demo { background: var(--ink); color: #e8e4dc; font-size: 12.5px; text-align: center; padding: 8px var(--pad); }
+  .demo a { color: #fff; white-space: nowrap; }
+
+  /* Menu: name set large, then a hairline and a quiet line of links. */
+  .masthead { text-align: center; padding: clamp(36px, 6vw, 72px) var(--pad) clamp(22px, 3vw, 34px); }
+  .masthead h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(46px, 9vw, 128px); line-height: 0.95; letter-spacing: 0.01em; text-transform: uppercase; }
+  .masthead p { margin-top: 14px; font-size: 13px; letter-spacing: 0.06em; }
+  .subnav { display: flex; justify-content: space-between; align-items: center; gap: 12px 32px; flex-wrap: wrap; padding: 16px var(--pad); font-size: 13px; }
+  .subnav p { color: var(--ink-2); }
+  .subnav ul { display: flex; gap: 28px; }
+
+  /* 1 · Two photographs meeting at the centre */
+  .split { display: grid; grid-template-columns: 1fr 1fr; height: min(88svh, 900px); min-height: 480px; }
+  .split figure { position: relative; overflow: hidden; }
+  .split figcaption { position: absolute; left: var(--pad); bottom: var(--pad); color: #fff; font-size: 13px; line-height: 1.45; letter-spacing: 0.04em; text-shadow: 0 0 18px rgb(0 0 0 / 0.35); }
+  .split figcaption strong { font-weight: 600; display: block; }
+  .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 64px; padding-block: clamp(56px, 8vw, 104px); align-items: end; }
+  .intro h2 { font-size: clamp(34px, 4.4vw, 56px); }
+  .intro p { font-size: 17px; color: var(--ink-2); max-width: 30em; }
+  .intro a { display: inline-block; margin-top: 18px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); }
+
+  /* 2 · Services as an index; the photo follows the open one */
+  .services { background: var(--linen); padding: clamp(64px, 9vw, 120px) 0; }
+  .label { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 14px; --line: 100%; background: linear-gradient(var(--ink), var(--ink)) left bottom / var(--line) 1px no-repeat; margin-bottom: clamp(32px, 5vw, 56px); }
+  .label h2 { font-size: clamp(30px, 3.4vw, 42px); }
+  .label p { font-size: 13px; color: var(--ink-2); }
+  .index { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
+  details { border-bottom: 1px solid rgb(18 17 16 / 0.25); }
+  summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 18px 0; }
+  summary::-webkit-details-marker { display: none; }
+  summary h3 { font-size: clamp(34px, 4vw, 54px); }
+  summary span { font-size: 26px; font-weight: 300; line-height: 1; }
+  summary span::before { content: "+"; }
+  details[open] summary span::before { content: "−"; }
+  .detail { overflow: hidden; }
+  .detail-inner { padding: 0 0 24px; display: grid; gap: 14px; }
+  .detail ul { display: grid; gap: 4px; font-size: 14.5px; }
+  .detail li::before { content: "·"; margin-right: 10px; }
+  .detail .price { font-family: var(--serif); font-size: 22px; }
+  .detail .price small { font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); margin-right: 8px; }
+  .index figure { position: sticky; top: 24px; aspect-ratio: 4 / 5; overflow: hidden; }
+  .index figure img { position: absolute; inset: 0; opacity: 0; }
+  .index figure img.on { opacity: 1; }
+  .detail-img { display: none; }
+
+  /* 3 · Selected work, three to a row with small captions */
+  .work { padding: clamp(64px, 9vw, 120px) 0 clamp(48px, 6vw, 80px); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(32px, 3vw, 44px) clamp(14px, 2vw, 36px); padding: 0 var(--pad); }
+  .grid figure img { aspect-ratio: 4 / 5; height: auto; }
+  .grid figcaption { margin-top: 12px; display: flex; justify-content: space-between; gap: 12px; }
+  .grid figcaption span:last-child { color: var(--ink-2); text-transform: none; letter-spacing: 0.02em; }
+
+  /* 4 · About: a statement between two photographs */
+  .about { padding: clamp(48px, 6vw, 80px) 0 clamp(72px, 10vw, 136px); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .about figure img { aspect-ratio: 4 / 5; height: auto; }
+  .statement { text-align: center; font-family: var(--serif); font-size: clamp(26px, 2.5vw, 34px); line-height: 1.3; }
+  .statement + p { text-align: center; margin-top: 18px; font-size: 13px; color: var(--ink-2); }
+  .facts { display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: clamp(24px, 4vw, 56px); margin-top: 28px; font-size: 14px; }
+  .facts ul { display: grid; gap: 6px; }
+  .facts strong { font-weight: 600; }
+
+  /* 5 · Quote request */
+  .contact { background: var(--linen); padding: clamp(64px, 9vw, 120px) 0; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(40px, 7vw, 112px); }
+  .contact h2 { font-size: clamp(34px, 4vw, 52px); }
+  .contact-grid > div > p { margin-top: 20px; font-size: 16px; max-width: 26em; }
+  .direct { margin-top: 32px; display: grid; gap: 6px; font-size: 14.5px; }
+  .direct a { justify-self: start; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 24px; }
+  .field { display: grid; gap: 4px; }
+  .span { grid-column: 1 / -1; }
+  label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+  input, select, textarea { font: inherit; letter-spacing: 0.02em; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; padding: 9px 0; width: 100%; }
+  select { appearance: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23121110' stroke-width='1.2'/%3E%3C/svg%3E") right 2px center / 11px no-repeat; }
+  textarea { resize: vertical; min-height: 88px; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible { outline: none; border-bottom-width: 2px; }
+  button { justify-self: start; font: 500 13px var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--paper); background: var(--ink); border: 0; border-radius: 0; padding: 17px 30px; cursor: pointer; }
+  .sent { font-family: var(--serif); font-size: 22px; display: none; }
+  form.done .sent { display: block; }
+
+  footer { background: var(--paper); color: var(--ink); border-top: 1px solid var(--ink); padding: 36px var(--pad) 44px; display: flex; justify-content: space-between; align-items: end; gap: 16px 40px; flex-wrap: wrap; font-size: 13px; }
+  footer strong { font-family: var(--serif); font-weight: 400; font-size: 26px; letter-spacing: 0.02em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  footer ul { display: flex; gap: 24px; }
+
+  /* Hover and focus: a warm clay taken from the photographs; underlines thicken, rows slide, the button warms up. */
+  a, summary h3, summary span, button, input, select, textarea { transition: color .3s, background-color .3s, border-color .3s, text-decoration-color .3s, text-decoration-thickness .3s, translate .45s cubic-bezier(.2, .7, .2, 1), rotate .45s cubic-bezier(.2, .7, .2, 1); }
+  a:hover { color: var(--clay); text-decoration-thickness: 2px; }
+  .demo a:hover { color: #fff; text-decoration-color: transparent; }
+  summary:hover h3 { translate: 12px 0; color: var(--clay); }
+  summary:hover span { rotate: 90deg; color: var(--clay); }
+  details[open] summary:hover span { rotate: 0deg; }
+  button:hover { background: var(--clay); }
+  button:active { translate: 0 1px; }
+  input:hover, select:hover, textarea:hover { border-bottom-color: var(--clay); }
+  :is(a, button, summary):focus-visible { outline: 1px solid var(--clay); outline-offset: 4px; }
+
+  @media (max-width: 900px) {
+    .intro, .index, .contact-grid { grid-template-columns: 1fr; }
+    .index figure { display: none; }
+    .detail-img { display: block; aspect-ratio: 4 / 3; overflow: hidden; margin-bottom: 4px; }
+    .grid { grid-template-columns: 1fr 1fr; }
+    .about-grid, .facts { grid-template-columns: 1fr 1fr; }
+    .statement-wrap { grid-column: 1 / -1; grid-row: 1; padding-bottom: 12px; }
+    .facts .spacer { display: none; }
+  }
+  @media (max-width: 560px) {
+    .subnav { justify-content: center; text-align: center; }
+    .subnav p { display: none; }
+    .split { height: auto; min-height: 0; }
+    .split figure { aspect-ratio: 3 / 4; }
+    .split figcaption { font-size: 11.5px; left: 12px; bottom: 12px; }
+    .grid { grid-template-columns: 1fr; padding: 0; }
+    .grid figcaption { padding: 0 var(--pad); }
+    form { grid-template-columns: 1fr; }
+    button { justify-self: stretch; }
+    .facts { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="demo">Demo One-Page Express · persoană, texte și fotografii fictive · <a href="/one-page-express">Vreau un site ca acesta →</a></div>
+
+<header>
+  <div class="masthead">
+    <h1>Sara Marin</h1>
+    <p>Fotograf · Nunți și portrete · Timișoara</p>
+  </div>
+  <hr class="rule">
+  <nav class="subnav" aria-label="Meniu">
+    <p>Nunți · Cupluri · Portrete · Familie</p>
+    <ul>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#lucrari">Lucrări</a></li>
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#oferta">Cere o ofertă</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- 1 · First impression -->
+  <section aria-label="Prezentare">
+    <div class="split">
+      <figure>
+        <img src="img/portret-1200.jpg" srcset="img/portret-1200.jpg 1200w, img/portret.jpg 1800w" sizes="50vw" width="1200" height="1490" alt="Portretul unei tinere cu părul scurt, la fereastră, în lumină laterală.">
+        <figcaption><strong>Irina</strong>Portret, Timișoara</figcaption>
+      </figure>
+      <figure>
+        <img src="img/hero-1600.jpg" srcset="img/hero-1600.jpg 1600w, img/hero.jpg 2800w" sizes="(max-width: 560px) 120vw, 2000px" width="1600" height="678" alt="Mirii se țin de mână într-un lan de iarbă aurie, la apus." style="object-position: 46% 50%">
+        <figcaption><strong>Ioana &amp; Radu</strong>Nuntă, Banat</figcaption>
+      </figure>
+    </div>
+    <div class="wrap intro">
+      <h2>Fotografiez nunți, cupluri și portrete, în Timișoara și în toată țara.</h2>
+      <div>
+        <p>Lucrez cu lumina pe care o găsesc și cu oamenii așa cum sunt. Primești fotografiile editate într-o galerie online, gata de descărcat și de printat.</p>
+        <a href="#oferta">Verifică data ta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Services -->
+  <section class="services" id="servicii">
+    <div class="wrap">
+      <div class="label">
+        <h2>Servicii</h2>
+        <p>Prețuri de pornire, oferta finală în scris</p>
+      </div>
+      <div class="index">
+        <div>
+          <details open data-img="pregatiri">
+            <summary><h3>Nunți</h3><span aria-hidden="true"></span></summary>
+            <div class="detail"><div class="detail-inner">
+              <div class="detail-img"><img src="img/pregatiri-800.jpg" width="800" height="994" alt="" loading="lazy"></div>
+              <ul>
+                <li>De la pregătiri până la primul dans</li>
+                <li>400–700 de fotografii editate, în 4 săptămâni</li>
+                <li>Opțional: a doua cameră, album tipărit</li>
+              </ul>
+              <p class="price"><small>de la</small>3.500 lei</p>
+            </div></div>
+          </details>
+          <details data-img="padure">
+            <summary><h3>Cupluri</h3><span aria-hidden="true"></span></summary>
+            <div class="detail"><div class="detail-inner">
+              <div class="detail-img"><img src="img/padure-1600.jpg" width="1600" height="894" alt="" loading="lazy"></div>
+              <ul>
+                <li>Logodnă sau aniversare, două ore</li>
+                <li>În oraș sau în natură, locul îl alegem împreună</li>
+                <li>80 de fotografii editate</li>
+              </ul>
+              <p class="price"><small>de la</small>800 lei</p>
+            </div></div>
+          </details>
+          <details data-img="barbat">
+            <summary><h3>Portrete</h3><span aria-hidden="true"></span></summary>
+            <div class="detail"><div class="detail-inner">
+              <div class="detail-img"><img src="img/barbat-800.jpg" width="800" height="994" alt="" loading="lazy"></div>
+              <ul>
+                <li>Pentru tine, pentru CV sau pentru brandul tău</li>
+                <li>O oră, la tine sau în lumină naturală</li>
+                <li>15 fotografii editate</li>
+              </ul>
+              <p class="price"><small>de la</small>600 lei</p>
+            </div></div>
+          </details>
+          <details data-img="familie">
+            <summary><h3>Familie</h3><span aria-hidden="true"></span></summary>
+            <div class="detail"><div class="detail-inner">
+              <div class="detail-img"><img src="img/familie-1600.jpg" width="1600" height="894" alt="" loading="lazy"></div>
+              <ul>
+                <li>O oră și jumătate, acasă sau afară</li>
+                <li>Copiii se joacă, eu fotografiez</li>
+                <li>60 de fotografii editate</li>
+              </ul>
+              <p class="price"><small>de la</small>700 lei</p>
+            </div></div>
+          </details>
+        </div>
+        <figure aria-hidden="true">
+          <img class="on" data-key="pregatiri" src="img/pregatiri-1200.jpg" width="1200" height="1490" alt="">
+          <img data-key="padure" src="img/padure-1600.jpg" width="1600" height="894" alt="" loading="lazy">
+          <img data-key="barbat" src="img/barbat-1200.jpg" width="1200" height="1490" alt="" loading="lazy">
+          <img data-key="familie" src="img/familie-1600.jpg" width="1600" height="894" alt="" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Selected work -->
+  <section class="work" id="lucrari">
+    <div class="wrap">
+      <div class="label">
+        <h2>Lucrări alese</h2>
+        <p>Din nunțile și ședințele din 2025</p>
+      </div>
+    </div>
+    <div class="grid">
+      <figure>
+        <img src="img/ceremonie-1200.jpg" srcset="img/ceremonie-800.jpg 800w, img/ceremonie-1200.jpg 1200w" sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1490" alt="Mireasa își citește jurământul, iar mirele își șterge o lacrimă, la o ceremonie în grădină." loading="lazy">
+        <figcaption class="caption"><span>Elena &amp; Matei</span><span>Ceremonia</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/buchet-1200.jpg" srcset="img/buchet-800.jpg 800w, img/buchet-1200.jpg 1200w" sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1490" alt="Mâinile miresei țin un buchet de trandafiri albi și ierburi uscate." loading="lazy">
+        <figcaption class="caption"><span>Elena &amp; Matei</span><span>Detalii</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/voal-1200.jpg" srcset="img/voal-800.jpg 800w, img/voal-1200.jpg 1200w" sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1490" alt="Mirii cu frunțile lipite, sub un voal alb purtat de vânt." loading="lazy">
+        <figcaption class="caption"><span>Ioana &amp; Radu</span><span>După cununie</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/oras-1200.jpg" srcset="img/oras-800.jpg 800w, img/oras-1200.jpg 1200w" sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" alt="Un cuplu râde în timp ce merge pe o stradă pietruită, printre fațade baroce." loading="lazy">
+        <figcaption class="caption"><span>Maria &amp; Tudor</span><span>Cuplu, centrul vechi</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/bunici-1200.jpg" srcset="img/bunici-800.jpg 800w, img/bunici-1200.jpg 1200w" sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1490" alt="Bunicii miresei dansează sub un nuc, la cina de nuntă." loading="lazy">
+        <figcaption class="caption"><span>Ioana &amp; Radu</span><span>Cina</span></figcaption>
+      </figure>
+      <figure>
+        <img src="img/dans-1200.jpg" srcset="img/dans-800.jpg 800w, img/dans-1200.jpg 1200w" sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="800" alt="Fotografie alb-negru cu invitați care dansează la o nuntă, sub becuri." loading="lazy">
+        <figcaption class="caption"><span>Elena &amp; Matei</span><span>Petrecerea</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4 · About -->
+  <section class="about" id="despre">
+    <div class="wrap">
+      <div class="label">
+        <h2>Despre mine</h2>
+        <p>Sara Marin, fotograf din 2016</p>
+      </div>
+      <div class="about-grid">
+        <figure><img src="img/sara-1200.jpg" width="1200" height="1490" alt="Sara Marin ține un aparat de film în dreptul pieptului." loading="lazy"></figure>
+        <div class="statement-wrap">
+          <p class="statement">Am învățat să fotografiez pe aparatul de film al bunicului. La fiecare nuntă sunt singură, de la pregătiri până la ultimul dans.</p>
+          <p>Răspund personal la fiecare mesaj.</p>
+        </div>
+        <figure class="film"><img src="img/film-1200.jpg" width="1200" height="896" alt="Un aparat foto de film, role de film și fotografii printate pe o masă acoperită cu in." loading="lazy"></figure>
+      </div>
+      <div class="facts">
+        <ul><li><strong>Din:</strong> 2016</li><li><strong>Zona:</strong> Timișoara, Banat și oriunde în țară</li></ul>
+        <div class="spacer"></div>
+        <ul><li><strong>Livrare:</strong> galerie online, în 4 săptămâni</li><li><strong>Limbi:</strong> română, engleză</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Quote request -->
+  <section class="contact" id="oferta">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Cere o ofertă</h2>
+        <p>Spune-mi data, locul și ce vrei să fotografiem. Îți răspund în 24 de ore cu disponibilitatea și prețul.</p>
+        <div class="direct">
+          <a href="#" data-demo>salut@exemplu.ro</a>
+          <a href="#" data-demo>0700 000 000</a>
+          <a href="#" data-demo>Instagram</a>
+        </div>
+      </div>
+      <form novalidate>
+        <div class="field">
+          <label for="name">Nume</label>
+          <input id="name" name="name" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="reach">Email sau telefon</label>
+          <input id="reach" name="reach">
+        </div>
+        <div class="field">
+          <label for="type">Ce fotografiem</label>
+          <select id="type" name="type">
+            <option>Nuntă</option>
+            <option>Cuplu</option>
+            <option>Portret</option>
+            <option>Familie</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="date">Data</label>
+          <input id="date" name="date" type="date">
+        </div>
+        <div class="field span">
+          <label for="message">Mesaj</label>
+          <textarea id="message" name="message" placeholder="Locul, numărul de invitați, orice ar trebui să știu."></textarea>
+        </div>
+        <button type="submit" class="span">Trimite cererea</button>
+        <p class="sent span" role="status">Demo: pe site-ul tău, cererea ajunge direct în emailul tău.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <strong>Sara Marin</strong>
+    © 2026 Sara Marin PFA · CUI 00000000
+  </div>
+  <ul>
+    <li><a href="#" data-demo>Confidențialitate</a></li>
+    <li><a href="#" data-demo>Instagram</a></li>
+  </ul>
+</footer>
+
+<script src="../js/gsap.min.js"></script>
+<script src="../js/ScrollTrigger.min.js"></script>
+<script src="../js/SplitText.min.js"></script>
+<script>
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = [...document.querySelectorAll("details")];
+  const photos = [...document.querySelectorAll(".index figure img")];
+
+  // Services: one open at a time. GSAP eases the height; the photo on the right crossfades to the open one.
+  function showPhoto(key) {
+    const next = photos.find((img) => img.dataset.key === key);
+    const current = photos.find((img) => img.classList.contains("on"));
+    if (!next || next === current) return;
+    photos.forEach((img) => img.classList.toggle("on", img === next));
+    if (calm) { gsap.set(photos, { opacity: (i) => (photos[i] === next ? 1 : 0) }); return; }
+    gsap.to(current, { opacity: 0, duration: 0.7, ease: "power2.out" });
+    gsap.fromTo(next, { opacity: 0, scale: 1.06 }, { opacity: 1, scale: 1, duration: 1.1, ease: "power3.out" });
+  }
+  function openItem(item) {
+    item.open = true;
+    const body = item.querySelector(".detail");
+    if (calm) return;
+    gsap.fromTo(body, { height: 0 }, { height: "auto", duration: 0.7, ease: "power3.inOut" });
+    gsap.fromTo(body.querySelectorAll("li, .price"), { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.06, delay: 0.15, ease: "power2.out" });
+  }
+  function closeItem(item) {
+    const body = item.querySelector(".detail");
+    if (calm) { item.open = false; return; }
+    gsap.to(body, { height: 0, duration: 0.55, ease: "power3.inOut", onComplete: () => { item.open = false; gsap.set(body, { clearProps: "height" }); } });
+  }
+  items.forEach((item) => item.querySelector("summary").addEventListener("click", (event) => {
+    event.preventDefault();
+    if (item.open) return closeItem(item);
+    items.filter((other) => other.open).forEach(closeItem);
+    openItem(item);
+    showPhoto(item.dataset.img);
+  }));
+  gsap.set(photos, { opacity: (i) => (photos[i].classList.contains("on") ? 1 : 0) });
+
+  // Scroll reveals for the intro and the services, once each.
+  if (!calm) {
+    gsap.registerPlugin(ScrollTrigger, SplitText);
+    document.fonts.ready.then(() => {
+      const intro = document.querySelector(".intro");
+      SplitText.create(intro.querySelector("h2"), {
+        type: "lines", mask: "lines", autoSplit: true,
+        onSplit: (self) => gsap.from(self.lines, { yPercent: 105, duration: 1.1, stagger: 0.09, ease: "power4.out", scrollTrigger: { trigger: intro, start: "top 82%", once: true } }),
+      });
+      gsap.from(intro.querySelectorAll("p, a"), { y: 18, opacity: 0, duration: 0.9, stagger: 0.12, delay: 0.25, ease: "power3.out", scrollTrigger: { trigger: intro, start: "top 82%", once: true } });
+
+      const services = document.querySelector(".services");
+      const reveal = gsap.timeline({ scrollTrigger: { trigger: services, start: "top 75%", once: true }, defaults: { ease: "power3.out" } });
+      reveal
+        .from(services.querySelector(".label"), { "--line": "0%", duration: 1.2, ease: "power2.inOut" })
+        .from(services.querySelectorAll(".label h2, .label p"), { y: 16, opacity: 0, duration: 0.8, stagger: 0.08 }, 0.1)
+        .from(services.querySelectorAll("summary"), { y: 28, opacity: 0, duration: 0.9, stagger: 0.08 }, 0.25)
+        .from(services.querySelector("details[open] .detail-inner"), { opacity: 0, duration: 0.8 }, 0.6)
+        .from(services.querySelector(".index figure"), { clipPath: "inset(100% 0 0 0)", duration: 1.3, ease: "power4.inOut" }, 0.2);
+    });
+  }
+
+  // Demo only: the form and the contact links don't go anywhere.
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    form.classList.add("done");
+  });
+  document.querySelectorAll("[data-demo]").forEach((link) => link.addEventListener("click", (event) => event.preventDefault()));
+</script>
+</body>
+</html>

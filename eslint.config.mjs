@@ -24,6 +24,8 @@ const eslintConfig = defineConfig([
     // Agent skills (installed by `npx remotion skills add`), not project code:
     ".agents/**",
     ".claude/**",
+    // Static One-Page Express demos: copied GSAP files and the trainer demo's Vite build.
+    "public/demo/**",
   ]),
 ]);
 

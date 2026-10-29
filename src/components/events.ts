@@ -5,3 +5,6 @@ export const PACKAGE_EVENT = "site:package";
 
 /** A service tile's "See prices": detail = service name. The pricing switch turns to it. */
 export const SERVICE_EVENT = "site:service";
+
+/** An Express template's "Choose this template": detail = template id. The Express form picks it up. */
+export const TEMPLATE_EVENT = "site:template";

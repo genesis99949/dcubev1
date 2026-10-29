@@ -81,8 +81,8 @@ export const servicePages = {
       {
         question: l("What do I need to prepare?", "Ce trebuie să pregătesc?"),
         answer: l(
-          "Your services, company details, logo and the photos you have the right to use. We agree who supplies the texts and images. Copywriting, a new identity and additional languages can be quoted separately.",
-          "Lista serviciilor, datele firmei, logo-ul și fotografiile pentru care ai drept de utilizare. Stabilim cine furnizează textele și imaginile. Redactarea textelor, o identitate nouă și limbile suplimentare se pot oferta separat.",
+          "Your services, company details, logo and the photos you have the right to use. We agree who supplies the texts and images. Copywriting and additional languages can be quoted separately.",
+          "Lista serviciilor, datele firmei, logo-ul și fotografiile pentru care ai drept de utilizare. Stabilim cine furnizează textele și imaginile. Redactarea textelor și limbile suplimentare se pot oferta separat.",
         ),
       },
       {
@@ -137,8 +137,8 @@ export const servicePages = {
     ],
     examplesTitle: l("Two ways to present a brand's products.", "Două feluri de a prezenta produsele unui brand."),
     examplesText: l(
-      "Pure Flame and David Craft Ale are portfolio concepts I designed and built. They show product pages, mobile layouts and the visual identity around each store.",
-      "Pure Flame și David Craft Ale sunt concepte de portofoliu pe care le-am desenat și construit. Poți vedea paginile de produs, versiunile pentru mobil și identitatea din jurul magazinelor.",
+      "Pure Flame and David Craft Ale are portfolio concepts I designed and built. They show the shop, product pages and mobile layouts of each store.",
+      "Pure Flame și David Craft Ale sunt concepte de portofoliu pe care le-am desenat și construit. Poți vedea magazinul, paginile de produs și versiunile pentru mobil ale fiecăruia.",
     ),
     faqs: [
       {
@@ -165,8 +165,8 @@ export const servicePages = {
       {
         question: l("What costs continue after launch?", "Ce costuri rămân după lansare?"),
         answer: l(
-          "Start includes the first year of hosting. The written quote lists domain fees, hosting renewals, any licences and payment-provider fees. Store management is free for the first month with Start and the first three with Custom; ongoing management is agreed separately.",
-          "La Start este inclus primul an de găzduire. Oferta scrisă precizează costurile domeniului, reînnoirea găzduirii, eventualele licențe și comisioanele procesatorului de plăți. Administrarea este gratuită o lună la Start și trei luni la Personalizat; continuarea se stabilește separat.",
+          "The domain and hosting are in your company's name: you pay the providers directly and I set them up. The written quote lists their costs, any licences and payment-provider fees. Store management is free for the first month with Start and the first three with Custom; ongoing management is agreed separately.",
+          "Domeniul și găzduirea sunt pe numele firmei tale: le plătești direct furnizorilor, iar eu le configurez. Oferta scrisă precizează costurile lor, eventualele licențe și comisioanele procesatorului de plăți. Administrarea este gratuită o lună la Start și trei luni la Personalizat; continuarea se stabilește separat.",
         ),
       },
     ],

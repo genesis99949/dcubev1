@@ -6,6 +6,7 @@ import { ui } from "./ui";
 import { mediaLabels } from "./video";
 import { servicePageCopy, servicePages, type ServicePageKey } from "./service-pages";
 import { packages } from "./packages";
+import { express } from "./express";
 
 const absolute = (path: string) => new URL(path, site.url).toString();
 const personId = absolute("/#person");
@@ -58,6 +59,39 @@ export const serviceStructuredData = (key: ServicePageKey, lang: Lang) => {
         itemListElement: [
           { "@type": "ListItem", position: 1, name: tr(servicePageCopy.home, lang), item: absolute(localePath(lang, "/")) },
           { "@type": "ListItem", position: 2, name: tr(page.title, lang), item: url },
+        ],
+      },
+    ],
+  };
+};
+
+/** One-Page Express: one Service with its single Offer. No FAQPage markup (Google shows it only for gov/health sites). */
+export const expressStructuredData = (lang: Lang) => {
+  const url = absolute(localePath(lang, express.path));
+  const description = tr(express.description, lang);
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      person(lang), website,
+      {
+        "@type": "WebPage", "@id": `${url}#webpage`, url,
+        name: express.name, description, inLanguage: lang,
+        isPartOf: { "@id": websiteId }, breadcrumb: { "@id": `${url}#breadcrumb` },
+        mainEntity: {
+          "@type": "Service", "@id": `${url}#service`, url,
+          name: express.name, serviceType: tr(express.metaTitle, lang), description,
+          provider: { "@id": personId }, areaServed: { "@type": "Country", name: "Romania" },
+          offers: {
+            "@type": "Offer", name: express.name, url: `${url}#contact`,
+            priceSpecification: { "@type": "PriceSpecification", minPrice: express.priceOwnDomain[lang], priceCurrency: lang === "ro" ? "RON" : "EUR" },
+          },
+        },
+      },
+      {
+        "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: tr(servicePageCopy.home, lang), item: absolute(localePath(lang, "/")) },
+          { "@type": "ListItem", position: 2, name: express.name, item: url },
         ],
       },
     ],

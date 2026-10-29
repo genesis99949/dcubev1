@@ -1,0 +1,72 @@
+/* Comic price burst. Size it with width on the element; tune the motion with the custom properties. */
+
+.burst {
+  --burst-tilt: -6deg;
+  --burst-beat: 1.3s; /* one throb */
+  --burst-shake: 0.5s; /* one shake of the spikes */
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  isolation: isolate;
+  rotate: var(--burst-tilt);
+}
+
+.seal { aspect-ratio: 1; }
+
+.shape {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.outer { fill: var(--burst-outer, var(--ink)); }
+.inner { fill: var(--burst-inner, var(--accent)); }
+
+.content {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.animated {
+  animation:
+    burst-pop 0.9s var(--ease-out) both,
+    burst-throb var(--burst-beat) ease-in-out 0.9s infinite;
+}
+
+.animated .outer,
+.animated .inner {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: burst-shake var(--burst-shake) steps(1) infinite;
+}
+
+/* The two layers shake out of step, like a printed burst on a cartoon. */
+.animated .inner { animation-delay: calc(var(--burst-shake) / -2); }
+
+@keyframes burst-pop {
+  0% { scale: 0; rotate: -40deg; }
+  65% { scale: 1.14; }
+  100% { scale: 1; rotate: var(--burst-tilt); }
+}
+
+@keyframes burst-throb {
+  0%,
+  100% { scale: 1; rotate: var(--burst-tilt); }
+  50% { scale: 1.08; rotate: calc(var(--burst-tilt) + 4deg); }
+}
+
+@keyframes burst-shake {
+  0% { rotate: 0deg; scale: 1; }
+  50% { rotate: 3deg; scale: 1.025; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated,
+  .animated .outer,
+  .animated .inner { animation: none; }
+}

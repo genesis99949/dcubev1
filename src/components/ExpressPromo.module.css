@@ -1,0 +1,66 @@
+/* The One-Page Express tile on the homepage. Colours: --express-red / --express-yellow from globals.css. */
+
+.promo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  margin-top: clamp(48px, 6vw, 80px);
+  padding: clamp(28px, 4.4vw, 64px);
+  border: 2.5px solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--express-red);
+  color: var(--paper);
+}
+
+.text { display: grid; justify-items: start; gap: clamp(14px, 1.6vw, 20px); }
+
+/* Tilted black label, as on the Express page. */
+.sticker {
+  padding: 0.3em 0.95em 0.36em;
+  border: 2.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: clamp(0.9375rem, 1.2vw, 1.125rem);
+  font-weight: 750;
+  line-height: 1.15;
+  rotate: -3deg;
+}
+
+.title {
+  max-width: 13ch;
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.lead { max-width: 34em; font-size: var(--t-lead); color: color-mix(in srgb, var(--paper) 88%, var(--express-red)); }
+
+.action { border: 2px solid var(--ink); background: var(--ink); color: var(--paper); font-weight: 650; }
+.action:hover { background: var(--paper); color: var(--ink); }
+
+.price {
+  --burst-outer: var(--ink);
+  --burst-inner: var(--express-yellow);
+  --burst-tilt: 8deg;
+  width: clamp(220px, 26vw, 340px);
+  color: var(--ink);
+}
+
+.from { font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 750; line-height: 1.05; }
+
+.value {
+  color: var(--express-red);
+  font-size: clamp(2.5rem, 4.6vw, 4rem);
+  font-weight: 850;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .promo { grid-template-columns: 1fr; justify-items: start; }
+  .price { justify-self: center; width: min(260px, 72vw); }
+}

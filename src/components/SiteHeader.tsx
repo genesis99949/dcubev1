@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { express } from "@/content/express";
 import { localePath, switchPath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
@@ -12,8 +13,10 @@ export function SiteHeader({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const other: Lang = lang === "en" ? "ro" : "en";
-  const onServicePage = ["/website-design", "/online-store"].some((path) => localePath(lang, path) === pathname);
+  const onServicePage = ["/website-design", "/online-store", "/one-page-express"].some((path) => localePath(lang, path) === pathname);
   const contactHref = onServicePage ? "#contact" : localePath(lang, "/#contact");
+  // The One-Page Express page is a funnel: no menu to wander off through, only the request button.
+  const funnel = localePath(lang, express.path) === pathname;
 
   const nav = [
     { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
@@ -49,6 +52,23 @@ export function SiteHeader({ lang }: { lang: Lang }) {
       {long ? tr(ui.nav.otherLanguage, lang) : tr(ui.nav.otherLanguageShort, lang)}
     </a>
   );
+
+  if (funnel) {
+    return (
+      <header className={`${styles.header} ${styles.funnel}`}>
+        <div className={`container ${styles.bar}`}>
+          <span className={styles.name}>
+            {site.name}
+            <span className="mark" aria-hidden />
+          </span>
+          {languageLink(styles.lang)}
+          <a href="#contact" className={`btn ${styles.cta}`}>
+            {tr(express.sticky, lang)}
+          </a>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className={styles.header} data-open={open}>

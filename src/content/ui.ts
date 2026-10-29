@@ -58,6 +58,9 @@ export const ui = {
     unsure: l("Not sure yet, help me choose", "Nu știu încă, ajută-mă să aleg"),
     budget: l("Budget", "Buget"),
     budgetPlaceholder: l("Choose a range", "Alege un interval"),
+    /** Optional, in both forms: where the visitor heard about Ramon (options in site.contact.sources). */
+    source: l("How did you hear about me? (optional)", "Cum ai aflat de mine? (opțional)"),
+    sourcePlaceholder: l("Choose", "Alege"),
     videoPackage: l("Video length", "Durata videoclipului"),
     videoPackagePlaceholder: l("Choose the length", "Alege durata"),
     videoVoiceover: l("Voice-over for this video", "Voice-over pentru acest video"),

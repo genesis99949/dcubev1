@@ -18,6 +18,10 @@
   --ink-3: color-mix(in srgb, var(--ink) 48%, var(--paper)); /* captions, meta */
   --tile: color-mix(in srgb, var(--ink) 5%, var(--paper)); /* tiles on the paper page */
   --hairline: color-mix(in srgb, var(--ink) 12%, transparent);
+
+  /* One-Page Express only (its page and its promo tile; Ramon's call, Oct 2026). */
+  --express-red: #d7141e; /* paper text on it ≥ 4.5:1 */
+  --express-yellow: #f6e21c; /* ink text on it; red only at large sizes (≈ 4:1) */
   --on-ink-2: color-mix(in srgb, var(--paper) 62%, var(--ink)); /* secondary text on ink */
 
   /* Type scale (one family: Inter Tight) */

@@ -42,10 +42,10 @@ export const site = {
     secondary: l("See the work", "Vezi proiectele"),
   },
   work: {
-    headline: l("Online stores, from logo to checkout.", "Magazine online, de la logo la checkout."),
+    headline: l("Online stores, from homepage to checkout.", "Magazine online, de la pagina principală la checkout."),
     text: l(
-      "Identity, site and store, made end to end by me. Open one to see every page in motion.",
-      "Identitate, site și magazin, făcute cap-coadă de mine. Deschide unul ca să vezi fiecare pagină în mișcare.",
+      "Every page designed and built by me. Open one to see them in motion.",
+      "Fiecare pagină, desenată și construită de mine. Deschide unul ca să le vezi în mișcare.",
     ),
   },
   services: {
@@ -70,15 +70,15 @@ export const site = {
     /** Heading of the optional extras under the packages. */
     extras: l("Add to any package", "Se pot adăuga la orice pachet"),
     payment: l("Payment: 50% to start, 50% at launch.", "Plata: 50% avans, 50% la lansare."),
-    ownHosting: l(
-      "Already have hosting for Start? If it's up to date, I install the site there and take its cost off the price.",
-      "Ai deja găzduire pentru Start? Dacă e potrivită, instalez site-ul pe ea și scad costul găzduirii din preț.",
+    hosting: l(
+      "For Start, you pay hosting directly to the provider, in your company's name. I help you choose it and set it up.",
+      "La Start, găzduirea o plătești direct furnizorului, pe numele firmei tale. Te ajut să o alegi și o configurez eu.",
     ),
     detailsTitle: l("Before we start", "Înainte să începem"),
     details: [
       {
         question: l("What about the domain, hosting and renewals?", "Cum rămâne cu domeniul, găzduirea și reînnoirile?"),
-        answer: l("Start includes hosting for the first year. The domain, hosting for Custom and any paid licences are itemised in the written quote, along with renewal costs. You know the recurring costs before work starts.", "Start include găzduirea pentru primul an. Domeniul, găzduirea la Personalizat și eventualele licențe plătite sunt detaliate separat în oferta scrisă, împreună cu reînnoirile. Cunoști costurile recurente înainte să începem."),
+        answer: l("The domain and hosting are in your company's name and you pay the providers directly. For a WordPress presentation site, hosting usually costs €50–70 a year. I help you choose them and set them up. For Custom, hosting depends on how the site is built. The written quote lists these costs, any paid licences and renewals, so you know the recurring costs before work starts.", "Domeniul și găzduirea sunt pe numele firmei tale și le plătești direct furnizorilor. Pentru un site de prezentare pe WordPress, găzduirea costă de obicei 250–350 lei pe an. Te ajut să le alegi și le configurez eu. La Personalizat, găzduirea depinde de cum e construit site-ul. Oferta scrisă trece aceste costuri, eventualele licențe plătite și reînnoirile, ca să cunoști costurile recurente înainte să începem."),
       },
       {
         question: l("What does site management cover after launch?", "Ce acoperă administrarea după lansare?"),
@@ -86,7 +86,7 @@ export const site = {
       },
       {
         question: l("Who provides the texts, photos and logo?", "Cine pregătește textele, fotografiile și logo-ul?"),
-        answer: l("Before starting, we list the pages, features and materials needed. You send the texts, images and logo you already have. If you need copywriting or visual identity, we include that work separately in the quote.", "Înainte să începem, facem lista paginilor, funcțiilor și materialelor necesare. Îmi trimiți textele, imaginile și logo-ul pe care le ai. Dacă ai nevoie de redactare sau identitate vizuală, le includem separat în ofertă."),
+        answer: l("Before starting, we list the pages, features and materials needed. You send the texts, images and logo you already have. If you need copywriting, we include it separately in the quote.", "Înainte să începem, facem lista paginilor, funcțiilor și materialelor necesare. Îmi trimiți textele, imaginile și logo-ul pe care le ai. Dacă ai nevoie de redactarea textelor, o includem separat în ofertă."),
       },
     ],
   },
@@ -137,6 +137,11 @@ export const site = {
     ),
     // Public business contact explicitly supplied by Ramon; the private delivery address stays private.
     email: "contact@ramonbugariu.ro" as string,
+    /** Public business phone, given by Ramon on 2026-10-28; also his WhatsApp. */
+    phone: { ro: "0774 774 069", en: "+40 774 774 069" } as Record<"ro" | "en", string>,
+    phoneHref: "tel:+40774774069",
+    /** WhatsApp number, digits only in international format, for wa.me links. Empty = no WhatsApp buttons. */
+    whatsapp: "40774774069" as string,
     /**
      * Web3Forms access key (https://web3forms.com — free). Messages from the contact form are emailed
      * to the address the key was created for; that address never appears on the site.
@@ -150,6 +155,16 @@ export const site = {
       l("€1,000 – €2,500", "5.000 – 12.500 lei"),
       l("Over €2,500", "Peste 12.500 lei"),
       l("Not sure yet", "Încă nu știu"),
+    ],
+    /** Answers to "How did you hear about me?" in the forms; sent in the request email, nothing else. */
+    sources: [
+      l("Google", "Google"),
+      l("Facebook", "Facebook"),
+      l("Instagram", "Instagram"),
+      l("YouTube", "YouTube"),
+      l("TikTok", "TikTok"),
+      l("A recommendation", "Recomandare"),
+      l("Somewhere else", "Altă sursă"),
     ],
     // Add more profiles here, e.g. { label: "Instagram", href: "https://instagram.com/…" }.
     socials: [

@@ -21,7 +21,7 @@ export function PricingSection({ lang, service }: { lang: Lang; service?: Servic
         </ul>
         <p className={styles.payment}>{tr(site.business.clients, lang)} {tr(site.business.vat, lang)}</p>
         <p className={styles.payment}>
-          {tr(p.payment, lang)} {tr(p.ownHosting, lang)}
+          {tr(p.payment, lang)} {tr(p.hosting, lang)}
         </p>
       </div>
       <OfferDetails lang={lang} title={p.detailsTitle} items={p.details} />

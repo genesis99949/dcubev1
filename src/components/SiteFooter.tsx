@@ -2,6 +2,7 @@ import Link from "next/link";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
+import { express, linkExpress } from "@/content/express";
 import { servicePages } from "@/content/service-pages";
 import { serviceLabel } from "@/content/services";
 import styles from "./SiteFooter.module.css";
@@ -14,6 +15,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
   ];
   const services = [
     ...Object.values(servicePages).map((page) => ({ label: tr(serviceLabel(page.service), lang), href: localePath(lang, page.path) })),
+    ...(linkExpress ? [{ label: express.name, href: localePath(lang, express.path) }] : []),
     { label: tr(ui.footer.video, lang), href: localePath(lang, "/#video") },
   ];
   return (

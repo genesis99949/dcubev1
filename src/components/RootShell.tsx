@@ -5,6 +5,7 @@ import type { Lang } from "@/content/i18n";
 import { BRAND } from "@/remotion/brand";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
+import { TrackClicks } from "./TrackClicks";
 
 // One family for the whole site, as in the videos (src/remotion/fonts.ts).
 const sans = Inter_Tight({
@@ -32,6 +33,7 @@ export function RootShell({ lang, children }: { lang: Lang; children: React.Reac
         <SiteHeader lang={lang} />
         {children}
         <SiteFooter lang={lang} />
+        <TrackClicks />
       </body>
     </html>
   );

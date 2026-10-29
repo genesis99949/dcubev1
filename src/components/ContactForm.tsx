@@ -10,7 +10,8 @@ import { ui } from "@/content/ui";
 import { mediaLabels, mediaOffers, type MediaKind } from "@/content/video";
 import styles from "./ContactForm.module.css";
 import { PACKAGE_EVENT } from "./events";
-
+import { track } from "./track";
+import { sendToWeb3Forms } from "./web3forms";
 
 type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
 
@@ -95,34 +96,26 @@ export function ContactForm({ lang, defaultService }: { lang: Lang; defaultServi
     }
     const form = new FormData(e.currentTarget);
     setStatus("sending");
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: site.contact.formKey,
-          subject: tr(ui.form.subject, lang),
-          from_name: `${site.name} website`,
-          name: form.get("name"),
-          email: form.get("email"),
-          company: form.get("company"),
-          business_request: form.get("business_request") === "on",
-          services: choice ? `${tr(options.find((o) => o.value === choice)!.label, "en")}${chosenVoiceover ? ` + ${tr(mediaLabels[chosenVoiceover.kind], "en")}` : ""}` : "—",
-          package: packageName("en") || "—",
-          voiceover: chosenVoiceover ? tr(mediaLabels[chosenVoiceover.kind], "en") : "—",
-          package_total: total === null ? "—" : formatPrice(total, lang),
-          budget: form.get("budget") || "—",
-          message: form.get("message"),
-          language: lang,
-          botcheck: form.get("botcheck") ? true : "",
-        }),
-      });
-      const data = (await res.json()) as { success?: boolean };
-      if (!data.success) throw new Error("Web3Forms rejected the message");
-      setStatus("sent");
-    } catch {
-      setStatus("error");
-    }
+    track("form_submit", { form_id: "contact" });
+    const result = await sendToWeb3Forms({
+      subject: tr(ui.form.subject, lang),
+      name: form.get("name"),
+      email: form.get("email"),
+      company: form.get("company"),
+      business_request: form.get("business_request") === "on",
+      services: choice ? `${tr(options.find((o) => o.value === choice)!.label, "en")}${chosenVoiceover ? ` + ${tr(mediaLabels[chosenVoiceover.kind], "en")}` : ""}` : "—",
+      package: packageName("en") || "—",
+      voiceover: chosenVoiceover ? tr(mediaLabels[chosenVoiceover.kind], "en") : "—",
+      package_total: total === null ? "—" : formatPrice(total, lang),
+      budget: form.get("budget") || "—",
+      source: form.get("source") || "—",
+      message: form.get("message"),
+      language: lang,
+      botcheck: form.get("botcheck") ? true : "",
+    });
+    // The form is replaced by the thank-you note once sent, so the conversion can't fire twice.
+    if (result === "sent") track("generate_lead", { form_id: "contact", service: choice ?? "none", package_id: packageId ?? "none" });
+    setStatus(result);
   };
 
   if (status === "sent") {
@@ -207,6 +200,14 @@ export function ContactForm({ lang, defaultService }: { lang: Lang; defaultServi
           </select>
         </label>
       ) : null}
+
+      <label className={styles.field}>
+        <span>{tr(ui.form.source, lang)}</span>
+        <select name="source" defaultValue="">
+          <option value="" disabled>{tr(ui.form.sourcePlaceholder, lang)}</option>
+          {site.contact.sources.map((o) => <option key={o.en} value={tr(o, lang)}>{tr(o, lang)}</option>)}
+        </select>
+      </label>
 
       <label className={styles.field}>
         <span>{tr(ui.form.message, lang)}</span>

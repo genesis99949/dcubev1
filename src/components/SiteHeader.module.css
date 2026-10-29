@@ -162,3 +162,8 @@
     display: none;
   }
 }
+
+/* Funnel header (One-Page Express): name, language and the request button, also on phones. */
+.funnel .lang {
+  display: inline-grid;
+}

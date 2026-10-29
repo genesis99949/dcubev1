@@ -90,16 +90,16 @@ export const projects: Project[] = [
     title: "Pure Flame",
     disclosure: l("Portfolio concept", "Concept de portofoliu"),
     seo: {
-      title: l("Pure Flame: online store & identity", "Pure Flame: magazin online și identitate"),
+      title: l("Pure Flame: online store & rebrand", "Pure Flame: magazin online și rebranding"),
       description: l(
-        "Explore Pure Flame, a portfolio concept by Ramon Bugariu: an online store for sculptural fire tables, with visual identity, logo animation and mobile design.",
-        "Descoperă Pure Flame, un concept de portofoliu de Ramon Bugariu: magazin online pentru mese cu foc, identitate vizuală, animație de logo și design pentru mobil.",
+        "Explore Pure Flame, a portfolio concept by Ramon Bugariu: an online store for sculptural fire tables, with a small rebrand, logo animation and mobile design.",
+        "Descoperă Pure Flame, un concept de portofoliu de Ramon Bugariu: magazin online pentru mese cu foc, un mic rebranding, animație de logo și design pentru mobil.",
       ),
     },
     // The brand's own line, kept in English.
     subtitle: same("The art of gathering"),
     services: ["Online store"],
-    scope: [l("Online store", "Magazin online"), l("Brand identity", "Identitate de brand"), l("Motion", "Animație")],
+    scope: [l("Online store", "Magazin online"), l("Rebrand", "Rebranding"), l("Motion", "Animație")],
     year: 2026,
     summary: l(
       "A digital experience for outdoor living — sculptural fire tables in a quiet, editorial e-commerce journey.",
@@ -111,8 +111,8 @@ export const projects: Project[] = [
         "O experiență digitală pentru viața în aer liber. Mese cu foc sculpturale, materiale calde și pagini editoriale, liniștite, se leagă într-un parcurs vizual de cumpărare pentru PureFlame.",
       ),
       l(
-        "The project covers the online shop — homepage, collection, product and about pages, on desktop and mobile — and the identity around it: the hand-lettered wordmark, the flame mark, colour, typography and a logo animation for the site.",
-        "Proiectul acoperă magazinul online — pagina principală, colecția, paginile de produs și pagina despre noi, pe desktop și mobil — și identitatea din jurul lui: logotipul scris de mână, simbolul flăcării, culorile, tipografia și o animație de logo pentru site.",
+        "The project covers the online shop — homepage, collection, product and about pages, on desktop and mobile — and a small rebrand around it: the existing hand-lettered logo in a new colour, and a logo animation for the site.",
+        "Proiectul acoperă magazinul online — pagina principală, colecția, paginile de produs și pagina despre noi, pe desktop și mobil — și un mic rebranding în jurul lui: logo-ul existent, scris de mână, într-o culoare nouă, și o animație de logo pentru site.",
       ),
     ],
     // Media is generated from the live site and the logo source files:
@@ -260,11 +260,11 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: l("Identity", "Identitatea"),
+        title: l("Rebrand", "Rebranding"),
         text: [
           l(
-            "The hand-lettered “Pure Flame” wordmark and the flame mark come straight from the logo master file. In the animation the flame ignites, then the signature is written in its original stroke order — exported with a transparent background so it can open the site itself.",
-            "Logotipul „Pure Flame”, scris de mână, și simbolul flăcării vin direct din fișierul master al logo-ului. În animație, flacăra se aprinde, apoi semnătura se scrie în ordinea originală a trăsăturilor — exportată cu fundal transparent, ca să poată deschide chiar site-ul.",
+            "The hand-lettered “Pure Flame” wordmark and the flame mark already existed; I gave them a new colour, working from the logo master file. In the animation the flame ignites, then the signature is written in its original stroke order — exported with a transparent background so it can open the site itself.",
+            "Logotipul „Pure Flame”, scris de mână, și simbolul flăcării existau deja; le-am dat o culoare nouă, pornind de la fișierul master al logo-ului. În animație, flacăra se aprinde, apoi semnătura se scrie în ordinea originală a trăsăturilor — exportată cu fundal transparent, ca să poată deschide chiar site-ul.",
           ),
           l(
             "Charcoal, olive, ember, brass and cream carry the warmth of the product. Georgia gives the brand its editorial voice; Work Sans keeps the interface quiet and legible.",
@@ -279,8 +279,8 @@ export const projects: Project[] = [
             width: 1920,
             height: 1080,
             alt: l(
-              "PureFlame identity film: logo animation, palette, typography and product naming",
-              "Filmul de identitate PureFlame: animația logo-ului, paleta, tipografia și numele produselor",
+              "PureFlame brand film: logo animation, palette, typography and product naming",
+              "Filmul de brand PureFlame: animația logo-ului, paleta, tipografia și numele produselor",
             ),
             caption: l(
               "Logo animation, palette, typography and product naming.",
@@ -367,8 +367,8 @@ export const projects: Project[] = [
       {
         label: l("Scope", "Ce include"),
         value: l(
-          "E-commerce, UI/UX, art direction, identity, logo animation",
-          "E-commerce, UI/UX, direcție artistică, identitate, animație de logo",
+          "E-commerce, UI/UX, art direction, rebrand (logo colour), logo animation",
+          "E-commerce, UI/UX, direcție artistică, rebranding (culoarea logo-ului), animație de logo",
         ),
       },
       { label: l("Platforms", "Platforme"), value: l("Desktop & mobile", "Desktop și mobil") },

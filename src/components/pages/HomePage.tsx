@@ -1,5 +1,6 @@
 import type React from "react";
 import { ContactForm } from "@/components/ContactForm";
+import { ExpressPromo } from "@/components/ExpressPromo";
 import { HeroDevices } from "@/components/HeroDevices";
 import { HeadingText } from "@/components/HeadingText";
 import { RollingDot } from "@/components/RollingDot";
@@ -10,6 +11,7 @@ import { ToolsMarquee } from "@/components/ToolsMarquee";
 import { WorkTiles } from "@/components/WorkTiles";
 import { VideoPricing } from "@/components/VideoPricing";
 import { StructuredData } from "@/components/StructuredData";
+import { linkExpress } from "@/content/express";
 import { tr, type Lang } from "@/content/i18n";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
@@ -96,6 +98,8 @@ export function HomePage({ lang }: { lang: Lang }) {
           </h2>
         </header>
         <PricingSection lang={lang} />
+        {/* The smaller product, below the packages so it never sets the first price a visitor sees. */}
+        {linkExpress ? <ExpressPromo lang={lang} /> : null}
       </section>
 
       <section id="video" className={`container ${styles.section}`} aria-labelledby="video-title">
