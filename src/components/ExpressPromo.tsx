@@ -4,6 +4,7 @@ import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice } from "@/content/packages";
 import { site } from "@/content/site";
 import styles from "./ExpressPromo.module.css";
+import { ExpressSticker } from "./ExpressSticker";
 import { Starburst } from "./Starburst";
 
 /**
@@ -14,6 +15,8 @@ export function ExpressPromo({ lang }: { lang: Lang }) {
   const t = (text: { en: string; ro: string }) => tr(text, lang);
   return (
     <aside className={`${styles.promo} rise`} aria-labelledby="express-promo-title">
+      <ExpressSticker name="cat" className={`${styles.art} ${styles.artLeft}`} />
+      <ExpressSticker name="rocket" className={`${styles.art} ${styles.artRight}`} />
       <div className={styles.text}>
         <p className={styles.sticker}>{express.name}</p>
         <h3 id="express-promo-title" className={styles.title}>{t(express.hero.title)}</h3>

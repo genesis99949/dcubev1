@@ -11,6 +11,18 @@
   border-radius: var(--radius);
   background: var(--express-red);
   color: var(--paper);
+  position: relative;
+}
+
+/* Stickers stuck over the tile's edges: the cat on the left, the rocket on the right. They stay inside the
+   page margin, so below 1400px only the rocket remains, on the top edge. */
+.art { position: absolute; height: auto; pointer-events: none; }
+.artLeft { left: -96px; bottom: -36px; width: 150px; rotate: -9deg; }
+.artRight { right: -84px; top: -64px; width: 160px; rotate: 10deg; }
+
+@media (max-width: 1399px) {
+  .artLeft { display: none; }
+  .artRight { right: 12px; top: -52px; width: clamp(84px, 12vw, 120px); }
 }
 
 .text { display: grid; justify-items: start; gap: clamp(14px, 1.6vw, 20px); }
