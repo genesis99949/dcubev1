@@ -39,8 +39,8 @@ export const packages: Package[] = [
     tier: "start",
     name: TIERS.start,
     for: l(
-      "A website tailored to your business, ready for mobile and launched on your domain.",
-      "Un site adaptat afacerii tale, pregătit pentru mobil și lansat pe domeniul tău.",
+      "A website tailored to your business, launched on your domain.",
+      "Un site adaptat afacerii tale, lansat pe domeniul tău.",
     ),
     price: { ro: 1500, en: 300 },
     includes: [

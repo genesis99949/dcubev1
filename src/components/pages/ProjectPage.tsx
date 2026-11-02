@@ -143,6 +143,12 @@ export async function ProjectPage({ lang, params }: ProjectPageProps & { lang: L
           </section>
         ))}
 
+        <section className={`${styles.cta} rise`} aria-labelledby="project-cta">
+          <h2 id="project-cta" className={styles.ctaTitle}>{t(ui.work.ctaTitle)}</h2>
+          <p className="lead">{t(ui.work.ctaText)}</p>
+          <Link href={localePath(lang, "/#contact")} className="btn">{t(ui.work.ctaAction)}</Link>
+        </section>
+
         {next && next.slug !== project.slug ? (
           <Link href={localePath(lang, `/work/${next.slug}`)} className={`${styles.next} rise`}>
             <span className="eyebrow">{t(ui.work.nextProject)}</span>

@@ -102,17 +102,17 @@ export const projects: Project[] = [
     scope: [l("Online store", "Magazin online"), l("Rebrand", "Rebranding"), l("Motion", "Animație")],
     year: 2026,
     summary: l(
-      "A digital experience for outdoor living — sculptural fire tables in a quiet, editorial e-commerce journey.",
-      "O experiență digitală pentru viața în aer liber — mese cu foc sculpturale, într-un magazin online editorial și liniștit.",
+      "Sculptural fire tables in a quiet, editorial online store.",
+      "Mese cu foc sculpturale, într-un magazin online editorial și liniștit.",
     ),
     description: [
       l(
-        "A digital experience for outdoor living. Sculptural fire tables, warm materials and quiet editorial layouts come together in a visual e-commerce journey for PureFlame.",
-        "O experiență digitală pentru viața în aer liber. Mese cu foc sculpturale, materiale calde și pagini editoriale, liniștite, se leagă într-un parcurs vizual de cumpărare pentru PureFlame.",
+        "An online store for sculptural fire tables, with warm materials and quiet editorial pages.",
+        "Un magazin online pentru mese cu foc sculpturale, cu materiale calde și pagini editoriale, liniștite.",
       ),
       l(
-        "The project covers the online shop — homepage, collection, product and about pages, on desktop and mobile — and a small rebrand around it: the existing hand-lettered logo in a new colour, and a logo animation for the site.",
-        "Proiectul acoperă magazinul online — pagina principală, colecția, paginile de produs și pagina despre noi, pe desktop și mobil — și un mic rebranding în jurul lui: logo-ul existent, scris de mână, într-o culoare nouă, și o animație de logo pentru site.",
+        "The project covers the online store (homepage, collection, product and about pages, on desktop and mobile) and a small rebrand: the existing hand-lettered logo in a new colour, plus a logo animation for the site.",
+        "Proiectul acoperă magazinul online (pagina principală, colecția, paginile de produs și pagina despre noi, pe desktop și mobil) și un mic rebranding: logo-ul existent, scris de mână, într-o culoare nouă, plus o animație de logo pentru site.",
       ),
     ],
     // Media is generated from the live site and the logo source files:
@@ -124,8 +124,8 @@ export const projects: Project[] = [
       width: 1920,
       height: 1080,
       alt: l(
-        "The PureFlame website in a browser, scrolling through the homepage",
-        "Site-ul PureFlame într-un browser, derulând pagina principală",
+        "The Pure Flame website in a browser, scrolling through the homepage",
+        "Site-ul Pure Flame într-un browser, derulând pagina principală",
       ),
     },
     // Self-hosted (the Vimeo copy is private and asked visitors to log in). Source:
@@ -138,8 +138,8 @@ export const projects: Project[] = [
       width: 1920,
       height: 1080,
       alt: l(
-        "PureFlame homepage on a MacBook, outdoors in a wheat field",
-        "Pagina principală PureFlame pe un MacBook, afară, într-un lan de grâu",
+        "Pure Flame homepage on a MacBook, outdoors in a wheat field",
+        "Pagina principală Pure Flame pe un MacBook, afară, într-un lan de grâu",
       ),
     },
     sections: [
@@ -147,12 +147,12 @@ export const projects: Project[] = [
         title: l("Website", "Site-ul"),
         text: [
           l(
-            "The homepage opens on a full-screen film under a single line — “Ignite the moment” — then moves through the collection, the evening ritual around the fire and a guide that helps you choose a table by the size of your terrace.",
-            "Pagina principală se deschide cu un film pe tot ecranul, sub un singur rând — „Ignite the moment” — apoi trece prin colecție, prin ritualul de seară din jurul focului și printr-un ghid care te ajută să alegi masa după mărimea terasei.",
+            "The homepage opens on a full-screen film under a single line, “Ignite the moment”. It then moves through the collection, the evening ritual around the fire and a guide that helps you choose a table by the size of your terrace.",
+            "Pagina principală se deschide cu un film pe tot ecranul, sub un singur rând: „Ignite the moment”. Apoi trece prin colecție, prin ritualul de seară din jurul focului și printr-un ghid care te ajută să alegi masa după mărimea terasei.",
           ),
           l(
-            "The about page tells the story behind the tables: the idea, the materials — flame, glass, stone — and the people who make them.",
-            "Pagina despre noi spune povestea din spatele meselor: ideea, materialele — flacără, sticlă, piatră — și oamenii care le fac.",
+            "The about page tells the story behind the tables: the idea, the materials (flame, glass, stone) and the people who make them.",
+            "Pagina despre noi spune povestea din spatele meselor: ideea, materialele (flacără, sticlă, piatră) și oamenii care le fac.",
           ),
         ],
         media: [
@@ -163,12 +163,12 @@ export const projects: Project[] = [
             width: 1920,
             height: 1080,
             alt: l(
-              "The PureFlame website in motion: homepage and about page",
-              "Site-ul PureFlame în mișcare: pagina principală și pagina despre noi",
+              "The Pure Flame website in motion: homepage and about page",
+              "Site-ul Pure Flame în mișcare: pagina principală și pagina despre noi",
             ),
             caption: l(
-              "Homepage and about — recorded scrolling through the live site.",
-              "Pagina principală și pagina despre noi — înregistrate derulând site-ul real.",
+              "Homepage and about page, recorded on the live site.",
+              "Pagina principală și pagina despre noi, înregistrate pe site-ul real.",
             ),
           },
         ],
@@ -177,8 +177,8 @@ export const projects: Project[] = [
         title: l("Collection", "Colecția"),
         text: [
           l(
-            "The collection page presents the five models — Embera, Aether, Flavo, Fera and Ignite — as large lifestyle compositions with a full-screen gallery view, followed by a side-by-side comparison of their proportions and the accessories.",
-            "Pagina de colecție prezintă cele cinci modele — Embera, Aether, Flavo, Fera și Ignite — în compoziții mari, de tip lifestyle, cu galerie pe tot ecranul, urmate de o comparație a proporțiilor și de accesorii.",
+            "The collection page shows the five models (Embera, Aether, Flavo, Fera and Ignite) in large lifestyle photos with a full-screen gallery, then compares their sizes and lists the accessories.",
+            "Pagina de colecție arată cele cinci modele (Embera, Aether, Flavo, Fera și Ignite) în fotografii mari, cu galerie pe tot ecranul, apoi le compară mărimile și prezintă accesoriile.",
           ),
         ],
         media: [
@@ -190,12 +190,12 @@ export const projects: Project[] = [
             width: 1536,
             height: 1024,
             alt: l(
-              "The PureFlame collection page on a desktop display in a wheat field: the five models, the comparison and the accessories",
-              "Pagina de colecție PureFlame pe un monitor, într-un lan de grâu: cele cinci modele, comparația și accesoriile",
+              "The Pure Flame collection page on a desktop display in a wheat field: the five models, the comparison and the accessories",
+              "Pagina de colecție Pure Flame pe un monitor, într-un lan de grâu: cele cinci modele, comparația și accesoriile",
             ),
             caption: l(
-              "Collection — the five models, the comparison and the accessories.",
-              "Colecția — cele cinci modele, comparația și accesoriile.",
+              "The collection: the five models, the comparison and the accessories.",
+              "Colecția: cele cinci modele, comparația și accesoriile.",
             ),
           },
         ],
@@ -204,12 +204,12 @@ export const projects: Project[] = [
         title: l("Product pages", "Paginile de produs"),
         text: [
           l(
-            "Each table has its own page: a gallery with every angle, the finish selector and the buy box — with delivery, secure payment, the two-year warranty and 14-day returns spelled out right next to the price.",
-            "Fiecare masă are pagina ei: o galerie din toate unghiurile, selectorul de finisaj și caseta de cumpărare — cu livrarea, plata securizată, garanția de doi ani și returul în 14 zile scrise chiar lângă preț.",
+            "Each table has its own page: a gallery with every angle, the finish selector and the buy box. Delivery, secure payment, the two-year warranty and 14-day returns are spelled out right next to the price.",
+            "Fiecare masă are pagina ei: o galerie din toate unghiurile, alegerea finisajului și caseta de cumpărare. Livrarea, plata securizată, garanția de doi ani și returul în 14 zile sunt scrise chiar lângă preț.",
           ),
           l(
-            "Further down, a 3D viewer and dimension drawings — top view for the footprint, front view for the height — help judge the table against a real terrace before ordering.",
-            "Mai jos, un vizualizator 3D și desenele cu dimensiuni — vedere de sus pentru suprafață, vedere din față pentru înălțime — te ajută să vezi masa pe o terasă reală înainte de comandă.",
+            "Further down, a 3D view and dimension drawings help you picture the table on your own terrace before ordering.",
+            "Mai jos, o vedere 3D și desenele cu dimensiuni te ajută să-ți imaginezi masa pe terasa ta înainte de comandă.",
           ),
         ],
         media: [
@@ -222,8 +222,8 @@ export const projects: Project[] = [
               "Pagina de produs Embera pe desktop și caseta de cumpărare pe mobil",
             ),
             l(
-              "Embera — product page on desktop, buy box on mobile.",
-              "Embera — pagina de produs pe desktop, caseta de cumpărare pe mobil.",
+              "Embera: product page on desktop, buy box on mobile.",
+              "Embera: pagina de produs pe desktop, caseta de cumpărare pe mobil.",
             ),
           ),
           img(
@@ -245,8 +245,8 @@ export const projects: Project[] = [
         title: l("Mobile", "Mobil"),
         text: [
           l(
-            "On a phone the pages keep the same editorial rhythm — the film-led hero, the collection and the product pages — with the menu and the cart always one tap away.",
-            "Pe telefon, paginile păstrează același ritm editorial — deschiderea cu film, colecția și paginile de produs — cu meniul și coșul mereu la o atingere distanță.",
+            "On a phone the pages keep the same calm rhythm, with the menu and the cart always one tap away.",
+            "Pe telefon, paginile păstrează același ritm liniștit, cu meniul și coșul mereu la o atingere distanță.",
           ),
         ],
         media: [
@@ -254,7 +254,7 @@ export const projects: Project[] = [
             "/work/pure-flame/mobile.jpg",
             3840,
             2160,
-            l("The PureFlame homepage and collection on mobile", "Pagina principală și colecția PureFlame pe mobil"),
+            l("The Pure Flame homepage and collection on mobile", "Pagina principală și colecția Pure Flame pe mobil"),
             l("Homepage and collection on mobile.", "Pagina principală și colecția pe mobil."),
           ),
         ],
@@ -263,12 +263,12 @@ export const projects: Project[] = [
         title: l("Rebrand", "Rebranding"),
         text: [
           l(
-            "The hand-lettered “Pure Flame” wordmark and the flame mark already existed; I gave them a new colour, working from the logo master file. In the animation the flame ignites, then the signature is written in its original stroke order — exported with a transparent background so it can open the site itself.",
-            "Logotipul „Pure Flame”, scris de mână, și simbolul flăcării existau deja; le-am dat o culoare nouă, pornind de la fișierul master al logo-ului. În animație, flacăra se aprinde, apoi semnătura se scrie în ordinea originală a trăsăturilor — exportată cu fundal transparent, ca să poată deschide chiar site-ul.",
+            "The hand-lettered “Pure Flame” logo and the flame mark already existed; I gave them a new colour. In the animation the flame ignites, then the signature writes itself, ready to open the site.",
+            "Logo-ul „Pure Flame”, scris de mână, și simbolul flăcării existau deja; eu le-am dat o culoare nouă. În animație, flacăra se aprinde, apoi semnătura se scrie singură, gata să deschidă site-ul.",
           ),
           l(
-            "Charcoal, olive, ember, brass and cream carry the warmth of the product. Georgia gives the brand its editorial voice; Work Sans keeps the interface quiet and legible.",
-            "Cărbune, oliv, jar, alamă și crem duc mai departe căldura produsului. Georgia dă brandului vocea editorială; Work Sans păstrează interfața liniștită și ușor de citit.",
+            "Charcoal, olive, ember, brass and cream carry the warmth of the product, with an editorial serif for headings and a plain, legible sans-serif for the rest.",
+            "Cărbune, oliv, jar, alamă și crem duc mai departe căldura produsului, cu un font serif pentru titluri și unul simplu, ușor de citit, pentru restul paginii.",
           ),
         ],
         media: [
@@ -279,8 +279,8 @@ export const projects: Project[] = [
             width: 1920,
             height: 1080,
             alt: l(
-              "PureFlame brand film: logo animation, palette, typography and product naming",
-              "Filmul de brand PureFlame: animația logo-ului, paleta, tipografia și numele produselor",
+              "Pure Flame brand film: logo animation, palette, typography and product naming",
+              "Filmul de brand Pure Flame: animația logo-ului, paleta, tipografia și numele produselor",
             ),
             caption: l(
               "Logo animation, palette, typography and product naming.",
@@ -376,8 +376,8 @@ export const projects: Project[] = [
       {
         label: l("Build", "Tehnologie"),
         value: l(
-          "HTML/CSS/JS front end, Node.js + Express back end, Stripe in test mode",
-          "Front end HTML/CSS/JS, back end Node.js + Express, Stripe în mod de test",
+          "Hand-coded site, card payments with Stripe in test mode",
+          "Site scris în cod, plăți cu cardul prin Stripe, în mod de test",
         ),
       },
       {
@@ -418,8 +418,8 @@ export const projects: Project[] = [
     scope: [l("Online store", "Magazin online"), l("Brand identity", "Identitate de brand"), l("Packaging", "Ambalaje")],
     year: 2026,
     summary: l(
-      "Identity and online shop for a small-batch craft beer brand — four beers, one colour each, and Hopper, a winged hop who never arrives empty-winged.",
-      "Identitate și magazin online pentru un brand de bere artizanală — patru beri, câte o culoare fiecare, și Hopper, un hamei cu aripi care nu vine niciodată cu aripile goale.",
+      "Identity and online store for a craft beer brand: four beers, one colour each, and Hopper, a winged hop.",
+      "Identitate și magazin online pentru un brand de bere artizanală: patru beri, câte o culoare fiecare, și Hopper, un hamei cu aripi.",
     ),
     description: [
       l(
@@ -427,8 +427,8 @@ export const projects: Project[] = [
         "Small batch, big personality: o identitate completă și un magazin online animat pentru un brand de bere artizanală, cu patru beri și o mascotă proprie.",
       ),
       l(
-        "The identity was rebuilt as Edition 02 straight from the live site, so the brand board, the labels and the website share one set of colours, typefaces and graphic elements — and the website does the storytelling in motion.",
-        "Identitatea a fost refăcută ca Ediția 02 pornind direct de la site, astfel încât planșa de brand, etichetele și site-ul folosesc aceleași culori, fonturi și elemente grafice — iar site-ul spune povestea în mișcare.",
+        "The brand board, the labels and the website share the same colours, typefaces and graphic elements, and the website tells the story in motion. The identity was part of this portfolio concept; I no longer take on logo or identity projects.",
+        "Planșa de brand, etichetele și site-ul folosesc aceleași culori, fonturi și elemente grafice, iar site-ul spune povestea în mișcare. Identitatea a făcut parte din acest concept de portofoliu; acum nu mai preiau proiecte de logo sau identitate.",
       ),
     ],
     cover: {
@@ -453,8 +453,8 @@ export const projects: Project[] = [
         "Pagina principală David Craft Ale în mișcare: ecranul de încărcare, Hopper care urmărește cursorul, selectorul de bere și recenziile",
       ),
       caption: l(
-        "Homepage — recorded frame by frame from the site, every animation at its real speed.",
-        "Pagina principală — înregistrată cadru cu cadru de pe site, fiecare animație la viteza ei reală.",
+        "The homepage, recorded on the live site.",
+        "Pagina principală, înregistrată pe site-ul real.",
       ),
     },
     sections: [
@@ -462,12 +462,12 @@ export const projects: Project[] = [
         title: l("Identity", "Identitatea"),
         text: [
           l(
-            "An 8-point star as the logomark, a slab-serif wordmark — DAVID in cocoa over CRAFT ALE in brick red — and Hopper, the winged hop, as the mascot. A rotating seal, a splash mark set in Archivo and a marquee of the brand's own lines complete the kit.",
-            "O stea cu 8 colțuri ca simbol, un logotip slab-serif — DAVID în cacao peste CRAFT ALE în roșu cărămiziu — și Hopper, hameiul cu aripi, ca mascotă. Un sigiliu rotativ, un semn de deschidere scris în Archivo și o bandă cu replicile brandului completează setul.",
+            "An eight-point star as the symbol, the name in bold letters (DAVID in cocoa over CRAFT ALE in brick red) and Hopper, the winged hop, as the mascot. A rotating seal and a strip with the brand's own lines complete the set.",
+            "O stea cu opt colțuri ca simbol, numele scris cu litere groase (DAVID în cacao peste CRAFT ALE în roșu cărămiziu) și Hopper, hameiul cu aripi, ca mascotă. Un sigiliu rotativ și o bandă cu replicile brandului completează setul.",
           ),
           l(
-            "Alfa Slab One for display, Hanken Grotesk for text and interface. Cream, paper, honey, cocoa and ink carry the brand; each beer adds one colour of its own — Blonde, Amber, IPA and Dark.",
-            "Alfa Slab One pentru titluri, Hanken Grotesk pentru text și interfață. Crem, hârtie, miere, cacao și cerneală poartă brandul; fiecare bere adaugă o culoare proprie — Blonde, Amber, IPA și Dark.",
+            "Cream, paper, honey, cocoa and ink carry the brand; each beer (Blonde, Amber, IPA and Dark) adds one colour of its own.",
+            "Crem, hârtie, miere, cacao și cerneală poartă brandul; fiecare bere (Blonde, Amber, IPA și Dark) adaugă o culoare proprie.",
           ),
         ],
         media: [
@@ -482,8 +482,8 @@ export const projects: Project[] = [
               "Filmul de identitate David Craft Ale: logo-ul principal, semnul de deschidere și sigiliul rotativ, cele patru beri și banda",
             ),
             caption: l(
-              "Identity film — logo, splash mark, seal, the four and the marquee, joined by the site's pour transition.",
-              "Filmul de identitate — logo, semnul de deschidere, sigiliul, cele patru beri și banda, legate prin tranziția „pour” a site-ului.",
+              "Identity film: logo, seal, the four beers and the strip.",
+              "Filmul de identitate: logo-ul, sigiliul, cele patru beri și banda.",
             ),
           },
           img(
@@ -502,8 +502,8 @@ export const projects: Project[] = [
         title: l("Labels & packaging", "Etichete și ambalaje"),
         text: [
           l(
-            "Each beer has its own label set — neck, front, side and back, the back with tasting notes and ingredients — built on the same frame: the arched David Craft Ale name, Hopper and the beer's own colour.",
-            "Fiecare bere are propriul set de etichete — de gât, față, lateral și spate, cea din spate cu note de degustare și ingrediente — construite pe același cadru: numele David Craft Ale în arc, Hopper și culoarea fiecărei beri.",
+            "Each beer has its own labels for the neck, front, side and back (the back one lists tasting notes and ingredients), all built on the same frame: the arched name, Hopper and the beer's colour.",
+            "Fiecare bere are etichete proprii pentru gât, față, lateral și spate (cea din spate cu note de degustare și ingrediente), toate pe același cadru: numele în arc, Hopper și culoarea berii.",
           ),
           l(
             "The cans and the six-pack carriers carry the same system, so the four beers read as one family on the shelf.",
@@ -568,7 +568,7 @@ export const projects: Project[] = [
             1536,
             1024,
             l("IPA six-pack of cans in its carrier", "Pachet de șase doze IPA în cutia lui"),
-            l("Six-pack carrier — IPA.", "Cutia de șase — IPA."),
+            l("Six-pack carrier, IPA.", "Cutia de șase, IPA."),
             "half",
           ),
         ],
@@ -577,12 +577,12 @@ export const projects: Project[] = [
         title: l("Homepage & story", "Pagina principală și povestea"),
         text: [
           l(
-            "The homepage opens with a splash, then lets Hopper chase the cursor around the hero. Picking a beer recolours the shelf and the “Now pouring” panel; pages hand over through “the pour” — four bands in the beer colours rising and unwinding like a glass being filled.",
-            "Pagina principală se deschide cu un ecran de încărcare, apoi îl lasă pe Hopper să urmărească cursorul prin hero. Alegerea unei beri recolorează raftul și panoul „Now pouring”; paginile se schimbă prin „the pour” — patru benzi în culorile berilor care se ridică și se retrag ca un pahar care se umple.",
+            "On the homepage, Hopper follows the cursor. Picking a beer recolours the shelf, and pages change through “the pour”: four bands in the beer colours that rise like beer filling a glass.",
+            "Pe pagina principală, Hopper urmărește cursorul. Alegerea unei beri recolorează raftul, iar paginile se schimbă prin „the pour”: patru benzi în culorile berilor, care se ridică precum berea într-un pahar.",
           ),
           l(
-            "The story page reveals its illustrations through irises and curtains, then walks through the brewery journey in seven steps — milling, mashing, boiling, fermentation, conditioning, bottling and good company — each illustration linked to the next by a line that draws itself as you scroll.",
-            "Pagina cu povestea își dezvăluie ilustrațiile prin efecte de iris și cortină, apoi parcurge drumul berii în șapte pași — măcinare, plămădire, fierbere, fermentare, maturare, îmbuteliere și compania bună — fiecare ilustrație legată de următoarea printr-o linie care se desenează pe măsură ce derulezi.",
+            "The story page walks through the brewery journey in seven steps, from milling to bottling and good company, each illustration linked to the next by a line that draws itself as you scroll.",
+            "Pagina cu povestea parcurge drumul berii în șapte pași, de la măcinare la îmbuteliere și compania bună, fiecare ilustrație legată de următoarea printr-o linie care se desenează pe măsură ce derulezi.",
           ),
         ],
         media: [
@@ -597,8 +597,8 @@ export const projects: Project[] = [
               "Pagina cu povestea David Craft Ale: dezvăluirea imaginilor, drumul berii în șapte pași și curtea",
             ),
             caption: l(
-              "Our story — iris and curtain reveals, and the brewery journey drawn by scroll.",
-              "Povestea — dezvăluiri iris și cortină, și drumul berii desenat la scroll.",
+              "The story page and the brewery journey.",
+              "Povestea și drumul berii.",
             ),
           },
         ],
@@ -607,12 +607,12 @@ export const projects: Project[] = [
         title: l("Product pages", "Paginile de produs"),
         text: [
           l(
-            "Every beer has its own page: a photo gallery, the essentials (volume, ABV, IBU) and a switch between bottle and can, single and six-pack, with photo and price following the choice.",
-            "Fiecare bere are pagina ei: o galerie foto, informațiile esențiale (volum, alcool, IBU) și opțiunea între sticlă și doză, bucată sau bax de șase, cu poza și prețul care se schimbă după alegere.",
+            "Every beer has its own page: a photo gallery, the essentials (volume, alcohol, bitterness) and a choice between bottle and can, single or six-pack, with the photo and price following the choice.",
+            "Fiecare bere are pagina ei: o galerie foto, informațiile esențiale (volum, alcool, amăreală) și alegerea între sticlă și doză, bucată sau bax de șase, cu poza și prețul care se schimbă după alegere.",
           ),
           l(
-            "Hopper gets a page of his own as a limited plush drop, with a gallery and the rest of the merch — beer mats, a bottle opener and a pint glass.",
-            "Hopper are propria pagină, ca jucărie de pluș în ediție limitată, cu galerie și restul produselor — suporturi de pahar, un desfăcător și un pahar de bere.",
+            "Hopper gets a page of his own as a limited-edition plush toy, next to the rest of the merch: beer mats, a bottle opener and a pint glass.",
+            "Hopper are propria pagină, ca jucărie de pluș în ediție limitată, lângă restul produselor: suporturi de pahar, un desfăcător și un pahar de bere.",
           ),
         ],
         media: [
@@ -627,8 +627,8 @@ export const projects: Project[] = [
               "Pagina de produs Blonde Ale și pagina jucăriei Hopper, legate prin tranziția „pour”",
             ),
             caption: l(
-              "Beer page and Hopper plushie — the pour in between is the site's own page transition.",
-              "Pagina berii și jucăria Hopper — tranziția dintre ele e chiar cea a site-ului.",
+              "The beer page and the Hopper plush page, with the site's own page transition between them.",
+              "Pagina berii și jucăria Hopper, cu tranziția dintre pagini a site-ului.",
             ),
           },
         ],
@@ -637,8 +637,8 @@ export const projects: Project[] = [
         title: l("Shop", "Magazinul"),
         text: [
           l(
-            "“Pick your pour” lays out the whole lineup — bottles, cans, six-packs and accessories. Hovering a product swaps in a close-up photo, and a quick view opens any product without leaving the page.",
-            "„Pick your pour” așază toată gama — sticle, doze, baxuri de șase și accesorii. La trecerea cu mouse-ul peste un produs apare o fotografie de aproape, iar quick view-ul deschide orice produs fără să părăsești pagina.",
+            "“Pick your pour” lays out the whole range: bottles, cans, six-packs and accessories. Pointing at a product shows a close-up photo, and a quick preview opens any product without leaving the page.",
+            "„Pick your pour” așază toată gama: sticle, doze, baxuri de șase și accesorii. Când treci cu mouse-ul peste un produs apare o fotografie de aproape, iar o previzualizare rapidă deschide orice produs fără să părăsești pagina.",
           ),
         ],
         media: [
@@ -650,11 +650,11 @@ export const projects: Project[] = [
             height: 1080,
             alt: l(
               "The David Craft Ale shop: product hover, quick view, bottles, cans and accessories",
-              "Magazinul David Craft Ale: hover pe produse, quick view, sticle, doze și accesorii",
+              "Magazinul David Craft Ale: fotografii de aproape, previzualizare rapidă, sticle, doze și accesorii",
             ),
             caption: l(
-              "Shop — hover close-ups and the quick view.",
-              "Magazinul — fotografii de aproape la hover și quick view-ul.",
+              "The shop: close-ups and the quick preview.",
+              "Magazinul: fotografii de aproape și previzualizarea rapidă.",
             ),
           },
         ],
@@ -663,8 +663,8 @@ export const projects: Project[] = [
         title: l("Mobile", "Mobil"),
         text: [
           l(
-            "On mobile the beer shelf becomes a carousel you tap or swipe, the brewery journey turns into a vertical trail, and the quick view and distributor map stay one thumb away.",
-            "Pe mobil, raftul de beri devine un carusel pe care îl atingi sau îl glisezi, drumul berii devine un traseu vertical, iar quick view-ul și harta distribuitorilor rămân la un deget distanță.",
+            "On mobile the beer shelf becomes a carousel you tap or swipe, the brewery journey turns into a vertical trail, and the quick preview and distributor map stay one tap away.",
+            "Pe mobil, raftul de beri devine un carusel pe care îl atingi sau îl glisezi, drumul berii devine un traseu vertical, iar previzualizarea rapidă și harta distribuitorilor rămân la o atingere distanță.",
           ),
         ],
         media: [

@@ -32,7 +32,7 @@ export const servicePages = {
     ),
     audience: l(
       "For companies and sole traders working on professional projects. I'm based in Timișoara and we can work together online, wherever you are in Romania.",
-      "Pentru firme și PFA care au nevoie de un site pentru activitatea profesională. Sunt în Timișoara și putem lucra online, din orice oraș din România.",
+      "Pentru firme și PFA-uri care au nevoie de un site pentru activitatea profesională. Sunt în Timișoara și putem lucra online, din orice oraș din România.",
     ),
     benefitsTitle: l("What your site needs to explain.", "Ce trebuie să afle clientul de pe site."),
     benefits: [
@@ -65,6 +65,13 @@ export const servicePages = {
     ),
     faqs: [
       {
+        question: l("What do I need to start a Start website?", "De ce am nevoie ca să încep un site Start?"),
+        answer: l(
+          "A company or sole-trader business, for the quote and the invoice. A domain and hosting in its name; if you don't have them yet, I help you choose. Your logo and colours, the texts for each page and photos you have the right to use. Then the accepted quote and the 50% deposit. Copywriting can be quoted separately.",
+          "O firmă sau un PFA, pentru ofertă și factură. Un domeniu și o găzduire pe numele firmei; dacă nu le ai încă, te ajut să le alegi. Logo-ul și culorile tale, textele pentru fiecare pagină și fotografiile pe care ai dreptul să le folosești. Apoi oferta acceptată și avansul de 50%. Redactarea textelor se poate oferta separat.",
+        ),
+      },
+      {
         question: l("How do I choose between Start and Custom?", "Cum aleg între Start și Personalizat?"),
         answer: l(
           "Start suits a presentation website with up to five pages and an existing structure adapted to your brand. Choose Custom when you want the pages designed from scratch. The written quote sets out the pages and features.",
@@ -76,13 +83,6 @@ export const servicePages = {
         answer: l(
           "The Start package has an indicative timeline of about seven days. The written quote confirms the deadline and the materials needed before work starts. Custom has its own agreed schedule.",
           "Pachetul Start are un termen orientativ de aproximativ șapte zile. Oferta scrisă confirmă termenul și materialele necesare înainte de lucru. La Personalizat stabilim un calendar pentru proiectul tău.",
-        ),
-      },
-      {
-        question: l("What do I need to prepare?", "Ce trebuie să pregătesc?"),
-        answer: l(
-          "Your services, company details, logo and the photos you have the right to use. We agree who supplies the texts and images. Copywriting and additional languages can be quoted separately.",
-          "Lista serviciilor, datele firmei, logo-ul și fotografiile pentru care ai drept de utilizare. Stabilim cine furnizează textele și imaginile. Redactarea textelor și limbile suplimentare se pot oferta separat.",
         ),
       },
       {
@@ -109,7 +109,7 @@ export const servicePages = {
     ),
     audience: l(
       "For companies and sole traders selling their own products. I'm based in Timișoara and work online with businesses across Romania.",
-      "Pentru firme și PFA care își vând propriile produse. Sunt în Timișoara și lucrez online cu afaceri din toată România.",
+      "Pentru firme și PFA-uri care își vând propriile produse. Sunt în Timișoara și lucrez online cu afaceri din toată România.",
     ),
     benefitsTitle: l("From product to order.", "De la produs la comandă."),
     benefits: [
@@ -130,8 +130,8 @@ export const servicePages = {
       {
         title: l("Running the store", "Administrarea magazinului"),
         text: l(
-          "WordPress Start lets you manage products and orders yourself. With Custom, I handle the agreed updates; a management panel is an optional extra. Shipping rates and rules are agreed before launch.",
-          "La Start, pe WordPress, gestionezi singur produsele și comenzile. La Personalizat mă ocup eu de actualizările agreate; panoul de administrare este opțional. Tarifele și regulile de livrare le stabilim înainte de lansare.",
+          "WordPress Start lets you manage products and orders yourself. With Custom, orders are saved in a database you can access and reach you by email, and you see the payments in the payment provider's account. I add new products; a management panel is an optional extra. Shipping rates and rules are agreed before launch.",
+          "La Start, pe WordPress, gestionezi singur produsele și comenzile. La Personalizat, comenzile se salvează într-o bază de date la care ai acces și îți ajung pe email, iar plățile le vezi în contul procesatorului. Produsele noi le adaug eu; panoul de administrare se poate adăuga separat. Tarifele și regulile de livrare le stabilim înainte de lansare.",
         ),
       },
     ],
@@ -141,6 +141,13 @@ export const servicePages = {
       "Pure Flame și David Craft Ale sunt concepte de portofoliu pe care le-am desenat și construit. Poți vedea magazinul, paginile de produs și versiunile pentru mobil ale fiecăruia.",
     ),
     faqs: [
+      {
+        question: l("What do I need to start an online store?", "De ce am nevoie ca să încep un magazin online?"),
+        answer: l(
+          "A company or sole-trader business with an active card-payment account in its name. A domain and WooCommerce hosting in the company's name; I help you choose them. For each product: name, description, price, variants and photos you have the right to use. Your shipping rates, return terms and the details for the legal pages. Then the accepted quote and the 50% deposit.",
+          "O firmă sau un PFA, cu un cont activ la un procesator de plăți cu cardul, pe numele firmei. Un domeniu și o găzduire pentru WooCommerce, tot pe numele firmei; te ajut să le alegi. Pentru fiecare produs: denumirea, descrierea, prețul, variantele și fotografiile pe care ai dreptul să le folosești. Tarifele de livrare, condițiile de retur și datele pentru paginile legale. Apoi oferta acceptată și avansul de 50%.",
+        ),
+      },
       {
         question: l("Do you use WooCommerce or build from scratch?", "Lucrezi cu WooCommerce sau construiești de la zero?"),
         answer: l(
@@ -156,17 +163,17 @@ export const servicePages = {
         ),
       },
       {
-        question: l("Who supplies the product information?", "Cine pregătește informațiile produselor?"),
+        question: l("Who writes the legal pages?", "Cine face paginile legale?"),
         answer: l(
-          "You provide product names, descriptions, prices and photos you have the right to use. We agree the categories and any product variants before uploading. Additional product uploads and copywriting can be quoted separately.",
-          "Tu furnizezi denumirile, descrierile, prețurile și fotografiile pentru care ai drept de utilizare. Stabilim categoriile și eventualele variante înainte de încărcare. Produsele în plus și redactarea textelor se pot oferta separat.",
+          "I write the terms and conditions, return policy, privacy and cookie pages with your details (company, delivery, returns) and add the ANPC links. If you already have these texts, I add them to the store. Have the final texts checked by you or your lawyer.",
+          "Le fac eu, cu datele tale (firma, livrarea, returul): termeni și condiții, politica de retur, confidențialitate și cookie-uri, plus linkurile ANPC. Dacă ai deja textele, le integrez în magazin. Textele finale le verifici tu sau juristul tău.",
         ),
       },
       {
         question: l("What costs continue after launch?", "Ce costuri rămân după lansare?"),
         answer: l(
-          "The domain and hosting are in your company's name: you pay the providers directly and I set them up. The written quote lists their costs, any licences and payment-provider fees. Store management is free for the first month with Start and the first three with Custom; ongoing management is agreed separately.",
-          "Domeniul și găzduirea sunt pe numele firmei tale: le plătești direct furnizorilor, iar eu le configurez. Oferta scrisă precizează costurile lor, eventualele licențe și comisioanele procesatorului de plăți. Administrarea este gratuită o lună la Start și trei luni la Personalizat; continuarea se stabilește separat.",
+          "The domain and hosting are in your company's name: you pay the providers directly and I set them up. The written quote lists their costs, any licences and payment-provider fees.",
+          "Domeniul și găzduirea sunt pe numele firmei tale: le plătești direct furnizorilor, iar eu le configurez. Oferta scrisă precizează costurile lor, eventualele licențe și comisioanele procesatorului de plăți.",
         ),
       },
     ],

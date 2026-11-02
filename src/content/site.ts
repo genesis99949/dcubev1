@@ -51,8 +51,8 @@ export const site = {
   services: {
     headline: l("A site that presents you, or a store that sells.", "Un site care te prezintă sau un magazin care vinde."),
     text: l(
-      "Choose Start for a WordPress site you can manage yourself, or Custom for a design made from scratch for your brand. After launch, I look after the site for free: one month with Start, three with Custom.",
-      "Alegi Start pentru un site pe WordPress pe care îl administrezi singur sau Personalizat pentru un design făcut de la zero pentru brandul tău. După lansare, mă ocup gratuit de administrare: o lună la Start, trei la Personalizat.",
+      "Start is a WordPress site you manage yourself. Custom is designed from scratch for your brand.",
+      "Start e un site pe WordPress, pe care îl administrezi singur. Personalizat e gândit de la zero pentru brandul tău.",
     ),
     /** Label before the projects listed under a service. */
     seeWork: l("Examples", "Exemple"),
@@ -74,11 +74,11 @@ export const site = {
       "For Start, you pay hosting directly to the provider, in your company's name. I help you choose it and set it up.",
       "La Start, găzduirea o plătești direct furnizorului, pe numele firmei tale. Te ajut să o alegi și o configurez eu.",
     ),
-    detailsTitle: l("Before we start", "Înainte să începem"),
+    detailsTitle: l("Costs and materials", "Costuri și materiale"),
     details: [
       {
         question: l("What about the domain, hosting and renewals?", "Cum rămâne cu domeniul, găzduirea și reînnoirile?"),
-        answer: l("The domain and hosting are in your company's name and you pay the providers directly. For a WordPress presentation site, hosting usually costs €50–70 a year. I help you choose them and set them up. For Custom, hosting depends on how the site is built. The written quote lists these costs, any paid licences and renewals, so you know the recurring costs before work starts.", "Domeniul și găzduirea sunt pe numele firmei tale și le plătești direct furnizorilor. Pentru un site de prezentare pe WordPress, găzduirea costă de obicei 250–350 lei pe an. Te ajut să le alegi și le configurez eu. La Personalizat, găzduirea depinde de cum e construit site-ul. Oferta scrisă trece aceste costuri, eventualele licențe plătite și reînnoirile, ca să cunoști costurile recurente înainte să începem."),
+        answer: l("The domain and hosting are in your company's name and you pay the providers directly. Hosting usually costs €50–70 a year for a WordPress presentation site and €80–150 a year for a WooCommerce store, which needs a stronger plan. I don't sell hosting: I help you choose it and set it up. For Custom, hosting depends on how the site is built. The written quote lists these costs, any paid licences and renewals, so you know the recurring costs before work starts.", "Domeniul și găzduirea sunt pe numele firmei tale și le plătești direct furnizorilor. Găzduirea costă de obicei 250–350 lei pe an pentru un site de prezentare pe WordPress și 400–750 lei pe an pentru un magazin WooCommerce, care are nevoie de un plan mai puternic. Nu vând găzduire: te ajut să o alegi și o configurez eu. La Personalizat, găzduirea depinde de cum e construit site-ul. Oferta scrisă trece aceste costuri, eventualele licențe plătite și reînnoirile, ca să cunoști costurile recurente înainte să începem."),
       },
       {
         question: l("What does site management cover after launch?", "Ce acoperă administrarea după lansare?"),
@@ -117,8 +117,8 @@ export const site = {
       {
         title: l("Launch", "Lansare"),
         text: l(
-          "The site goes live on your domain, and I look after it for free at first: one month on Start, three on Custom.",
-          "Site-ul intră live pe domeniul tău, iar la început îl administrez eu, gratuit: o lună la Start, trei luni la Personalizat.",
+          "The site goes live on your domain, and I show you how to use it.",
+          "Site-ul intră live pe domeniul tău și îți arăt cum îl folosești.",
         ),
       },
     ],
@@ -132,8 +132,8 @@ export const site = {
   contact: {
     headline: l("Tell me about your business.", "Spune-mi despre afacerea ta."),
     text: l(
-      "I'll reply with a few questions, a first idea and a ballpark price.",
-      "Îți răspund cu câteva întrebări, o primă idee și un preț orientativ.",
+      "Within 24–48 hours I'll reply with a few questions, a first idea and a ballpark price.",
+      "În 24–48 de ore îți răspund cu câteva întrebări, o primă idee și un preț orientativ.",
     ),
     // Public business contact explicitly supplied by Ramon; the private delivery address stays private.
     email: "contact@ramonbugariu.ro" as string,

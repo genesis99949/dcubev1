@@ -245,7 +245,7 @@ export const express = {
       },
       {
         title: l("I build the site", "Construiesc site-ul"),
-        text: l("I fit the template with your materials. The 48 hours start here, once the order is confirmed and everything has arrived.", "Potrivesc șablonul cu materialele tale. Cele 48 de ore pornesc aici, după ce comanda e confirmată și am primit tot."),
+        text: l("I fit the template with your materials. The 48 hours start here.", "Potrivesc șablonul cu materialele tale. Cele 48 de ore pornesc de aici."),
       },
       {
         title: l("Review and launch", "Verifici și lansăm"),

@@ -82,7 +82,7 @@ export const videoCopy = {
     },
     {
       question: l("When do I receive it, and how do I pay?", "Când îl primesc și cum plătesc?"),
-      answer: l("The written quote confirms the delivery date, scene list and materials needed before work starts. Payment is 50% in advance and 50% on final delivery.", "Oferta scrisă confirmă data livrării, lista scenelor și materialele necesare, înainte să începem. Plata este 50% avans și 50% la livrarea finală."),
+      answer: l("A video without voice-over takes about a week; with voice-over, we agree the date together. The written quote confirms the delivery date, scene list and materials needed before work starts. Payment is 50% in advance and 50% on final delivery.", "Un video fără voice-over e gata în aproximativ o săptămână; cu voice-over, stabilim data împreună. Oferta scrisă confirmă data livrării, lista scenelor și materialele necesare, înainte să începem. Plata este 50% avans și 50% la livrarea finală."),
     },
     {
       question: l("Can I order just a voice-over?", "Pot comanda doar voice-over?"),

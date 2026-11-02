@@ -178,6 +178,26 @@
 
 /* ---------- Next project ---------- */
 
+/* Call to action after the last chapter: centred, plain, before the dark "next project" tile. */
+.cta {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  margin-top: clamp(112px, 14vw, 200px);
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: var(--t-h2);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.cta :global(.lead) { max-width: 30em; }
+
+.cta + .next { margin-top: clamp(72px, 9vw, 128px); }
+
 .next {
   display: grid;
   justify-items: center;

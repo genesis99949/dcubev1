@@ -24,6 +24,13 @@ export const ui = {
     viewCaseStudy: l("View case study", "Vezi studiul de caz"),
     allWork: l("All work", "Toate proiectele"),
     nextProject: l("Next project", "Proiectul următor"),
+    /** Call to action at the end of a case study, before the next project. */
+    ctaTitle: l("Want a store like this?", "Vrei un magazin ca acesta?"),
+    ctaText: l(
+      "Tell me what you sell. Within 24–48 hours I'll reply with a few questions and a ballpark price.",
+      "Spune-mi ce vinzi. În 24–48 de ore îți răspund cu câteva întrebări și un preț orientativ.",
+    ),
+    ctaAction: l("Request a quote", "Cere o ofertă"),
     year: l("Year", "An"),
     builtWith: l("Built with", "Construit cu"),
     madeWith: l("Made with", "Realizat cu"),

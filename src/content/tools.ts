@@ -66,7 +66,8 @@ export const tools = {
   /** Homepage: one moving row each (alternating directions) — design & motion, web & code, AI & platforms. */
   rows: [
     ["figma", "photoshop", "illustrator", "afterEffects", "premierePro"],
-    ["wordpress", "shopify", "javascript", "typescript", "react", "nextjs", "nodejs", "python"],
+    // No Shopify here: the stores I offer run on WooCommerce or custom code.
+    ["wordpress", "javascript", "typescript", "react", "nextjs", "nodejs", "python"],
     ["claude", "chatgpt", "github", "vercel", "cloudflare", "stripe"],
   ] satisfies ToolId[][],
 };
