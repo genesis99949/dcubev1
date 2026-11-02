@@ -1,0 +1,23 @@
+/* Apfel Grotezk by Collletttivo (SIL Open Font License 1.1, see ../fonts/apfelgrotezk-OFL.txt).
+   One family for VELORA: Regular for text, Mittel and Fett for emphasis and titles. */
+@font-face {
+  font-family: 'Apfel Grotezk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/apfelgrotezk-regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Apfel Grotezk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/apfelgrotezk-mittel.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Apfel Grotezk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/apfelgrotezk-fett.woff2) format('woff2');
+}

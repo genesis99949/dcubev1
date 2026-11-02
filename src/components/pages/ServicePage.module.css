@@ -71,6 +71,16 @@
   text-align: center;
 }
 .exampleTitle { max-width: 18ch; font-size: var(--t-h2); font-weight: 600; letter-spacing: -0.045em; line-height: 1.1; text-wrap: balance; }
+/* Start demos: three cards, screenshot first, opening the demo in a new tab. */
+.demos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.demo { display: grid; gap: 6px; align-content: start; text-decoration: none; }
+.demo img { width: 100%; height: auto; margin-bottom: 12px; border: 1px solid var(--hairline); border-radius: var(--radius-sm); transition: translate 0.3s ease; }
+.demo:hover img { translate: 0 -4px; }
+.demoName { font-size: var(--t-lead); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+.demoSector { color: var(--ink-2); }
+.demoOpen { margin-top: 8px; font-size: var(--t-small); font-weight: 700; }
+.demo:hover .demoOpen { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+@media (max-width: 760px) { .demos { grid-template-columns: 1fr; } }
 .faq { max-width: var(--text); margin-inline: auto; }
 .faq details { padding-block: 24px; border-bottom: 1px solid var(--hairline); }
 .faq summary { min-height: 44px; padding-block: 10px; font-size: var(--t-lead); font-weight: 500; letter-spacing: -0.015em; cursor: pointer; }

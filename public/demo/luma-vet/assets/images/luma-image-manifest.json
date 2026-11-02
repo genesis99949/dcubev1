@@ -1,0 +1,55 @@
+{
+  "generated": "2026-10-28",
+  "source": "OpenAI image generation",
+  "illustrative": true,
+  "images": [
+    {
+      "name": "luma-consultatie",
+      "role": "Consultație blândă pentru un câine; pagina și fișa serviciului Consultații",
+      "widths": [
+        720,
+        1600
+      ]
+    },
+    {
+      "name": "luma-analize",
+      "role": "Laborator veterinar; pagina și fișa serviciului Diagnostic",
+      "widths": [
+        720,
+        1600
+      ]
+    },
+    {
+      "name": "luma-ingrijire",
+      "role": "Câine senior alături de stăpân; îngrijire personalizată",
+      "widths": [
+        720,
+        1600
+      ]
+    },
+    {
+      "name": "luma-primire",
+      "role": "Recepție veterinară; Despre noi și rezumatul aceleiași pagini",
+      "widths": [
+        720,
+        1600
+      ]
+    },
+    {
+      "name": "luma-pisica-vizita",
+      "role": "Pisică în transportor; articol despre pregătirea vizitei",
+      "widths": [
+        720,
+        1600
+      ]
+    },
+    {
+      "name": "luma-preventie",
+      "role": "Câine liniștit alături de stăpân și medic; introducerea Servicii și articolul despre prevenție",
+      "widths": [
+        720,
+        1600
+      ]
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import { projects } from "@/content/projects";
 import { pageMetadata } from "@/content/seo";
 import { servicePageCopy as copy, servicePages, type ServicePageKey } from "@/content/service-pages";
 import { site } from "@/content/site";
+import { startDemos } from "@/content/start-demos";
 import { serviceStructuredData } from "@/content/structured-data";
 import styles from "./ServicePage.module.css";
 
@@ -73,6 +74,26 @@ export function ServicePage({ serviceKey, lang }: { serviceKey: ServicePageKey; 
           </div>
         )}
       </section>
+
+      {serviceKey === "website" ? (
+        <section className={`container ${styles.section}`} aria-labelledby="start-demos-title">
+          <header className={styles.head}>
+            <h2 id="start-demos-title" className="headline"><HeadingText text={t(startDemos.title)} /></h2>
+            <p className="lead">{t(startDemos.text)}</p>
+          </header>
+          <div className={styles.demos}>
+            {startDemos.items.map((demo) => (
+              <a key={demo.slug} href={demo.href} className={`${styles.demo} rise`} target="_blank" rel="noreferrer">
+                {/* eslint-disable-next-line @next/next/no-img-element -- demo screenshots are exported at their final size */}
+                <img src={demo.image} width={1600} height={1000} alt={t(demo.alt)} loading="lazy" />
+                <span className={styles.demoName}>{demo.name}</span>
+                <span className={styles.demoSector}>{t(demo.sector)}</span>
+                <span className={styles.demoOpen}>{t(startDemos.open)} <span aria-hidden="true">↗</span></span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section id="pricing" className={`container ${styles.section}`} aria-labelledby="pricing-title">
         <header className={styles.head}>

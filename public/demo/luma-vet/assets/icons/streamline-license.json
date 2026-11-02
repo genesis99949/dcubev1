@@ -1,0 +1,30 @@
+{
+  "collection": "Streamline Core Solid \u2014 Free",
+  "author": {
+    "name": "Streamline",
+    "url": "https://github.com/webalys-hq/streamline-vectors"
+  },
+  "license": {
+    "title": "CC BY 4.0",
+    "spdx": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "source": "https://github.com/iconify/icon-sets/blob/master/json/streamline.json",
+  "changes": "Selected SVGs extracted, dimensions retained; inline currentColor inherited from Luma palette.",
+  "icons": {
+    "service-1": "checkup-medical-report-clipboard-solid",
+    "service-2": "microscope-observation-sciene-solid",
+    "service-3": "health-care-2-solid",
+    "heart": "heart-solid",
+    "heart-cross": "health-care-2-solid",
+    "paw": "pet-paw-solid",
+    "mail": "mail-send-envelope-solid",
+    "phone": "phone-solid",
+    "location": "location-pin-3-solid",
+    "hours": "circle-clock-solid",
+    "faq-visit": "calendar-star-solid",
+    "faq-travel": "bag-suitcase-1-solid",
+    "faq-plan": "chat-bubble-square-question-solid",
+    "search": "magnifying-glass-solid"
+  }
+}
