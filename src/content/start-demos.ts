@@ -14,6 +14,11 @@ export const startDemos = {
     "Trei site-uri demonstrative, construite pe șabloanele mele WordPress. Firmele sunt fictive. Fiecare demo arată toate paginile pe care le are șablonul; la Start alegi până la cinci.",
   ),
   open: l("Explore the demo", "Explorează demo-ul"),
+  /** The section's id on the service page, and the link to it from the Start pricing card. */
+  anchor: "exemple-start",
+  /** Package whose pricing card links to the demos. */
+  packageId: "website-start",
+  cardLink: l("See the three demos", "Vezi cele trei demo-uri"),
   items: [
     {
       slug: "luma-vet",

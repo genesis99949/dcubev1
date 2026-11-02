@@ -76,7 +76,7 @@ export function ServicePage({ serviceKey, lang }: { serviceKey: ServicePageKey; 
       </section>
 
       {serviceKey === "website" ? (
-        <section className={`container ${styles.section}`} aria-labelledby="start-demos-title">
+        <section id={startDemos.anchor} className={`container ${styles.section}`} aria-labelledby="start-demos-title">
           <header className={styles.head}>
             <h2 id="start-demos-title" className="headline"><HeadingText text={t(startDemos.title)} /></h2>
             <p className="lead">{t(startDemos.text)}</p>

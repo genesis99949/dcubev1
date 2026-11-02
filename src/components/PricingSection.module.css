@@ -168,6 +168,13 @@
   align-self: flex-start;
 }
 
+/* Start card: link to the template demos on the service page. */
+.demosLink {
+  margin-bottom: 18px;
+  align-self: flex-start;
+  font-size: var(--t-small);
+}
+
 .packageNote {
   margin-bottom: 18px;
   font-size: var(--t-small);

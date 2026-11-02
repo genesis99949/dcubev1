@@ -2,10 +2,11 @@
 
 import type React from "react";
 import { useEffect, useState } from "react";
-import { tr, type Lang } from "@/content/i18n";
+import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice, packages } from "@/content/packages";
 import { SERVICES, type Service } from "@/content/services";
 import { site } from "@/content/site";
+import { startDemos } from "@/content/start-demos";
 import { EventLink } from "./EventLink";
 import { PACKAGE_EVENT, SERVICE_EVENT } from "./events";
 import styles from "./PricingSection.module.css";
@@ -82,6 +83,11 @@ export function PricingTabs({ lang, service: fixedService }: { lang: Lang; servi
                   ))}
                 </ul>
                 {pkg.editing ? <p className={styles.packageNote}>{tr(pkg.editing, lang)}</p> : null}
+                {pkg.id === startDemos.packageId ? (
+                  <a href={`${localePath(lang, "/website-design")}#${startDemos.anchor}`} className={`more ${styles.demosLink}`}>
+                    {tr(startDemos.cardLink, lang)}
+                  </a>
+                ) : null}
                 <EventLink
                   event={PACKAGE_EVENT}
                   detail={pkg.id}
