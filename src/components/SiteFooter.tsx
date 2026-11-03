@@ -2,7 +2,8 @@ import Link from "next/link";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
-import { express, linkExpress } from "@/content/express";
+import { express } from "@/content/express";
+import { ExpressLive } from "./ExpressLive";
 import { guide, linkGuide } from "@/content/guide";
 import { servicePages } from "@/content/service-pages";
 import { serviceLabel } from "@/content/services";
@@ -17,7 +18,6 @@ export function SiteFooter({ lang }: { lang: Lang }) {
   ];
   const services = [
     ...Object.values(servicePages).map((page) => ({ label: tr(serviceLabel(page.service), lang), href: localePath(lang, page.path) })),
-    ...(linkExpress ? [{ label: express.name, href: localePath(lang, express.path) }] : []),
     { label: tr(ui.footer.video, lang), href: localePath(lang, "/#video") },
   ];
   return (
@@ -39,7 +39,9 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           <nav className={styles.group} aria-label={tr(ui.nav.services, lang)}>
             <h2>{tr(ui.nav.services, lang)}</h2>
             <ul className={styles.links}>
-              {services.map((link) => <li key={link.href}><Link href={link.href}>{link.label}</Link></li>)}
+              {services.slice(0, -1).map((link) => <li key={link.href}><Link href={link.href}>{link.label}</Link></li>)}
+              <ExpressLive><li><Link href={localePath(lang, express.path)}>{express.name}</Link></li></ExpressLive>
+              {services.slice(-1).map((link) => <li key={link.href}><Link href={link.href}>{link.label}</Link></li>)}
             </ul>
           </nav>
           <nav className={`${styles.group} ${styles.contact}`} aria-label={tr(ui.nav.contact, lang)}>

@@ -12,7 +12,7 @@ import { StickyCta } from "@/components/StickyCta";
 import { StructuredData } from "@/components/StructuredData";
 import { TEMPLATE_EVENT } from "@/components/events";
 import { blackFriday, expressPrices } from "@/content/blackFriday";
-import { express } from "@/content/express";
+import { express, expressLive } from "@/content/express";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice, packages, TIERS } from "@/content/packages";
 import { pageMetadata } from "@/content/seo";
@@ -24,8 +24,8 @@ import x from "./ExpressPage.module.css";
 
 export const expressMetadata = (lang: Lang): Metadata => ({
   ...pageMetadata({ lang, path: express.path, title: tr(express.metaTitle, lang), description: tr(express.description, lang) }),
-  // The price is still a proposal: keep the page out of search results until it's published.
-  ...(express.published ? {} : { robots: { index: false, follow: true } }),
+  // Out of search results until Express goes live (1 December); rebuild after that date to index it.
+  ...(expressLive() ? {} : { robots: { index: false, follow: true } }),
 });
 
 /** The Black Friday landing page: short-lived, so never indexed and without language alternates of its own. */

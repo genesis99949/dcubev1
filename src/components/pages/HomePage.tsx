@@ -12,7 +12,6 @@ import { ToolsMarquee } from "@/components/ToolsMarquee";
 import { WorkTiles } from "@/components/WorkTiles";
 import { VideoPricing } from "@/components/VideoPricing";
 import { StructuredData } from "@/components/StructuredData";
-import { linkExpress } from "@/content/express";
 import { tr, type Lang } from "@/content/i18n";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
@@ -100,9 +99,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         </header>
         <PricingSection lang={lang} />
         {/* The smaller product, below the packages so it never sets the first price a visitor sees. */}
-        {linkExpress ? (
-          <CampaignPromo campaign={<ExpressPromo lang={lang} campaign />} regular={<ExpressPromo lang={lang} />} />
-        ) : null}
+        <CampaignPromo campaign={<ExpressPromo lang={lang} campaign />} regular={<ExpressPromo lang={lang} />} />
       </section>
 
       <section id="video" className={`container ${styles.section}`} aria-labelledby="video-title">

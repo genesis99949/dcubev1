@@ -6,7 +6,7 @@ Setările sunt în `src/content/blackFriday.ts`: datele, prețurile de campanie,
 Black Friday, iar `/one-page-express` trimite la `/black-friday`. Din 1 decembrie, totul revine la Express.
 După 30 noiembrie, pagina trimite singură la `/one-page-express`.
 
-**Înainte de lansare:** prețul Express de după campanie (590 / 500 lei) trebuie aprobat și `express.published` pus pe `true`.
+**Express (590 / 500 lei)** apare singur pe 1 decembrie (`express.launch`): linkurile și caseta roșie după ceasul vizitatorului; pentru Google (noindex, sitemap) site-ul trebuie reconstruit și publicat după 1 decembrie.
 Altfel, pagina de campanie trimite oamenii spre un produs care încă nu e public.
 
 ## Oferta, pe scurt

@@ -31,8 +31,11 @@ type Block = { title: L; text: L };
 export const express = {
   id: "one-page-express",
   path: "/one-page-express",
-  /** false = proposed price, not public yet (noindex, not linked). */
-  published: false,
+  /**
+   * Goes live by itself on this date (Ramon's call, 2026-11-03); until then only the Black Friday page sells it.
+   * Links and the homepage tile follow the visitor's clock; noindex and the sitemap follow the build, so rebuild after it.
+   */
+  launch: "2026-12-01T00:00:00+02:00",
   name: "One-Page Express",
   /**
    * Round amounts on Ramon's ~5 lei/€ rule: lei on the Romanian site, euro on the English one.
@@ -437,7 +440,7 @@ export const express = {
   more: l("Need more than one page?", "Ai nevoie de mai multe pagini?"),
   /** Cross-link from the Website service page, shown once published. */
   related: l("Only need one page?", "Ai nevoie doar de o pagină?"),
-  /** The red promo tile under the homepage pricing (ExpressPromo), shown with `linkExpress`. Title = hero.title. */
+  /** The red promo tile under the homepage pricing (ExpressPromo), shown once Express is live. Title = hero.title. */
   promo: {
     lead: l(
       "Only need one page, fast? A menu, five sections and a footer on a tested template, with the domain for the first year.",
@@ -447,8 +450,5 @@ export const express = {
   },
 };
 
-/**
- * Whether other pages link to Express (home pricing, Website page, footer). Always on in `npm run dev`, so the links
- * can be checked locally; in the built site only once `published` is true. Sitemap and noindex follow `published` alone.
- */
-export const linkExpress = express.published || process.env.NODE_ENV === "development";
+/** Whether Express is live: on the visitor's clock for links (see ExpressLive), at build time for noindex and the sitemap. */
+export const expressLive = (now = Date.now()) => now >= Date.parse(express.launch);

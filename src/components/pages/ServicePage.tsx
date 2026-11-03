@@ -4,7 +4,8 @@ import { HeadingText } from "@/components/HeadingText";
 import { PricingSection, ProcessSteps } from "@/components/PricingSection";
 import { StructuredData } from "@/components/StructuredData";
 import { WorkTiles } from "@/components/WorkTiles";
-import { express, linkExpress } from "@/content/express";
+import { express } from "@/content/express";
+import { ExpressLive } from "@/components/ExpressLive";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice, packages } from "@/content/packages";
 import { projects } from "@/content/projects";
@@ -139,11 +140,11 @@ export function ServicePage({ serviceKey, lang }: { serviceKey: ServicePageKey; 
       <aside className={`container ${styles.related}`}>
         <p>{t(copy.otherService)}</p>
         <Link href={localePath(lang, other.path)} className="more">{t(other.title)}</Link>
-        {serviceKey === "website" && linkExpress ? (
-          <>
+        {serviceKey === "website" ? (
+          <ExpressLive>
             <p>{t(express.related)}</p>
             <Link href={localePath(lang, express.path)} className="more">{express.name}</Link>
-          </>
+          </ExpressLive>
         ) : null}
       </aside>
     </main>
