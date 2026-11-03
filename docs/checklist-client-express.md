@@ -5,6 +5,10 @@ Pentru Ramon, înainte să trimiți lista: completează câmpurile [ ] de mai jo
 - Plata: nu e hotărâtă încă (integral la comandă sau 50% avans). Completează rândul din pasul 1.
 - Datele tale de contact și emailul pentru invitația Cloudflare se trec în mesajul către client, nu în acest fișier.
 - Politica de confidențialitate: dacă site-ul are formular, cineva trebuie să scrie textul. Hotărăște dacă îl dă clientul.
+- Domeniul: îl înregistrezi din contul tău Hosterion („Înregistrează”, nu „Transferă”), cu firma clientului ca titular
+  și emailul clientului ca email al titularului (RoTLD trimite acolo cheia de autorizare). Nu îl înregistra pe numele tău.
+  La predare, clientul își face cont Hosterion și deschideți amândoi câte un ticket, fiecare din contul lui, că vreți
+  mutarea; e gratuită (confirmat de suportul Hosterion, 29.10.2026). Pune-ți un memento cu o lună înainte de expirare.
 Lista urmează pagina /one-page-express (src/content/express.ts). Dacă schimbi ceva acolo, schimbă și aici.
 -->
 
@@ -47,8 +51,9 @@ Ai nevoie de mai mult de cinci secțiuni? Fiecare secțiune în plus costă 50 l
 **Dacă îl înregistrez eu (inclus pe primul an):**
 
 - [ ] Îmi dai două-trei variante de nume, în ordinea preferinței, cu .ro sau .com. Verific eu care sunt libere.
-- [ ] Îmi confirmi datele firmei pe care se înregistrează: denumirea, codul fiscal, sediul, plus un email și un telefon de contact.
-- [ ] Reții că, din anul al doilea, reînnoirea o plătești tu, direct la registrar.
+- [ ] Îmi confirmi datele firmei pe care se înregistrează: denumirea, codul fiscal, sediul, un telefon și un email al firmei pe care îl citești. Pe emailul ăsta primești datele de acces și orice cod pentru domeniu, deci domeniul e al tău de la început.
+- [ ] La predare îți faci un cont gratuit pe hosterion.ro, unde l-am înregistrat, și deschizi un ticket că vrei domeniul în contul tău. Eu deschid unul din contul meu, iar ei îl mută gratuit.
+- [ ] Reții că, din anul al doilea, reînnoirea o plătești tu, din contul tău de la Hosterion. Îți spun la predare data la care expiră.
 
 **Dacă ai deja un domeniu:**
 
@@ -74,7 +79,7 @@ Site-ul stă pe Cloudflare, pe planul gratuit, într-un cont al firmei tale. Con
 
 ## 7. După lansare
 
-- Rămâi cu site-ul publicat, cu contul Cloudflare și cu datele domeniului, toate pe numele tău.
+- Rămâi cu site-ul publicat, cu contul Cloudflare și cu domeniul, în contul tău de la registrar, toate pe numele tău.
 - Nu ai nimic de actualizat: site-ul nu are module care să se învechească.
 - Pentru orice modificare îmi scrii. Îți spun prețul și apoi o fac.
 - Dacă vrei mai multe pagini sau să schimbi singur textele, poți trece la pachetul Start. Dacă treci în cel mult șase luni de la lansare, îți scad 300 lei din prețul lui.

@@ -392,8 +392,145 @@
 .call a { color: var(--paper); font-weight: 650; text-decoration: underline; text-underline-offset: 0.2em; }
 .call a:hover { color: var(--yellow); }
 
+/* ---------- Black Friday (the campaign page, /black-friday) ---------- */
+
+/* The strip and the hero, plus the site header above them (not the section heads in <main>), sit on black: paper and ink swap places there, and the
+   derived tones are declared again so they follow the swap. Still only the brand colours, red and yellow. */
+.night,
+:global(body):has(.blackFriday) :global(header):not(main *) {
+  --paper: var(--brand-ink);
+  --ink: var(--brand-paper);
+  --ink-2: color-mix(in srgb, var(--ink) 72%, var(--paper));
+  --ink-3: color-mix(in srgb, var(--ink) 55%, var(--paper));
+  --tile: color-mix(in srgb, var(--ink) 8%, var(--paper));
+  --hairline: color-mix(in srgb, var(--ink) 16%, transparent);
+  --on-ink-2: color-mix(in srgb, var(--paper) 62%, var(--ink));
+  --outline: 2.5px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.night {
+  --burst-text: var(--brand-ink);
+  /* Domain switch: on = yellow track with a black knob; the saving sticker is black text on yellow, unframed. */
+  --switch-on: var(--yellow);
+  --switch-knob: var(--brand-ink);
+  --switch-focus: var(--yellow);
+  --saving-line: var(--yellow);
+  --saving-text: var(--brand-ink);
+  padding-bottom: clamp(56px, 8vw, 112px);
+}
+.night .marquee { color: var(--yellow); }
+
+/* Light type on black reads heavier and tighter than dark on paper: open the title up a little. */
+.night .title {
+  max-width: 14ch;
+  letter-spacing: -0.03em;
+  word-spacing: 0.06em;
+  line-height: 1.02;
+}
+
+/* Campaign buttons: no outline. In the black band (and on the places panel) they turn yellow on black. */
+.blackFriday :global(.btn) { border-color: transparent; }
+.night :global(.btn),
+.places :global(.btn),
+:global(body):has(.blackFriday) :global(header):not(main *) :global(.btn) { background: var(--yellow); color: var(--brand-ink); }
+.night :global(.btn:hover),
+.places :global(.btn:hover),
+:global(body):has(.blackFriday) :global(header):not(main *) :global(.btn:hover) { background: var(--brand-paper); color: var(--brand-ink); }
+
+/* The campaign label above the title, in yellow. */
+.heroSticker {
+  margin-bottom: 18px;
+  border-color: var(--yellow);
+  background: var(--yellow);
+  color: var(--paper);
+}
+
+.bonuses {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap);
+  list-style: none;
+}
+
+.bonus {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: clamp(22px, 2.6vw, 32px);
+  padding-top: clamp(44px, 4.4vw, 56px);
+  border: var(--outline);
+  border-radius: var(--radius);
+}
+
+.bonus h3 { font-size: clamp(1.375rem, 2vw, 1.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.04em; }
+.bonus p { color: var(--ink-2); }
+
+/* "+1" … "+4" as round price seals over the top edge. */
+.bonusSeal {
+  --burst-outer: var(--red);
+  --burst-inner: var(--yellow);
+  --burst-tilt: -8deg;
+  position: absolute;
+  top: -26px;
+  right: 18px;
+  width: 64px;
+  color: var(--red);
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+/* The twelve places on a black panel that echoes the hero: free ones outlined in yellow, taken ones filled red
+   and crossed out. */
+.places {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  max-width: 880px;
+  margin: clamp(48px, 6vw, 80px) auto 0;
+  padding: clamp(28px, 4vw, 52px) clamp(20px, 4vw, 56px);
+  border-radius: var(--radius);
+  background: var(--brand-ink);
+  color: var(--brand-paper);
+  text-align: center;
+}
+
+.placesLabel { font-size: var(--t-h3); font-weight: 800; letter-spacing: -0.035em; line-height: 1.05; }
+
+.placesGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(6px, 0.8vw, 10px);
+  width: 100%;
+  list-style: none;
+}
+
+.placesGrid li {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  border: 2px solid var(--yellow);
+  border-radius: 50%;
+  color: var(--yellow);
+  font-size: clamp(0.8125rem, 1.1vw, 1rem);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.placesGrid .taken {
+  border-color: var(--red);
+  background: var(--red);
+  color: var(--brand-paper);
+  text-decoration: line-through;
+}
+
+.places .note { max-width: 46em; color: color-mix(in srgb, var(--brand-paper) 62%, var(--brand-ink)); }
+
 @media (max-width: 1000px) {
-  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps,
+  .bonuses { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: calc(var(--gap) + 24px); }
 }
 
 @media (max-width: 900px) {
@@ -411,7 +548,9 @@
 }
 
 @media (max-width: 560px) {
-  .steps { grid-template-columns: 1fr; }
+  .steps,
+  .bonuses { grid-template-columns: 1fr; }
+  .placesGrid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

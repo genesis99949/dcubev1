@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { blackFriday } from "@/content/blackFriday";
 import { express } from "@/content/express";
 import { localePath, switchPath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
@@ -13,10 +14,10 @@ export function SiteHeader({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const other: Lang = lang === "en" ? "ro" : "en";
-  const onServicePage = ["/website-design", "/online-store", "/one-page-express"].some((path) => localePath(lang, path) === pathname);
+  const onServicePage = ["/website-design", "/online-store", express.path, blackFriday.path].some((path) => localePath(lang, path) === pathname);
   const contactHref = onServicePage ? "#contact" : localePath(lang, "/#contact");
-  // The One-Page Express page is a funnel: no menu to wander off through, only the request button.
-  const funnel = localePath(lang, express.path) === pathname;
+  // The One-Page Express page (and its Black Friday version) is a funnel: no menu to wander off through, only the request button.
+  const funnel = [express.path, blackFriday.path].some((path) => localePath(lang, path) === pathname);
 
   const nav = [
     { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
@@ -57,10 +58,11 @@ export function SiteHeader({ lang }: { lang: Lang }) {
     return (
       <header className={`${styles.header} ${styles.funnel}`}>
         <div className={`container ${styles.bar}`}>
-          <span className={styles.name}>
+          {/* No menu here, but the name still leads back to the homepage. */}
+          <Link href={localePath(lang, "/")} className={styles.name} aria-label={`${site.name} — ${tr(ui.nav.home, lang)}`}>
             {site.name}
             <span className="mark" aria-hidden />
-          </span>
+          </Link>
           {languageLink(styles.lang)}
           <a href="#contact" className={`btn ${styles.cta}`}>
             {tr(express.sticky, lang)}

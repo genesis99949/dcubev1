@@ -10,7 +10,7 @@ import { ExpressForm } from "./ExpressForm";
  * sticky bar, header) opens it instead of scrolling; without JavaScript they still lead to the form at the
  * bottom of the page. A template link's TEMPLATE_EVENT still reaches the form, which skips to step 2.
  */
-export function ExpressDialog({ lang }: { lang: Lang }) {
+export function ExpressDialog({ lang, campaign = false }: { lang: Lang; campaign?: boolean }) {
   const dialog = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export function ExpressDialog({ lang }: { lang: Lang }) {
       // A click on the dimmed backdrop (the dialog element itself, outside the form) closes it.
       onClick={(e) => e.target === e.currentTarget && close()}
     >
-      <ExpressForm lang={lang} onClose={close} />
+      <ExpressForm lang={lang} campaign={campaign} onClose={close} />
     </dialog>
   );
 }

@@ -11,7 +11,8 @@
   --burst-outer: var(--red);
   --burst-inner: var(--yellow);
   width: clamp(250px, 30vw, 380px);
-  color: var(--ink);
+  /* Dark text on the yellow burst, also where the page swaps paper and ink (Black Friday band). */
+  color: var(--burst-text, var(--ink));
 }
 
 .label { font-size: clamp(0.875rem, 1.2vw, 1.125rem); font-weight: 750; line-height: 1.05; }
@@ -82,18 +83,27 @@
     background-color 0.25s;
 }
 
-.switch[aria-checked="true"] .track { background: var(--red, var(--ink)); }
-.switch[aria-checked="true"] .knob { translate: 24px 0; background: var(--paper); }
+/* The --switch-* and --saving-* variables let a dark band (Black Friday) recolour the switch. */
+.switch[aria-checked="true"] .track {
+  border-color: var(--switch-on, var(--ink));
+  background: var(--switch-on, var(--red, var(--ink)));
+}
+.switch[aria-checked="true"] .knob {
+  translate: 24px 0;
+  border-color: var(--switch-knob, var(--ink));
+  background: var(--switch-knob, var(--paper));
+}
 
 .switch:focus-visible { outline: none; }
-.switch:focus-visible .track { outline: 2px solid var(--red, var(--accent)); outline-offset: 3px; }
+.switch:focus-visible .track { outline: 2px solid var(--switch-focus, var(--red, var(--accent))); outline-offset: 3px; }
 
 /* How much the switch saves, as a small tilted sticker. */
 .saving {
   padding: 0.2em 0.7em 0.26em;
-  border: 2.5px solid var(--ink);
+  border: 2.5px solid var(--saving-line, var(--ink));
   border-radius: 999px;
   background: var(--yellow, var(--tile));
+  color: var(--saving-text, inherit);
   font-weight: 800;
   letter-spacing: -0.02em;
   rotate: -4deg;

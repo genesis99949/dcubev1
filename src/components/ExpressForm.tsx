@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { type FormEvent, useEffect, useRef, useState } from "react";
+import { blackFriday } from "@/content/blackFriday";
 import { express, type ExpressTemplateId } from "@/content/express";
 import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice } from "@/content/packages";
@@ -29,7 +30,7 @@ const isPhone = (value: string) => PHONE.test(value) && value.replace(/\D/g, "")
  * on by itself, so the first two steps are one click each. Same styles, Web3Forms delivery and consents as the
  * general form. `onClose` adds a close button (in the dialog).
  */
-export function ExpressForm({ lang, onClose }: { lang: Lang; onClose?: () => void }) {
+export function ExpressForm({ lang, campaign = false, onClose }: { lang: Lang; campaign?: boolean; onClose?: () => void }) {
   const f = express.form;
   const t = (text: { en: string; ro: string }) => tr(text, lang);
   const [step, setStep] = useState<Step>(1);
@@ -37,7 +38,7 @@ export function ExpressForm({ lang, onClose }: { lang: Lang; onClose?: () => voi
   const [materials, setMaterials] = useState<string | null>(null);
   const [status, setStatus] = useState<Status>("idle");
   const ownDomain = useOwnDomain();
-  const price = formatPrice(expressPrice(ownDomain, lang), lang);
+  const price = formatPrice(expressPrice(ownDomain, lang, campaign), lang);
   const headings = useRef<(HTMLHeadingElement | null)[]>([]);
   const moved = useRef(false);
 
@@ -75,7 +76,9 @@ export function ExpressForm({ lang, onClose }: { lang: Lang; onClose?: () => voi
     setStatus("sending");
     track("form_submit", { form_id: "express" });
     const result = await sendToWeb3Forms({
-      subject: tr(f.subject, lang),
+      // Requests from the Black Friday page are tagged, so the bonuses aren't forgotten.
+      subject: campaign ? `[${blackFriday.tag}] ${tr(f.subject, lang)}` : tr(f.subject, lang),
+      offer: campaign ? blackFriday.tag : "—",
       name: form.get("name"),
       // An email becomes the reply-to address; a phone number is passed on as is.
       ...(EMAIL.test(reach) ? { email: reach } : { phone: reach }),
@@ -95,10 +98,11 @@ export function ExpressForm({ lang, onClose }: { lang: Lang; onClose?: () => voi
       track("generate_lead", {
         form_id: "express",
         package_id: express.id,
+        campaign: campaign ? blackFriday.id : "none",
         template: template ?? "none",
         materials: materials ?? "none",
         own_domain: ownDomain,
-        value: expressPrice(ownDomain, "ro"),
+        value: expressPrice(ownDomain, "ro", campaign),
         currency: "RON",
       });
     }
@@ -206,7 +210,7 @@ export function ExpressForm({ lang, onClose }: { lang: Lang; onClose?: () => voi
 
       <div className={s.step} hidden={step !== 3}>
         {heading(3, t(f.contactTitle))}
-        <DomainSwitch lang={lang} className={s.domain} />
+        <DomainSwitch lang={lang} campaign={campaign} className={s.domain} />
         {ownDomain ? (
           <label className={styles.field}>
             <span>{t(express.domain.name)}</span>

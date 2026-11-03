@@ -34,7 +34,7 @@ Setări → Instrumente pentru afaceri → Răspunsuri rapide. Le trimiți scrii
 
 **/domeniu** — dacă îl înregistrezi tu:
 
-> Pentru domeniu îmi trebuie două-trei variante de nume (.ro sau .com) și datele firmei: denumirea, codul fiscal, sediul, un email și un telefon de contact. Îl înregistrez pe numele firmei tale.
+> Pentru domeniu îmi trebuie două-trei variante de nume (.ro sau .com) și datele firmei: denumirea, codul fiscal, sediul, un telefon și un email al firmei pe care îl citești. Îl înregistrez pe numele firmei tale, iar la predare îl mutăm gratuit în contul tău de la Hosterion.
 
 **/cloudflare** — contul pentru găzduire:
 

@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { express } from "@/content/express";
+import { expressPrices } from "@/content/blackFriday";
 import type { Lang } from "@/content/i18n";
 
 // The Express "I already have a domain" switch, shared by the hero price and the request form, so flipping
@@ -20,4 +20,7 @@ export function setOwnDomain(value: boolean) {
 
 export const useOwnDomain = () => useSyncExternalStore(subscribe, () => ownDomain, () => false);
 
-export const expressPrice = (own: boolean, lang: Lang) => (own ? express.priceOwnDomain : express.price)[lang];
+export const expressPrice = (own: boolean, lang: Lang, campaign = false) => {
+  const prices = expressPrices(campaign);
+  return (own ? prices.priceOwnDomain : prices.price)[lang];
+};

@@ -1,5 +1,6 @@
 import type React from "react";
 import { ContactForm } from "@/components/ContactForm";
+import { CampaignPromo } from "@/components/CampaignPromo";
 import { ExpressPromo } from "@/components/ExpressPromo";
 import { HeroDevices } from "@/components/HeroDevices";
 import { HeadingText } from "@/components/HeadingText";
@@ -99,7 +100,9 @@ export function HomePage({ lang }: { lang: Lang }) {
         </header>
         <PricingSection lang={lang} />
         {/* The smaller product, below the packages so it never sets the first price a visitor sees. */}
-        {linkExpress ? <ExpressPromo lang={lang} /> : null}
+        {linkExpress ? (
+          <CampaignPromo campaign={<ExpressPromo lang={lang} campaign />} regular={<ExpressPromo lang={lang} />} />
+        ) : null}
       </section>
 
       <section id="video" className={`container ${styles.section}`} aria-labelledby="video-title">
