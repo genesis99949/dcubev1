@@ -128,6 +128,8 @@
 .blackFriday .lead { color: color-mix(in srgb, var(--paper) 78%, var(--ink)); }
 .blackFriday .action { border-color: transparent; background: var(--express-yellow); color: var(--ink); }
 .blackFriday .action:hover { background: var(--paper); }
+.blackFriday .teaser { cursor: default; }
+.blackFriday .teaser:hover { background: var(--express-yellow); }
 .blackFriday .price { --burst-outer: var(--express-red); }
 .blackFriday .value { color: var(--ink); }
 

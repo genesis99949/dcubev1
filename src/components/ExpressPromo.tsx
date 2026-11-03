@@ -5,6 +5,7 @@ import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice } from "@/content/packages";
 import { site } from "@/content/site";
 import styles from "./ExpressPromo.module.css";
+import { CampaignOpen } from "./CampaignOpen";
 import { ExpressSticker } from "./ExpressSticker";
 import { Starburst } from "./Starburst";
 
@@ -24,9 +25,14 @@ export function ExpressPromo({ lang, campaign = false }: { lang: Lang; campaign?
         <p className={styles.sticker}>{campaign ? t(bf.hero.sticker) : express.name}</p>
         <h3 id="express-promo-title" className={styles.title}>{t(campaign ? bf.hero.title : express.hero.title)}</h3>
         <p className={styles.lead}>{t(campaign ? bf.promo.lead : express.promo.lead)}</p>
-        <Link href={localePath(lang, campaign ? bf.path : express.path)} className={`btn ${styles.action}`}>
-          {t(campaign ? bf.promo.action : express.promo.action)}
-        </Link>
+        {campaign ? (
+          // Until the offer opens the button goes nowhere: it only says how few places there are.
+          <CampaignOpen soon={<span className={`btn ${styles.action} ${styles.teaser}`}>{t(bf.promo.teaser)}</span>}>
+            <Link href={localePath(lang, bf.path)} className={`btn ${styles.action}`}>{t(bf.promo.action)}</Link>
+          </CampaignOpen>
+        ) : (
+          <Link href={localePath(lang, express.path)} className={`btn ${styles.action}`}>{t(express.promo.action)}</Link>
+        )}
       </div>
       <div className={styles.priceArea}>
         <Starburst className={styles.price} animated aria-hidden="true">

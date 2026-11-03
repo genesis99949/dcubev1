@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { blackFriday } from "@/content/blackFriday";
+import { useCampaignOpen } from "./CampaignOpen";
 import { express } from "@/content/express";
 import { localePath, switchPath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
@@ -18,6 +19,9 @@ export function SiteHeader({ lang }: { lang: Lang }) {
   const contactHref = onServicePage ? "#contact" : localePath(lang, "/#contact");
   // The One-Page Express page (and its Black Friday version) is a funnel: no menu to wander off through, only the request button.
   const funnel = [express.path, blackFriday.path].some((path) => localePath(lang, path) === pathname);
+  // Before the offer opens, the campaign page is only a placeholder: nothing to request yet.
+  const campaignOpen = useCampaignOpen();
+  const requestButton = !(localePath(lang, blackFriday.path) === pathname && !campaignOpen);
 
   const nav = [
     { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
@@ -64,9 +68,11 @@ export function SiteHeader({ lang }: { lang: Lang }) {
             <span className="mark" aria-hidden />
           </Link>
           {languageLink(styles.lang)}
-          <a href="#contact" className={`btn ${styles.cta}`}>
-            {tr(express.sticky, lang)}
-          </a>
+          {requestButton ? (
+            <a href="#contact" className={`btn ${styles.cta}`}>
+              {tr(express.sticky, lang)}
+            </a>
+          ) : null}
         </div>
       </header>
     );

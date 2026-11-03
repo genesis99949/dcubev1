@@ -560,3 +560,6 @@
   .badge,
   .badge svg { animation: none; }
 }
+
+/* The placeholder before the Black Friday offer opens: the black band fills most of the screen. */
+.soon { display: grid; align-content: center; min-height: 72svh; }

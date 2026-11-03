@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import type React from "react";
 import { CampaignGate } from "@/components/CampaignGate";
+import { CampaignOpen } from "@/components/CampaignOpen";
 import { EventLink } from "@/components/EventLink";
 import { ExpressDialog } from "@/components/ExpressDialog";
 import { ExpressForm } from "@/components/ExpressForm";
@@ -66,7 +67,7 @@ export function ExpressPage({ lang, campaign = false }: { lang: Lang; campaign?:
     { key: "custom", name: `${t(TIERS.custom)}`, price: custom.price ? formatPrice(custom.price[lang], lang) : "", dark: false },
   ] as const;
 
-  return (
+  const page = (
     <main className={`${x.express} ${campaign ? x.blackFriday : ""}`}>
       <CampaignGate lang={lang} campaign={campaign} />
       {campaign ? null : <StructuredData data={expressStructuredData(lang)} />}
@@ -300,4 +301,25 @@ export function ExpressPage({ lang, campaign = false }: { lang: Lang; campaign?:
       <ExpressDialog lang={lang} campaign={campaign} />
     </main>
   );
+  if (!campaign) return page;
+
+  // Before `start` the campaign page is only a placeholder hero on the black band.
+  const soon = (
+    <main className={`${x.express} ${x.blackFriday}`}>
+      <div className={`${x.night} ${x.soon}`}>
+        <section className={`container ${styles.hero} ${x.hero}`} aria-labelledby="express-title">
+          <nav className={styles.breadcrumb} aria-label={t(servicePageCopy.breadcrumb)}>
+            <Link href={localePath(lang, "/")}>{t(servicePageCopy.home)}</Link>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">{`${express.name} · ${t(bf.breadcrumb)}`}</span>
+          </nav>
+          <p className={`${x.sticker} ${x.heroSticker}`}>{t(bf.hero.sticker)}</p>
+          <h1 id="express-title" className={`${styles.title} ${x.title} reveal`}>
+            <HeadingText text={t(bf.soon.title)} />
+          </h1>
+        </section>
+      </div>
+    </main>
+  );
+  return <CampaignOpen soon={soon}>{page}</CampaignOpen>;
 }
