@@ -147,8 +147,6 @@ export const blackFriday = {
     action: l("See the Black Friday offer", "Vezi oferta de Black Friday"),
     /** Before `start` the button links nowhere and says this instead (Ramon's wording, 2026-11-03). */
     teaser: l("Stay tuned! Only 12 places available.", "Fii pe fază! Avem doar 12 locuri disponibile."),
-    /** Hand-written note by the price: the usual price from December, never crossed out (see the top of this file). */
-    later: l("From December", "Din decembrie"),
   },
 
   /** Before `start` the campaign page shows only this hero (Ramon's wording, 2026-11-03). */

@@ -74,53 +74,6 @@
 
 .priceArea { position: relative; display: grid; justify-items: center; }
 
-/* Black Friday: the December price, hand-written in marker above the burst, with an arrow pointing at it. */
-.later {
-  position: absolute;
-  top: -26px;
-  left: -48px;
-  z-index: 1;
-  color: var(--paper);
-  font-size: clamp(1.0625rem, 1.6vw, 1.4375rem);
-  font-weight: 750;
-  font-style: italic;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  rotate: -9deg;
-}
-
-.laterValue {
-  position: relative;
-  isolation: isolate;
-  font-weight: 850;
-  padding-inline: 0.1em;
-}
-
-/* A dry-brush stroke under the price (under, never through it: this is not a crossed-out price). */
-.brush {
-  position: absolute;
-  left: -4%;
-  bottom: -0.4em;
-  z-index: -1;
-  width: 112%;
-  height: 0.46em;
-  fill: var(--express-yellow);
-  rotate: -1deg;
-}
-
-.arrow {
-  position: absolute;
-  left: 58%;
-  top: 100%;
-  width: 56px;
-  height: auto;
-  fill: none;
-  stroke: var(--paper);
-  stroke-width: 3.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 /* Black Friday (November): a black tile, as on the campaign page, with yellow label and button. */
 .blackFriday { background: var(--ink); }
 .blackFriday .sticker { border-color: var(--express-yellow); background: var(--express-yellow); color: var(--ink); }
@@ -135,7 +88,6 @@
 
 @media (max-width: 760px) {
   .promo { grid-template-columns: 1fr; justify-items: start; }
-  .priceArea { justify-self: center; margin-top: 40px; }
-  .later { left: 50%; top: -34px; translate: -50% 0; white-space: nowrap; }
+  .priceArea { justify-self: center; }
   .price { width: min(260px, 72vw); }
 }

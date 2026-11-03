@@ -39,22 +39,6 @@ export function ExpressPromo({ lang, campaign = false }: { lang: Lang; campaign?
           <span className={styles.from}>{t(site.pricing.from)}</span>
           <span className={styles.value}>{formatPrice(expressPrices(campaign).priceOwnDomain[lang], lang)}</span>
         </Starburst>
-        {campaign ? (
-          // The usual price as a marker note with an arrow to the burst. A future price, never a crossed-out one.
-          <p className={styles.later}>
-            <span>{t(bf.promo.later)}:</span> <span className={styles.laterValue}>
-              {formatPrice(express.priceOwnDomain[lang], lang)}
-              <svg className={styles.brush} viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M2 9.5C14 6.2 30 5.4 48 6.1c18 .6 38-.9 56-1.6 6-.2 11 .3 14 1.4-2 1.7-7 2.3-13 2.8-17 1.3-35 2.8-53 3.6-15 .7-30 1.4-44 .9C5 13 2 11.8 2 9.5Z" />
-                <path d="M12 12.6c20-1.4 44-2.2 66-2.5 11-.1 22 .2 30 .9-9 1.3-22 1.9-36 2.3-21 .6-42 .8-60-.7Z" opacity="0.7" />
-              </svg>
-            </span>
-            <svg className={styles.arrow} viewBox="0 0 80 60" aria-hidden="true">
-              <path d="M6 8c18 2 40 10 52 30" />
-              <path d="M46 36l13 5 2-14" />
-            </svg>
-          </p>
-        ) : null}
       </div>
     </aside>
   );
