@@ -1,0 +1,169 @@
+/* Landing page: the hero and form come from ServicePage.module.css; these add the chapter list. */
+.title { max-width: 16ch; }
+
+.inside {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--gap);
+  max-width: 900px;
+  margin-inline: auto;
+  list-style: none;
+}
+
+.inside li {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding-block: 22px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--t-lead);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.number {
+  flex: none;
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.formSection { margin-top: var(--section); }
+
+@media (max-width: 760px) {
+  .inside { grid-template-columns: 1fr; }
+}
+
+/* The guide itself: one column, like a printed booklet. */
+.document {
+  padding: clamp(100px, 12vw, 160px) var(--page) var(--section);
+}
+
+.paper {
+  max-width: var(--text);
+  margin-inline: auto;
+}
+
+.cover h1 {
+  margin-top: 18px;
+  font-size: var(--t-h2);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.coverIntro {
+  margin-top: 24px;
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+.chapter {
+  margin-top: clamp(56px, 7vw, 88px);
+  padding-top: 28px;
+  border-top: 1px solid var(--ink);
+}
+
+.chapter h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  font-size: var(--t-h3);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.chapterText { margin-top: 18px; color: var(--ink-2); }
+
+/* Empty boxes to tick with a pen. */
+.checklist {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+  list-style: none;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 34px;
+  line-height: 1.5;
+}
+
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+}
+
+.costs { margin-top: 24px; }
+
+.costs div {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 24px;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.costs dt { font-weight: 600; }
+.costs dd { color: var(--ink-2); }
+
+.closing {
+  margin-top: clamp(56px, 7vw, 88px);
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.closing h2 {
+  font-size: var(--t-h3);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.closing p { margin-top: 18px; color: var(--on-ink-2); }
+.closing .prices { color: var(--paper); font-weight: 600; }
+
+.siteLink {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: var(--t-lead);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 640px) {
+  .costs div { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* A4 print (the PDF): no site header or footer, fixed sizes, chapters never split mid-list. */
+@media print {
+  :global(body > header),
+  :global(body > footer) { display: none; }
+  /* Paper-white sheets: the page margins can't take the site's background, so drop it everywhere. */
+  :global(html), :global(body) { background: none; }
+
+  .document { padding: 0; }
+  .paper { max-width: none; font-size: 11pt; }
+  .cover h1 { font-size: 30pt; }
+  .coverIntro { font-size: 13pt; }
+  .chapter { margin-top: 26pt; padding-top: 14pt; break-inside: avoid; }
+  .chapter h2, .closing h2 { font-size: 18pt; }
+  .closing { break-inside: avoid; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .siteLink { font-size: 13pt; }
+}

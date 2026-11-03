@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { express } from "@/content/express";
+import { guide } from "@/content/guide";
 import { DEFAULT_LANG, LANGS, localePath } from "@/content/i18n";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/",
     ...Object.values(servicePages).map((page) => page.path),
     ...(express.published ? [express.path] : []),
+    ...(guide.published ? [guide.path] : []),
     ...projects.map((p) => `/work/${p.slug}`),
     "/privacy",
   ];

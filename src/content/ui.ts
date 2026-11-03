@@ -46,6 +46,7 @@ export const ui = {
   footer: {
     explore: l("Explore", "Explorează"),
     video: l("Video & voice-over", "Video și voice-over"),
+    guide: l("Free website guide", "Ghid gratuit pentru site"),
     tagline: l("Websites · Online stores · Video & voice-over.", "Site-uri · Magazine online · Video și voice-over."),
     privacy: l("Privacy", "Confidențialitate"),
     taxId: l("Tax ID (CUI)", "CUI"),

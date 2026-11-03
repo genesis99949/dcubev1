@@ -22,6 +22,8 @@ export const OG_LOCALE: Record<Lang, string> = { en: "en_US", ro: "ro_RO" };
 const LOCALIZED_PATHS: Record<string, Record<Lang, string>> = {
   "/website-design": { ro: "/creare-site-de-prezentare", en: "/en/website-design" },
   "/online-store": { ro: "/creare-magazin-online", en: "/en/online-store" },
+  "/website-guide": { ro: "/ghid-site", en: "/en/website-guide" },
+  "/website-guide/document": { ro: "/ghid-site/document", en: "/en/website-guide/document" },
 };
 
 /**

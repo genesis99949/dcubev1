@@ -3,6 +3,7 @@ import { localePath, tr, type Lang } from "@/content/i18n";
 import { site } from "@/content/site";
 import { ui } from "@/content/ui";
 import { express, linkExpress } from "@/content/express";
+import { guide, linkGuide } from "@/content/guide";
 import { servicePages } from "@/content/service-pages";
 import { serviceLabel } from "@/content/services";
 import styles from "./SiteFooter.module.css";
@@ -12,6 +13,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
     { label: tr(ui.nav.work, lang), href: localePath(lang, "/#work") },
     { label: tr(ui.nav.pricing, lang), href: localePath(lang, "/#pricing") },
     { label: tr(ui.nav.about, lang), href: localePath(lang, "/#about") },
+    ...(linkGuide ? [{ label: tr(ui.footer.guide, lang), href: localePath(lang, guide.path) }] : []),
   ];
   const services = [
     ...Object.values(servicePages).map((page) => ({ label: tr(serviceLabel(page.service), lang), href: localePath(lang, page.path) })),

@@ -24,6 +24,27 @@
   text-align: center;
 }
 
+/* The guide's download card (GuideForm): title, a line, then the PDF and the online version. */
+.doneText {
+  margin-top: 12px;
+  font-size: var(--t-body);
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.doneActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px 32px;
+  margin-block: 28px 22px;
+}
+
+.done > :global(.link) {
+  font-size: var(--t-small);
+}
+
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
