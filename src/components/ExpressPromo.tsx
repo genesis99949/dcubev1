@@ -26,8 +26,8 @@ export function ExpressPromo({ lang, campaign = false }: { lang: Lang; campaign?
         <h3 id="express-promo-title" className={styles.title}>{t(campaign ? bf.hero.title : express.hero.title)}</h3>
         <p className={styles.lead}>{t(campaign ? bf.promo.lead : express.promo.lead)}</p>
         {campaign ? (
-          // Until the offer opens the button goes nowhere: it only says how few places there are.
-          <CampaignOpen soon={<span className={`btn ${styles.action} ${styles.teaser}`}>{t(bf.promo.teaser)}</span>}>
+          // Until the offer opens there is nothing to click: a plain line says how few places there are.
+          <CampaignOpen soon={<p className={styles.teaser}>{t(bf.promo.teaser)}</p>}>
             <Link href={localePath(lang, bf.path)} className={`btn ${styles.action}`}>{t(bf.promo.action)}</Link>
           </CampaignOpen>
         ) : (
