@@ -52,6 +52,15 @@ export const ui = {
     taxId: l("Tax ID (CUI)", "CUI"),
     registration: l("Trade Register no.", "Nr. Registrul Comerțului"),
   },
+  whatsapp: {
+    /** Accessible name of the floating WhatsApp button. */
+    label: l("Message me on WhatsApp", "Scrie-mi pe WhatsApp"),
+    /** Text already typed in the chat when the button opens WhatsApp. */
+    message: l(
+      "Hi, I saw ramonbugariu.ro and I'd like to know more about a website.",
+      "Bună, am văzut ramonbugariu.ro și vreau să aflu mai multe despre un site.",
+    ),
+  },
   notFound: {
     title: l("Nothing here", "Nimic aici"),
     back: l("Back to the homepage", "Înapoi la prima pagină"),

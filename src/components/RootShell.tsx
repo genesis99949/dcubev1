@@ -6,6 +6,7 @@ import { BRAND } from "@/remotion/brand";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { TrackClicks } from "./TrackClicks";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 // One family for the whole site, as in the videos (src/remotion/fonts.ts).
 const sans = Inter_Tight({
@@ -36,6 +37,7 @@ export function RootShell({ lang, children }: { lang: Lang; children: React.Reac
         <SiteHeader lang={lang} />
         {children}
         <SiteFooter lang={lang} />
+        <WhatsAppButton lang={lang} />
         <TrackClicks />
       </body>
     </html>

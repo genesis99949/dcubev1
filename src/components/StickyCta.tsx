@@ -30,7 +30,7 @@ export function StickyCta({ label, action, watch }: { label: string; action: str
 
   const visible = heroGone && !atContact;
   return (
-    <div className={styles.bar} data-visible={visible} aria-hidden={!visible}>
+    <div className={styles.bar} data-sticky-cta="" data-visible={visible} aria-hidden={!visible}>
       <p>{label}</p>
       <a href="#contact" className="btn btn-light" tabIndex={visible ? undefined : -1}>
         {action}
