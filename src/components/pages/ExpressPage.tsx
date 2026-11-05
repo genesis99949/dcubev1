@@ -104,8 +104,9 @@ export function ExpressPage({ lang, campaign = false }: { lang: Lang; campaign?:
         <ExpressPrice lang={lang} campaign={campaign} />
         <div id="express-actions" className={styles.actions}>
           <a href="#contact" className="btn">{t(express.hero.primary)}</a>
-          <a href={hasDemos ? "#templates" : "#includes"} className="more">
-            {t(hasDemos ? express.hero.examples : express.hero.contents)}
+          {/* The campaign page opens with its own examples, right under the hero. */}
+          <a href={campaign ? "#exemple" : hasDemos ? "#templates" : "#includes"} className="more">
+            {t(campaign || hasDemos ? express.hero.examples : express.hero.contents)}
           </a>
         </div>
         <p className={styles.audience}>
@@ -113,6 +114,38 @@ export function ExpressPage({ lang, campaign = false }: { lang: Lang; campaign?:
         </p>
       </section>
       </div>
+
+      {campaign ? (
+        <section id="exemple" className={`container ${styles.section}`} aria-labelledby="examples-title">
+          <header className={styles.head}>
+            <p className={x.sticker}>{t(bf.examples.sticker)}</p>
+            <h2 id="examples-title" className="headline"><HeadingText text={t(bf.examples.title)} /></h2>
+            <p className="lead">{t(bf.examples.lead)}</p>
+          </header>
+          <ul className={x.examples}>
+            {bf.examples.items.map((item) => (
+              <li key={item.href} className={`${x.example} rise`}>
+                {/* The whole card opens the demo in a new tab; the screenshot carries the description. */}
+                <a href={item.href} className={x.exampleLink} target="_blank" rel="noreferrer">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- demo screenshots are added by hand, already sized */}
+                  <img src={item.image} width={1600} height={1000} alt={t(item.alt)} loading="lazy" />
+                  <div className={x.exampleBody}>
+                    <h3 className={x.exampleTrade}>{t(item.trade)}</h3>
+                    <p className={x.exampleBusiness}>{t(item.business)}</p>
+                    <p className={x.exampleTry}>
+                      <strong>{t(bf.examples.tryLabel)}:</strong> {t(item.try)}
+                    </p>
+                    <p className={x.exampleOpen}>
+                      {t(bf.examples.open)} <span aria-hidden="true">↗</span>
+                    </p>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className={x.examplesNote}>{t(bf.examples.note)}</p>
+        </section>
+      ) : null}
 
       {campaign ? (
         <section id="bonuses" className={`container ${styles.section}`} aria-labelledby="bonuses-title">

@@ -3,6 +3,7 @@ import type React from "react";
 import "@/app/globals.css";
 import type { Lang } from "@/content/i18n";
 import { BRAND } from "@/remotion/brand";
+import { CampaignBand } from "./CampaignBand";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 import { TrackClicks } from "./TrackClicks";
@@ -34,6 +35,7 @@ export function RootShell({ lang, children }: { lang: Lang; children: React.Reac
   return (
     <html lang={lang} className={sans.variable} style={brandVariables}>
       <body>
+        <CampaignBand lang={lang} />
         <SiteHeader lang={lang} />
         {children}
         <SiteFooter lang={lang} />

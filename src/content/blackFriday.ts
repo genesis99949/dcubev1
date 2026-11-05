@@ -55,6 +55,71 @@ export const blackFriday = {
     ),
   },
 
+  /**
+   * Right after the hero: three finished one-page sites for trades every town has. Static demos in public/demo/<slug>,
+   * built in F:\Projects\One-Page Express (plain HTML/CSS/JS, relative paths, copied without brand/, output/, tools/).
+   * The businesses are invented and each page says so in its own demo bar. Their interactive pieces (estimate, booking,
+   * job card) are custom features, which Express lists as not included, so the note says they are quoted separately.
+   */
+  examples: {
+    sticker: l("Examples", "Exemple"),
+    title: l("This is what your page can look like.", "Așa poate arăta pagina ta."),
+    lead: l(
+      "Three one-page sites for trades every town has. The businesses are invented; the pages, buttons and calculations really work. Open them on your phone too.",
+      "Trei site-uri de o pagină pentru meserii pe care le găsești în orice oraș. Firmele sunt inventate; paginile, butoanele și calculele chiar funcționează. Deschide-le și de pe telefon.",
+    ),
+    tryLabel: l("Try it", "Încearcă"),
+    open: l("Open the demo", "Deschide demo-ul"),
+    items: [
+      {
+        trade: l("Interior finishing", "Amenajări interioare"),
+        business: l("Calcar Finisaje · Cluj-Napoca", "Calcar Finisaje · Cluj-Napoca"),
+        href: "/demo/amenajari/",
+        image: "/demo/amenajari/preview.jpg",
+        alt: l(
+          "Demo of an interior finishing company's page: the headline, the visit button and a before-and-after photo of the same living room.",
+          "Demo pentru o firmă de finisaje interioare: titlul, butonul pentru vizită și o fotografie înainte și după a aceluiași living.",
+        ),
+        try: l(
+          "Drag the before/after slider, then work out the cost for your own flat.",
+          "Trage de comparatorul înainte/după, apoi calculează costul pentru apartamentul tău.",
+        ),
+      },
+      {
+        trade: l("Electrician & plumber", "Electrician și instalator"),
+        business: l("Andrei Dobre · Timișoara", "Andrei Dobre · Timișoara"),
+        href: "/demo/electrician/",
+        image: "/demo/electrician/preview.jpg",
+        alt: l(
+          "Demo of an electrician's page on blue: the headline, a call button and a panel of breakers, one for each common problem.",
+          "Demo pentru un electrician, pe albastru: titlul, butonul de apel și un tablou cu siguranțe, câte una pentru fiecare problemă des întâlnită.",
+        ),
+        try: l(
+          "Flip a breaker to see what to do right away, how long the repair takes and what it usually costs.",
+          "Ridică o siguranță ca să vezi ce faci pe loc, cât durează reparația și cât costă de obicei.",
+        ),
+      },
+      {
+        trade: l("Car repair", "Service auto"),
+        business: l("Bârsan Auto · Brașov", "Bârsan Auto · Brașov"),
+        href: "/demo/service-auto/",
+        image: "/demo/service-auto/preview.jpg",
+        alt: l(
+          "Demo of a car repair workshop's page: the headline “You only pay for what you approve” and a booking form with services, days and times.",
+          "Demo pentru un service auto: titlul „Repari doar ce aprobi” și un formular de programare cu servicii, zile și ore.",
+        ),
+        try: l(
+          "Pick a time slot, then tick the repairs on the job card and watch the total change.",
+          "Alege o oră de programare, apoi bifează reparațiile din fișa de lucru și urmărește totalul.",
+        ),
+      },
+    ],
+    note: l(
+      "The businesses, prices and photos in the demos are fictional, and the demo sites are in Romanian. The estimate, the booking form and the job card are custom features: they are not in the Express price, and I quote them separately if you want them.",
+      "Firmele, prețurile și pozele din demo-uri sunt fictive. Calculatorul de cost, programarea și fișa de lucru sunt funcții la comandă: nu intră în prețul Express, ți le cotez separat dacă le vrei.",
+    ),
+  },
+
   bonuses: {
     sticker: l("Included for Black Friday", "Incluse de Black Friday"),
     title: l("Four bonuses, at no extra cost.", "Patru bonusuri, fără cost în plus."),
@@ -136,6 +201,24 @@ export const blackFriday = {
         "În săptămâna pe care ți-o rezervi. Când confirmi comanda, îți spun ce săptămâni sunt libere între 9 noiembrie și 18 decembrie și alegi una. Dacă toate materialele ajung la mine până luni în săptămâna aceea, primești linkul de previzualizare până vineri; data ți-o confirm în scris înainte să încep.",
       ),
     },
+  },
+
+  /**
+   * The band above the header on every page but the two funnels, from `promoStart` to `end` (CampaignBand).
+   * {price} = the campaign price with the domain, {free} = places left. Visitors can hide it for the rest of the campaign.
+   */
+  band: {
+    label: l("Black Friday", "Black Friday"),
+    /** Before `start`, after the label. */
+    soon: l("from 6 November", "din 6 noiembrie"),
+    text: l(
+      "A one-page website for {price}, with the domain and four bonuses. Only {free} places.",
+      "Site de o pagină la {price}, cu domeniu și patru bonusuri. Doar {free} locuri.",
+    ),
+    /** Phones: the same offer in a few words. */
+    short: l("{price} · {free} places", "{price} · {free} locuri"),
+    action: l("See the offer", "Vezi oferta"),
+    close: l("Hide the Black Friday notice", "Ascunde anunțul de Black Friday"),
   },
 
   /** The homepage tile while the campaign runs (ExpressPromo with `campaign`). Title = hero.title. */
