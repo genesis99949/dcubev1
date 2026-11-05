@@ -5,7 +5,6 @@ import { localePath, tr, type Lang } from "@/content/i18n";
 import { formatPrice } from "@/content/packages";
 import { site } from "@/content/site";
 import styles from "./ExpressPromo.module.css";
-import { CampaignOpen } from "./CampaignOpen";
 import { ExpressSticker } from "./ExpressSticker";
 import { Starburst } from "./Starburst";
 
@@ -26,10 +25,15 @@ export function ExpressPromo({ lang, campaign = false }: { lang: Lang; campaign?
         <h3 id="express-promo-title" className={styles.title}>{t(campaign ? bf.hero.title : express.hero.title)}</h3>
         <p className={styles.lead}>{t(campaign ? bf.promo.lead : express.promo.lead)}</p>
         {campaign ? (
-          // Until the offer opens there is nothing to click: a plain line says how few places there are.
-          <CampaignOpen soon={<p className={styles.teaser}>{t(bf.promo.teaser)}</p>}>
+          // The button leads to the campaign page from the teaser on (before `start` that page says when it opens);
+          // the places left sit next to it, so the scarcity is seen before the click.
+          <div className={styles.actions}>
             <Link href={localePath(lang, bf.path)} className={`btn ${styles.action}`}>{t(bf.promo.action)}</Link>
-          </CampaignOpen>
+            <p className={styles.places}>
+              <span className={styles.placesDot} aria-hidden="true" />
+              {t(bf.promo.places).replace("{free}", String(bf.slots - bf.taken))}
+            </p>
+          </div>
         ) : (
           <Link href={localePath(lang, express.path)} className={`btn ${styles.action}`}>{t(express.promo.action)}</Link>
         )}

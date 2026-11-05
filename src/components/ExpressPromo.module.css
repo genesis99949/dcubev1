@@ -81,8 +81,36 @@
 .blackFriday .lead { color: color-mix(in srgb, var(--paper) 78%, var(--ink)); }
 .blackFriday .action { border-color: transparent; background: var(--express-yellow); color: var(--ink); }
 .blackFriday .action:hover { background: var(--paper); }
-/* Before the offer opens: a plain yellow line, not a button (there's nowhere to go yet). */
-.teaser { color: var(--express-yellow); font-size: var(--t-lead); font-weight: 750; line-height: 1.25; letter-spacing: -0.015em; }
+/* The button and, next to it, the places left: an outlined yellow pill with a beating dot. */
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.places {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 2px solid var(--express-yellow);
+  border-radius: 999px;
+  color: var(--express-yellow);
+  font-size: var(--t-body);
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+.placesDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--express-yellow);
+  animation: placesBeat 1.6s ease-in-out infinite;
+}
+@keyframes placesBeat {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--express-yellow) 55%, transparent); }
+  60% { box-shadow: 0 0 0 7px transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .placesDot { animation: none; }
+}
 .blackFriday .price { --burst-outer: var(--express-red); }
 .blackFriday .value { color: var(--ink); }
 
