@@ -26,7 +26,21 @@ Setări → Instrumente pentru afaceri → Răspunsuri rapide. Le trimiți scrii
 
 **/data** — după ce verifici săptămâna:
 
-> Pot începe pe [ziua]. Termenul de două zile lucrătoare pornește după ce confirmi comanda și am primit toate materialele, deci ai linkul de previzualizare cel târziu pe [ziua]. Plata: [de completat]. Îmi trimiți datele firmei pentru factură?
+> Pot începe pe [ziua]. Termenul de două zile lucrătoare pornește după ce confirmi comanda și am primit toate materialele, deci ai linkul de previzualizare cel târziu pe [ziua]. Plata e integrală, prin transfer, pe baza unei proforme; comanda e confirmată când am primit plata și ți-am confirmat săptămâna în scris. Îmi trimiți datele firmei pentru proformă?
+
+**/databf** — în campania de Black Friday (6–30 nov), în loc de /data: acolo nu se promit 48 de ore, fiecare comandă are o săptămână.
+
+> Îți rezerv săptămâna [luni]–[vineri]. Dacă textele și pozele ajung până luni, ai linkul de previzualizare până vineri. Plata e integrală, prin transfer, pe baza unei proforme; comanda e confirmată, iar locul și bonusurile sunt ale tale, când am primit plata și ți-am confirmat săptămâna în scris. Îmi trimiți datele firmei pentru proformă?
+
+**/proforma** — după ce clientul îți trimite datele firmei (completează între paranteze drepte; nu lăsa niciun [ ] în mesajul trimis). Alege varianta potrivită:
+
+**Varianta Express** (preț fix, plată integrală):
+
+> Iată proforma pentru One-Page Express: [suma] lei, [cu domeniu / pe domeniul tău]. Plătește integral prin transfer bancar în contul [IBAN], titular [titularul contului], cu mențiunea [numărul proformei]. După ce primesc plata, îți confirm în scris săptămâna rezervată și pornesc. Locul se rezervă abia la confirmare.
+
+**Varianta Start / Personalizat** (50% la început, 50% după ce e gata; prețul se stabilește împreună, după ce vedem ce are nevoie site-ul):
+
+> Iată proforma pentru [Start / Personalizat], pe baza a ce am stabilit împreună: [suma totală] lei. Plata se face în două părți: 50% ([suma avansului] lei) la început și 50% ([suma rămasă] lei) după ce site-ul e gata. Avansul îl plătești prin transfer bancar în contul [IBAN], titular [titularul contului], cu mențiunea [numărul proformei]. Pornesc după ce primesc avansul; restul îl plătești la lansare, pe baza unei a doua proforme.
 
 **/plin** — când săptămâna e ocupată:
 
