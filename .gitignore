@@ -58,3 +58,8 @@ public/remotion/
 
 # Cloudflare
 .wrangler/
+
+# local working files (kept on disk, not in the repo)
+/ramonbugariu.ro-audit/
+/velora-property-preview.png
+/public/images/express/stickers/*.png

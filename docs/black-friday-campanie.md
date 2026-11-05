@@ -23,8 +23,15 @@ Altfel, pagina de campanie trimite oamenii spre un produs care încă nu e publi
 - Nu scrie „reducere” sau „-17%” la prețul Express și nu tăia 590 lei. Express nu s-a vândut niciodată la 590,
   deci n-ai un preț anterior real. Poți spune, adevărat, că din decembrie prețul devine 590 lei.
 
+**Comandă confirmată** (decis 4 nov 2026) = plata integrală primită **și** săptămâna confirmată în scris. Doar atunci
+crește `taken`, se dau bonusurile și se rezervă locul. Fără plată, nu promiți loc sau bonusuri.
+
 **După fiecare comandă confirmată:** mărește `taken` în `blackFriday.ts` și republică site-ul,
 ca numărul de locuri să fie mereu adevărat.
+Contorul de pe pagină arată doar `slots - taken`, fără să țină cont de săptămânile care trec. De aceea, la fiecare
+republicare, adaugă la `taken` și locurile rămase nefolosite din săptămânile deja trecute (2 pe săptămână, de la 9 nov).
+Exemplu: pe 20 nov, dacă ai 1 comandă confirmată și au trecut 2 săptămâni cu 4 locuri disponibile, `taken` = 1 + 3 = 4.
+Înainte de fiecare postare „Mai sunt X locuri", verifică X cu capacitatea reală rămasă.
 
 **Profilul Google:** clientul trebuie să-ți dea acces de administrator la profil sau să facă el verificarea
 (cod prin poștă, telefon sau video). Spune-i asta din prima zi, ca să nu întârzie bonusul.
@@ -91,7 +98,7 @@ Ca să vezi de unde vin cererile, folosește câte un link pe canal:
 
 > Ultimul weekend pentru bonusurile de Black Friday.
 >
-> Comenzile confirmate până luni, 30 noiembrie, au prețul de 490 lei și primesc profilul Google, codul QR, a doua rundă de modificări și 400 lei reducere la Start.
+> Cât timp mai sunt locuri, comenzile confirmate până luni, 30 noiembrie, au prețul de 490 lei și primesc profilul Google, codul QR, a doua rundă de modificări și 400 lei reducere la Start.
 >
 > 👉 ramonbugariu.ro/black-friday
 
@@ -140,3 +147,5 @@ Clipul din `OlxAd` din Remotion poate deveni un story vertical cu același mesaj
 > Mulțumesc! Comanda ta intră la oferta de Black Friday: 490 lei cu domeniu (400 lei pe domeniul tău) și cele patru bonusuri: profilul pe Google, codul QR, a doua rundă de modificări și 400 lei reducere la Start în următoarele șase luni.
 >
 > Săptămânile libere sunt: [săptămânile]. Pe care o vrei? Dacă materialele ajung până luni, ai linkul de previzualizare până vineri. Pentru profilul Google, îmi dai acces de administrator sau, dacă nu ai încă profil, îl facem împreună când îți trimit linkul site-ului.
+>
+> Plata e integrală, prin transfer, pe baza unei proforme. Comanda e confirmată, iar locul și bonusurile sunt ale tale, abia când am primit plata și ți-am confirmat săptămâna în scris.

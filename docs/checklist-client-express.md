@@ -2,7 +2,7 @@
 
 <!--
 Pentru Ramon, înainte să trimiți lista: completează câmpurile [ ] de mai jos și șterge acest comentariu.
-- Plata: nu e hotărâtă încă (integral la comandă sau 50% avans). Completează rândul din pasul 1.
+- Plata: hotărâtă la 4 nov 2026. Express se plătește integral, prin transfer, înainte de rezervarea săptămânii. 50/50 rămâne doar la Start și Personalizat. Verifică cu contabilul când emiți factura fiscală (după plată sau odată cu proforma).
 - Datele tale de contact și emailul pentru invitația Cloudflare se trec în mesajul către client, nu în acest fișier.
 - Politica de confidențialitate: dacă site-ul are formular, cineva trebuie să scrie textul. Hotărăște dacă îl dă clientul.
 - Domeniul: îl înregistrezi din contul tău Hosterion („Înregistrează”, nu „Transferă”), cu firma clientului ca titular
@@ -21,7 +21,7 @@ Lucrez doar cu firme și PFA-uri, iar domeniul se înregistrează pe numele firm
 - [ ] Alegi șablonul: **Servicii locale** sau **Freelanceri și profesioniști**. Dacă nu știi, te ajut eu să alegi.
 - [ ] Îmi spui dacă ai deja un domeniu sau vrei să-l înregistrez eu. Domeniul pe primul an e inclus în preț. Dacă ai deja unul, prețul scade.
 - [ ] Îmi trimiți datele firmei pentru factură: denumirea, codul fiscal, numărul de la Registrul Comerțului și sediul.
-- [ ] Plata: [de completat de Ramon].
+- [ ] Plata: integrală, prin transfer bancar, pe baza unei facturi proforme pe care ți-o trimit după ce îmi dai datele firmei. Comanda e confirmată, iar locul rezervat, abia când am primit plata și ți-am confirmat în scris săptămâna.
 - [ ] Îmi spui cine aprobă site-ul din partea ta. O singură persoană îmi trimite părerile și dă acordul final.
 
 Iau cel mult două comenzi Express pe săptămână. Data exactă ți-o confirm în scris înainte să încep.
