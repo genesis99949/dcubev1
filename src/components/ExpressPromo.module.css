@@ -74,7 +74,7 @@
 
 .priceArea { position: relative; display: grid; justify-items: center; }
 
-/* Black Friday (November): a black tile, as on the campaign page, with yellow label and button. */
+/* Black Month (November): a black tile, as on the campaign page, with yellow label and button. */
 .blackFriday { background: var(--ink); }
 .blackFriday .sticker { border-color: var(--express-yellow); background: var(--express-yellow); color: var(--ink); }
 .blackFriday .title { letter-spacing: -0.03em; word-spacing: 0.06em; }

@@ -392,7 +392,7 @@
 .call a { color: var(--paper); font-weight: 650; text-decoration: underline; text-underline-offset: 0.2em; }
 .call a:hover { color: var(--yellow); }
 
-/* ---------- Black Friday (the campaign page, /black-friday) ---------- */
+/* ---------- Black Month (the campaign page, /black-month) ---------- */
 
 /* The strip and the hero, plus the site header above them (not the section heads in <main>), sit on black: paper and ink swap places there, and the
    derived tones are declared again so they follow the swap. Still only the brand colours, red and yellow. */
@@ -616,5 +616,5 @@
   .badge svg { animation: none; }
 }
 
-/* The placeholder before the Black Friday offer opens: the black band fills most of the screen. */
+/* The placeholder before the Black Month offer opens: the black band fills most of the screen. */
 .soon { display: grid; align-content: center; min-height: 72svh; }

@@ -29,7 +29,7 @@ export const expressMetadata = (lang: Lang): Metadata => ({
   ...(expressLive() ? {} : { robots: { index: false, follow: true } }),
 });
 
-/** The Black Friday landing page: short-lived, so never indexed and without language alternates of its own. */
+/** The Black Month landing page: short-lived, so never indexed and without language alternates of its own. */
 export const blackFridayMetadata = (lang: Lang): Metadata => ({
   ...pageMetadata({ lang, path: blackFriday.path, title: tr(blackFriday.metaTitle, lang), description: tr(blackFriday.description, lang) }),
   robots: { index: false, follow: true },

@@ -6,7 +6,7 @@ import { express } from "@/content/express";
 import { localePath, type Lang } from "@/content/i18n";
 
 /**
- * Switches between the Express page and its Black Friday version without a redeploy (the site is static, so the
+ * Switches between the Express page and its Black Month version without a redeploy (the site is static, so the
  * date is checked in the browser): on the campaign page after `end`, visitors go to the normal Express page;
  * on the Express page from the homepage teaser (`promoStart`) to `end`, they go to the campaign page.
  */

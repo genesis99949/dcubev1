@@ -1,3 +1,7 @@
 # Cloudflare static assets: Romanian moved from /ro to the root on 2026-10-20 (English is now /en).
 /ro /  301
 /ro/* /:splat 301
+
+# Black Friday campaign renamed to Black Month on 2026-11-06; keep old links working.
+/black-friday /black-month 301
+/en/black-friday /en/black-month 301

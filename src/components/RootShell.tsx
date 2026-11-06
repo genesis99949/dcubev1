@@ -22,7 +22,7 @@ const brandVariables = {
   "--muted": BRAND.colors.muted,
   "--line": BRAND.colors.line,
   "--accent": BRAND.colors.accent,
-  // Fixed copies, for places that swap paper and ink (the Black Friday band).
+  // Fixed copies, for places that swap paper and ink (the Black Month band).
   "--brand-paper": BRAND.colors.paper,
   "--brand-ink": BRAND.colors.ink,
 } as React.CSSProperties;

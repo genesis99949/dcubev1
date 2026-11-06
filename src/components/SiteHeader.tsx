@@ -17,7 +17,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
   const other: Lang = lang === "en" ? "ro" : "en";
   const onServicePage = ["/website-design", "/online-store", express.path, blackFriday.path].some((path) => localePath(lang, path) === pathname);
   const contactHref = onServicePage ? "#contact" : localePath(lang, "/#contact");
-  // The One-Page Express page (and its Black Friday version) is a funnel: no menu to wander off through, only the request button.
+  // The One-Page Express page (and its Black Month version) is a funnel: no menu to wander off through, only the request button.
   const funnel = [express.path, blackFriday.path].some((path) => localePath(lang, path) === pathname);
   // Before the offer opens, the campaign page is only a placeholder: nothing to request yet.
   const campaignOpen = useCampaignOpen();

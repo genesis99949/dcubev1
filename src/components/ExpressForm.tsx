@@ -76,7 +76,7 @@ export function ExpressForm({ lang, campaign = false, onClose }: { lang: Lang; c
     setStatus("sending");
     track("form_submit", { form_id: "express" });
     const result = await sendToWeb3Forms({
-      // Requests from the Black Friday page are tagged, so the bonuses aren't forgotten.
+      // Requests from the Black Month page are tagged, so the bonuses aren't forgotten.
       subject: campaign ? `[${blackFriday.tag}] ${tr(f.subject, lang)}` : tr(f.subject, lang),
       offer: campaign ? blackFriday.tag : "—",
       name: form.get("name"),

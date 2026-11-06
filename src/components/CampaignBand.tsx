@@ -36,7 +36,7 @@ const builtShown = blackFridayPromoActive();
 const builtOpen = blackFridayActive();
 const shownNow = () => blackFridayPromoActive() && !readHidden();
 
-/** A black band above the header that sends visitors to the Black Friday page, from `promoStart` to `end`. */
+/** A black band above the header that sends visitors to the Black Month page, from `promoStart` to `end`. */
 export function CampaignBand({ lang }: { lang: Lang }) {
   const pathname = usePathname();
   const shown = useSyncExternalStore(subscribe, shownNow, () => builtShown);

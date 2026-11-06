@@ -32,7 +32,7 @@ export const express = {
   id: "one-page-express",
   path: "/one-page-express",
   /**
-   * Goes live by itself on this date (Ramon's call, 2026-11-03); until then only the Black Friday page sells it.
+   * Goes live by itself on this date (Ramon's call, 2026-11-03); until then only the Black Month page sells it.
    * Links and the homepage tile follow the visitor's clock; noindex and the sitemap follow the build, so rebuild after it.
    */
   launch: "2026-12-01T00:00:00+02:00",

@@ -1,10 +1,10 @@
-// Black Friday campaign for One-Page Express (Ramon's call, 2026-11-02): a campaign price (490 / 400 lei) plus
+// Black Month campaign for One-Page Express (Ramon's call, 2026-11-02): a campaign price (490 / 400 lei) plus
 // bonuses for orders confirmed in November; from December Express goes back to its usual price (590 / 500 lei).
 // Never shown as a crossed-out or "reduced" price: Express was never sold at 590, so that would claim a
 // reduction that never happened. The copy only says what the price will be from December.
 // No 48-hour promise here (Ramon's call, 2026-11-02): twelve orders can't each be built in two days, so every
 // place is a week. Ramon takes two sites a week from 9 November to 18 December and delivers within the booked week.
-// The campaign has its own landing page (/black-friday) so ads and messages can be measured apart from the
+// The campaign has its own landing page (/black-month) so ads and messages can be measured apart from the
 // evergreen Express page. It is always noindex and out of the sitemap; after `end` the page sends visitors
 // to the normal Express page by itself (CampaignGate).
 
@@ -12,12 +12,12 @@ import { express } from "./express";
 import { l } from "./i18n";
 
 export const blackFriday = {
-  id: "black-friday-2026",
-  path: "/black-friday",
+  id: "black-month-2026",
+  path: "/black-month",
   /** ISO dates with the Romanian time zone. Orders confirmed in this window get the bonuses. */
   start: "2026-11-06T00:00:00+02:00",
   end: "2026-11-30T23:59:59+02:00",
-  /** The homepage tile switches to Black Friday earlier, as a teaser (Ramon's call, 2026-11-03); the offer itself starts at `start`. */
+  /** The homepage tile switches to Black Month earlier, as a teaser (Ramon's call, 2026-11-03); the offer itself starts at `start`. */
   promoStart: "2026-11-03T00:00:00+02:00",
   /**
    * Two Express orders a week, in the six weeks from 9 Nov to 18 Dec = 12 places. `taken` is updated by hand (and the site
@@ -31,27 +31,27 @@ export const blackFriday = {
   /** Replaces express.upgradeCredit on the campaign page ({credit} in the copy). */
   upgradeCredit: { ro: 400, en: 80 },
   /** Tag added to the form's subject and payload, so Ramon sees which requests came from the campaign. */
-  tag: "Black Friday",
+  tag: "Black Month",
 
-  name: l("Black Friday", "Black Friday"),
-  metaTitle: l("Black Friday: a one-page website with bonuses", "Black Friday: site de o pagină, cu bonusuri"),
+  name: l("Black Month", "Black Month"),
+  metaTitle: l("Black Month: a one-page website with bonuses", "Black Month: site de o pagină, cu bonusuri"),
   description: l(
-    "One-Page Express for Black Friday: €100 with the domain, four bonuses included, twelve places. Order by 30 November and you're online before Christmas.",
-    "One-Page Express de Black Friday: 490 lei cu domeniu, patru bonusuri incluse, douăsprezece locuri. Comanzi până pe 30 noiembrie și ești online înainte de Crăciun.",
+    "One-Page Express for Black Month: €100 with the domain, four bonuses included, twelve places. Order by 30 November and you're online before Christmas.",
+    "One-Page Express de Black Month: 490 lei cu domeniu, patru bonusuri incluse, douăsprezece locuri. Comanzi până pe 30 noiembrie și ești online înainte de Crăciun.",
   ),
 
   marquee: [
-    l("Black Friday", "Black Friday"),
+    l("Black Month", "Black Month"),
     l("Online before Christmas", "Online înainte de Crăciun"),
     l("12 places", "12 locuri"),
   ],
 
   hero: {
-    sticker: l("Black Friday · 6–30 November", "Black Friday · 6–30 noiembrie"),
+    sticker: l("Black Month · 6–30 November", "Black Month · 6–30 noiembrie"),
     title: l("Your website, online before Christmas.", "Site-ul tău, online înainte de Crăciun."),
     lead: l(
-      "A one-page website, ready in the week you book. Order by 30 November and you get the Black Friday price and four extras.",
-      "Un site de o pagină, gata în săptămâna pe care ți-o rezervi. Dacă comanzi până pe 30 noiembrie, ai prețul de Black Friday și patru bonusuri.",
+      "A one-page website, ready in the week you book. Order by 30 November and you get the Black Month price and four extras.",
+      "Un site de o pagină, gata în săptămâna pe care ți-o rezervi. Dacă comanzi până pe 30 noiembrie, ai prețul de Black Month și patru bonusuri.",
     ),
   },
 
@@ -121,11 +121,11 @@ export const blackFriday = {
   },
 
   bonuses: {
-    sticker: l("Included for Black Friday", "Incluse de Black Friday"),
+    sticker: l("Included for Black Month", "Incluse de Black Month"),
     title: l("Four bonuses, at no extra cost.", "Patru bonusuri, fără cost în plus."),
     lead: l(
-      "On top of the Black Friday price, for orders confirmed between 6 and 30 November. Everything else in Express stays the same.",
-      "Pe lângă prețul de Black Friday, pentru comenzile confirmate între 6 și 30 noiembrie. Restul pachetului Express rămâne același.",
+      "On top of the Black Month price, for orders confirmed between 6 and 30 November. Everything else in Express stays the same.",
+      "Pe lângă prețul de Black Month, pentru comenzile confirmate între 6 și 30 noiembrie. Restul pachetului Express rămâne același.",
     ),
     items: [
       {
@@ -171,7 +171,7 @@ export const blackFriday = {
 
   /** Shown first in the FAQ on the campaign page. */
   faq: {
-    question: l("How does the Black Friday offer work?", "Cum funcționează oferta de Black Friday?"),
+    question: l("How does the Black Month offer work?", "Cum funcționează oferta de Black Month?"),
     answer: l(
       "Orders confirmed between 6 and 30 November get the four bonuses, up to twelve orders. The price is €100 with the domain or €80 on your own domain; from December, Express costs €120 and €100. When you order, you book one of the free weeks between 9 November and 18 December, so your site is online before Christmas. The bonuses stay yours even if we move to a later week.",
       "Comenzile confirmate între 6 și 30 noiembrie primesc cele patru bonusuri, până la douăsprezece comenzi. Prețul este 490 lei cu domeniu sau 400 lei pe domeniul tău; din decembrie, Express costă 590 lei, respectiv 500 lei. Când comanzi, îți rezervi una dintre săptămânile libere dintre 9 noiembrie și 18 decembrie, așa că site-ul e online înainte de Crăciun. Bonusurile rămân ale tale și dacă ne mutăm într-o săptămână mai târzie.",
@@ -208,7 +208,7 @@ export const blackFriday = {
    * {price} = the campaign price with the domain, {free} = places left. Visitors can hide it for the rest of the campaign.
    */
   band: {
-    label: l("Black Friday", "Black Friday"),
+    label: l("Black Month", "Black Month"),
     /** Before `start`, after the label. */
     soon: l("from 6 November", "din 6 noiembrie"),
     text: l(
@@ -218,16 +218,16 @@ export const blackFriday = {
     /** Phones: the same offer in a few words. */
     short: l("{price} · {free} places", "{price} · {free} locuri"),
     action: l("See the offer", "Vezi oferta"),
-    close: l("Hide the Black Friday notice", "Ascunde anunțul de Black Friday"),
+    close: l("Hide the Black Month notice", "Ascunde anunțul de Black Month"),
   },
 
   /** The homepage tile while the campaign runs (ExpressPromo with `campaign`). Title = hero.title. */
   promo: {
     lead: l(
-      "A one-page website at the Black Friday price, with four bonuses. Twelve places, each one a week before the holidays.",
-      "Un site de o pagină la preț de Black Friday, cu patru bonusuri. Douăsprezece locuri, fiecare cu săptămâna lui, până la sărbători.",
+      "A one-page website at the Black Month price, with four bonuses. Twelve places, each one a week before the holidays.",
+      "Un site de o pagină la preț de Black Month, cu patru bonusuri. Douăsprezece locuri, fiecare cu săptămâna lui, până la sărbători.",
     ),
-    action: l("See the Black Friday offer", "Vezi oferta de Black Friday"),
+    action: l("See the Black Month offer", "Vezi oferta de Black Month"),
     /** Next to the button, from the teaser on (Ramon's call, 2026-11-05: the button links to the page even before `start`). {free} = places left. */
     places: l("{free} places available", "{free} locuri disponibile"),
   },
@@ -238,19 +238,19 @@ export const blackFriday = {
   },
 
   contact: {
-    title: l("Book your Black Friday place.", "Rezervă-ți locul de Black Friday."),
+    title: l("Book your Black Month place.", "Rezervă-ți locul de Black Month."),
   },
-  breadcrumb: l("Black Friday", "Black Friday"),
+  breadcrumb: l("Black Month", "Black Month"),
 };
 
 /** Whether the campaign has ended at the given time (checked in the browser; the site is static). */
 export const blackFridayEnded = (now = Date.now()) => now > Date.parse(blackFriday.end);
 
-/** The prices in force: the Black Friday ones on the campaign page, the usual Express ones elsewhere. */
+/** The prices in force: the Black Month ones on the campaign page, the usual Express ones elsewhere. */
 export const expressPrices = (campaign = false) => (campaign ? blackFriday : express);
 
 /** Whether the campaign is running at the given time. */
 export const blackFridayActive = (now = Date.now()) => now >= Date.parse(blackFriday.start) && !blackFridayEnded(now);
 
-/** Whether the homepage shows the Black Friday tile: from `promoStart` until the campaign ends. */
+/** Whether the homepage shows the Black Month tile: from `promoStart` until the campaign ends. */
 export const blackFridayPromoActive = (now = Date.now()) => now >= Date.parse(blackFriday.promoStart) && !blackFridayEnded(now);

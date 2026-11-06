@@ -28,7 +28,7 @@ Setări → Instrumente pentru afaceri → Răspunsuri rapide. Le trimiți scrii
 
 > Pot începe pe [ziua]. Termenul de două zile lucrătoare pornește după ce confirmi comanda și am primit toate materialele, deci ai linkul de previzualizare cel târziu pe [ziua]. Plata e integrală, prin transfer, pe baza unei proforme; comanda e confirmată când am primit plata și ți-am confirmat săptămâna în scris. Îmi trimiți datele firmei pentru proformă?
 
-**/databf** — în campania de Black Friday (6–30 nov), în loc de /data: acolo nu se promit 48 de ore, fiecare comandă are o săptămână.
+**/databf** — în campania de Black Month (6–30 nov), în loc de /data: acolo nu se promit 48 de ore, fiecare comandă are o săptămână.
 
 > Îți rezerv săptămâna [luni]–[vineri]. Dacă textele și pozele ajung până luni, ai linkul de previzualizare până vineri. Plata e integrală, prin transfer, pe baza unei proforme; comanda e confirmată, iar locul și bonusurile sunt ale tale, când am primit plata și ți-am confirmat săptămâna în scris. Îmi trimiți datele firmei pentru proformă?
 

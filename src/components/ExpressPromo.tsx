@@ -11,7 +11,7 @@ import { Starburst } from "./Starburst";
 /**
  * One-Page Express advertised on the homepage, under the packages: a red tile in the Express page's own look
  * (red, yellow, black, heavy type), so it reads as a separate product. The rest of the page keeps the one-accent rule.
- * `campaign`: the Black Friday version (black tile, campaign price, links to /black-friday); see CampaignPromo.
+ * `campaign`: the Black Month version (black tile, campaign price, links to /black-month); see CampaignPromo.
  */
 export function ExpressPromo({ lang, campaign = false }: { lang: Lang; campaign?: boolean }) {
   const t = (text: { en: string; ro: string }) => tr(text, lang);
