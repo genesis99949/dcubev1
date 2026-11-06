@@ -138,6 +138,7 @@ export const express = {
     alsoTitle: l("Also included", "Mai primești"),
     also: [
       l("Layout adapted for phone, tablet and desktop", "Aspect adaptat pentru telefon, tabletă și desktop"),
+      l("A call button: visitors call you with one tap on their phone", "Buton de apel: vizitatorul te sună cu o atingere, de pe telefon"),
       l("Basic SEO: page title, description and a clear heading structure", "SEO de bază: titlul paginii, descrierea și o ierarhie clară a titlurilor"),
       l("Basic speed work: compressed images and lean code", "Optimizare de bază pentru viteză: imagini comprimate și cod curat"),
       l("One round of minor changes", "O rundă de mici modificări"),

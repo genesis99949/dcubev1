@@ -48,6 +48,7 @@ export const packages: Package[] = [
       l("My own template, with your colours, fonts and photos", "Șablon propriu, cu culorile, fonturile și pozele tale"),
       l("On WordPress: you change texts and photos yourself", "Pe WordPress: textele și pozele le schimbi singur"),
       l("Contact form, map, basic SEO and analytics", "Formular de contact, hartă, SEO de bază și statistici"),
+      l("Legal pages and a cookie notice", "Pagini legale și modul de cookie-uri"),
       l("Hosting set up by me in your company's account, plus one month of site management", "Găzduire configurată de mine, în contul firmei tale, plus o lună de administrare"),
       l("One round of changes · about 7 days", "O rundă de modificări · aproximativ 7 zile"),
     ],
