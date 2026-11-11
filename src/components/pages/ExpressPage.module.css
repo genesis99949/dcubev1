@@ -535,8 +535,8 @@
   font-weight: 900;
 }
 
-/* The twelve places on a black panel that echoes the hero: free ones outlined in yellow, taken ones filled red
-   and crossed out. */
+/* The twelve places on a black panel that echoes the hero: free ones outlined in yellow, taken ones crossed
+   out with a red marker X. */
 .places {
   display: grid;
   justify-items: center;
@@ -572,11 +572,25 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* A taken place: the circle stays, the number fades and a red marker X is scrawled over it. */
 .placesGrid .taken {
-  border-color: var(--red);
-  background: var(--red);
-  color: var(--brand-paper);
-  text-decoration: line-through;
+  position: relative;
+  color: color-mix(in srgb, var(--yellow) 45%, var(--brand-ink));
+  border-color: color-mix(in srgb, var(--yellow) 45%, var(--brand-ink));
+}
+
+.cross {
+  position: absolute;
+  inset: -14%;
+  width: 128%;
+  height: 128%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 11;
+  stroke-linecap: round;
+  rotate: -4deg;
+  pointer-events: none;
 }
 
 .places .note { max-width: 46em; color: color-mix(in srgb, var(--brand-paper) 62%, var(--brand-ink)); }

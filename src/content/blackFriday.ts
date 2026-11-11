@@ -24,7 +24,7 @@ export const blackFriday = {
    * redeployed) after each confirmed order, so the count on the page is always true.
    */
   slots: 12,
-  taken: 0,
+  taken: 1,
   /** Campaign prices, same shape as express.price / priceOwnDomain (expressPrices() picks them). */
   price: { ro: 490, en: 100 },
   priceOwnDomain: { ro: 400, en: 80 },

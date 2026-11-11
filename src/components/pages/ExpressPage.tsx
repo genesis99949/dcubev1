@@ -169,7 +169,15 @@ export function ExpressPage({ lang, campaign = false }: { lang: Lang; campaign?:
             </p>
             <ol className={x.placesGrid} aria-hidden="true">
               {Array.from({ length: bf.slots }, (_, i) => (
-                <li key={i} className={i < bf.taken ? x.taken : undefined}>{i + 1}</li>
+                <li key={i} className={i < bf.taken ? x.taken : undefined}>
+                  {i + 1}
+                  {i < bf.taken && (
+                    <svg className={x.cross} viewBox="0 0 100 100" aria-hidden="true">
+                      <path d="M14 18 C 34 36, 58 62, 88 86" />
+                      <path d="M84 12 C 62 34, 40 58, 16 90" />
+                    </svg>
+                  )}
+                </li>
               ))}
             </ol>
             <p className={x.note}>{t(bf.places.note)}</p>
