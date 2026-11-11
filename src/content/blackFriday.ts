@@ -1,6 +1,6 @@
-// Black Month campaign for One-Page Express (Ramon's call, 2026-11-02): a campaign price (490 / 400 lei) plus
-// bonuses for orders confirmed in November; from December Express goes back to its usual price (590 / 500 lei).
-// Never shown as a crossed-out or "reduced" price: Express was never sold at 590, so that would claim a
+// Black Month campaign for One-Page Express (Ramon's call, 2026-11-02): a campaign price (500 / 400 lei) plus
+// bonuses for orders confirmed in November; from December Express goes back to its usual price (600 / 500 lei).
+// Never shown as a crossed-out or "reduced" price: Express was never sold at 600, so that would claim a
 // reduction that never happened. The copy only says what the price will be from December.
 // No 48-hour promise here (Ramon's call, 2026-11-02): twelve orders can't each be built in two days, so every
 // place is a week. Ramon takes two sites a week from 9 November to 18 December and delivers within the booked week.
@@ -26,7 +26,7 @@ export const blackFriday = {
   slots: 12,
   taken: 1,
   /** Campaign prices, same shape as express.price / priceOwnDomain (expressPrices() picks them). */
-  price: { ro: 490, en: 100 },
+  price: { ro: 500, en: 100 },
   priceOwnDomain: { ro: 400, en: 80 },
   /** Replaces express.upgradeCredit on the campaign page ({credit} in the copy). */
   upgradeCredit: { ro: 400, en: 80 },
@@ -37,7 +37,7 @@ export const blackFriday = {
   metaTitle: l("Black Month: a one-page website with bonuses", "Black Month: site de o pagină, cu bonusuri"),
   description: l(
     "One-Page Express for Black Month: €100 with the domain, four bonuses included, twelve places. Order by 30 November and you're online before Christmas.",
-    "One-Page Express de Black Month: 490 lei cu domeniu, patru bonusuri incluse, douăsprezece locuri. Comanzi până pe 30 noiembrie și ești online înainte de Crăciun.",
+    "One-Page Express de Black Month: 500 lei cu domeniu, patru bonusuri incluse, douăsprezece locuri. Comanzi până pe 30 noiembrie și ești online înainte de Crăciun.",
   ),
 
   marquee: [
@@ -174,7 +174,7 @@ export const blackFriday = {
     question: l("How does the Black Month offer work?", "Cum funcționează oferta de Black Month?"),
     answer: l(
       "Orders confirmed between 6 and 30 November get the four bonuses, up to twelve orders. The price is €100 with the domain or €80 on your own domain; from December, Express costs €120 and €100. When you order, you book one of the free weeks between 9 November and 18 December, so your site is online before Christmas. The bonuses stay yours even if we move to a later week.",
-      "Comenzile confirmate între 6 și 30 noiembrie primesc cele patru bonusuri, până la douăsprezece comenzi. Prețul este 490 lei cu domeniu sau 400 lei pe domeniul tău; din decembrie, Express costă 590 lei, respectiv 500 lei. Când comanzi, îți rezervi una dintre săptămânile libere dintre 9 noiembrie și 18 decembrie, așa că site-ul e online înainte de Crăciun. Bonusurile rămân ale tale și dacă ne mutăm într-o săptămână mai târzie.",
+      "Comenzile confirmate între 6 și 30 noiembrie primesc cele patru bonusuri, până la douăsprezece comenzi. Prețul este 500 lei cu domeniu sau 400 lei pe domeniul tău; din decembrie, Express costă 600 lei, respectiv 500 lei. Când comanzi, îți rezervi una dintre săptămânile libere dintre 9 noiembrie și 18 decembrie, așa că site-ul e online înainte de Crăciun. Bonusurile rămân ale tale și dacă ne mutăm într-o săptămână mai târzie.",
     ),
   },
 

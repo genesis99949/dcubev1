@@ -41,7 +41,7 @@ export const express = {
    * Round amounts on Ramon's ~5 lei/€ rule: lei on the Romanian site, euro on the English one.
    * `price` includes the domain for the first year; `priceOwnDomain` is for a client who already has one.
    */
-  price: { ro: 590, en: 120 } as Record<Lang, number>,
+  price: { ro: 600, en: 120 } as Record<Lang, number>,
   priceOwnDomain: { ro: 500, en: 100 } as Record<Lang, number>,
   /**
    * Taken off the Start price when an Express client moves to Start within six months of launch ({credit} in the copy).
@@ -86,7 +86,7 @@ export const express = {
   metaTitle: l("One-page website in 48 hours", "Creare site de o pagină, gata în 48h"),
   description: l(
     "A one-page website for your business, €120 with the domain for the first year. Up to five sections, ready two working days after I receive your materials.",
-    "Site de o pagină pentru afacerea ta, 590 lei cu domeniul inclus pe primul an. Până la cinci secțiuni, gata în două zile lucrătoare după ce primesc materialele.",
+    "Site de o pagină pentru afacerea ta, 600 lei cu domeniul inclus pe primul an. Până la cinci secțiuni, gata în două zile lucrătoare după ce primesc materialele.",
   ),
 
   hero: {

@@ -6,12 +6,12 @@ Setările sunt în `src/content/blackFriday.ts`: datele, prețurile de campanie,
 Black Month, iar `/one-page-express` trimite la `/black-month`. Din 1 decembrie, totul revine la Express.
 După 30 noiembrie, pagina trimite singură la `/one-page-express`.
 
-**Express (590 / 500 lei)** apare singur pe 1 decembrie (`express.launch`): linkurile și caseta roșie după ceasul vizitatorului; pentru Google (noindex, sitemap) site-ul trebuie reconstruit și publicat după 1 decembrie.
+**Express (600 / 500 lei)** apare singur pe 1 decembrie (`express.launch`): linkurile și caseta roșie după ceasul vizitatorului; pentru Google (noindex, sitemap) site-ul trebuie reconstruit și publicat după 1 decembrie.
 Altfel, pagina de campanie trimite oamenii spre un produs care încă nu e public.
 
 ## Oferta, pe scurt
 
-- Preț de Black Month: **490 lei cu domeniu, 400 lei pe domeniul tău.** Din decembrie, Express costă 590 / 500 lei.
+- Preț de Black Month: **500 lei cu domeniu, 400 lei pe domeniul tău.** Din decembrie, Express costă 600 / 500 lei.
 - Comenzile confirmate între 6 și 30 noiembrie primesc patru bonusuri:
   1. profilul firmei pe Google, creat sau aranjat (Maps și Căutare);
   2. un cod QR pentru tipar, care deschide site-ul;
@@ -20,8 +20,8 @@ Altfel, pagina de campanie trimite oamenii spre un produs care încă nu e publi
 - 12 locuri: două site-uri pe săptămână, în cele șase săptămâni dintre 9 noiembrie și 18 decembrie.
 - **Fără promisiunea de 48 de ore în campanie.** Fiecare comandă își rezervă o săptămână: dacă materialele
   ajung până luni, clientul primește linkul de previzualizare până vineri. Dacă întârzie, trece în prima săptămână liberă.
-- Nu scrie „reducere” sau „-17%” la prețul Express și nu tăia 590 lei. Express nu s-a vândut niciodată la 590,
-  deci n-ai un preț anterior real. Poți spune, adevărat, că din decembrie prețul devine 590 lei.
+- Nu scrie „reducere” sau „-17%” la prețul Express și nu tăia 600 lei. Express nu s-a vândut niciodată la 600,
+  deci n-ai un preț anterior real. Poți spune, adevărat, că din decembrie prețul devine 600 lei.
 
 **Comandă confirmată** (decis 4 nov 2026) = plata integrală primită **și** săptămâna confirmată în scris. Doar atunci
 crește `taken`, se dau bonusurile și se rezervă locul. Fără plată, nu promiți loc sau bonusuri.
@@ -63,7 +63,7 @@ Ca să vezi de unde vin cererile, folosește câte un link pe canal:
 
 > Black Month pentru afacerile mici: site-ul tău, online înainte de Crăciun.
 >
-> One-Page Express e un site de o pagină, gata în săptămâna pe care ți-o rezervi. Prețul de Black Month e 490 lei, cu domeniul inclus pe primul an. Din decembrie, prețul devine 590 lei.
+> One-Page Express e un site de o pagină, gata în săptămâna pe care ți-o rezervi. Prețul de Black Month e 500 lei, cu domeniul inclus pe primul an. Din decembrie, prețul devine 600 lei.
 >
 > Dacă comanzi până pe 30 noiembrie, primești în plus:
 > • profilul firmei pe Google, aranjat
@@ -98,7 +98,7 @@ Ca să vezi de unde vin cererile, folosește câte un link pe canal:
 
 > Ultimul weekend pentru bonusurile de Black Month.
 >
-> Cât timp mai sunt locuri, comenzile confirmate până luni, 30 noiembrie, au prețul de 490 lei și primesc profilul Google, codul QR, a doua rundă de modificări și 400 lei reducere la Start.
+> Cât timp mai sunt locuri, comenzile confirmate până luni, 30 noiembrie, au prețul de 500 lei și primesc profilul Google, codul QR, a doua rundă de modificări și 400 lei reducere la Start.
 >
 > 👉 ramonbugariu.ro/black-month
 
@@ -109,7 +109,7 @@ Clipul din `OlxAd` din Remotion poate deveni un story vertical cu același mesaj
 
 **Titlu** (max. 70 caractere):
 
-> Site de o pagină, 490 lei cu domeniu · preț și bonusuri Black Month
+> Site de o pagină, 500 lei cu domeniu · preț și bonusuri Black Month
 
 **Descriere:**
 
@@ -122,7 +122,7 @@ Clipul din `OlxAd` din Remotion poate deveni un story vertical cu același mesaj
 > • găzduire fără cost lunar
 > • gata în săptămâna rezervată, dacă textele și pozele ajung până luni
 >
-> Preț de Black Month, pentru comenzile confirmate până pe 30 noiembrie: 490 lei cu domeniu inclus, 400 lei dacă ai deja domeniu. Din decembrie, prețul devine 590 lei. Emit factură.
+> Preț de Black Month, pentru comenzile confirmate până pe 30 noiembrie: 500 lei cu domeniu inclus, 400 lei dacă ai deja domeniu. Din decembrie, prețul devine 600 lei. Emit factură.
 >
 > Bonusuri pentru comenzile confirmate până pe 30 noiembrie:
 > • profilul firmei pe Google Maps, aranjat
@@ -136,7 +136,7 @@ Clipul din `OlxAd` din Remotion poate deveni un story vertical cu același mesaj
 
 **Mesaj pentru contacte (6 nov)**. Trimite-l doar oamenilor care te cunosc, nu în masă către numere străine:
 
-> Salut! Am pornit o ofertă de Black Month pentru site-uri de o pagină: 490 lei cu domeniul inclus, gata înainte de Crăciun.
+> Salut! Am pornit o ofertă de Black Month pentru site-uri de o pagină: 500 lei cu domeniul inclus, gata înainte de Crăciun.
 >
 > Până pe 30 noiembrie vin cu profilul firmei pe Google, un cod QR și o rundă de modificări în plus. Am doar 12 locuri până la sărbători.
 >
@@ -144,7 +144,7 @@ Clipul din `OlxAd` din Remotion poate deveni un story vertical cu același mesaj
 
 **Răspuns rapid /bf**, când cererea vine de pe pagina de campanie (subiectul emailului începe cu `[Black Month]`):
 
-> Mulțumesc! Comanda ta intră la oferta de Black Month: 490 lei cu domeniu (400 lei pe domeniul tău) și cele patru bonusuri: profilul pe Google, codul QR, a doua rundă de modificări și 400 lei reducere la Start în următoarele șase luni.
+> Mulțumesc! Comanda ta intră la oferta de Black Month: 500 lei cu domeniu (400 lei pe domeniul tău) și cele patru bonusuri: profilul pe Google, codul QR, a doua rundă de modificări și 400 lei reducere la Start în următoarele șase luni.
 >
 > Săptămânile libere sunt: [săptămânile]. Pe care o vrei? Dacă materialele ajung până luni, ai linkul de previzualizare până vineri. Pentru profilul Google, îmi dai acces de administrator sau, dacă nu ai încă profil, îl facem împreună când îți trimit linkul site-ului.
 >
