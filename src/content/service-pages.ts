@@ -31,8 +31,8 @@ export const servicePages = {
       "Creez un site care explică ce face afacerea ta și prin care clienții te pot contacta ușor. Pornim de la ce vrei să facă vizitatorul: să sune, să ceară o programare sau o ofertă.",
     ),
     audience: l(
-      "For companies and sole traders working on professional projects. I'm based in Timișoara and we can work together online, wherever you are in Romania.",
-      "Pentru firme și PFA-uri care au nevoie de un site pentru activitatea profesională. Sunt în Timișoara și putem lucra online, din orice oraș din România.",
+      "For companies, sole traders and private persons who need a presentation website. I'm based in Timișoara and we can work together online, wherever you are in Romania.",
+      "Pentru firme, PFA-uri și persoane fizice care au nevoie de un site de prezentare. Sunt în Timișoara și putem lucra online, din orice oraș din România.",
     ),
     benefitsTitle: l("What your site needs to explain.", "Ce trebuie să afle clientul de pe site."),
     benefits: [

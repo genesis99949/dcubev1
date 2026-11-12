@@ -181,6 +181,23 @@
   color: var(--ink-2);
 }
 
+.clientType {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.clientType legend {
+  width: 100%;
+  margin-bottom: 8px;
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
 .consent input {
   flex: none;
   width: 18px;

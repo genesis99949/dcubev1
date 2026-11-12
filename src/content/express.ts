@@ -57,8 +57,8 @@ export const express = {
     included: l("Domain included", "Cu domeniu inclus"),
     own: l("On your domain", "Pe domeniul tău"),
     noteIncluded: l(
-      "Includes a .ro or .com domain for the first year, in your company's name, and hosting with no monthly cost.",
-      "Include un domeniu .ro sau .com pe primul an, pe numele firmei tale, și găzduire fără cost lunar.",
+      "Includes a .ro or .com domain for the first year, in your name or your company's, and hosting with no monthly cost.",
+      "Include un domeniu .ro sau .com pe primul an, pe numele tău sau al firmei, și găzduire fără cost lunar.",
     ),
     noteOwn: l(
       "I publish it on your domain. Hosting still has no monthly cost.",
@@ -112,7 +112,7 @@ export const express = {
       "Un meniu, cinci secțiuni și un subsol. Vizitatorul derulează o dată și află cine ești, ce oferi și cum te contactează.",
     ),
     menu: l("Menu with links to each section", "Meniu cu legături către fiecare secțiune"),
-    footer: l("Footer with your company details", "Subsol cu datele firmei"),
+    footer: l("Footer with your contact details", "Subsol cu datele tale de contact"),
     blocks: [
       {
         title: l("First impression", "Prima impresie"),
@@ -142,7 +142,7 @@ export const express = {
       l("Basic SEO: page title, description and a clear heading structure", "SEO de bază: titlul paginii, descrierea și o ierarhie clară a titlurilor"),
       l("Basic speed work: compressed images and lean code", "Optimizare de bază pentru viteză: imagini comprimate și cod curat"),
       l("One round of minor changes", "O rundă de mici modificări"),
-      l("The domain for the first year, in your company's name", "Domeniul pe primul an, pe numele firmei tale"),
+      l("The domain for the first year, in your name or your company's", "Domeniul pe primul an, pe numele tău sau al firmei"),
       l("Hosting on Cloudflare with no monthly cost, in your account, set up by me", "Găzduire pe Cloudflare fără cost lunar, în contul tău, configurată de mine"),
     ],
     excludedTitle: l("Not included in the price", "Nu sunt incluse în preț"),
@@ -330,16 +330,16 @@ export const express = {
     {
       question: l("Is hosting included?", "Găzduirea este inclusă?"),
       answer: l(
-        "Yes, with no monthly cost. The site sits on Cloudflare's free plan, in an account in your company's name, with SSL. I set it up and publish it.",
-        "Da, și nu costă lunar. Site-ul stă pe Cloudflare, pe planul gratuit, într-un cont pe numele firmei tale, cu SSL. Eu îl configurez și îl public.",
+        "Yes, with no monthly cost. The site sits on Cloudflare's free plan, in an account in your name or your company's, with SSL. I set it up and publish it.",
+        "Da, și nu costă lunar. Site-ul stă pe Cloudflare, pe planul gratuit, într-un cont pe numele tău sau al firmei, cu SSL. Eu îl configurez și îl public.",
       ),
     },
     {
       question: l("Is the domain included?", "Domeniul este inclus?"),
       /** {price} is the price with your own domain; any answer may also use {credit} and {section}. */
       answer: l(
-        "Yes, for the first year. I register it in your company's name, so it stays yours; from the second year you pay the renewal directly to the registrar. If you already have a domain, we use it and the price drops to {price}.",
-        "Da, pe primul an. Îl înregistrez pe numele firmei tale, ca să rămână al tău; din anul al doilea plătești reînnoirea direct la registrar. Dacă ai deja un domeniu, îl folosim pe acela și prețul scade la {price}.",
+        "Yes, for the first year. I register it in your name or your company's, so it stays yours; from the second year you pay the renewal directly to the registrar. If you already have a domain, we use it and the price drops to {price}.",
+        "Da, pe primul an. Îl înregistrez pe numele tău sau al firmei, ca să rămână al tău; din anul al doilea plătești reînnoirea direct la registrar. Dacă ai deja un domeniu, îl folosim pe acela și prețul scade la {price}.",
       ),
     },
     {
@@ -359,8 +359,15 @@ export const express = {
     {
       question: l("What materials do I need to provide?", "Ce materiale trebuie să pregătesc?"),
       answer: l(
-        "Your logo, your colours if you have them, the texts for each section, photos you have the right to use and your contact details, including a WhatsApp number if you want the button. For the domain, your company details. I can tidy up short texts; writing them from scratch is quoted separately.",
-        "Logo-ul, culorile tale dacă le ai, textele pentru fiecare secțiune, fotografiile pentru care ai drept de utilizare și datele de contact, inclusiv numărul de WhatsApp dacă vrei butonul. Pentru domeniu, datele firmei. Textele scurte le pot ajusta; redactarea lor de la zero se cotează separat.",
+        "Your logo, your colours if you have them, the texts for each section, photos you have the right to use and your contact details, including a WhatsApp number if you want the button. For the domain, your details or your company's. I can tidy up short texts; writing them from scratch is quoted separately.",
+        "Logo-ul, culorile tale dacă le ai, textele pentru fiecare secțiune, fotografiile pentru care ai drept de utilizare și datele de contact, inclusiv numărul de WhatsApp dacă vrei butonul. Pentru domeniu, datele tale sau ale firmei. Textele scurte le pot ajusta; redactarea lor de la zero se cotează separat.",
+      ),
+    },
+    {
+      question: l("Can I order as a private person?", "Pot comanda ca persoană fizică?"),
+      answer: l(
+        "Yes. The price is final: I'm not registered for VAT, so nothing is added. You can withdraw from the contract within 14 days of signing it, without giving a reason. If you want the site sooner, you ask me in writing to start straight away; if you withdraw after that, you pay only for the part already done. Payment is by bank transfer, with an invoice from my sole-trader business.",
+        "Da. Prețul e final: sunt neplătitor de TVA, deci nu se adaugă nimic. Poți renunța la contract în 14 zile de la semnare, fără să-mi spui motivul. Dacă vrei site-ul mai repede, îmi ceri în scris să încep imediat; dacă renunți după aceea, plătești doar partea făcută până atunci. Plata se face prin transfer bancar, cu factură de la PFA-ul meu.",
       ),
     },
     {

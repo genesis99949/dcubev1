@@ -205,8 +205,8 @@ export const guide = {
 
   closingTitle: l("When you're ready", "Când ești gata"),
   closingText: l(
-    "I build presentation websites and online stores for companies and sole traders, from Timișoara. I work alone, so you talk to the person who designs, builds and launches your website. Send me your answers from this guide and I'll tell you which option fits and what it costs.",
-    "Fac site-uri de prezentare și magazine online pentru firme și PFA-uri, din Timișoara. Lucrez singur, așa că vorbești cu omul care îți face designul, construiește site-ul și îl lansează. Trimite-mi răspunsurile din ghid și îți spun ce variantă ți se potrivește și cât costă.",
+    "I build presentation websites for companies, sole traders and private persons, and online stores for companies and sole traders, from Timișoara. I work alone, so you talk to the person who designs, builds and launches your website. Send me your answers from this guide and I'll tell you which option fits and what it costs.",
+    "Fac site-uri de prezentare pentru firme, PFA-uri și persoane fizice, și magazine online pentru firme și PFA-uri, din Timișoara. Lucrez singur, așa că vorbești cu omul care îți face designul, construiește site-ul și îl lansează. Trimite-mi răspunsurile din ghid și îți spun ce variantă ți se potrivește și cât costă.",
   ),
   pricesFrom: l("Presentation website from {website} · Online store from {store}", "Site de prezentare de la {website} · Magazin online de la {store}"),
 } as const;

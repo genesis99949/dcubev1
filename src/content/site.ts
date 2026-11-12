@@ -29,7 +29,12 @@ export const site = {
     cui: "55131615",
     registration: "F2026034188004",
     euid: "ROONRC.F2026034188004",
-    clients: l("I work exclusively with companies and sole traders, on projects for their business.", "Lucrez exclusiv cu firme și PFA-uri, pentru proiecte legate de activitatea lor profesională."),
+    clients: l("I work with companies, sole traders and private persons. Online stores are for companies and sole traders only.", "Lucrez cu firme, PFA-uri și persoane fizice. Magazinele online le fac doar pentru firme și PFA-uri."),
+    /** Private persons (B2C, Ramon's call 2026-11-12): the 14-day withdrawal right, said plainly where prices are shown. */
+    withdrawal: l(
+      "If you order as a private person, you can withdraw from the contract within 14 days of signing it, without giving a reason. If you ask me to start work before then, you pay only for the part already done.",
+      "Dacă ești persoană fizică, poți renunța la contract în 14 zile de la semnare, fără să-mi spui motivul. Dacă îmi ceri să încep lucrul mai devreme, plătești doar partea făcută până atunci.",
+    ),
     vat: l("Not registered for VAT. VAT is not added to the displayed prices.", "Neplătitor de TVA. TVA nu se adaugă prețurilor afișate."),
   },
 
@@ -71,14 +76,21 @@ export const site = {
     extras: l("Add to any package", "Se pot adăuga la orice pachet"),
     payment: l("Payment: 50% to start, 50% at launch.", "Plata: 50% avans, 50% la lansare."),
     hosting: l(
-      "For Start, you pay hosting directly to the provider, in your company's name. I help you choose it and set it up.",
-      "La Start, găzduirea o plătești direct furnizorului, pe numele firmei tale. Te ajut să o alegi și o configurez eu.",
+      "For Start, you pay hosting directly to the provider, in your name or your company's. I help you choose it and set it up.",
+      "La Start, găzduirea o plătești direct furnizorului, pe numele tău sau al firmei. Te ajut să o alegi și o configurez eu.",
     ),
     detailsTitle: l("Costs and materials", "Costuri și materiale"),
     details: [
       {
         question: l("What about the domain, hosting and renewals?", "Cum rămâne cu domeniul, găzduirea și reînnoirile?"),
-        answer: l("The domain and hosting are in your company's name and you pay the providers directly. Hosting usually costs €50–70 a year for a WordPress presentation site and €80–150 a year for a WooCommerce store, which needs a stronger plan. I don't sell hosting: I help you choose it and set it up. For Custom, hosting depends on how the site is built. The written quote lists these costs, any paid licences and renewals, so you know the recurring costs before work starts.", "Domeniul și găzduirea sunt pe numele firmei tale și le plătești direct furnizorilor. Găzduirea costă de obicei 250–350 lei pe an pentru un site de prezentare pe WordPress și 400–750 lei pe an pentru un magazin WooCommerce, care are nevoie de un plan mai puternic. Nu vând găzduire: te ajut să o alegi și o configurez eu. La Personalizat, găzduirea depinde de cum e construit site-ul. Oferta scrisă trece aceste costuri, eventualele licențe plătite și reînnoirile, ca să cunoști costurile recurente înainte să începem."),
+        answer: l("The domain and hosting are in your name or your company's and you pay the providers directly. Hosting usually costs €50–70 a year for a WordPress presentation site and €80–150 a year for a WooCommerce store, which needs a stronger plan. I don't sell hosting: I help you choose it and set it up. For Custom, hosting depends on how the site is built. The written quote lists these costs, any paid licences and renewals, so you know the recurring costs before work starts.", "Domeniul și găzduirea sunt pe numele tău sau al firmei și le plătești direct furnizorilor. Găzduirea costă de obicei 250–350 lei pe an pentru un site de prezentare pe WordPress și 400–750 lei pe an pentru un magazin WooCommerce, care are nevoie de un plan mai puternic. Nu vând găzduire: te ajut să o alegi și o configurez eu. La Personalizat, găzduirea depinde de cum e construit site-ul. Oferta scrisă trece aceste costuri, eventualele licențe plătite și reînnoirile, ca să cunoști costurile recurente înainte să începem."),
+      },
+      {
+        question: l("Can I order as a private person?", "Pot comanda ca persoană fizică?"),
+        answer: l(
+          "Yes, for a presentation website; online stores are for companies and sole traders only. The prices are final: I'm not registered for VAT, so nothing is added. The delivery time is in the quote and the contract. You can withdraw from the contract within 14 days of signing it, without giving a reason; if you ask me to start work before then, you pay only for the part already done. Payment is by bank transfer, with an invoice from my sole-trader business.",
+          "Da, pentru un site de prezentare; magazinele online le fac doar pentru firme și PFA-uri. Prețurile sunt finale: sunt neplătitor de TVA, deci nu se adaugă nimic. Termenul de livrare e trecut în ofertă și în contract. Poți renunța la contract în 14 zile de la semnare, fără să-mi spui motivul; dacă îmi ceri să încep lucrul mai devreme, plătești doar partea făcută până atunci. Plata se face prin transfer bancar, cu factură de la PFA-ul meu.",
+        ),
       },
       {
         question: l("What does site management cover after launch?", "Ce acoperă administrarea după lansare?"),

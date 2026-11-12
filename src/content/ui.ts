@@ -68,8 +68,11 @@ export const ui = {
   form: {
     name: l("Name", "Nume"),
     email: l("Email", "Email"),
-    company: l("Company name", "Denumirea firmei"),
-    businessRequest: l("I am requesting this project for a company or sole trader, for business purposes.", "Solicit proiectul în numele unei firme sau al unui PFA, pentru activitatea profesională."),
+    company: l("Company name (if you order for a company)", "Denumirea firmei (dacă comanzi pentru o firmă)"),
+    /** Who orders: the contract differs for private persons (14-day withdrawal right). */
+    clientType: l("I'm ordering as", "Comand ca"),
+    clientBusiness: l("Company or sole trader", "Firmă sau PFA"),
+    clientPerson: l("Private person", "Persoană fizică"),
     services: l("What do you need?", "De ce ai nevoie?"),
     /** An alternative to picking a specific offer. */
     unsure: l("Not sure yet, help me choose", "Nu știu încă, ajută-mă să aleg"),

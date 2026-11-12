@@ -102,7 +102,7 @@ export function ContactForm({ lang, defaultService }: { lang: Lang; defaultServi
       name: form.get("name"),
       email: form.get("email"),
       company: form.get("company"),
-      business_request: form.get("business_request") === "on",
+      client_type: form.get("client_type") === "person" ? "Private person" : "Company / sole trader",
       services: choice ? `${tr(options.find((o) => o.value === choice)!.label, "en")}${chosenVoiceover ? ` + ${tr(mediaLabels[chosenVoiceover.kind], "en")}` : ""}` : "—",
       package: packageName("en") || "—",
       voiceover: chosenVoiceover ? tr(mediaLabels[chosenVoiceover.kind], "en") : "—",
@@ -131,7 +131,7 @@ export function ContactForm({ lang, defaultService }: { lang: Lang; defaultServi
       <p>{tr(site.business.clients, lang)}</p>
       <label className={styles.field}>
         <span>{tr(ui.form.company, lang)}</span>
-        <input name="company" type="text" autoComplete="organization" required />
+        <input name="company" type="text" autoComplete="organization" />
       </label>
       <div className={styles.row}>
         <label className={styles.field}>
@@ -217,10 +217,18 @@ export function ContactForm({ lang, defaultService }: { lang: Lang; defaultServi
       {/* Spam trap: invisible to people, filled in by bots. */}
       <input type="checkbox" name="botcheck" className={styles.trap} tabIndex={-1} autoComplete="off" aria-hidden />
 
-      <label className={styles.consent}>
-        <input type="checkbox" name="business_request" required />
-        <span>{tr(ui.form.businessRequest, lang)}</span>
-      </label>
+      {/* Private persons get a different contract (14-day withdrawal right), so Ramon needs to know. */}
+      <fieldset className={styles.clientType}>
+        <legend>{tr(ui.form.clientType, lang)}</legend>
+        <label className={styles.consent}>
+          <input type="radio" name="client_type" value="business" required />
+          <span>{tr(ui.form.clientBusiness, lang)}</span>
+        </label>
+        <label className={styles.consent}>
+          <input type="radio" name="client_type" value="person" />
+          <span>{tr(ui.form.clientPerson, lang)}</span>
+        </label>
+      </fieldset>
 
       <label className={styles.consent}>
         <input type="checkbox" required />

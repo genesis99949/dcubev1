@@ -83,7 +83,7 @@ export function ExpressForm({ lang, campaign = false, onClose }: { lang: Lang; c
       // An email becomes the reply-to address; a phone number is passed on as is.
       ...(EMAIL.test(reach) ? { email: reach } : { phone: reach }),
       company: form.get("company"),
-      business_request: form.get("business_request") === "on",
+      client_type: form.get("client_type") === "person" ? "Private person" : "Company / sole trader",
       package: `${express.name} · ${price}`,
       domain: ownDomain ? `${express.domain.toggle.en}: ${form.get("domain_name") || "—"}` : express.domain.included.en,
       template: templates.find((o) => o.value === template)?.label ?? "—",
@@ -219,7 +219,7 @@ export function ExpressForm({ lang, campaign = false, onClose }: { lang: Lang; c
         ) : null}
         <label className={styles.field}>
           <span>{t(ui.form.company)}</span>
-          <input name="company" type="text" autoComplete="organization" required />
+          <input name="company" type="text" autoComplete="organization" />
         </label>
         <div className={styles.row}>
           <label className={styles.field}>
@@ -257,10 +257,18 @@ export function ExpressForm({ lang, campaign = false, onClose }: { lang: Lang; c
         {/* Spam trap: invisible to people, filled in by bots. */}
         <input type="checkbox" name="botcheck" className={styles.trap} tabIndex={-1} autoComplete="off" aria-hidden />
 
-        <label className={styles.consent}>
-          <input type="checkbox" name="business_request" required />
-          <span>{t(ui.form.businessRequest)}</span>
-        </label>
+        {/* Private persons get a different contract (14-day withdrawal right), so Ramon needs to know. */}
+        <fieldset className={styles.clientType}>
+          <legend>{t(ui.form.clientType)}</legend>
+          <label className={styles.consent}>
+            <input type="radio" name="client_type" value="business" required />
+            <span>{t(ui.form.clientBusiness)}</span>
+          </label>
+          <label className={styles.consent}>
+            <input type="radio" name="client_type" value="person" />
+            <span>{t(ui.form.clientPerson)}</span>
+          </label>
+        </fieldset>
 
         <label className={styles.consent}>
           <input type="checkbox" required />
