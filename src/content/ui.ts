@@ -5,6 +5,7 @@ import { l } from "./i18n";
 
 export const ui = {
   nav: {
+    call: l("Call", "Sună la"),
     work: l("Work", "Proiecte"),
     services: l("Services", "Servicii"),
     pricing: l("Pricing", "Prețuri"),

@@ -45,6 +45,16 @@ export function SiteHeader({ lang }: { lang: Lang }) {
     };
   }, [open]);
 
+  // The phone number, always in the bar (Ramon's call, 2026-11-12); on phones only the icon, which calls straight away.
+  const phoneLink = (
+    <a href={site.contact.phoneHref} className={styles.phone} aria-label={`${tr(ui.nav.call, lang)} ${site.contact.phone[lang]}`}>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z" />
+      </svg>
+      <span>{site.contact.phone[lang]}</span>
+    </a>
+  );
+
   // The two languages use separate root layouts, so switching is a normal page load.
   const languageLink = (className: string, long = false) => (
     <a
@@ -67,6 +77,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
             {site.name}
             <span className="mark" aria-hidden />
           </Link>
+          {phoneLink}
           {languageLink(styles.lang)}
           {requestButton ? (
             <a href="#contact" className={`btn ${styles.cta}`}>
@@ -99,6 +110,7 @@ export function SiteHeader({ lang }: { lang: Lang }) {
             ))}
           </ul>
         </nav>
+        {phoneLink}
         {languageLink(styles.lang)}
         <Link href={contactHref} className={`btn ${styles.cta}`} onClick={() => setOpen(false)}>
           {tr(site.hero.primary, lang)}
